@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Что он чувствует ко мне сейчас? — тест Ирины Дудкиной</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23F9D3B4'/%3E%3Cpath d='M32 50 C14 38 8 26 16 17 C22 10 30 12 32 20 C34 12 42 10 48 17 C56 26 50 38 32 50 Z' fill='none' stroke='%2392532F' stroke-width='3.4' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='24' r='3' fill='%2392532F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --beige-bg:#F9D3B4;
+    --beige-card:#FFFFFF;
+    --beige-line:#D9A868;
+    --beige-deep:#B37D3F;
+    --blue-soft:#C9E4C5;
+    --blue-mid:#84B96F;
+    --blue-deep:#92532F;
+    --blue-ink:#92532F;
+    --ink:#92532F;
+    --ink-light:#92532F;
+    --blush:#E7C7B9;
+    --shadow: 0 18px 40px -22px rgba(90,60,30,0.32);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: var(--beige-bg);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-weight:700;
+    line-height:1.65;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .voice{font-family:'Cormorant Garamond', serif;}
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:56px 24px 80px;
+    position:relative;
+  }
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--blue-deep);
+    font-weight:700;
+    margin:0 0 14px;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(32px,7vw,46px);
+    line-height:1.14;
+    margin:0 0 20px;
+    color:var(--blue-ink);
+    letter-spacing:0.002em;
+  }
+  .lede{
+    font-size:17px;
+    color:var(--ink);
+    margin:0 0 26px;
+    max-width:52ch;
+  }
+  .pain-list{
+    list-style:none;
+    margin:0 0 30px;
+    padding:22px 24px;
+    background:var(--beige-card);
+    border:1px solid var(--beige-line);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+  }
+  .pain-list li{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:19px;
+    color:var(--blue-ink);
+    padding:7px 0;
+    border-bottom:1px solid var(--beige-line);
+  }
+  .pain-list li:last-child{border-bottom:none;}
+  .body-text{font-size:16px;color:var(--ink); margin:0 0 18px;}
+  .body-text.muted{color:var(--ink-light); font-size:14.5px;}
+  .scenario-list{
+    margin:22px 0 34px;
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .scenario-list li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    font-size:15.5px;
+    color:var(--ink);
+    padding:14px 16px;
+    background:rgba(201,228,197,0.4);
+    border-radius:12px;
+    border:1px solid rgba(132,185,111,0.4);
+  }
+  .scenario-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--blue-deep);
+    margin-top:8px;flex-shrink:0;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border:none;
+    cursor:pointer;
+    font-family:'Jost', sans-serif;
+    font-weight:700;
+    font-size:15.5px;
+    letter-spacing:0.01em;
+    padding:16px 34px;
+    border-radius:100px;
+    transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+  }
+  .btn-primary{
+    background:var(--blue-deep);
+    color:#fff;
+    box-shadow:0 14px 28px -14px rgba(78,124,150,0.7);
+  }
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 18px 32px -14px rgba(78,124,150,0.8);}
+  .btn-primary:active{transform:translateY(0px) scale(0.98);}
+  .btn-tg{
+    background:var(--blue-ink);
+    color:#fff;
+    width:100%;
+    box-shadow:0 16px 30px -14px rgba(47,80,100,0.65);
+  }
+  .btn-tg:hover{transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--blue-deep);
+    border:1px solid var(--blue-mid);
+    padding:13px 26px;
+  }
+  .cta-row{margin-top:10px;}
+  .hero-flor{position:relative; height:110px; margin:0 0 8px;}
+  .divider{
+    display:flex; align-items:center; justify-content:center;
+    margin:34px 0; gap:14px; color:var(--beige-deep);
+  }
+  .divider .line{height:1px; flex:1; background:linear-gradient(90deg, transparent, var(--beige-deep), transparent);}
+  .screen{display:none;}
+  .screen.active{display:block;}
+
+  /* Quiz */
+  .progress-wrap{margin-bottom:8px;}
+  .progress-label{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:12.5px; color:var(--ink-light); margin-bottom:8px;
+    letter-spacing:0.02em;
+  }
+  .progress-track{
+    height:4px; background:var(--beige-line); border-radius:4px; overflow:hidden;
+  }
+  .progress-fill{
+    height:100%; background:linear-gradient(90deg, var(--blue-mid), var(--blue-deep));
+    border-radius:4px; transition:width .35s ease;
+    width:8.3%;
+  }
+  .quiz-card{
+    background:var(--beige-card);
+    border:1px solid var(--beige-line);
+    border-radius:20px;
+    padding:34px 28px 28px;
+    margin-top:26px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .q-index{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--blue-deep);
+    margin:0 0 10px;
+  }
+  .q-text{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-size:clamp(20px,4.6vw,24px);
+    line-height:1.32;
+    color:var(--blue-ink);
+    margin:0 0 24px;
+  }
+  .options{display:flex; flex-direction:column; gap:11px;}
+  .option{
+    display:flex; align-items:center; gap:14px;
+    text-align:left;
+    padding:15px 18px;
+    border-radius:14px;
+    border:1px solid var(--beige-line);
+    background:#fff;
+    cursor:pointer;
+    font-family:'Jost', sans-serif;
+    font-size:15px;
+    color:var(--ink);
+    transition:all .15s ease;
+  }
+  .option:hover{border-color:var(--blue-mid); background:rgba(201,228,197,0.35);}
+  .option .letter{
+    flex-shrink:0;
+    width:30px;height:30px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--blue-soft);
+    color:var(--blue-ink);
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;font-style:italic;
+    font-size:15px;
+  }
+  .quiz-nav{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-top:22px;
+  }
+  .link-back{
+    background:none;border:none;cursor:pointer;
+    color:var(--ink-light); font-family:'Jost',sans-serif;
+    font-size:13.5px; padding:6px 4px;
+  }
+  .link-back:hover{color:var(--blue-deep);}
+  .link-back:disabled{opacity:0; cursor:default;}
+
+  /* Result */
+  .wreath{
+    position:relative;
+    width:240px; height:240px;
+    margin:6px auto 18px;
+  }
+  .wreath-badge{
+    position:absolute; inset:18px;
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #fff, #FCE3D4 78%);
+    border:1px solid #F3C5B0;
+    box-shadow:0 12px 30px -14px rgba(224,48,74,0.35);
+  }
+  .wreath-badge .num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-weight:700;
+    font-size:14px; color:var(--ink);
+    letter-spacing:0.05em;
+    margin-top:6px;
+  }
+  .wreath-heart{
+    font-size:42px;
+    color:#E0304A;
+    display:inline-block;
+    animation:heartbeat 1.15s ease-in-out infinite;
+  }
+  .wreath-petal{position:absolute; transform-origin:center;}
+  .sprig{position:absolute; width:70px; height:120px; transform-origin:bottom center;}
+  .result-title{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-weight:700;
+    font-size:clamp(24px,6vw,30px);
+    text-align:center;
+    color:var(--blue-ink);
+    margin:0 0 18px;
+    line-height:1.28;
+  }
+  .result-body p{font-size:16px; color:var(--ink); margin:0 0 16px;}
+  .thought-box{
+    background:rgba(231,199,185,0.25);
+    border:1px solid rgba(231,199,185,0.6);
+    border-radius:14px;
+    padding:18px 20px;
+    margin:20px 0;
+  }
+  .thought-box p{margin:0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px; color:var(--ink);}
+  .cta-card{
+    margin-top:36px;
+    background:linear-gradient(165deg, var(--blue-ink), var(--blue-deep));
+    border-radius:22px;
+    padding:34px 28px;
+    color:#fff;
+    text-align:center;
+    box-shadow:0 26px 50px -24px rgba(47,80,100,0.6);
+  }
+  .cta-card .voice{
+    font-size:clamp(21px,5vw,25px);
+    font-weight:700;
+    margin:0 0 12px;
+  }
+  .cta-card p{
+    font-size:14.5px;
+    color:rgba(255,255,255,0.86);
+    margin:0 0 24px;
+    max-width:44ch;
+    margin-left:auto; margin-right:auto;
+  }
+  .cta-card .btn-tg{background:#fff; color:var(--blue-ink);}
+  .cta-card .btn-tg:hover{background:#F5EFE3;}
+  .restart-row{text-align:center; margin-top:22px;}
+  footer{
+    text-align:center; margin-top:50px;
+    font-size:12.5px; color:var(--ink-light);
+  }
+  .pulse-heart{
+    display:inline-block;
+    font-size:22px;
+    color:#E0304A;
+    animation:heartbeat 1.15s ease-in-out infinite;
+  }
+  @keyframes heartbeat{
+    0%, 100%{ transform:scale(1); }
+    15%{ transform:scale(1.25); }
+    30%{ transform:scale(1); }
+    45%{ transform:scale(1.18); }
+    60%{ transform:scale(1); }
+  }
+  @media (max-width:480px){
+    .wrap{padding:40px 18px 64px;}
+    .quiz-card{padding:26px 18px 22px;}
+    .cta-card{padding:28px 20px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <section id="screen-hero" class="screen active">
+    <div class="hero-flor" aria-hidden="true">
+      <svg class="sprig" style="left:-6px; top:-14px; transform:rotate(-14deg) scaleX(-1);" viewBox="0 0 70 120" fill="none"><use href="#heartSprigDef"/></svg>
+      <svg class="sprig" style="right:-10px; top:-6px; transform:rotate(18deg);" viewBox="0 0 70 120" fill="none"><use href="#heartSprigDef"/></svg>
+    </div>
+
+    <h1>Что он чувствует ко мне сейчас?</h1>
+    <p class="lede">Как перестать угадывать и понять, что на самом деле происходит между вами.</p>
+
+    <ul class="pain-list">
+      <li>«Он меня ещё любит?»</li>
+      <li>«Почему он изменился?»</li>
+      <li>«Мы просто переживаем кризис или чувства действительно уходят?»</li>
+      <li>«Есть ли у этих отношений будущее?»</li>
+    </ul>
+
+    <p class="body-text">Когда мужчина становится холоднее, меньше говорит, отдаляется или ведёт себя непонятно, внутри появляется тревога. И чем меньше ясности — тем больше хочется анализировать каждое его слово, сообщение, взгляд и поступок.</p>
+    <p class="body-text">Этот тест поможет посмотреть на ваши отношения шире и понять, какой из трёх сценариев сейчас похож на ваш:</p>
+
+    <ul class="scenario-list">
+      <li><span class="scenario-dot"></span>Отношения живы, но вы потеряли контакт</li>
+      <li><span class="scenario-dot"></span>Отношениями управляют накопленные болевые заряды</li>
+      <li><span class="scenario-dot"></span>Ситуация глубже и требует индивидуального разбора</li>
+    </ul>
+
+    <p class="body-text muted">12 вопросов, 2–3 минуты. Отвечайте максимально честно — важна реальная картина ваших отношений, а не то, какими они должны быть.</p>
+
+    <button class="btn btn-primary" onclick="startQuiz()">Начать тест</button>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="screen-quiz" class="screen">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span id="progressText">Вопрос 1 из 12</span>
+        <span id="progressPct">8%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+
+    <div class="quiz-card">
+      <svg class="sprig" style="right:-18px; top:-30px; transform:rotate(28deg) scale(0.55); opacity:0.5;" viewBox="0 0 70 120" fill="none"><use href="#heartSprigDef"/></svg>
+      <p class="q-index" id="qIndex">Вопрос 1</p>
+      <p class="q-text" id="qText"></p>
+      <div class="options" id="qOptions"></div>
+      <div class="quiz-nav">
+        <button class="link-back" id="backBtn" onclick="prevQuestion()">← Назад</button>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="screen-result" class="screen">
+    <div class="wreath" id="wreath" aria-hidden="true"></div>
+
+    <p class="result-title" id="resultTitle"></p>
+    <div class="result-body" id="resultBody"></div>
+
+    <div class="thought-box">
+      <p id="resultThought"></p>
+    </div>
+
+    <div class="cta-card">
+      <p class="voice">Разобрать именно вашу ситуацию с Ириной</p>
+      <p>Тест дал направление. Но у ваших отношений — своя история, свои сценарии и своя динамика. На индивидуальном разборе Ирина поможет увидеть картину целиком и понять, что делать дальше именно вам.</p>
+      <a class="btn btn-tg cta-row" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Записаться на разбор к Ирине →</a>
+    </div>
+
+    <div class="restart-row">
+      <button class="btn btn-ghost" onclick="restartQuiz()">Пройти тест заново</button>
+    </div>
+  </section>
+
+  <footer><span class="pulse-heart">❤</span></footer>
+</div>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <path id="heartPath" d="M0 -6 C -5 -12 -15 -8 -13 -1 C -11 6 0 13 0 13 C 0 13 11 6 13 -1 C 15 -8 5 -12 0 -6 Z"/>
+    <g id="heartSprigDef">
+      <path d="M35 118 C 30 95, 44 82, 32 62 C 22 45, 40 34, 30 12" stroke="var(--beige-deep)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.55"/>
+      <use href="#heartPath" transform="translate(24 88) rotate(-18) scale(0.6)" fill="var(--blush)"/>
+      <use href="#heartPath" transform="translate(41 68) rotate(15) scale(0.5)" fill="#E0304A" opacity="0.85"/>
+      <use href="#heartPath" transform="translate(21 46) rotate(-14) scale(0.55)" fill="var(--blush)"/>
+      <use href="#heartPath" transform="translate(30 10) scale(0.85)" fill="#E0304A"/>
+    </g>
+  </defs>
+</svg>
+
+<script>
+const questions = [
+  {q:"Как часто вы разговариваете не о быте, детях, работе и делах, а о вас двоих, своих чувствах и желаниях?", opts:["Часто, у нас есть такие разговоры.","Иногда, но хотелось бы чаще.","Практически никогда."]},
+  {q:"Есть ли между вами телесная близость: объятия, прикосновения, нежность, желание быть рядом?", opts:["Да, она сохраняется.","Стало значительно меньше.","Практически исчезла."]},
+  {q:"Чувствуешь ли ты искренний интерес партнёра к твоим чувствам, мыслям и жизни?", opts:["Да.","Иногда.","Чаще чувствую равнодушие или дистанцию."]},
+  {q:"Можешь ли ты прямо сказать партнёру, чего хочешь и чего тебе не хватает?", opts:["Да, обычно могу.","Иногда могу, но многое оставляю при себе.","Мне проще промолчать, намекнуть или ждать, что он поймёт сам."]},
+  {q:"Что происходит после конфликтов?", opts:["Мы можем поговорить и постепенно восстановить контакт.","Некоторое время остаётся напряжение.","Мы закрываемся, отдаляемся, молчим или продолжаем конфликт внутри себя."]},
+  {q:"Есть ли обиды, к которым ты мысленно возвращаешься снова и снова?", opts:["Почти нет.","Есть несколько болезненных ситуаций.","Да, внутри накопилось очень много."]},
+  {q:"Повторяются ли ваши конфликты по похожему сценарию?", opts:["Редко.","Иногда замечаю повторения.","Да. Темы могут меняться, но всё заканчивается одинаково."]},
+  {q:"Чувствуешь ли ты, что рядом с этим человеком можешь быть собой?", opts:["Да.","Не всегда.","Мне приходится контролировать себя, подстраиваться или быть «правильной»."]},
+  {q:"Есть ли у вас желание проводить время вместе просто потому, что вам хорошо друг с другом?", opts:["Да.","Иногда.","Почти нет."]},
+  {q:"Как часто ты пытаешься угадать, что он думает и чувствует?", opts:["Редко, мы можем говорить об этом.","Периодически.","Очень часто. Я постоянно анализирую его слова и поведение."]},
+  {q:"Представь, что через год ваши отношения останутся такими же, как сейчас. Что ты чувствуешь?", opts:["В целом мне спокойно, хотя некоторые вещи хочется улучшить.","Мне становится тревожно и грустно.","Я понимаю, что не хочу ещё год жить именно так."]},
+  {q:"Готова ли ты посмотреть не только на поведение партнёра, но и на собственные реакции, ожидания и повторяющиеся сценарии?", opts:["Да, мне важно понять всю картину.","Мне сложно, но я готова попробовать.","Пока мне кажется, что всё зависит только от него."]}
+];
+
+const results = {
+  r1:{
+    title:"Отношения живы, но вы потеряли контакт",
+    icon:"◐",
+    body:[
+      "Между вами по-прежнему есть ресурс. При этом близость постепенно оказалась закрыта бытовыми задачами, усталостью, недосказанностью, привычкой и накопившимся напряжением.",
+      "В таких отношениях женщина может думать «он меня больше не любит», хотя реальная проблема может быть в другом: вы перестали по-настоящему встречаться друг с другом — разговаривать о себе, слышать друг друга, говорить о желаниях, проявлять нежность."
+    ],
+    thought:"Главный вопрос для тебя сейчас: где именно между вами начал теряться контакт и что поможет его восстановить?"
+  },
+  r2:{
+    title:"Отношениями управляют накопленные болевые заряды",
+    icon:"◑",
+    body:[
+      "Между вами накопилось эмоциональное напряжение. Поэтому сегодняшние ситуации могут запускать гораздо более сильные реакции, чем кажется логичным.",
+      "Одна фраза, молчание, отсутствие сообщения или определённый тон способны включить целую цепочку мыслей: «я ему не нужна», «меня снова не выбрали», «я должна заслужить любовь». Такие накопленные болезненные реакции называются болевыми зарядами."
+    ],
+    thought:"Здесь важно увидеть, какая часть боли относится к сегодняшним отношениям, а какая усиливается прошлым опытом."
+  },
+  r3:{
+    title:"Ситуация глубже — нужен индивидуальный разбор",
+    icon:"◒",
+    body:[
+      "В вашей ситуации, вероятно, переплелось сразу несколько факторов: потеря контакта, накопленные обиды, страх одиночества, границы, старые сценарии, собственное состояние и реальное поведение партнёра.",
+      "Здесь трудно получить ясность из универсального совета. Важно собрать вашу историю целиком: что происходило раньше, где отношения начали меняться, что повторяется и какой ресурс сейчас остаётся у пары."
+    ],
+    thought:"Такую картину не разглядеть по 12 пунктам — но её можно разобрать вместе с Ириной, шаг за шагом."
+  }
+};
+
+let current = 0;
+const answers = new Array(questions.length).fill(null);
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function startQuiz(){
+  current = 0;
+  renderQuestion();
+  showScreen('screen-quiz');
+}
+
+function renderQuestion(){
+  const item = questions[current];
+  document.getElementById('qIndex').textContent = "Вопрос " + (current+1);
+  document.getElementById('qText').textContent = item.q;
+  const pct = Math.round(((current+1)/questions.length)*100);
+  document.getElementById('progressFill').style.width = pct + "%";
+  document.getElementById('progressText').textContent = "Вопрос " + (current+1) + " из " + questions.length;
+  document.getElementById('progressPct').textContent = pct + "%";
+  document.getElementById('backBtn').disabled = current === 0;
+
+  const letters = ["А","Б","В"];
+  const optsWrap = document.getElementById('qOptions');
+  optsWrap.innerHTML = "";
+  item.opts.forEach((text, idx)=>{
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.type = 'button';
+    btn.innerHTML = '<span class="letter">'+letters[idx]+'</span><span>'+text+'</span>';
+    btn.onclick = ()=>selectAnswer(idx);
+    optsWrap.appendChild(btn);
+  });
+}
+
+function selectAnswer(idx){
+  answers[current] = 2 - idx;
+  if(current < questions.length - 1){
+    current++;
+    renderQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function prevQuestion(){
+  if(current > 0){
+    current--;
+    renderQuestion();
+  }
+}
+
+function showResult(){
+  const total = answers.reduce((a,b)=>a+(b||0),0);
+  const pain = (answers[5]||0) + (answers[6]||0) + (answers[9]||0);
+  let key;
+  if(total <= 10){
+    key = 'r3';
+  } else if(pain <= 3){
+    key = 'r2';
+  } else {
+    key = 'r1';
+  }
+  const r = results[key];
+  document.getElementById('resultTitle').textContent = r.title;
+  document.getElementById('resultBody').innerHTML = r.body.map(p=>'<p>'+p+'</p>').join('');
+  document.getElementById('resultThought').textContent = r.thought;
+  renderWreath();
+  showScreen('screen-result');
+}
+
+function renderWreath(){
+  const wreath = document.getElementById('wreath');
+  let html = '<div class="wreath-badge"><span class="wreath-heart">❤</span><div class="num">персональный результат</div></div>';
+  const count = 10;
+  const radius = 108;
+  const palette = ['#E0304A', 'var(--blush)', 'var(--ink)', '#E0304A'];
+  const sizes = [17, 24, 15, 27, 18, 22, 16, 25, 19, 21];
+  for(let i=0;i<count;i++){
+    const angle = (360/count)*i - 90;
+    const rad = angle * Math.PI/180;
+    const x = radius * Math.cos(rad);
+    const y = radius * Math.sin(rad);
+    const size = sizes[i % sizes.length];
+    const color = palette[i % palette.length];
+    const opacity = 0.5 + (i % 3) * 0.18;
+    const tilt = ((i % 2 === 0) ? 1 : -1) * (8 + (i % 4) * 4);
+    html += '<span class="wreath-petal" style="left:calc(50% + '+x+'px); top:calc(50% + '+y+'px); font-size:'+size+'px; color:'+color+'; opacity:'+opacity+'; transform:translate(-50%,-50%) rotate('+tilt+'deg);">❤</span>';
+  }
+  wreath.innerHTML = html;
+}
+
+function restartQuiz(){
+  answers.fill(null);
+  current = 0;
+  showScreen('screen-hero');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>МОЁ СОСТОЯНИЕ — клуб Ирины Дудкиной</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#F7F1E6;
+    --sand-deep:#EFE2CC;
+    --ink:#3B342C;
+    --ink-soft:#6E6459;
+    --grey:#8B8073;
+    --blush:#C98F86;
+    --blush-deep:#B06E64;
+    --blush-tint:#EFDAD5;
+    --sage:#8FA37E;
+    --sage-deep:#6E8560;
+    --sage-tint:#E1E8D8;
+    --gold:#B0812E;
+    --gold-tint:#EFDDB2;
+    --line:#E2D5BE;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    font-weight:400;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Comfortaa', sans-serif;
+    font-weight:600;
+    letter-spacing:-0.005em;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+
+  ::selection{background:var(--gold-tint);}
+
+  /* ---------- header ---------- */
+
+  header{
+    padding:22px 0;
+    position:sticky;
+    top:0;
+    background:rgba(247,241,230,0.92);
+    backdrop-filter:blur(6px);
+    z-index:20;
+    border-bottom:1px solid var(--line);
+  }
+
+  .header-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:opacity .25s ease;
+  }
+  .logo:hover{opacity:0.72;}
+
+  .logo-icon{
+    width:38px;
+    height:38px;
+    flex-shrink:0;
+    border-radius:50%;
+    overflow:hidden;
+  }
+
+  .logo-icon img{width:100%; height:100%; object-fit:cover;}
+
+  .logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+  }
+
+  .logo-mark{
+    font-family:'Comfortaa', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:0.06em;
+  }
+
+  .logo-by{
+    font-size:11.5px;
+    color:var(--grey);
+    margin-top:3px;
+    letter-spacing:0.02em;
+  }
+
+  nav{
+    display:flex;
+    align-items:center;
+    gap:26px;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:22px;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+
+  .nav-links a{
+    position:relative;
+    padding-bottom:4px;
+    transition:color .25s ease;
+  }
+
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:50%; right:50%;
+    bottom:0;
+    height:1px;
+    background:var(--blush-deep);
+    transition:left .3s cubic-bezier(.16,1,.3,1), right .3s cubic-bezier(.16,1,.3,1);
+  }
+
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a:hover::after{left:0; right:0;}
+
+  .logo{transition:opacity .25s ease;}
+
+  .btn{
+    position:relative;
+    display:inline-block;
+    padding:13px 26px;
+    background:var(--gold);
+    color:#FFF9EE;
+    font-weight:600;
+    font-size:14.5px;
+    border-radius:100px;
+    white-space:nowrap;
+    overflow:hidden;
+    isolation:isolate;
+    transition:color .35s ease, transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease;
+    box-shadow:0 0 0 0 rgba(59,52,44,0);
+  }
+
+  .btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background:var(--ink);
+    transform:translateY(102%);
+    transition:transform .4s cubic-bezier(.16,1,.3,1);
+  }
+
+  .btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px -8px rgba(59,52,44,0.45);
+  }
+
+  .btn:hover::before{transform:translateY(0);}
+  .btn:active{transform:translateY(0);}
+
+  .btn-ghost{
+    position:relative;
+    display:inline-block;
+    padding:13px 26px;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    font-weight:600;
+    font-size:14.5px;
+    border-radius:100px;
+    overflow:hidden;
+    isolation:isolate;
+    transition:color .35s ease, border-color .35s ease, transform .35s cubic-bezier(.16,1,.3,1);
+  }
+
+  .btn-ghost::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background:var(--ink);
+    border-radius:100px;
+    transform:scale(0);
+    transition:transform .4s cubic-bezier(.16,1,.3,1);
+  }
+
+  .btn-ghost:hover{color:var(--sand); transform:translateY(-2px);}
+  .btn-ghost:hover::before{transform:scale(1);}
+
+  .contacts .btn-ghost::before{background:var(--sand);}
+  .contacts .btn-ghost:hover{color:var(--ink);}
+
+  .btn-sm{padding:10px 20px; font-size:13.5px;}
+
+  /* ---------- hero ---------- */
+
+  .hero{
+    position:relative;
+    padding:88px 0 96px;
+    overflow:hidden;
+  }
+
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background:
+      radial-gradient(60% 55% at 82% 8%, rgba(201,143,134,0.28), transparent 70%),
+      radial-gradient(55% 50% at 8% 92%, rgba(143,163,126,0.28), transparent 70%),
+      radial-gradient(40% 40% at 60% 60%, rgba(176,129,46,0.10), transparent 70%);
+  }
+
+  .hero-inner{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    max-width:760px;
+    margin:0 auto;
+  }
+
+  .hero-eyebrow{
+    font-size:13.5px;
+    letter-spacing:0.08em;
+    color:var(--blush-deep);
+    font-weight:600;
+    margin-bottom:22px;
+  }
+
+  .hero-title{
+    font-size:46px;
+    line-height:1.24;
+  }
+
+  .hero-title .mark{color:var(--gold);}
+
+  .hero-sub{
+    margin:26px auto 0;
+    max-width:520px;
+    font-size:18px;
+    color:var(--ink-soft);
+  }
+
+  .hero-actions{
+    margin-top:38px;
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-portrait{
+    position:relative;
+    z-index:1;
+    max-width:220px;
+    margin:52px auto 0;
+  }
+
+  .hero-portrait-photo{
+    border-radius:50%;
+    overflow:hidden;
+    aspect-ratio:1/1;
+    border:5px solid var(--sand);
+    box-shadow:0 0 0 1px var(--line);
+    transition:box-shadow .4s ease;
+  }
+
+  .hero-portrait-photo:hover{box-shadow:0 0 0 1px var(--gold);}
+
+  .hero-portrait-photo img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:top;
+    transition:transform .6s cubic-bezier(.16,1,.3,1);
+  }
+
+  .hero-portrait-photo:hover img{transform:scale(1.08);}
+
+  .hero-portrait-cap{
+    text-align:center;
+    margin-top:14px;
+    font-size:13.5px;
+    color:var(--grey);
+  }
+
+  /* ---------- shift band ---------- */
+
+  .shift{
+    background:var(--ink);
+    color:var(--sand);
+    padding:80px 0;
+  }
+
+  .shift-line{
+    font-size:26px;
+    line-height:1.6;
+    max-width:760px;
+    margin:0 auto;
+    padding:18px 0;
+    text-align:center;
+    border-top:1px solid rgba(247,241,230,0.14);
+  }
+
+  .shift-line:last-child{border-bottom:1px solid rgba(247,241,230,0.14);}
+  .shift-line b{color:var(--gold-tint); font-weight:600;}
+
+  /* ---------- section shared ---------- */
+
+  section{padding:92px 0;}
+
+  .section-head{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:44px;
+    margin-bottom:48px;
+  }
+
+  .section-label{
+    font-size:13.5px;
+    letter-spacing:0.06em;
+    color:var(--blush-deep);
+    font-weight:700;
+  }
+
+  .section-title{
+    font-size:30px;
+    max-width:560px;
+  }
+
+  .lede{
+    font-size:17.5px;
+    color:var(--ink-soft);
+    max-width:600px;
+    margin-bottom:40px;
+  }
+
+  /* ---------- two-col list (used by benefits + program) ---------- */
+
+  .duo-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 52px;
+  }
+
+  .duo-item{
+    position:relative;
+    padding:20px 0 20px 0;
+    border-top:1px solid var(--line);
+    font-size:16.5px;
+    transition:padding-left .35s cubic-bezier(.16,1,.3,1), color .35s ease;
+  }
+
+  .duo-item::before{
+    content:"";
+    position:absolute;
+    left:-16px; top:50%;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--gold);
+    transform:translateY(-50%) scale(0);
+    transition:transform .3s cubic-bezier(.16,1,.3,1);
+  }
+
+  .duo-item:hover{padding-left:20px; color:var(--ink);}
+  .duo-item:hover::before{transform:translateY(-50%) scale(1);}
+
+  .duo-item:nth-last-child(1),.duo-item:nth-last-child(2){border-bottom:1px solid var(--line);}
+
+  /* ---------- about (creator) ---------- */
+
+  .about{background:var(--sand-deep);}
+
+  .about-grid{display:grid; grid-template-columns:260px 1fr; gap:44px;}
+
+  .about-text{font-size:17.5px; max-width:600px; color:var(--ink-soft);}
+  .about-text p{margin-bottom:18px;}
+  .about-text strong{color:var(--ink); font-weight:700;}
+
+  .stat-row{display:flex; gap:36px; margin:32px 0; flex-wrap:wrap;}
+
+  .stat{border-left:2px solid var(--gold); padding-left:14px; transition:padding-left .35s cubic-bezier(.16,1,.3,1);}
+  .stat:hover{padding-left:20px;}
+  .stat-num{font-family:'Comfortaa', sans-serif; font-size:26px; font-weight:700;}
+  .stat-label{font-size:13.5px; color:var(--grey); margin-top:2px;}
+
+  .method-tags{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;}
+  .tag{
+    font-size:13px;
+    padding:7px 14px;
+    border-radius:100px;
+    background:var(--sand);
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    transition:background .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .tag:hover{background:var(--ink); color:var(--sand); border-color:var(--ink);}
+
+  /* ---------- for whom ---------- */
+
+  .resonance-list{max-width:640px;}
+  .resonance-item{display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--line); font-size:16.5px; color:var(--ink-soft); transition:color .3s ease, gap .3s cubic-bezier(.16,1,.3,1);}
+  .resonance-item:last-child{border-bottom:1px solid var(--line);}
+  .resonance-mark{color:var(--sage-deep); font-weight:700; flex-shrink:0; transition:transform .3s cubic-bezier(.16,1,.3,1);}
+  .resonance-item:hover{color:var(--ink); gap:22px;}
+  .resonance-item:hover .resonance-mark{transform:scale(1.4);}
+
+  /* ---------- values ---------- */
+
+  .values{background:var(--sage-tint);}
+
+  .values-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:30px 40px;}
+  .value-item{
+    border-top:1px solid rgba(59,52,44,0.14);
+    padding-top:16px;
+    transition:transform .35s cubic-bezier(.16,1,.3,1);
+  }
+  .value-item:hover{transform:translateY(-4px);}
+  .value-name{
+    font-family:'Comfortaa', sans-serif;
+    font-size:17px;
+    font-weight:600;
+    margin-bottom:8px;
+    transition:color .3s ease;
+  }
+  .value-item:hover .value-name{color:var(--gold);}
+  .value-desc{font-size:14.5px; color:var(--ink-soft); line-height:1.55;}
+
+  /* ---------- rules ---------- */
+
+  .rules-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:14px;
+    max-width:880px;
+  }
+
+  .rule-chip{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:15px;
+    padding:16px 18px;
+    background:var(--sand-deep);
+    border-radius:10px;
+    transition:background .35s ease, color .35s ease, transform .35s cubic-bezier(.16,1,.3,1);
+  }
+
+  .rule-chip::before{
+    content:"";
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--blush-deep);
+    flex-shrink:0;
+    transition:background .35s ease, transform .35s ease;
+  }
+
+  .rule-chip:hover{
+    background:var(--ink);
+    color:var(--sand);
+    transform:translateY(-3px);
+  }
+
+  .rule-chip:hover::before{background:var(--gold-tint); transform:scale(1.3);}
+
+  .rules-note{
+    margin-top:30px;
+    font-size:14.5px;
+    color:var(--grey);
+    max-width:520px;
+    border-left:2px solid var(--gold);
+    padding-left:16px;
+  }
+
+  /* ---------- principles ---------- */
+
+  .principle-list{max-width:720px;}
+  .principle-item{
+    display:grid;
+    grid-template-columns:26px 1fr;
+    gap:18px;
+    padding:24px 0;
+    border-top:1px solid var(--line);
+    transition:padding-left .35s cubic-bezier(.16,1,.3,1);
+  }
+  .principle-item:hover{padding-left:10px;}
+  .principle-item:last-child{border-bottom:1px solid var(--line);}
+  .principle-mark{color:var(--gold); font-weight:700; font-size:18px; transition:transform .4s cubic-bezier(.16,1,.3,1);}
+  .principle-item:hover .principle-mark{transform:rotate(180deg);}
+  .principle-title{font-family:'Comfortaa', sans-serif; font-weight:600; font-size:17.5px; margin-bottom:6px; transition:color .3s ease;}
+  .principle-item:hover .principle-title{color:var(--blush-deep);}
+  .principle-desc{font-size:15px; color:var(--grey); max-width:520px;}
+
+  .principles-note{
+    margin-top:32px;
+    font-size:14.5px;
+    color:var(--grey);
+    max-width:520px;
+    border-left:2px solid var(--gold);
+    padding-left:16px;
+  }
+
+  /* ---------- reviews (placeholder) ---------- */
+
+  .reviews{background:var(--blush-tint);}
+
+  .reviews-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:24px;
+  }
+
+  .review-card{
+    background:var(--sand);
+    border-radius:14px;
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease;
+  }
+
+  .review-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px -20px rgba(59,52,44,0.35);
+  }
+
+  .review-avatar{
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--sand-deep);
+    border:1px dashed var(--grey);
+    transition:background .35s ease, border-color .35s ease;
+  }
+
+  .review-card:hover .review-avatar{background:var(--gold-tint); border-color:var(--gold);}
+
+  .review-quote{
+    font-size:15px;
+    color:var(--ink-soft);
+    font-style:italic;
+    flex-grow:1;
+  }
+
+  .review-name{
+    font-size:13.5px;
+    color:var(--grey);
+    font-weight:600;
+  }
+
+  .reviews-note{
+    margin-top:28px;
+    font-size:14px;
+    color:var(--grey);
+  }
+
+  /* ---------- faq ---------- */
+
+  .faq-list{max-width:720px;}
+
+  .faq-item{
+    border-top:1px solid var(--line);
+  }
+
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+
+  .faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:22px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    font-family:'Comfortaa', sans-serif;
+    font-weight:600;
+    font-size:16.5px;
+    transition:color .25s ease;
+  }
+
+  .faq-item summary:hover{color:var(--blush-deep);}
+
+  .faq-item summary::-webkit-details-marker{display:none;}
+
+  .faq-icon{
+    flex-shrink:0;
+    width:22px; height:22px;
+    border-radius:50%;
+    border:1px solid var(--ink);
+    position:relative;
+    transition:transform .35s cubic-bezier(.16,1,.3,1), border-color .25s ease, background .25s ease;
+  }
+
+  .faq-item summary:hover .faq-icon{border-color:var(--blush-deep); transform:rotate(90deg);}
+
+  .faq-icon::before,.faq-icon::after{
+    content:"";
+    position:absolute;
+    background:var(--ink);
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+  }
+
+  .faq-icon::before{width:9px; height:1.4px;}
+  .faq-icon::after{width:1.4px; height:9px; transition:opacity .15s ease;}
+
+  .faq-item[open] .faq-icon::after{opacity:0;}
+
+  .faq-answer{
+    padding:0 0 24px;
+    font-size:15.5px;
+    color:var(--ink-soft);
+    max-width:560px;
+  }
+
+  .faq-placeholder{
+    color:var(--blush-deep);
+    font-weight:600;
+  }
+
+  /* ---------- contacts / cta ---------- */
+
+  .contacts{
+    background:var(--ink);
+    color:var(--sand);
+    text-align:center;
+  }
+
+  .contacts .section-label{color:var(--gold-tint); display:block; margin-bottom:16px;}
+  .contacts-inner{max-width:600px; margin:0 auto;}
+  .contacts-title{font-size:32px;}
+  .contacts-sub{margin-top:16px; color:#D9CFC0; font-size:16.5px;}
+  .contacts-actions{margin-top:32px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
+  .contacts-note{margin-top:22px; font-size:13.5px; color:#B3A997;}
+
+  .contacts .btn-ghost{border-color:var(--sand); color:var(--sand);}
+  .contacts .btn-ghost:hover{background:rgba(247,241,230,0.08);}
+
+  /* ---------- footer ---------- */
+
+  footer{padding:44px 0; border-top:1px solid var(--line);}
+  .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-logo{display:flex; align-items:center; gap:10px; font-family:'Comfortaa', sans-serif; font-weight:700; font-size:15px; letter-spacing:0.05em;}
+  .footer-logo img{width:26px; height:26px; border-radius:50%;}
+  .footer-links{display:flex; gap:22px; font-size:14px; color:var(--grey);}
+
+  /* ---------- responsive ---------- */
+
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .hero-title{font-size:32px;}
+    .section-head,.about-grid{grid-template-columns:1fr; gap:16px;}
+    .duo-list,.values-grid,.rules-grid,.reviews-grid{grid-template-columns:1fr;}
+    .shift-line{font-size:20px;}
+  }
+
+  :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="logo" href="#">
+      <span class="logo-icon"><img src="logo-mark.svg" alt=""></span>
+      <span class="logo-text">
+        <span class="logo-mark">МОЁ СОСТОЯНИЕ</span>
+        <span class="logo-by">клуб Ирины Дудкиной</span>
+      </span>
+    </a>
+    <nav>
+      <div class="nav-links">
+        <a href="#about">О клубе</a>
+        <a href="#for-whom">Для кого</a>
+        <a href="#program">Программа</a>
+        <a href="#values">Ценности</a>
+        <a href="#rules">Правила</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <a class="btn btn-sm" href="https://t.me/mastizmreal" target="_blank" rel="noopener">Вступить в клуб</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-eyebrow">Закрытый клуб для женщин</div>
+    <h1 class="hero-title">«Моё состояние» — клуб, где ты <span class="mark">возвращаешь себя</span></h1>
+    <p class="hero-sub">Закрытое пространство для женщин, которые хотят обрести внутреннюю опору, равновесие и перестать выживать.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#about">Узнать о клубе</a>
+      <a class="btn-ghost" href="https://t.me/mastizmreal" target="_blank" rel="noopener">Вступить</a>
+    </div>
+    <div class="hero-portrait">
+      <div class="hero-portrait-photo">
+        <img src="irina.jpg" alt="Ирина Дудкина">
+      </div>
+      <p class="hero-portrait-cap">Ирина Дудкина — создатель клуба</p>
+    </div>
+  </div>
+</section>
+
+<section class="shift">
+  <div class="wrap">
+    <div class="shift-line">Когда меняется <b>восприятие</b> — мир перестаёт быть врагом.</div>
+    <div class="shift-line">Когда меняется <b>реагирование</b> — ты перестаёшь срываться и проваливаться.</div>
+    <div class="shift-line">Когда меняется <b>состояние</b> — ты начинаешь дышать, выбирать, жить.</div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="section-label">О создателе клуба</div>
+    <div>
+      <h2 class="section-title" style="margin-bottom:22px;">Ирина Дудкина — интегративный психолог, нумеролог, энерготерапевт</h2>
+      <div class="about-text">
+        <p>14 лет опыта, сотни клиенток из разных стран. <strong>Работаю через поле, первопричину и стирание болевых зарядов.</strong> В основе — метод Раджайоги, нумерология как навигатор, расстановки и энерготерапия.</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num">14 лет</div><div class="stat-label">практики с женщинами из разных стран</div></div>
+        <div class="stat"><div class="stat-num">Сотни</div><div class="stat-label">клиенток, изменивших своё состояние</div></div>
+      </div>
+      <div class="method-tags">
+        <span class="tag">Метод Раджайоги</span>
+        <span class="tag">Нумерология</span>
+        <span class="tag">Расстановки</span>
+        <span class="tag">Энерготерапия</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gives">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Что даёт клуб</div>
+      <h2 class="section-title">С клубом «Моё состояние» вы сможете</h2>
+    </div>
+    <div class="duo-list">
+      <div class="duo-item">Найти и убрать первопричину того, что сбивает состояние</div>
+      <div class="duo-item">Освободиться от страхов, тревоги, вины</div>
+      <div class="duo-item">Выстроить внутреннюю опору, которая не зависит от внешнего</div>
+      <div class="duo-item">Перестать сливать деньги и выгорать</div>
+      <div class="duo-item">Наладить отношения с мужем, детьми, родителями, собой</div>
+      <div class="duo-item">Вернуть себя настоящую — живую, свободную</div>
+    </div>
+  </div>
+</section>
+
+<section id="for-whom">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Для кого этот клуб</div>
+      <h2 class="section-title">Здесь будет особенно ценно, если вы</h2>
+    </div>
+    <div class="resonance-list">
+      <div class="resonance-item"><span class="resonance-mark">·</span><span>Чувствуете, что внутри что-то мешает дышать</span></div>
+      <div class="resonance-item"><span class="resonance-mark">·</span><span>Устали от «я всё понимаю, но ничего не меняется»</span></div>
+      <div class="resonance-item"><span class="resonance-mark">·</span><span>Перепробовали многое, а результат не приходит</span></div>
+      <div class="resonance-item"><span class="resonance-mark">·</span><span>Хотите наконец выдохнуть и почувствовать себя собой</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="program">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Что внутри клуба</div>
+      <h2 class="section-title">Программа</h2>
+    </div>
+    <div class="duo-list">
+      <div class="duo-item">Ежемесячные эфиры и сессии — работа с состояниями, стирание болевых зарядов</div>
+      <div class="duo-item">Закрытые материалы: практики, медитации, дневниковые задания</div>
+      <div class="duo-item">Поддержка в чате единомышленниц</div>
+      <div class="duo-item">Доступ к записям всех эфиров</div>
+      <div class="duo-item">Разборы ситуаций участниц</div>
+    </div>
+  </div>
+</section>
+
+<section class="values" id="values">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Ценности клуба</div>
+      <h2 class="section-title">На чём держится пространство</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-item"><div class="value-name">Безопасность</div><div class="value-desc">Пространство, где можно быть собой — без осуждения и оценок.</div></div>
+      <div class="value-item"><div class="value-name">Системность</div><div class="value-desc">Изменения рождаются из регулярности и поддержки, а не разовых практик.</div></div>
+      <div class="value-item"><div class="value-name">Глубина</div><div class="value-desc">Мы идём в первопричину, а не скользим по поверхности.</div></div>
+      <div class="value-item"><div class="value-name">Поддержка</div><div class="value-desc">Ты не одна. Рядом те, кто понимает и идёт в том же направлении.</div></div>
+      <div class="value-item"><div class="value-name">Свобода</div><div class="value-desc">Ты учишься создавать своё состояние и удерживать его, не завися от внешнего.</div></div>
+      <div class="value-item"><div class="value-name">Живость</div><div class="value-desc">Не про «позитивное мышление» — про настоящие чувства, честность и контакт с собой.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Правила клуба</div>
+      <h2 class="section-title">Договорённости, которые помогают чувствовать себя в безопасности</h2>
+    </div>
+    <div class="rules-grid">
+      <div class="rule-chip">Конфиденциальность</div>
+      <div class="rule-chip">Уважение и поддержка</div>
+      <div class="rule-chip">Каждая на своём этапе</div>
+      <div class="rule-chip">Можно просто наблюдать</div>
+      <div class="rule-chip">Можно быть в любых чувствах</div>
+      <div class="rule-chip">Обратная связь только по запросу</div>
+      <div class="rule-chip">Держим фокус на себе</div>
+      <div class="rule-chip">Чат — пространство для жизни</div>
+      <div class="rule-chip">Записи эфиров не распространяются</div>
+    </div>
+    <p class="rules-note">Это не ограничения, а договорённости, чтобы ты могла раскрываться, не боясь осуждения. Полный текст правил ты получишь при вступлении в клуб.</p>
+  </div>
+</section>
+
+<section id="principles">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Как получить максимум</div>
+      <h2 class="section-title">То, что помогает участницам получать реальные изменения</h2>
+    </div>
+    <p class="lede">Клуб даёт результат не сам по себе, а тогда, когда ты в нём живёшь, а не наблюдаешь со стороны.</p>
+    <div class="principle-list">
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Будь здесь — не просто присутствуй, а участвуй</div><div class="principle-desc">Изменения приходят, когда ты включаешься: задаёшь вопросы, делишься откликом, проживаешь практики.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Разреши себе быть неидеальной</div><div class="principle-desc">Здесь не нужно играть роль «успешной». Именно в этой безопасности рождаются настоящие изменения.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Смотри на свои триггеры как на подсказки</div><div class="principle-desc">То, что раздражает, — не враг, а указатель на заряд внутри, который ждёт твоего внимания.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Применяй практики в жизни, а не оставляй их в канале</div><div class="principle-desc">Инструмент работает, когда ты его используешь. Даже одна осознанная практика может изменить день.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Доверяй процессу</div><div class="principle-desc">Изменения приходят постепенно, как утро — сначала свет, потом тепло, потом день.</div></div></div>
+    </div>
+    <p class="principles-note">Это краткий ориентир. Полный гайд «Как получить максимум от клуба» участницы получают при вступлении.</p>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Отзывы</div>
+      <h2 class="section-title">Что говорят участницы клуба</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-avatar"></div>
+        <div class="review-quote">Здесь будет отзыв участницы клуба — добавьте историю и фото.</div>
+        <div class="review-name">Имя участницы</div>
+      </div>
+      <div class="review-card">
+        <div class="review-avatar"></div>
+        <div class="review-quote">Здесь будет отзыв участницы клуба — добавьте историю и фото.</div>
+        <div class="review-name">Имя участницы</div>
+      </div>
+      <div class="review-card">
+        <div class="review-avatar"></div>
+        <div class="review-quote">Здесь будет отзыв участницы клуба — добавьте историю и фото.</div>
+        <div class="review-name">Имя участницы</div>
+      </div>
+    </div>
+    <p class="reviews-note">Это шаблон — замените карточки на реальные отзывы и фото участниц (с их согласия), когда они у вас будут.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Частые вопросы</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Сколько стоит участие?<span class="faq-icon"></span></summary>
+        <div class="faq-answer"><span class="faq-placeholder">[Уточняется — впишите актуальную стоимость]</span>. Написать Ирине можно напрямую в Telegram.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Как часто проходят эфиры?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">Раз в месяц проходит живой эфир или сессия, посвящённая работе с состоянием.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Что делать, если пропустила эфир?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">Ничего страшного — все эфиры сохраняются, и ты можешь пересмотреть запись в удобное время.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Есть ли запись?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">Да, доступ к записям всех эфиров остаётся за участницами клуба.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли попробовать бесплатно?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">Перед вступлением ты можешь бесплатно и без обязательств обсудить свою ситуацию с Ириной на 30-минутной диагностике — это поможет понять, подходит ли тебе клуб.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <div class="contacts-inner">
+      <span class="section-label">Ты здесь не случайно</span>
+      <h2 class="contacts-title">Разберём вашу ситуацию лично</h2>
+      <p class="contacts-sub">Если хочешь разобрать свою ситуацию лично — напиши мне «ДИАГНОСТИКА». 30 минут. Бесплатно. Найдём твой корень.</p>
+      <div class="contacts-actions">
+        <a class="btn" href="https://t.me/mastizmreal" target="_blank" rel="noopener">Написать Ирине</a>
+        <a class="btn-ghost" href="https://t.me/mastizmreal" target="_blank" rel="noopener">Telegram-канал</a>
+      </div>
+      <p class="contacts-note">@IrinaDudkina · t.me/mastizmreal</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-logo"><img src="logo-mark.svg" alt="">МОЁ СОСТОЯНИЕ</div>
+    <div class="footer-links">
+      <span>Ирина Дудкина</span>
+      <a href="https://t.me/mastizmreal" target="_blank" rel="noopener">@IrinaDudkina</a>
+      <a href="https://t.me/mastizmreal" target="_blank" rel="noopener">Telegram-канал</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

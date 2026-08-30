@@ -1,0 +1,88 @@
+<svg width="480" height="420" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Клуб «Моё состояние»</title>
+<desc>Женский силуэт в центре светящегося круга на фоне рассветного неба и спокойной воды, с мягкими золотыми лучами</desc>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#E7DEE3"/>
+<stop offset="55%" stop-color="#F3D9C9"/>
+<stop offset="100%" stop-color="#F6C99B"/>
+</linearGradient>
+<linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#F0C9A8"/>
+<stop offset="35%" stop-color="#E3D3C0"/>
+<stop offset="100%" stop-color="#CFE0D6"/>
+</linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#FFF8EA" stop-opacity="0.95"/>
+<stop offset="55%" stop-color="#F8E3B8" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#F8E3B8" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="reflection" cx="50%" cy="0%" r="80%">
+<stop offset="0%" stop-color="#FFEFCB" stop-opacity="0.85"/>
+<stop offset="100%" stop-color="#FFEFCB" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="waterClip">
+<rect x="0" y="300" width="480" height="120"/>
+</clipPath>
+</defs>
+
+<rect x="0" y="0" width="480" height="300" fill="url(#sky)"/>
+<rect x="0" y="300" width="480" height="120" fill="url(#water)"/>
+
+<line x1="358.0" y1="258.0" x2="404.0" y2="258.0" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="355.0" y1="284.3" x2="384.3" y2="290.9" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="346.3" y1="309.2" x2="387.8" y2="329.2" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="332.3" y1="331.6" x2="355.7" y2="350.3" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="313.6" y1="350.3" x2="342.3" y2="386.2" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="291.2" y1="364.3" x2="304.2" y2="391.3" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="266.3" y1="373.0" x2="276.5" y2="417.9" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="240.0" y1="376.0" x2="240.0" y2="406.0" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="213.7" y1="373.0" x2="203.5" y2="417.9" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="188.8" y1="364.3" x2="175.8" y2="391.3" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="166.4" y1="350.3" x2="137.7" y2="386.2" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="147.7" y1="331.6" x2="124.3" y2="350.3" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="133.7" y1="309.2" x2="92.2" y2="329.2" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="125.0" y1="284.3" x2="95.7" y2="290.9" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="122.0" y1="258.0" x2="76.0" y2="258.0" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="125.0" y1="231.7" x2="95.7" y2="225.1" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="133.7" y1="206.8" x2="92.2" y2="186.8" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="147.7" y1="184.4" x2="124.3" y2="165.7" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="166.4" y1="165.7" x2="137.7" y2="129.8" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="188.8" y1="151.7" x2="175.8" y2="124.7" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="213.7" y1="143.0" x2="203.5" y2="98.1" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="240.0" y1="140.0" x2="240.0" y2="110.0" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="266.3" y1="143.0" x2="276.5" y2="98.1" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="291.2" y1="151.7" x2="304.2" y2="124.7" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="313.6" y1="165.7" x2="342.3" y2="129.8" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="332.3" y1="184.4" x2="355.7" y2="165.7" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="346.3" y1="206.8" x2="387.8" y2="186.8" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+<line x1="355.0" y1="231.7" x2="384.3" y2="225.1" stroke="#D9A85C" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+
+<circle cx="240" cy="258" r="118" fill="url(#glow)"/>
+
+<g clip-path="url(#waterClip)">
+<ellipse cx="240" cy="300" rx="150" ry="46" fill="url(#reflection)"/>
+<path d="M60,318 Q120,312 180,318 T300,318 T420,318" fill="none" stroke="#F3E2C4" stroke-width="1.5" opacity="0.5"/>
+<path d="M40,340 Q110,333 180,340 T320,340 T440,340" fill="none" stroke="#E8EFE2" stroke-width="1.5" opacity="0.55"/>
+<path d="M30,366 Q100,359 170,366 T310,366 T450,366" fill="none" stroke="#DCE9DE" stroke-width="1.5" opacity="0.5"/>
+<path d="M20,394 Q95,387 170,394 T320,394 T460,394" fill="none" stroke="#D2E3D4" stroke-width="1.5" opacity="0.5"/>
+</g>
+
+<line x1="0" y1="300" x2="480" y2="300" stroke="#EAD3B8" stroke-width="1" opacity="0.6"/>
+
+<g fill="#5B4438">
+<path d="M226,150 C218,156 215,170 220,182 C216,170 217,156 226,148 Z" opacity="0.92"/>
+<path d="M254,150 C262,156 265,170 260,182 C264,170 263,156 254,148 Z" opacity="0.92"/>
+<circle cx="240" cy="152" r="15"/>
+<path d="M231,166 L249,166 L251,179 L229,179 Z"/>
+<path d="M224,179
+L256,179
+C270,204 284,244 290,289
+Q291,300 280,300
+L200,300
+Q189,300 190,289
+C196,244 210,204 224,179
+Z"/>
+</g>
+
+</svg>

@@ -7,23 +7,23 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --sand:#FFF8F9;
-    --sand-deep:#FBE7EC;
-    --ink:#3E2A34;
-    --ink-soft:#77606B;
-    --grey:#A38F97;
-    --blush:#F3B9C6;
-    --blush-deep:#C43D6B;
-    --blush-tint:#FBE1E7;
-    --sage:#9FCBAE;
-    --sage-deep:#5F9877;
-    --sage-tint:#E4F3E9;
-    --gold:#C43D6B;
-    --gold-tint:#F6D3DC;
-    --line:#F1DCE3;
+    --sand:#F7F1E6;
+    --sand-deep:#EFE2CC;
+    --ink:#3B342C;
+    --ink-soft:#6E6459;
+    --grey:#8B8073;
+    --blush:#C98F86;
+    --blush-deep:#B06E64;
+    --blush-tint:#EFDAD5;
+    --sage:#8FA37E;
+    --sage-deep:#6E8560;
+    --sage-tint:#E1E8D8;
+    --gold:#B0812E;
+    --gold-tint:#EFDDB2;
+    --line:#E2D5BE;
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -32,7 +32,7 @@
   body{
     background:var(--sand);
     color:var(--ink);
-    font-family:'Nunito', sans-serif;
+    font-family:'Manrope', sans-serif;
     font-weight:400;
     font-size:16px;
     line-height:1.65;
@@ -40,8 +40,8 @@
   }
 
   h1,h2,h3,.display{
-    font-family:'Nunito', sans-serif;
-    font-weight:800;
+    font-family:'Comfortaa', sans-serif;
+    font-weight:600;
     letter-spacing:-0.005em;
   }
 
@@ -96,11 +96,10 @@
   }
 
   .logo-mark{
-    font-family:'Nunito', sans-serif;
-    font-weight:800;
-    font-size:19px;
-    letter-spacing:0.05em;
-    color:var(--blush-deep);
+    font-family:'Comfortaa', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:0.06em;
   }
 
   .logo-by{
@@ -224,17 +223,9 @@
     inset:0;
     z-index:0;
     background:
-      radial-gradient(60% 55% at 82% 8%, rgba(196,61,107,0.16), transparent 70%),
-      radial-gradient(55% 50% at 8% 92%, rgba(95,152,119,0.18), transparent 70%),
-      radial-gradient(40% 40% at 60% 60%, rgba(243,185,198,0.30), transparent 70%);
-  }
-
-  .hero-blob{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(2px);
-    opacity:0.5;
-    z-index:0;
+      radial-gradient(60% 55% at 82% 8%, rgba(201,143,134,0.28), transparent 70%),
+      radial-gradient(55% 50% at 8% 92%, rgba(143,163,126,0.28), transparent 70%),
+      radial-gradient(40% 40% at 60% 60%, rgba(176,129,46,0.10), transparent 70%);
   }
 
   .hero-inner{
@@ -368,34 +359,26 @@
   }
 
   .duo-item{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    padding:18px 0;
+    position:relative;
+    padding:20px 0 20px 0;
     border-top:1px solid var(--line);
     font-size:16.5px;
-    transition:transform .35s cubic-bezier(.16,1,.3,1), color .35s ease;
+    transition:padding-left .35s cubic-bezier(.16,1,.3,1), color .35s ease;
   }
 
-  .duo-item span{padding-top:6px;}
-
-  .item-icon{
-    flex-shrink:0;
-    width:36px; height:36px;
+  .duo-item::before{
+    content:"";
+    position:absolute;
+    left:-16px; top:50%;
+    width:6px; height:6px;
     border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:transform .35s cubic-bezier(.16,1,.3,1);
+    background:var(--gold);
+    transform:translateY(-50%) scale(0);
+    transition:transform .3s cubic-bezier(.16,1,.3,1);
   }
 
-  .item-icon svg{width:18px; height:18px;}
-
-  .item-icon.pink{background:var(--blush-tint); color:var(--blush-deep);}
-  .item-icon.sage{background:var(--sage-tint); color:var(--sage-deep);}
-
-  .duo-item:hover{transform:translateX(6px); color:var(--ink);}
-  .duo-item:hover .item-icon{transform:scale(1.12);}
+  .duo-item:hover{padding-left:20px; color:var(--ink);}
+  .duo-item:hover::before{transform:translateY(-50%) scale(1);}
 
   .duo-item:nth-last-child(1),.duo-item:nth-last-child(2){border-bottom:1px solid var(--line);}
 
@@ -413,7 +396,7 @@
 
   .stat{border-left:2px solid var(--gold); padding-left:14px; transition:padding-left .35s cubic-bezier(.16,1,.3,1);}
   .stat:hover{padding-left:20px;}
-  .stat-num{font-family:'Nunito', sans-serif; font-size:26px; font-weight:700;}
+  .stat-num{font-family:'Comfortaa', sans-serif; font-size:26px; font-weight:700;}
   .stat-label{font-size:13.5px; color:var(--grey); margin-top:2px;}
 
   .method-tags{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;}
@@ -430,35 +413,12 @@
 
   /* ---------- for whom ---------- */
 
-  .resonance-list{
-    max-width:none;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-  }
-  .resonance-item{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    padding:26px;
-    background:var(--blush-tint);
-    border-radius:16px;
-    font-size:16.5px;
-    color:var(--ink-soft);
-    transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease;
-  }
-  .resonance-mark{
-    flex-shrink:0;
-    width:30px; height:30px;
-    border-radius:50%;
-    background:var(--sage);
-    color:#fff;
-    display:flex; align-items:center; justify-content:center;
-    transition:transform .3s cubic-bezier(.16,1,.3,1);
-  }
-  .resonance-mark svg{width:15px; height:15px;}
-  .resonance-item:hover{transform:translateY(-4px); box-shadow:0 16px 32px -18px rgba(196,61,107,0.35);}
-  .resonance-item:hover .resonance-mark{transform:scale(1.15);}
+  .resonance-list{max-width:640px;}
+  .resonance-item{display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--line); font-size:16.5px; color:var(--ink-soft); transition:color .3s ease, gap .3s cubic-bezier(.16,1,.3,1);}
+  .resonance-item:last-child{border-bottom:1px solid var(--line);}
+  .resonance-mark{color:var(--sage-deep); font-weight:700; flex-shrink:0; transition:transform .3s cubic-bezier(.16,1,.3,1);}
+  .resonance-item:hover{color:var(--ink); gap:22px;}
+  .resonance-item:hover .resonance-mark{transform:scale(1.4);}
 
   /* ---------- values ---------- */
 
@@ -466,19 +426,15 @@
 
   .values-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:30px 40px;}
   .value-item{
-    background:rgba(255,255,255,0.6);
-    backdrop-filter:blur(4px);
-    border-radius:16px;
-    padding:26px 24px;
-    box-shadow:0 10px 26px -20px rgba(62,42,52,0.3);
-    transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease;
+    border-top:1px solid rgba(59,52,44,0.14);
+    padding-top:16px;
+    transition:transform .35s cubic-bezier(.16,1,.3,1);
   }
-  .value-item:hover{transform:translateY(-5px); box-shadow:0 18px 34px -18px rgba(196,61,107,0.3);}
+  .value-item:hover{transform:translateY(-4px);}
   .value-name{
-    font-family:'Nunito', sans-serif;
-    font-size:18px;
-    font-weight:800;
-    color:var(--blush-deep);
+    font-family:'Comfortaa', sans-serif;
+    font-size:17px;
+    font-weight:600;
     margin-bottom:8px;
     transition:color .3s ease;
   }
@@ -507,9 +463,9 @@
 
   .rule-chip::before{
     content:"";
-    width:8px; height:8px;
+    width:6px; height:6px;
     border-radius:50%;
-    background:var(--sage-deep);
+    background:var(--blush-deep);
     flex-shrink:0;
     transition:background .35s ease, transform .35s ease;
   }
@@ -520,7 +476,7 @@
     transform:translateY(-3px);
   }
 
-  .rule-chip:hover::before{background:var(--sage-tint); transform:scale(1.3);}
+  .rule-chip:hover::before{background:var(--gold-tint); transform:scale(1.3);}
 
   .rules-note{
     margin-top:30px;
@@ -536,7 +492,7 @@
   .principle-list{max-width:720px;}
   .principle-item{
     display:grid;
-    grid-template-columns:40px 1fr;
+    grid-template-columns:26px 1fr;
     gap:18px;
     padding:24px 0;
     border-top:1px solid var(--line);
@@ -544,17 +500,9 @@
   }
   .principle-item:hover{padding-left:10px;}
   .principle-item:last-child{border-bottom:1px solid var(--line);}
-  .principle-mark{
-    width:36px; height:36px;
-    border-radius:50%;
-    background:var(--blush-deep);
-    color:#fff;
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:15px;
-    transition:transform .4s cubic-bezier(.16,1,.3,1);
-  }
-  .principle-item:hover .principle-mark{transform:scale(1.12);}
-  .principle-title{font-family:'Nunito', sans-serif; font-weight:700; font-size:17.5px; margin-bottom:6px; transition:color .3s ease;}
+  .principle-mark{color:var(--gold); font-weight:700; font-size:18px; transition:transform .4s cubic-bezier(.16,1,.3,1);}
+  .principle-item:hover .principle-mark{transform:rotate(180deg);}
+  .principle-title{font-family:'Comfortaa', sans-serif; font-weight:600; font-size:17.5px; margin-bottom:6px; transition:color .3s ease;}
   .principle-item:hover .principle-title{color:var(--blush-deep);}
   .principle-desc{font-size:15px; color:var(--grey); max-width:520px;}
 
@@ -578,20 +526,18 @@
   }
 
   .review-card{
-    background:rgba(255,255,255,0.7);
-    backdrop-filter:blur(6px);
+    background:var(--sand);
     border-radius:14px;
     padding:28px;
     display:flex;
     flex-direction:column;
     gap:16px;
-    box-shadow:0 12px 30px -20px rgba(196,61,107,0.25);
     transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease;
   }
 
   .review-card:hover{
     transform:translateY(-6px);
-    box-shadow:0 20px 40px -18px rgba(196,61,107,0.35);
+    box-shadow:0 20px 40px -20px rgba(59,52,44,0.35);
   }
 
   .review-avatar{
@@ -641,7 +587,7 @@
     justify-content:space-between;
     align-items:center;
     gap:20px;
-    font-family:'Nunito', sans-serif;
+    font-family:'Comfortaa', sans-serif;
     font-weight:600;
     font-size:16.5px;
     transition:color .25s ease;
@@ -690,32 +636,26 @@
   /* ---------- contacts / cta ---------- */
 
   .contacts{
-    background:linear-gradient(135deg, #C43D6B 0%, #D96E92 45%, #5F9877 100%);
-    color:#fff;
+    background:var(--ink);
+    color:var(--sand);
     text-align:center;
-    position:relative;
-    overflow:hidden;
   }
 
-  .contacts .section-label{color:#FBE1E7; display:block; margin-bottom:16px;}
-  .contacts-inner{max-width:600px; margin:0 auto; position:relative; z-index:1;}
+  .contacts .section-label{color:var(--gold-tint); display:block; margin-bottom:16px;}
+  .contacts-inner{max-width:600px; margin:0 auto;}
   .contacts-title{font-size:32px;}
-  .contacts-sub{margin-top:16px; color:#FBEAEF; font-size:16.5px;}
+  .contacts-sub{margin-top:16px; color:#D9CFC0; font-size:16.5px;}
   .contacts-actions{margin-top:32px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
-  .contacts-note{margin-top:22px; font-size:13.5px; color:#F3D2DD;}
+  .contacts-note{margin-top:22px; font-size:13.5px; color:#B3A997;}
 
-  .contacts .btn{background:#fff; color:var(--blush-deep);}
-  .contacts .btn::before{background:#3E2A34;}
-  .contacts .btn:hover{color:#fff;}
-  .contacts .btn-ghost{border-color:#fff; color:#fff;}
-  .contacts .btn-ghost::before{background:#fff;}
-  .contacts .btn-ghost:hover{color:var(--blush-deep);}
+  .contacts .btn-ghost{border-color:var(--sand); color:var(--sand);}
+  .contacts .btn-ghost:hover{background:rgba(247,241,230,0.08);}
 
   /* ---------- footer ---------- */
 
   footer{padding:44px 0; border-top:1px solid var(--line);}
   .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
-  .footer-logo{display:flex; align-items:center; gap:10px; font-family:'Nunito', sans-serif; font-weight:800; font-size:15px; letter-spacing:0.05em; color:var(--blush-deep);}
+  .footer-logo{display:flex; align-items:center; gap:10px; font-family:'Comfortaa', sans-serif; font-weight:700; font-size:15px; letter-spacing:0.05em;}
   .footer-logo img{width:26px; height:26px; border-radius:50%;}
   .footer-links{display:flex; gap:22px; font-size:14px; color:var(--grey);}
 
@@ -761,9 +701,6 @@
 
 <section class="hero">
   <div class="hero-bg"></div>
-  <svg class="hero-blob" style="top:8%; right:6%; width:180px; height:180px;" viewBox="0 0 100 100"><path d="M50,8 C72,8 90,26 90,50 C90,74 70,92 46,90 C24,88 8,70 10,48 C12,26 30,8 50,8 Z" fill="#F3B9C6" opacity="0.35"/></svg>
-  <svg class="hero-blob" style="bottom:4%; left:4%; width:140px; height:140px;" viewBox="0 0 100 100"><path d="M50,10 C68,14 86,30 88,50 C90,72 70,90 48,88 C28,86 10,68 12,46 C14,26 32,6 50,10 Z" fill="#9FCBAE" opacity="0.30"/></svg>
-  <svg class="hero-blob" style="top:38%; left:10%; width:70px; height:70px;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#C43D6B" opacity="0.12"/></svg>
   <div class="wrap hero-inner">
     <div class="hero-eyebrow">Закрытый клуб для женщин</div>
     <h1 class="hero-title">«Моё состояние» — клуб, где ты <span class="mark">возвращаешь себя</span></h1>
@@ -818,12 +755,12 @@
       <h2 class="section-title">С клубом «Моё состояние» вы сможете</h2>
     </div>
     <div class="duo-list">
-      <div class="duo-item"><span class="item-icon pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg></span><span>Найти и убрать первопричину того, что сбивает состояние</span></div>
-      <div class="duo-item"><span class="item-icon sage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-4 3-7 8-7 12a5 5 0 0010 0c0-3-1-6-3-9z"/><path d="M9 15c1-2 3-4 5-5"/></svg></span><span>Освободиться от страхов, тревоги, вины</span></div>
-      <div class="duo-item"><span class="item-icon pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v5"/><circle cx="12" cy="10" r="2"/><path d="M12 12v9"/><path d="M7 21h10"/></svg></span><span>Выстроить внутреннюю опору, которая не зависит от внешнего</span></div>
-      <div class="duo-item"><span class="item-icon sage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2-3 4 3 6 0s4 3 6 0 4 3 6 0"/></svg></span><span>Перестать сливать деньги и выгорать</span></div>
-      <div class="duo-item"><span class="item-icon pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.35-7-9.5A4.5 4.5 0 0112 6a4.5 4.5 0 017 4.5C19 15.65 12 20 12 20z"/></svg></span><span>Наладить отношения с мужем, детьми, родителями, собой</span></div>
-      <div class="duo-item"><span class="item-icon sage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></span><span>Вернуть себя настоящую — живую, свободную</span></div>
+      <div class="duo-item">Найти и убрать первопричину того, что сбивает состояние</div>
+      <div class="duo-item">Освободиться от страхов, тревоги, вины</div>
+      <div class="duo-item">Выстроить внутреннюю опору, которая не зависит от внешнего</div>
+      <div class="duo-item">Перестать сливать деньги и выгорать</div>
+      <div class="duo-item">Наладить отношения с мужем, детьми, родителями, собой</div>
+      <div class="duo-item">Вернуть себя настоящую — живую, свободную</div>
     </div>
   </div>
 </section>
@@ -835,10 +772,10 @@
       <h2 class="section-title">Здесь будет особенно ценно, если вы</h2>
     </div>
     <div class="resonance-list">
-      <div class="resonance-item"><span class="resonance-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><span>Чувствуете, что внутри что-то мешает дышать</span></div>
-      <div class="resonance-item"><span class="resonance-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><span>Устали от «я всё понимаю, но ничего не меняется»</span></div>
-      <div class="resonance-item"><span class="resonance-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><span>Перепробовали многое, а результат не приходит</span></div>
-      <div class="resonance-item"><span class="resonance-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><span>Хотите наконец выдохнуть и почувствовать себя собой</span></div>
+      <div class="resonance-item"><span class="resonance-mark">·</span><span>Чувствуете, что внутри что-то мешает дышать</span></div>
+      <div class="resonance-item"><span class="resonance-mark">·</span><span>Устали от «я всё понимаю, но ничего не меняется»</span></div>
+      <div class="resonance-item"><span class="resonance-mark">·</span><span>Перепробовали многое, а результат не приходит</span></div>
+      <div class="resonance-item"><span class="resonance-mark">·</span><span>Хотите наконец выдохнуть и почувствовать себя собой</span></div>
     </div>
   </div>
 </section>
@@ -850,11 +787,11 @@
       <h2 class="section-title">Программа</h2>
     </div>
     <div class="duo-list">
-      <div class="duo-item"><span class="item-icon pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg></span><span>Ежемесячные эфиры и сессии — работа с состояниями, стирание болевых зарядов</span></div>
-      <div class="duo-item"><span class="item-icon sage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="9" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><span>Закрытые материалы: практики, медитации, дневниковые задания</span></div>
-      <div class="duo-item"><span class="item-icon pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4V5z"/></svg></span><span>Поддержка в чате единомышленниц</span></div>
-      <div class="duo-item"><span class="item-icon sage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/></svg></span><span>Доступ к записям всех эфиров</span></div>
-      <div class="duo-item"><span class="item-icon pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M15 15l5 5"/></svg></span><span>Разборы ситуаций участниц</span></div>
+      <div class="duo-item">Ежемесячные эфиры и сессии — работа с состояниями, стирание болевых зарядов</div>
+      <div class="duo-item">Закрытые материалы: практики, медитации, дневниковые задания</div>
+      <div class="duo-item">Поддержка в чате единомышленниц</div>
+      <div class="duo-item">Доступ к записям всех эфиров</div>
+      <div class="duo-item">Разборы ситуаций участниц</div>
     </div>
   </div>
 </section>
@@ -905,11 +842,11 @@
     </div>
     <p class="lede">Клуб даёт результат не сам по себе, а тогда, когда ты в нём живёшь, а не наблюдаешь со стороны.</p>
     <div class="principle-list">
-      <div class="principle-item"><span class="principle-mark">1</span><div><div class="principle-title">Будь здесь — не просто присутствуй, а участвуй</div><div class="principle-desc">Изменения приходят, когда ты включаешься: задаёшь вопросы, делишься откликом, проживаешь практики.</div></div></div>
-      <div class="principle-item"><span class="principle-mark">2</span><div><div class="principle-title">Разреши себе быть неидеальной</div><div class="principle-desc">Здесь не нужно играть роль «успешной». Именно в этой безопасности рождаются настоящие изменения.</div></div></div>
-      <div class="principle-item"><span class="principle-mark">3</span><div><div class="principle-title">Смотри на свои триггеры как на подсказки</div><div class="principle-desc">То, что раздражает, — не враг, а указатель на заряд внутри, который ждёт твоего внимания.</div></div></div>
-      <div class="principle-item"><span class="principle-mark">4</span><div><div class="principle-title">Применяй практики в жизни, а не оставляй их в канале</div><div class="principle-desc">Инструмент работает, когда ты его используешь. Даже одна осознанная практика может изменить день.</div></div></div>
-      <div class="principle-item"><span class="principle-mark">5</span><div><div class="principle-title">Доверяй процессу</div><div class="principle-desc">Изменения приходят постепенно, как утро — сначала свет, потом тепло, потом день.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Будь здесь — не просто присутствуй, а участвуй</div><div class="principle-desc">Изменения приходят, когда ты включаешься: задаёшь вопросы, делишься откликом, проживаешь практики.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Разреши себе быть неидеальной</div><div class="principle-desc">Здесь не нужно играть роль «успешной». Именно в этой безопасности рождаются настоящие изменения.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Смотри на свои триггеры как на подсказки</div><div class="principle-desc">То, что раздражает, — не враг, а указатель на заряд внутри, который ждёт твоего внимания.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Применяй практики в жизни, а не оставляй их в канале</div><div class="principle-desc">Инструмент работает, когда ты его используешь. Даже одна осознанная практика может изменить день.</div></div></div>
+      <div class="principle-item"><span class="principle-mark">·</span><div><div class="principle-title">Доверяй процессу</div><div class="principle-desc">Изменения приходят постепенно, как утро — сначала свет, потом тепло, потом день.</div></div></div>
     </div>
     <p class="principles-note">Это краткий ориентир. Полный гайд «Как получить максимум от клуба» участницы получают при вступлении.</p>
   </div>

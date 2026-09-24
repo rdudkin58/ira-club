@@ -307,6 +307,9 @@
   .plan-list{list-style:none; margin:34px 0 44px; border-top:1px solid var(--line); flex:1;}
   .plan-list li{display:flex; gap:14px; align-items:baseline; padding:14px 0; border-bottom:1px solid var(--line); font-size:15px; color:var(--ink);}
   .plan-list li::before{content:"✦"; font-size:10px; color:var(--gold);}
+  .plan-list li.off{color:var(--muted);}
+  .plan-list li.off::before{content:"✕"; font-size:10px; color:var(--muted);}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
   .plan .btn{align-self:stretch;}
 
   .plan.dark{
@@ -474,7 +477,7 @@
       <div class="hero-facts reveal d2">
         <div><div class="fact-num">Среда</div><div class="fact-label">живой эфир<br>с Ириной</div></div>
         <div><div class="fact-num">Записи</div><div class="fact-label">после каждого<br>эфира</div></div>
-        <div><div class="fact-num">1 300 ₽</div><div class="fact-label">цена основательницы<br>до 31 октября</div></div>
+        <div><div class="fact-num">Практики</div><div class="fact-label">на каждый<br>день</div></div>
       </div>
     </div>
     <div class="hero-visual reveal">
@@ -553,7 +556,7 @@
       <div class="feature reveal">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.4 8.6l-2 4.8-4.8 2 2-4.8z"/></svg>
         <h3>Диагностика на входе</h3>
-        <p>30–40 минут — разбираем запросы участницы.</p>
+        <p>40 минут — разбираем запросы участницы.</p>
       </div>
       <div class="feature reveal d1">
         <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="5.2"/><circle cx="15" cy="12" r="5.2"/></svg>
@@ -597,7 +600,7 @@
       <div class="mentor-sub">Проводник к себе Настоящей</div>
       <div class="mentor-roles">Интегративный психолог · Нумеролог · Энерготерапевт</div>
       <div class="mentor-text">
-        <p>14 лет опыта работы с женщинами. Сотни клиенток из разных стран. Работаю через навигацию нумерологии, считывание поля, нахожу первопричины и болевые заряды страданий.</p>
+        <p>14 лет опыта работы с женщинами. Более 1000 клиенток из разных стран. Работаю через навигацию нумерологии, считывание поля, нахожу первопричины и болевые заряды страданий.</p>
         <p>Использую расстановки, энерготерапию, метод раджа-йоги.</p>
       </div>
       <div class="stats">
@@ -617,16 +620,15 @@
     </div>
     <div class="plans">
       <div class="plan reveal">
-        <div class="plan-name">Месячный тариф</div>
-        <div class="plan-price">1 300 ₽</div>
+        <div class="plan-name">Гостевой тариф</div>
+        <div class="plan-price">2 600 ₽</div>
         <div class="plan-per">в месяц</div>
-        <p class="plan-note">Цена основательницы — для тех, кто вступит до 31 октября. Сохраняется, пока продлеваешь без перерыва. С 1 ноября — 2 600 ₽.</p>
         <ul class="plan-list">
           <li>Эфиры и разборы каждую среду</li>
           <li>База знаний</li>
           <li>Закрытое сообщество</li>
-          <li>2 индивидуальные сессии</li>
-          <li>Энергочистка</li>
+          <li class="off"><span class="sr-only">Не входит: </span><s>2 индивидуальные сессии</s></li>
+          <li class="off"><span class="sr-only">Не входит: </span><s>Энергочистка</s></li>
         </ul>
         <a class="btn btn-line" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Занять место</a>
       </div>
@@ -659,7 +661,7 @@
     <div class="faq-list reveal d1">
       <details class="faq-item" open>
         <summary>Сколько стоит участие?<span class="plus"></span></summary>
-        <div class="faq-answer">До 31 октября действует цена основательницы — 1 300 ₽ в месяц. Она сохраняется, пока продлеваешь без перерыва. С 1 ноября — 2 600 ₽ в месяц. Годовой тариф — 26 000 ₽ / год (12 месяцев по цене 10).</div>
+        <div class="faq-answer">Гостевой тариф — 2 600 ₽ в месяц. Годовой тариф — 26 000 ₽ / год (12 месяцев по цене 10).</div>
       </details>
       <details class="faq-item">
         <summary>Как часто проходят эфиры?<span class="plus"></span></summary>
@@ -686,7 +688,7 @@
     <div class="cta-star" aria-hidden="true">✦</div>
     <div class="eyebrow">Ты здесь не случайно</div>
     <h2>Напиши мне <em>«ДИАГНОСТИКА»</em></h2>
-    <p>Разберём твою ситуацию лично — 30 минут, бесплатно. Найдём твой корень.</p>
+    <p>Разберём твою ситуацию лично — 40 минут, бесплатно. Найдём твой корень.</p>
     <a class="btn btn-gold" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Написать Ирине</a>
     <div class="cta-note">Telegram · @IrinaDudkina</div>
   </div>

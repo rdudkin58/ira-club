@@ -177,12 +177,12 @@
   .hero-facts{
     margin-top:64px; padding-top:30px;
     border-top:1px solid var(--line);
-    display:grid; grid-template-columns:repeat(3,auto); justify-content:start; gap:0 44px;
+    display:grid; grid-template-columns:repeat(3,auto); justify-content:space-between; gap:0 32px;
   }
   .fact-num{font-family:var(--serif); font-size:30px; line-height:1.1; color:var(--espresso);}
   .fact-label{font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.45;}
 
-  .hero-visual{position:relative; justify-self:center; align-self:start; margin-top:clamp(40px, 5vh, 64px); width:min(100%, 72vh, 720px);}
+  .hero-visual{position:relative; justify-self:end; align-self:start; margin-top:clamp(40px, 5vh, 64px); margin-right:22px; width:min(100% - 22px, 72vh, 720px);}
   .hero-visual::before{
     content:""; position:absolute; inset:-22px; border-radius:50%;
     border:1px solid var(--line);
@@ -504,7 +504,7 @@
     .hero{padding:36px 0 48px; text-align:center;}
     .hero + .sec{padding-top:64px;}
     .hero-grid{grid-template-columns:1fr; gap:48px;}
-    .hero-visual{order:-1; width:100%; max-width:270px; align-self:center; margin-top:0;}
+    .hero-visual{order:-1; width:100%; max-width:270px; align-self:center; justify-self:center; margin-top:0; margin-right:0;}
     .hero-visual::before{inset:-14px;}
     .hero-visual::after{top:-34px;}
     .hero-sub{margin:24px auto 0;}

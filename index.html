@@ -182,7 +182,7 @@
   .fact-num{font-family:var(--serif); font-size:30px; line-height:1.1; color:var(--espresso);}
   .fact-label{font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.45;}
 
-  .hero-visual{position:relative; justify-self:center; align-self:start; margin-top:clamp(40px, 5vh, 64px); width:min(100%, 72vh);}
+  .hero-visual{position:relative; justify-self:center; align-self:start; margin-top:clamp(40px, 5vh, 64px); width:min(100%, 72vh, 720px);}
   .hero-visual::before{
     content:""; position:absolute; inset:-22px; border-radius:50%;
     border:1px solid var(--line);
@@ -465,6 +465,17 @@
   }
   @media (min-width:1600px){
     h1{font-size:clamp(78px, 5vw, 100px);}
+    /* header a size up so it doesn't get lost on wide screens */
+    section{scroll-margin-top:96px;}
+    .header-row{height:96px;}
+    .brand{gap:16px;}
+    .brand-mark{height:64px;}
+    .brand-kicker{font-size:11px; margin-bottom:8px;}
+    .brand-name{font-size:29px;}
+    .nav{gap:48px;}
+    .nav-links{gap:38px;}
+    .nav-links a{font-size:13px;}
+    .btn-sm{height:50px; padding:0 30px; font-size:12px;}
     .hero-grid{grid-template-columns:minmax(0, min(620px, 46%)) minmax(0, 1fr);}
   }
 

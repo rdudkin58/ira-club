@@ -241,10 +241,11 @@
   .price-name{font-size:14px; letter-spacing:0.06em; color:var(--rust); font-weight:800; margin-bottom:10px;}
   .price-num{font-size:40px; font-weight:800; color:var(--gold-deep);}
   .price-period{font-size:14px; color:var(--ink-soft); margin-bottom:24px;}
-  .price-note{font-size:13.5px; font-weight:700; color:var(--rust); line-height:1.5; margin:-12px 0 24px;}
   .price-features{list-style:none; text-align:left; margin-bottom:28px;}
   .price-features li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--ink-soft); padding:9px 0;}
   .price-features li::before{content:"✓"; color:var(--rust); font-weight:800; flex-shrink:0;}
+  .price-features li.off{color:var(--grey);}
+  .price-features li.off::before{content:"✕"; color:var(--grey); font-weight:700;}
 
   /* ---------- faq ---------- */
 
@@ -467,16 +468,15 @@
     </div>
     <div class="pricing-grid">
       <div class="price-card">
-        <div class="price-name">Месячный тариф</div>
-        <div class="price-num">1 300 ₽</div>
+        <div class="price-name">Гостевой тариф</div>
+        <div class="price-num">2 600 ₽</div>
         <div class="price-period">1 месяц</div>
-        <p class="price-note">Цена основательницы — для тех, кто вступит до 31 октября. Сохраняется, пока продлеваешь без перерыва. С 1 ноября — 2 600 ₽.</p>
         <ul class="price-features">
           <li>Эфиры и разборы каждую среду</li>
           <li>База знаний</li>
           <li>Закрытое сообщество</li>
-          <li>2 индивидуальные сессии</li>
-          <li>Энергочистка</li>
+          <li class="off"><span class="sr-only">Не входит: </span><s>2 индивидуальные сессии</s></li>
+          <li class="off"><span class="sr-only">Не входит: </span><s>Энергочистка</s></li>
         </ul>
         <a class="btn" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Занять место</a>
       </div>
@@ -506,7 +506,7 @@
     <div class="faq-list">
       <details class="faq-item" open>
         <summary>Сколько стоит участие?<span class="faq-icon"></span></summary>
-        <div class="faq-answer">До 31 октября действует цена основательницы — 1 300 ₽ в месяц. Она сохраняется, пока продлеваешь без перерыва. С 1 ноября — 2 600 ₽ в месяц. Годовой тариф — 26 000 ₽ / год (12 месяцев по цене 10). Подробности — в разделе «Тарифы» выше.</div>
+        <div class="faq-answer">Гостевой тариф — 2 600 ₽ в месяц. Годовой тариф — 26 000 ₽ / год (12 месяцев по цене 10). Подробности — в разделе «Тарифы» выше.</div>
       </details>
       <details class="faq-item">
         <summary>Как часто проходят эфиры?<span class="faq-icon"></span></summary>

@@ -71,7 +71,7 @@
   .eyebrow::before{content:""; width:32px; height:1px; background:currentColor; opacity:.7;}
 
   h1,h2,h3{font-family:var(--serif); font-weight:500; color:var(--espresso); letter-spacing:-0.01em;}
-  h1{font-size:clamp(42px,6.2vw,86px); line-height:1.02;}
+  h1{font-size:clamp(42px,6.2vw,78px); line-height:1.02;}
   h2{font-size:clamp(34px,4.3vw,58px); line-height:1.08;}
   h1 em,h2 em{
     font-style:italic;
@@ -166,14 +166,11 @@
       var(--ivory);
   }
   .hero + .sec{padding-top:88px;}
-  /* the text keeps the page's left edge; the picture column reaches further into the right margin
-     and the picture is sized by the visible screen height */
+  /* text and picture stay inside the same frame as the header; the picture takes the rest of
+     the row and is also limited by the visible screen height */
   .hero-grid{
     display:grid; align-items:center; gap:48px;
-    grid-template-columns:minmax(0, min(540px, 48%)) minmax(0, 1fr);
-    max-width:none;
-    padding-left:max(48px, calc((100vw - 1240px) / 2 + 48px));
-    padding-right:64px;
+    grid-template-columns:minmax(0, min(490px, 46%)) minmax(0, 1fr);
   }
   .hero-sub{margin-top:30px; font-size:18px; color:var(--muted); max-width:500px;}
   .hero-actions{margin-top:46px; display:flex; align-items:center; gap:34px; flex-wrap:wrap;}
@@ -416,10 +413,50 @@
     .js .reveal{opacity:1; transform:none; transition:none;}
   }
 
+
+  /* ---------- mobile menu ---------- */
+
+  .menu-btn{display:none; position:relative; width:44px; height:44px; margin-right:-10px; border:0; background:none; cursor:pointer;}
+  .menu-btn span{position:absolute; left:11px; right:11px; height:1.5px; background:var(--gold-deep);
+    transition:top .4s var(--ease), transform .4s var(--ease), opacity .25s ease;}
+  .menu-btn span:nth-child(1){top:15px;}
+  .menu-btn span:nth-child(2){top:21px;}
+  .menu-btn span:nth-child(3){top:27px;}
+  .menu-open .menu-btn span:nth-child(1){top:21px; transform:rotate(45deg);}
+  .menu-open .menu-btn span:nth-child(2){opacity:0;}
+  .menu-open .menu-btn span:nth-child(3){top:21px; transform:rotate(-45deg);}
+
+  .mobile-menu{
+    position:fixed; inset:0; z-index:25; overflow-y:auto;
+    display:flex; flex-direction:column;
+    padding:calc(84px + 28px) 48px 48px;
+    background:
+      radial-gradient(70% 45% at 100% 100%, rgba(245,210,186,.45), transparent 70%),
+      var(--ivory);
+    opacity:0; visibility:hidden; transform:translateY(-10px);
+    transition:opacity .35s ease, transform .5s var(--ease), visibility 0s linear .5s;
+  }
+  .menu-open .mobile-menu{opacity:1; visibility:visible; transform:none; transition:opacity .35s ease, transform .5s var(--ease), visibility 0s;}
+  .menu-open{overflow:hidden;}
+  .mm-links{border-top:1px solid var(--line);}
+  .mm-links a{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 0; border-bottom:1px solid var(--line);
+    font-family:var(--serif); font-size:30px; line-height:1.2; color:var(--espresso);
+    transition:color .3s ease, padding-left .4s var(--ease);
+  }
+  .mm-links a::after{content:"→"; font:500 15px/1 var(--sans); color:var(--gold);}
+  .mm-links a:hover{color:var(--gold-deep); padding-left:6px;}
+  .mm-cta{margin-top:40px;}
+  .mm-cta .btn{width:100%;}
+  .mm-note{margin-top:16px; text-align:center; font-size:13px; letter-spacing:.08em; color:var(--muted);}
+
   /* ---------- responsive ---------- */
 
   @media (max-width:1080px){
     .nav-links{display:none;}
+    .nav{gap:14px;}
+    .menu-btn{display:inline-block;}
     .features{grid-template-columns:1fr 1fr;}
     .mentor-grid,.why-grid,.results-grid,.faq-grid{gap:64px;}
   }
@@ -428,6 +465,8 @@
     .wrap{padding:0 22px;}
     .sec{padding:88px 0;}
     .header-row{height:70px;}
+    .mobile-menu{padding:calc(70px + 20px) 22px 36px;}
+    .mm-links a{font-size:27px; padding:15px 0;}
     section{scroll-margin-top:70px;}
     .brand{gap:10px;}
     .brand-mark{height:44px;}
@@ -438,7 +477,7 @@
 
     .hero{padding:36px 0 48px; text-align:center;}
     .hero + .sec{padding-top:64px;}
-    .hero-grid{grid-template-columns:1fr; gap:48px; padding-left:22px; padding-right:22px;}
+    .hero-grid{grid-template-columns:1fr; gap:48px;}
     .hero-visual{order:-1; width:100%; max-width:270px; align-self:center; margin-top:0;}
     .hero-visual::before{inset:-14px;}
     .hero-visual::after{top:-34px;}
@@ -471,6 +510,11 @@
     .faq-answer{padding-right:0;}
     .footer-row{flex-direction:column; align-items:flex-start;}
   }
+
+  /* phones: no room for both the header button and the menu button — «Вступить» moves into the menu */
+  @media (max-width:560px){
+    .nav-cta{display:none;}
+  }
 </style>
 </head>
 <body id="top">
@@ -488,10 +532,25 @@
         <a href="#pricing">Тарифы</a>
         <a href="#faq">Вопросы</a>
       </div>
-      <a class="btn btn-line btn-sm" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Вступить</a>
+      <a class="btn btn-line btn-sm nav-cta" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Вступить</a>
+      <button class="menu-btn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mm-links" aria-label="Разделы сайта">
+    <a href="#for-whom">Для кого</a>
+    <a href="#about-club">О клубе</a>
+    <a href="#mentor">Ирина</a>
+    <a href="#pricing">Тарифы</a>
+    <a href="#faq">Вопросы</a>
+  </nav>
+  <div class="mm-cta">
+    <a class="btn btn-gold" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Вступить в клуб</a>
+    <div class="mm-note">Telegram · @IrinaDudkina</div>
+  </div>
+</div>
 
 <main>
 
@@ -758,6 +817,21 @@
       });
     }, {rootMargin:'0px 0px -8% 0px'});
     items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<script>
+  (function(){
+    var root = document.documentElement, btn = document.querySelector('.menu-btn'), menu = document.getElementById('mobile-menu');
+    function setMenu(open){
+      root.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    }
+    btn.addEventListener('click', function(){ setMenu(!root.classList.contains('menu-open')); });
+    menu.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+    document.querySelector('.brand').addEventListener('click', function(){ setMenu(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+    window.addEventListener('resize', function(){ if (window.innerWidth > 1080) setMenu(false); });
   })();
 </script>
 </body>

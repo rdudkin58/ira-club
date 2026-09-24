@@ -128,7 +128,16 @@
   }
   .site-header.scrolled{border-color:var(--line); box-shadow:0 10px 30px -24px rgba(42,32,26,.35);}
   .header-row{height:84px; display:flex; align-items:center; justify-content:space-between; gap:24px;}
-  .brand img{height:60px; width:auto;}
+  .brand{display:flex; align-items:center; gap:14px;}
+  .brand-mark{height:54px; width:auto; flex-shrink:0;}
+  .brand-text{display:flex; flex-direction:column; line-height:1;}
+  .brand-kicker{font:600 10px/1 var(--sans); letter-spacing:.5em; text-transform:uppercase; color:#B06A22; margin:0 0 7px 2px;}
+  .brand-name{
+    font-family:var(--serif); font-weight:500; font-size:24px; line-height:1;
+    letter-spacing:.05em; text-transform:uppercase; white-space:nowrap;
+    background:linear-gradient(135deg,#D38B2A 0%,#A4520F 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
   .nav{display:flex; align-items:center; gap:40px;}
   .nav-links{display:flex; gap:30px;}
   .nav-links a{
@@ -145,12 +154,14 @@
 
   .hero{
     position:relative; overflow:hidden;
-    padding:64px 0 120px;
+    padding:64px 0 56px;
     background:
+      linear-gradient(to bottom, rgba(251,247,241,0) 55%, var(--ivory) 100%),
       radial-gradient(55% 60% at 82% 38%, rgba(245,210,186,.55), transparent 70%),
-      radial-gradient(45% 50% at 0% 100%, rgba(239,227,210,.9), transparent 70%),
+      radial-gradient(45% 50% at 0% 75%, rgba(239,227,210,.9), transparent 70%),
       var(--ivory);
   }
+  .hero + .sec{padding-top:88px;}
   .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:72px; align-items:center;}
   .hero-sub{margin-top:30px; font-size:18px; color:var(--muted); max-width:500px;}
   .hero-actions{margin-top:46px; display:flex; align-items:center; gap:34px; flex-wrap:wrap;}
@@ -370,7 +381,8 @@
 
   .site-footer{background:var(--espresso-2); color:#B9AA95; padding:48px 0;}
   .footer-row{display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;}
-  .footer-brand img{height:46px; width:auto; opacity:.95;}
+  .site-footer .brand-kicker{color:#B9AA95;}
+  .site-footer .brand-name{background:linear-gradient(135deg,#F0D29A 0%,#D39A4E 100%); -webkit-background-clip:text; background-clip:text;}
   .footer-links{display:flex; gap:32px; flex-wrap:wrap;}
   .footer-links a{font:500 11.5px/1 var(--sans); letter-spacing:.18em; text-transform:uppercase; transition:color .3s ease;}
   .footer-links a:hover{color:var(--gold-light);}
@@ -402,11 +414,15 @@
     .sec{padding:88px 0;}
     .header-row{height:70px;}
     section{scroll-margin-top:70px;}
-    .brand img{height:46px;}
+    .brand{gap:10px;}
+    .brand-mark{height:44px;}
+    .brand-kicker{font-size:9px; margin-bottom:5px;}
+    .brand-name{font-size:18px; letter-spacing:.03em;}
     .btn{height:54px; padding:0 30px;}
     .btn-sm{height:40px; padding:0 18px; letter-spacing:.16em;}
 
-    .hero{padding:36px 0 88px; text-align:center;}
+    .hero{padding:36px 0 48px; text-align:center;}
+    .hero + .sec{padding-top:64px;}
     .hero-grid{grid-template-columns:1fr; gap:48px;}
     .hero-visual{order:-1; max-width:270px;}
     .hero-visual::before{inset:-14px;}
@@ -447,7 +463,7 @@
 <header class="site-header">
   <div class="wrap header-row">
     <a class="brand" href="#top" aria-label="Клуб «Моё состояние» — наверх">
-      <img src="header-logo1.png" alt="Клуб «Моё состояние»" width="640" height="183">
+      <img class="brand-mark" src="logo-emblem.png" alt="" width="154" height="167"><span class="brand-text" aria-hidden="true"><span class="brand-kicker">Клуб</span><span class="brand-name">Моё состояние</span></span>
     </a>
     <nav class="nav">
       <div class="nav-links">
@@ -698,7 +714,7 @@
 
 <footer class="site-footer">
   <div class="wrap footer-row">
-    <a class="footer-brand" href="#top"><img src="header-logo1.png" alt="Клуб «Моё состояние»" width="640" height="183" loading="lazy"></a>
+    <a class="brand footer-brand" href="#top" aria-label="Клуб «Моё состояние» — наверх"><img class="brand-mark" src="logo-emblem.png" alt="" width="154" height="167" loading="lazy"><span class="brand-text" aria-hidden="true"><span class="brand-kicker">Клуб</span><span class="brand-name">Моё состояние</span></span></a>
     <div class="footer-links">
       <a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Написать Ирине</a>
       <a href="https://t.me/mastizmreal" target="_blank" rel="noopener">Telegram-канал</a>

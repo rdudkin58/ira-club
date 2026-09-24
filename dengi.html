@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Почему мне всё время не хватает денег? — тест Ирины Дудкиной</title>
+<meta name="description" content="Тест Ирины Дудкиной про деньги: 12 вопросов, 2–3 минуты. Узнай, почему денег не хватает — утекают ли они сквозь пальцы, держит ли тебя денежный потолок или родовые сценарии.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Почему мне всё время не хватает денег? — тест Ирины Дудкиной">
+<meta property="og:description" content="12 вопросов, 2–3 минуты. Узнай, какие установки и сценарии рода держат твои деньги.">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=6">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=6">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=6">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF7F1;
+    --cream:#F6EEE3;
+    --sand:#EFE3D2;
+    --blush:#F5E3D7;
+    --gold:#B8904F;
+    --gold-light:#DCC194;
+    --gold-deep:#8C6832;
+    --espresso:#2A201A;
+    --espresso-2:#35291F;
+    --ink:#33291F;
+    --muted:#7A6B5E;
+    --line:rgba(140,104,50,0.22);
+    --gold-grad:linear-gradient(135deg,#DDBF86 0%,#B8904F 48%,#94703A 100%);
+    --serif:'Cormorant Garamond', 'Times New Roman', serif;
+    --sans:'Manrope', system-ui, -apple-system, sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --shadow:0 22px 44px -28px rgba(90,64,30,.45);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--ivory) linear-gradient(180deg, var(--cream) 0, var(--ivory) 480px) no-repeat;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.7;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-variant-numeric:lining-nums;
+  }
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--gold-light); color:var(--espresso);}
+  :focus-visible{outline:1px solid var(--gold); outline-offset:4px;}
+
+  .wrap{max-width:660px; margin:0 auto; padding:52px 24px 0;}
+  .screen{display:none;}
+  .screen.active{display:block; animation:rise .6s var(--ease);}
+  @keyframes rise{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
+
+  /* ---------- type ---------- */
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:14px;
+    font:600 11.5px/1 var(--sans);
+    letter-spacing:0.28em; text-transform:uppercase;
+    color:var(--gold-deep);
+    margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:32px; height:1px; background:currentColor; opacity:.7;}
+
+  h1{
+    font-family:var(--serif); font-weight:500; color:var(--espresso);
+    font-size:clamp(38px,8vw,56px); line-height:1.06; letter-spacing:-0.01em;
+    margin-bottom:22px;
+  }
+  h1 em, .cta-card h2 em{
+    font-style:italic;
+    background:var(--gold-grad);
+    -webkit-background-clip:text; background-clip:text;
+    color:transparent;
+    padding-right:.04em;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  }
+  .lede{font-size:17.5px; color:var(--muted); max-width:34em; margin-bottom:30px;}
+  .body-text{font-size:16px; margin-bottom:18px;}
+  .body-text.muted{font-size:14.5px; color:var(--muted);}
+
+  /* ---------- buttons ---------- */
+
+  .btn{
+    position:relative; overflow:hidden; isolation:isolate;
+    display:inline-flex; align-items:center; justify-content:center; gap:12px;
+    max-width:100%;
+    height:58px; padding:0 38px;
+    border:none; border-radius:999px; cursor:pointer;
+    font:600 12px/1 var(--sans);
+    letter-spacing:0.22em; text-transform:uppercase;
+    white-space:nowrap;
+    transition:transform .5s var(--ease), box-shadow .5s var(--ease), background-color .4s ease, color .4s ease;
+  }
+  .btn-gold{background:var(--gold-grad); color:#fff; box-shadow:0 18px 36px -18px rgba(140,104,50,.75);}
+  .btn-gold::after{
+    content:""; position:absolute; inset:0; z-index:-1;
+    background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+    transform:translateX(-120%); transition:transform .9s var(--ease);
+  }
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 24px 44px -18px rgba(140,104,50,.85);}
+  .btn-gold:hover::after{transform:translateX(120%);}
+  .btn-line{background:transparent; border:1px solid var(--gold); color:var(--gold-deep);}
+  .btn-line:hover{background:var(--gold); color:#fff;}
+
+  /* ---------- hero ---------- */
+
+  .emblem{display:block; width:88px; height:88px; margin:0 0 26px -6px;}
+  .pain-list{
+    list-style:none;
+    margin:0 0 32px;
+    padding:10px 26px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+  }
+  .pain-list li{
+    font:italic 500 20px/1.4 var(--serif);
+    color:var(--espresso);
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .pain-list li:last-child{border-bottom:none;}
+  .scenario-list{
+    list-style:none;
+    margin:22px 0 32px;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .scenario-list li{
+    display:flex; gap:14px; align-items:flex-start;
+    font-size:15.5px; line-height:1.5;
+    padding:15px 18px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:14px;
+  }
+  .scenario-list li::before{
+    content:"✦"; flex-shrink:0;
+    color:var(--gold); font-size:11px; line-height:24px;
+  }
+  .start-row{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+  .start-note{font-size:13px; color:var(--muted);}
+
+  /* ---------- quiz ---------- */
+
+  .progress-label{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font:600 11px/1 var(--sans); letter-spacing:.2em; text-transform:uppercase;
+    color:var(--gold-deep); margin-bottom:12px;
+  }
+  .progress-track{height:3px; background:var(--sand); border-radius:3px; overflow:hidden;}
+  .progress-fill{height:100%; width:8%; background:var(--gold-grad); border-radius:3px; transition:width .45s var(--ease);}
+  .quiz-card{
+    margin-top:26px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:36px 30px 26px;
+    box-shadow:var(--shadow);
+  }
+  .q-index{font:italic 500 17px/1 var(--serif); color:var(--gold-deep); margin-bottom:12px;}
+  .q-text{
+    font-family:var(--serif); font-weight:500; color:var(--espresso);
+    font-size:clamp(23px,5vw,28px); line-height:1.24;
+    margin-bottom:26px;
+  }
+  .options{display:flex; flex-direction:column; gap:11px;}
+  .option{
+    display:flex; align-items:center; gap:14px;
+    width:100%; text-align:left;
+    padding:15px 18px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    cursor:pointer;
+    font:500 15.5px/1.5 var(--sans);
+    color:var(--ink);
+    transition:border-color .25s ease, background-color .25s ease, transform .4s var(--ease);
+  }
+  .option:hover{border-color:var(--gold); background:var(--ivory);}
+  .option:active{transform:scale(.99);}
+  .option.selected{border-color:var(--gold); background:var(--cream);}
+  .option .letter{
+    flex-shrink:0;
+    width:32px; height:32px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--gold-light);
+    background:var(--ivory);
+    font:italic 500 18px/1 var(--serif);
+    color:var(--gold-deep);
+    transition:background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .option:hover .letter, .option.selected .letter{background:var(--gold-grad); color:#fff; border-color:transparent;}
+  .quiz-nav{margin-top:20px; min-height:32px;}
+  .link-back{
+    background:none; border:none; cursor:pointer;
+    font:600 11px/1 var(--sans); letter-spacing:.2em; text-transform:uppercase;
+    color:var(--muted); padding:10px 2px;
+    transition:color .3s ease;
+  }
+  .link-back:hover{color:var(--gold-deep);}
+  .link-back:disabled{visibility:hidden;}
+
+  /* ---------- result ---------- */
+
+  .result-emblem{display:block; width:240px; height:240px; margin:0 auto 14px;}
+  .twinkle{transform-box:fill-box; transform-origin:center; animation:twinkle 2.8s ease-in-out infinite;}
+  .orbit{transform-origin:120px 120px; animation:orbit 60s linear infinite;}
+  @keyframes twinkle{0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(.86); opacity:.82;}}
+  @keyframes orbit{to{transform:rotate(360deg);}}
+  .result-kicker{text-align:center; margin-bottom:12px;}
+  .result-kicker .eyebrow{margin-bottom:0;}
+  .result-kicker .eyebrow::after{content:""; width:32px; height:1px; background:currentColor; opacity:.7;}
+  .result-title{
+    font:italic 500 clamp(30px,6.4vw,40px)/1.12 var(--serif);
+    color:var(--espresso);
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .level{display:flex; flex-direction:column; align-items:center; gap:12px; margin:-6px auto 30px; max-width:30em; text-align:center;}
+  .level-bar{display:flex; gap:6px;}
+  .level-bar span{width:36px; height:4px; border-radius:4px; background:var(--sand);}
+  .level-bar span.on{background:var(--gold-grad);}
+  .level-text{font-size:14.5px; line-height:1.6; color:var(--muted);}
+  .level-text b{font-weight:600; color:var(--gold-deep);}
+  .result-body p{font-size:16.5px; margin-bottom:16px;}
+  .thought-box{
+    margin:26px 0 0;
+    padding:20px 24px;
+    background:var(--cream);
+    border-left:2px solid var(--gold);
+    border-radius:0 14px 14px 0;
+  }
+  .thought-box p{font:italic 500 21px/1.4 var(--serif); color:var(--espresso);}
+  .cta-card{
+    margin-top:40px;
+    padding:44px 32px 38px;
+    border-radius:24px;
+    text-align:center;
+    color:#D9CCBB;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(220,193,148,.18), transparent 70%),
+      var(--espresso);
+    box-shadow:0 30px 60px -30px rgba(42,32,26,.7);
+  }
+  .cta-card .eyebrow{color:var(--gold-light); margin-bottom:18px;}
+  .cta-card h2{
+    font-family:var(--serif); font-weight:500; color:#fff;
+    font-size:clamp(30px,6.6vw,40px); line-height:1.1;
+    margin-bottom:16px;
+  }
+  .cta-card p{font-size:15px; max-width:32em; margin:0 auto 28px;}
+  .cta-note{margin-top:16px; font:500 12.5px/1 var(--sans); letter-spacing:.08em; color:#9E8F7C;}
+  .restart-row{text-align:center; margin-top:28px;}
+
+  /* ---------- footer ---------- */
+
+  footer{
+    max-width:660px; margin:64px auto 0; padding:26px 24px 40px;
+    border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center; gap:14px 28px; flex-wrap:wrap;
+    font-size:12.5px; color:var(--muted);
+  }
+  .footer-links{display:flex; gap:22px; flex-wrap:wrap;}
+  .footer-links a{font:600 11px/1.6 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep); transition:color .3s ease;}
+  .footer-links a:hover{color:var(--gold);}
+
+  @media (max-width:480px){
+    .wrap{padding:36px 16px 0;}
+    .pain-list{padding:6px 20px;}
+    .pain-list li{font-size:19px;}
+    .quiz-card{padding:28px 18px 20px; border-radius:18px;}
+    .option{padding:14px 14px; gap:12px; font-size:15px;}
+    .btn{padding:0 28px;}
+    .start-row .btn{width:100%;}
+    .cta-card{padding:36px 20px 32px;}
+    .cta-card .btn{width:100%;}
+    footer{padding:24px 16px 36px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .screen.active, .twinkle, .orbit{animation:none;}
+    .btn, .option, .progress-fill{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DDBF86"/>
+      <stop offset=".48" stop-color="#B8904F"/>
+      <stop offset="1" stop-color="#94703A"/>
+    </linearGradient>
+    <radialGradient id="badgeFill" cx=".38" cy=".32" r=".8">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F6EEE3"/>
+    </radialGradient>
+    <path id="spark" d="M0 -10 Q1.4 -1.4 10 0 Q1.4 1.4 0 10 Q-1.4 1.4 -10 0 Q-1.4 -1.4 0 -10 Z"/>
+  </defs>
+</svg>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section id="screen-hero" class="screen active">
+    <svg class="emblem" viewBox="0 0 96 96" aria-hidden="true">
+      <circle cx="48" cy="50" r="30" fill="none" stroke="url(#goldGrad)" stroke-width="1.4"/>
+      <circle cx="48" cy="50" r="24" fill="none" stroke="url(#goldGrad)" stroke-width=".9" stroke-dasharray="1.2 3.2"/>
+      <use href="#spark" transform="translate(48 50) scale(1.35)" fill="url(#goldGrad)"/>
+      <use href="#spark" transform="translate(83 17) scale(.55)" fill="url(#goldGrad)"/>
+      <use href="#spark" transform="translate(14 80) scale(.38)" fill="url(#goldGrad)" opacity=".7"/>
+      <use href="#spark" transform="translate(86 76) scale(.3)" fill="url(#goldGrad)" opacity=".55"/>
+    </svg>
+
+    <div class="eyebrow">Тест Ирины Дудкиной</div>
+    <h1>Почему мне всё время <em>не хватает</em> денег?</h1>
+    <p class="lede">Узнай, какие установки и сценарии рода держат твои деньги — и как это изменить.</p>
+
+    <ul class="pain-list">
+      <li>«Зарабатываю, а куда всё уходит — непонятно»</li>
+      <li>«Сколько ни стараюсь, упираюсь в одну и ту же сумму»</li>
+      <li>«Подушки нет, живу от поступления до поступления»</li>
+      <li>«Мне неловко назвать свою цену»</li>
+    </ul>
+
+    <p class="body-text">Можно вести таблицу расходов, читать книги про финансы и брать подработки — а денег больше не становится. Потому что деньги — это не только цифры. Это твоё состояние: страхи, обиды, установки из детства и сценарии, которые передаются в роду. И то, сколько ты разрешаешь себе иметь.</p>
+    <p class="body-text">Этот тест поможет честно посмотреть на твои отношения с деньгами и понять, какой из трёх сценариев сейчас похож на твой:</p>
+
+    <ul class="scenario-list">
+      <li>Деньги приходят, но утекают сквозь пальцы</li>
+      <li>Доход упёрся в денежный потолок</li>
+      <li>Деньгами управляют родовые сценарии</li>
+    </ul>
+
+    <p class="body-text muted">Отвечай честно — не как «правильно», а как есть на самом деле. Так результат будет про тебя.</p>
+
+    <div class="start-row">
+      <button class="btn btn-gold" type="button" onclick="startQuiz()">Начать тест</button>
+      <span class="start-note">12 вопросов · 2–3 минуты</span>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="screen-quiz" class="screen">
+    <div class="progress-label">
+      <span id="progressText">Вопрос 1 из 12</span>
+      <span id="progressPct">8%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="quiz-card">
+      <p class="q-index" id="qIndex">Вопрос 1</p>
+      <p class="q-text" id="qText"></p>
+      <div class="options" id="qOptions"></div>
+      <div class="quiz-nav">
+        <button class="link-back" id="backBtn" type="button" onclick="prevQuestion()">← Назад</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="screen-result" class="screen">
+    <svg class="result-emblem" id="resultEmblem" viewBox="0 0 240 240" aria-hidden="true"></svg>
+
+    <div class="result-kicker"><span class="eyebrow">Твой результат</span></div>
+    <h2 class="result-title" id="resultTitle"></h2>
+    <div class="level">
+      <div class="level-bar" id="levelBar" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="level-text"><b id="levelName"></b> <span id="levelText"></span></p>
+    </div>
+    <div class="result-body" id="resultBody"></div>
+
+    <div class="thought-box">
+      <p id="resultThought"></p>
+    </div>
+
+    <div class="cta-card">
+      <div class="eyebrow">Бесплатно · 40 минут</div>
+      <h2>Напиши Ирине <em>«ДИАГНОСТИКА»</em></h2>
+      <p>Тест показал направление. А на бесплатной диагностике Ирина лично разберёт твою ситуацию и покажет корень: почему с деньгами у тебя происходит именно так — и как это можно решить.</p>
+      <a class="btn btn-gold" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Написать Ирине</a>
+      <div class="cta-note">Telegram · @IrinaDudkina</div>
+    </div>
+
+    <div class="restart-row">
+      <button class="btn btn-line" type="button" onclick="restartQuiz()">Пройти тест заново</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Ирина Дудкина</span>
+  <div class="footer-links">
+    <a href="index.html">Клуб «Моё состояние»</a>
+    <a href="osoznanie.html">Тест «Что он чувствует?»</a>
+  </div>
+</footer>
+
+<script>
+// Вопросы 1–4 — утечка денег, 5–8 — денежный потолок, 9–12 — установки и родовые сценарии.
+// Ответ «А» даёт 2 балла, «Б» — 1, «В» — 0.
+const questions = [
+  {q:"Что происходит, когда к тебе приходят деньги — зарплата, оплата от клиента?", opts:["Часть сразу откладываю, остальное спокойно распределяю.","Собираюсь отложить, но обычно не получается.","Через пару недель уже не понимаю, куда всё ушло."]},
+  {q:"Есть ли у тебя финансовая подушка — запас хотя бы на 3 месяца жизни?", opts:["Да, есть.","Есть немного, но её постоянно приходится трогать.","Нет, живу от поступления до поступления."]},
+  {q:"Бывает, что ты тратишь, чтобы успокоиться, поднять настроение или «наградить» себя за тяжёлый день?", opts:["Редко. Покупаю то, что действительно нужно или правда радует.","Бывает, особенно когда устала или расстроена.","Часто. А потом ругаю себя за эти траты."]},
+  {q:"Как часто ты выручаешь деньгами других — даже когда самой не хватает?", opts:["Помогаю, только когда могу себе это позволить.","Иногда отдаю последнее, потом жалею.","Постоянно. Мне неудобно отказать, даже себе в ущерб."]},
+  {q:"Как менялся твой доход за последние 2–3 года?", opts:["Растёт, и я чувствую, что могу больше.","То больше, то меньше, но в среднем стоит на месте.","Сколько бы я ни старалась, упираюсь в одну и ту же сумму."]},
+  {q:"Что ты чувствуешь, когда называешь цену за свою работу или просишь о повышении?", opts:["Спокойствие. Я знаю, сколько стою.","Волнение. Бывает, занижаю цену или заранее делаю скидку.","Сильную неловкость. Проще промолчать или взять меньше."]},
+  {q:"Представь, что твой доход вырос в три раза. Что ты чувствуешь?", opts:["Радость и лёгкость.","Радость — и сразу тревогу: а справлюсь ли, а что скажут.","Напряжение. Большие деньги — это риск, ответственность, зависть, чужое осуждение."]},
+  {q:"Легко ли тебе проявляться: заявлять о себе, показывать свою работу, продавать?", opts:["Да, мне это даётся легко.","Могу, но через силу и с откатами.","Боюсь осуждения и прячусь, даже если понимаю, что это держит мой доход."]},
+  {q:"Что говорили о деньгах в твоей семье?", opts:["Что денег хватит и зарабатывать можно с удовольствием.","Разное: и хорошее, и «на всё не напасёшься».","«Деньги достаются тяжёлым трудом», «богатые — нечестные», «не до жиру»."]},
+  {q:"Замечаешь ли ты, что в деньгах повторяешь историю мамы, бабушки или других женщин в роду?", opts:["Нет, у меня своя история.","Кое-что узнаю — в тревоге, в экономии, в отношении к тратам.","Да. Как будто живу по тому же сценарию, хотя очень этого не хочу."]},
+  {q:"Что ты чувствуешь, когда у тебя денег больше, чем у родных и близких?", opts:["Радость и спокойствие.","Неловкость: хочется поделиться или не показывать.","Вину, будто предаю своих. Или деньги быстро куда-то уходят."]},
+  {q:"Есть ли у тебя обиды, связанные с деньгами, — на родителей, мужа, бывшего партнёра, работодателя?", opts:["Почти нет.","Есть пара болезненных историй.","Да, и они до сих пор отзываются."]}
+];
+
+const results = {
+  leak:{
+    title:"Деньги приходят — и утекают сквозь пальцы",
+    body:[
+      "Зарабатывать ты умеешь: деньги к тебе приходят. Но задержаться не успевают. Срочные траты, покупки «для настроения», помощь близким, внезапные дыры — и в конце месяца снова ноль. Ты много работаешь, а подушки как не было, так и нет.",
+      "Дело не в том, что ты «не умеешь считать». Деньги утекают там, где утекает состояние: через тревогу, усталость, вину, привычку ставить себя на последнее место. А под этим часто сидит установка «я этого не заслуживаю» или «хорошее долго не держится». Пока она внутри, дыру не закроет ни одна таблица расходов."
+    ],
+    thought:"Главный вопрос для тебя сейчас: какая установка выталкивает деньги из твоей жизни — и что изменится, когда её не станет?"
+  },
+  ceiling:{
+    title:"Твой доход упёрся в денежный потолок",
+    body:[
+      "Ты стараешься, работаешь, пробуешь новое — а доход снова и снова останавливается на одной и той же сумме. Как будто внутри стоит невидимый ограничитель: «больше тебе нельзя».",
+      "Так и работает денежный потолок. Его держат не обстоятельства, а внутренние запреты: страх проявляться, неловкость назвать свою цену, страх осуждения и зависти, установка «большие деньги — это опасно». Снаружи ты хочешь больше, а внутри что-то давит на тормоз."
+    ],
+    thought:"Потолок — не приговор. Это страх, а страх можно найти и убрать. Часто быстрее, чем кажется."
+  },
+  roots:{
+    title:"Твоими деньгами управляют родовые сценарии",
+    body:[
+      "Ты можешь стараться, учиться, менять работу — а с деньгами всё равно повторяется одно и то же. Как будто живёшь не свою денежную историю, а чужую: мамину экономию «на чёрный день», бабушкин страх «лишь бы не было хуже», семейное «мы люди простые, нам много не надо».",
+      "Это не твоя вина. Такие сценарии передаются в роду из поколения в поколение и работают тихо, из глубины: через вину, когда у тебя становится больше, чем у родных, через обиды, через верность «своим». Пока сценарий не увиден, он решает за тебя. Когда увиден — его можно отпустить."
+    ],
+    thought:"Главный вопрос для тебя сейчас: чей сценарий ты проживаешь в деньгах — и готова ли вернуть себе свой?"
+  }
+};
+
+// Сила влияния — по сумме баллов из 24.
+const levels = {
+  strong:{bars:3, name:"Сила влияния — сильная.", text:"Сейчас этот сценарий во многом решает за тебя. Не откладывай: чем раньше найдёшь корень, тем быстрее станет легче."},
+  medium:{bars:2, name:"Сила влияния — заметная.", text:"Сценарий уже тормозит твои деньги, и сам по себе он не уйдёт."},
+  light:{bars:1, name:"Сила влияния — мягкая.", text:"Опора у тебя есть. Но именно этот сценарий стоит между тобой и следующим уровнем дохода."}
+};
+
+const letters = ["А","Б","В"];
+const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let current = 0;
+const answers = new Array(questions.length).fill(null);
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'});
+}
+
+function startQuiz(){
+  current = 0;
+  renderQuestion();
+  showScreen('screen-quiz');
+}
+
+function renderQuestion(){
+  const item = questions[current];
+  const pct = Math.round(((current+1)/questions.length)*100);
+  document.getElementById('qIndex').textContent = "Вопрос " + (current+1);
+  document.getElementById('qText').textContent = item.q;
+  document.getElementById('progressFill').style.width = pct + "%";
+  document.getElementById('progressText').textContent = "Вопрос " + (current+1) + " из " + questions.length;
+  document.getElementById('progressPct').textContent = pct + "%";
+  document.getElementById('backBtn').disabled = current === 0;
+
+  const optsWrap = document.getElementById('qOptions');
+  optsWrap.innerHTML = "";
+  item.opts.forEach((text, idx)=>{
+    const btn = document.createElement('button');
+    btn.className = 'option' + (answers[current] === 2 - idx ? ' selected' : '');
+    btn.type = 'button';
+    const letter = document.createElement('span');
+    letter.className = 'letter';
+    letter.textContent = letters[idx];
+    const label = document.createElement('span');
+    label.textContent = text;
+    btn.append(letter, label);
+    btn.onclick = ()=>selectAnswer(idx);
+    optsWrap.appendChild(btn);
+  });
+}
+
+function selectAnswer(idx){
+  answers[current] = 2 - idx;
+  if(current < questions.length - 1){
+    current++;
+    renderQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function prevQuestion(){
+  if(current > 0){
+    current--;
+    renderQuestion();
+  }
+}
+
+function score(from, to){
+  return answers.slice(from, to).reduce((sum, v)=>sum + (v || 0), 0);
+}
+
+// Результат — блок с наименьшим баллом. При равенстве: сначала род, потом утечка, потом потолок.
+function pickResult(){
+  const leak = score(0, 4);      // из 8
+  const ceiling = score(4, 8);   // из 8
+  const roots = score(8, 12);    // из 8
+  const min = Math.min(leak, ceiling, roots);
+  if(roots === min) return 'roots';
+  if(leak === min) return 'leak';
+  return 'ceiling';
+}
+
+function pickLevel(){
+  const total = score(0, 12);
+  if(total <= 10) return 'strong';
+  if(total <= 17) return 'medium';
+  return 'light';
+}
+
+function showResult(){
+  const r = results[pickResult()];
+  const lvl = levels[pickLevel()];
+  document.getElementById('resultTitle').textContent = r.title;
+  document.getElementById('levelName').textContent = lvl.name;
+  document.getElementById('levelText').textContent = lvl.text;
+  document.querySelectorAll('#levelBar span').forEach((bar, i)=>bar.classList.toggle('on', i < lvl.bars));
+  const body = document.getElementById('resultBody');
+  body.innerHTML = "";
+  r.body.forEach(text=>{
+    const p = document.createElement('p');
+    p.textContent = text;
+    body.appendChild(p);
+  });
+  document.getElementById('resultThought').textContent = r.thought;
+  renderEmblem();
+  showScreen('screen-result');
+}
+
+function renderEmblem(){
+  let orbit = '';
+  const count = 12, radius = 104;
+  const sizes = [.62, .38, .5, .32, .7, .42, .56, .34, .64, .4, .5, .36];
+  for(let i=0; i<count; i++){
+    const rad = ((360/count)*i - 90) * Math.PI/180;
+    const x = (120 + radius*Math.cos(rad)).toFixed(1);
+    const y = (120 + radius*Math.sin(rad)).toFixed(1);
+    const opacity = (0.45 + (i % 3) * 0.22).toFixed(2);
+    orbit += '<use href="#spark" transform="translate('+x+' '+y+') scale('+sizes[i]+')" fill="url(#goldGrad)" opacity="'+opacity+'"/>';
+  }
+  document.getElementById('resultEmblem').innerHTML =
+    '<g class="orbit">' + orbit + '</g>' +
+    '<circle cx="120" cy="120" r="80" fill="url(#badgeFill)" stroke="url(#goldGrad)" stroke-width="1.4"/>' +
+    '<circle cx="120" cy="120" r="72" fill="none" stroke="url(#goldGrad)" stroke-width=".8" stroke-dasharray="1.4 3.6"/>' +
+    '<g transform="translate(120 120)"><g class="twinkle"><use href="#spark" transform="scale(3)" fill="url(#goldGrad)"/></g></g>';
+}
+
+function restartQuiz(){
+  answers.fill(null);
+  current = 0;
+  showScreen('screen-hero');
+}
+</script>
+</body>
+</html>

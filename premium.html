@@ -279,17 +279,16 @@
   /* ---------- mentor ---------- */
 
   .mentor-grid{display:grid; grid-template-columns:5fr 6fr; gap:112px; align-items:center;}
-  .arch{position:relative; max-width:440px; width:100%; justify-self:center;}
-  .arch::before{
+  .portrait{position:relative; max-width:440px; width:100%; justify-self:center;}
+  .portrait::before{
     content:""; position:absolute; inset:0;
     transform:translate(22px,22px);
-    border:1px solid var(--gold); border-radius:999px 999px 0 0;
+    border:1px solid var(--gold);
     opacity:.55;
   }
-  .arch img{
+  .portrait img{
     position:relative;
     width:100%; height:auto; aspect-ratio:4/5.2; object-fit:cover; object-position:50% 20%;
-    border-radius:999px 999px 0 0;
   }
   .mentor-sub{font-family:var(--serif); font-style:italic; font-size:26px; color:var(--gold-deep); margin-top:10px;}
   .mentor-roles{margin-top:22px; font:600 11px/1.6 var(--sans); letter-spacing:.22em; text-transform:uppercase; color:var(--muted);}
@@ -449,8 +448,8 @@
     .feature{padding:36px 26px 40px;}
     .feature svg{margin-bottom:24px;}
     .results-list li{grid-template-columns:48px 1fr; padding:20px 0;}
-    .arch{max-width:320px;}
-    .arch::before{transform:translate(14px,14px);}
+    .portrait{max-width:320px;}
+    .portrait::before{transform:translate(14px,14px);}
     .stats{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
     .stat-num{font-size:46px;}
     .plans{grid-template-columns:1fr;}
@@ -611,7 +610,7 @@
 
 <section class="sec" id="mentor">
   <div class="wrap mentor-grid">
-    <div class="arch reveal">
+    <div class="portrait reveal">
       <img src="irina.jpg" alt="Ирина Дудкина" width="714" height="1280" loading="lazy">
     </div>
     <div class="reveal d1">

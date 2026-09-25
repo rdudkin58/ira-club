@@ -76,6 +76,14 @@ nav.days::-webkit-scrollbar{display:none}
 .voice-note{margin:4px 16px 0;font-size:14px;color:var(--muted)}
 .voice-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px 16px 14px;font-size:15.5px}
 .pause{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 10px}
+.img{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+.img summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:14.5px;color:var(--gold)}
+.img-note{margin:0 0 10px;font-size:14px}
+.img-row{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.lang{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);padding-top:3px}
+.img-text{font-size:14px;overflow-wrap:anywhere}
+.copy.small{grid-column:2;width:auto;justify-self:start;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px}
+.img-hint{margin:0;padding:8px 0 12px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
 .foot{color:var(--muted);font-size:13px;padding-top:20px}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{margin:0}
@@ -99,6 +107,10 @@ body{margin:0}
 <header class="day-h"><div class="when"><span class="dname">Понедельник</span><span class="date">28.09</span></div>
 <div class="tags"><span class="tag">тема недели</span></div></header>
 <div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Проверь, что ссылка на тест про деньги открывается.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir0">Женщина 40–45 лет славянской внешности вечером сидит у окна на кухне, держит телефон экраном к себе, другая рука прижата к груди, задумчивый встревоженный взгляд, рядом остывшая чашка чая, за окном осенние сумерки, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir0">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie0">A Slavic woman in her early 40s sits by a kitchen window in the evening, holding a phone with the screen facing her, her other hand pressed to her chest, pensive worried look, a cold cup of tea beside her, autumn dusk outside, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie0">Скопировать</button></div>
+<p class="img-hint">Русский — для Шедеврума или Кандинского, английский — для Midjourney или ChatGPT.</p></details>
 <div class="post"><div class="post-text" id="t0">Знаешь это чувство, когда открываешь банковское приложение и сердце сжимается? 💔
 
 Зарплата пришла всего неделю назад. Ты ничего особенного не покупала. Ни шубы, ни поездки на море. Детям, в дом, по мелочи, «ну это же нужно». А на счёте снова почти ноль.
@@ -126,6 +138,10 @@ body{margin:0}
 <header class="day-h"><div class="when"><span class="dname">Вторник</span><span class="date">29.09</span></div>
 <div class="tags"><span class="tag">#практика</span></div></header>
 <div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Под постом текст практики для голоса. Наговори его голосом или кружком, медленно и с паузами, и выложи сразу после поста.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir1">Женщина 40–45 лет сидит на диване, укутавшись в вязаный плед, глаза закрыты, одна ладонь на груди, другая на животе, лицо спокойное, рядом горит свеча, утренний свет из окна, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir1">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie1">A woman in her early 40s sits on a sofa wrapped in a knitted blanket, eyes closed, one palm on her chest and the other on her belly, peaceful face, a lit candle nearby, morning light from the window, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie1">Скопировать</button></div>
+<p class="img-hint">Русский — для Шедеврума или Кандинского, английский — для Midjourney или ChatGPT.</p></details>
 <div class="post"><div class="post-text" id="t1">#практика
 
 Куда на самом деле уходят твои деньги?
@@ -202,6 +218,10 @@ body{margin:0}
 <header class="day-h"><div class="when"><span class="dname">Среда</span><span class="date">30.09</span></div>
 <div class="tags"><span class="tag">кейс</span><span class="tag cta">зовём на диагностику</span></div></header>
 <div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Кейс взят из твоего поста от 18 июня (мама говорила «богатые — плохие»). Сверь детали, имя клиентки убрано.</li><li>В конце поста эфир клуба в 11:00 и ссылка на сайт клуба.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir2">Крупный план: женские руки бережно держат небольшую стеклянную банку с монетами и свёрнутыми купюрами, деревянный стол, несколько осенних листьев, тёплый свет, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir2">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie2">Close-up of a woman&#x27;s hands gently holding a small glass jar with coins and rolled banknotes, wooden table, a few autumn leaves, warm light, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie2">Скопировать</button></div>
+<p class="img-hint">Русский — для Шедеврума или Кандинского, английский — для Midjourney или ChatGPT.</p></details>
 <div class="post"><div class="post-text" id="t2">Она хорошо зарабатывала. А денег всё равно не было
 
 Ко мне пришла женщина с очень знакомой историей. Доход нормальный, работа есть. Но как только на счёте собиралась крупная сумма, она её «сливала». Не на что-то большое, а на ерунду. Деньги просто растворялись.
@@ -229,6 +249,10 @@ P.S. Сегодня в 11:00 в клубе «Моё состояние» пос�
 <header class="day-h"><div class="when"><span class="dname">Четверг</span><span class="date">01.10</span></div>
 <div class="tags"><span class="tag">#спрашивают</span></div></header>
 <div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Если в личке или на диагностике прозвучит настоящий вопрос про деньги, лучше ответить на него.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir3">Фарфоровая копилка-свинка с тонкой трещиной стоит на деревянном кухонном столе, женская ладонь бережно касается её, рядом чашка чая и осенние листья, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir3">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie3">A porcelain piggy bank with a thin crack on a wooden kitchen table, a woman&#x27;s palm gently touching it, a cup of tea and autumn leaves nearby, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie3">Скопировать</button></div>
+<p class="img-hint">Русский — для Шедеврума или Кандинского, английский — для Midjourney или ChatGPT.</p></details>
 <div class="post"><div class="post-text" id="t3">#спрашивают
 
 «Ирина, почему, как только у меня появляются деньги, обязательно что-то ломается или кто-то просит в долг?»
@@ -255,6 +279,10 @@ P.S. Сегодня в 11:00 в клубе «Моё состояние» пос�
 <header class="day-h"><div class="when"><span class="dname">Пятница</span><span class="date">02.10</span></div>
 <div class="tags"><span class="tag">#послание</span></div></header>
 <div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>В комментариях отвечай каждой посланием её карты.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary><p class="img-note">Если есть фото твоей колоды «Две жизни» (одна карта рубашкой вверх), лучше взять его.</p>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir4">Колода метафорических карт на льняной скатерти, женская рука вытягивает одну карту рубашкой вверх, рядом горящая свеча, сухие осенние листья и тонкая золотая лента, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir4">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie4">A deck of metaphorical cards on a linen tablecloth, a woman&#x27;s hand drawing one card face down, a lit candle, dry autumn leaves and a thin gold ribbon nearby, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie4">Скопировать</button></div>
+<p class="img-hint">Русский — для Шедеврума или Кандинского, английский — для Midjourney или ChatGPT.</p></details>
 <div class="post"><div class="post-text" id="t4">#послание
 
 Карта недели: что тебе важно понять про свои деньги? 🃏
@@ -278,6 +306,10 @@ P.S. Сегодня в 11:00 в клубе «Моё состояние» пос�
 <header class="day-h"><div class="when"><span class="dname">Суббота</span><span class="date">03.10</span></div>
 <div class="tags"><span class="tag">закулисье</span><span class="tag cta">зовём на диагностику</span></div></header>
 <div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Проверь, что фразы клиенток похожи на то, что ты правда слышишь на диагностиках.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary><p class="img-note">Пост личный, поэтому лучше взять твоё настоящее фото за работой, например за ноутбуком на созвоне. Промт на случай, если подходящего фото нет.</p>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir5">Тёплая улыбающаяся женщина-психолог сидит за ноутбуком во время видеозвонка, рядом блокнот с ручкой и чашка чая, уютный светлый кабинет, вид немного сбоку, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir5">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie5">A warm smiling woman psychologist sitting at a laptop during a video call, a notebook with a pen and a cup of tea beside her, a cozy bright home office, seen slightly from the side, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie5">Скопировать</button></div>
+<p class="img-hint">Русский — для Шедеврума или Кандинского, английский — для Midjourney или ChatGPT.</p></details>
 <div class="post"><div class="post-text" id="t5">Что я слышу на диагностиках, когда речь заходит о деньгах 🤍
 
 Каждую неделю ко мне на диагностику приходят женщины с запросом про деньги. И почти всегда я слышу одни и те же фразы:
@@ -306,6 +338,10 @@ P.S. Сегодня в 11:00 в клубе «Моё состояние» пос�
 <header class="day-h"><div class="when"><span class="dname">Воскресенье</span><span class="date">04.10</span></div>
 <div class="tags"><span class="tag">#сериал</span></div></header>
 
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir6">Открытый бумажный дневник с ручкой на подоконнике, рядом старый пожелтевший конверт и телефон, за окном осень, вечерний свет, ностальгическое настроение, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir6">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie6">An open paper diary with a pen on a windowsill, an old yellowed envelope and a phone beside it, autumn outside the window, evening light, nostalgic mood, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie6">Скопировать</button></div>
+<p class="img-hint">Русский — для Шедеврума или Кандинского, английский — для Midjourney или ChatGPT.</p></details>
 <div class="post"><div class="post-text" id="t6">#сериал
 
 ЗАПИСКИ ДНЕВНИКА ОБЫЧНОЙ ЖЕНЩИНЫ

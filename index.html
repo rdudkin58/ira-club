@@ -226,9 +226,16 @@
   .why{
     position:relative; overflow:hidden;
     background:
-      radial-gradient(50% 70% at 100% 0%, rgba(220,193,148,.10), transparent 70%),
-      var(--espresso);
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,226,160,.35), transparent 70%),
+      linear-gradient(135deg, #B5803C 0%, #95622A 55%, #74491C 100%);
   }
+  .why .eyebrow{color:#FCE3B2;}
+  .why .quote{color:#fff;}
+  .why .quote::before{color:#FCE3B2; opacity:.8;}
+  .why .quote em{background:none; color:#FCE3B2;}
+  .why .quote-sign{color:#FCE3B2;}
+  .why .why-text{border-left-color:rgba(252,227,178,.45);}
+  .why .why-text p{color:#FBEEDB;}
   .why-grid{display:grid; grid-template-columns:7fr 5fr; gap:96px; align-items:start;}
   .quote{
     position:relative;

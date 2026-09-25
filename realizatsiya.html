@@ -446,7 +446,7 @@
 
     <div class="result-kicker"><span class="eyebrow">Твой результат</span></div>
     <h2 class="result-title" id="resultTitle"></h2>
-    <div class="level">
+    <div class="level" id="levelBlock">
       <div class="level-bar" id="levelBar" aria-hidden="true"><span></span><span></span><span></span></div>
       <p class="level-text"><b id="levelName"></b> <span id="levelText"></span></p>
     </div>
@@ -459,7 +459,7 @@
     <div class="cta-card">
       <div class="eyebrow">Бесплатно · 40 минут</div>
       <h2>Напиши Ирине <em>«ДИАГНОСТИКА»</em></h2>
-      <p>Тест показал направление. А на бесплатной диагностике Ирина лично разберёт твою ситуацию и покажет корень: что именно тормозит твою реализацию — и что можно изменить.</p>
+      <p id="ctaText">Тест показал направление. А на бесплатной диагностике Ирина лично разберёт твою ситуацию и покажет корень: что именно тормозит твою реализацию — и что можно изменить.</p>
       <a class="btn btn-gold" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Написать Ирине</a>
       <div class="cta-note">Telegram · @IrinaDudkina</div>
     </div>
@@ -523,6 +523,15 @@ const results = {
       "Часто это не твои страхи, а семейные: «не высовывайся», «кто ты такая», «женщина должна терпеть и жертвовать собой». Если женщины в роду не реализовывались, внутри может жить верность их судьбе: стать успешной — будто предать своих. Это не твоя вина. Пока сценарий не увиден, он решает за тебя. Когда увиден — его можно отпустить, и тогда уходит страх успеха и пробивается потолок."
     ],
     thought:"Главный вопрос для тебя сейчас: чью судьбу ты повторяешь — и готова ли разрешить себе свою?"
+  },
+  ok:{
+    title:"С реализацией у тебя в целом всё хорошо",
+    body:[
+      "По твоим ответам ты не прячешься в тени: легко заявляешь о себе, спокойно принимаешь и похвалу, и критику, доверяешь себе и не повторяешь чужую судьбу. Ты разрешаешь себе расти — и это видно.",
+      "И всё же у реализации нет потолка. Часто внутри уже зреет следующий шаг: больше масштаба, больше смелости, больше своего дела."
+    ],
+    thought:"Главный вопрос для тебя сейчас: какой шаг ты давно хочешь сделать — и что поможет сделать его уже сейчас?",
+    cta:"Тест не нашёл у тебя проблем с реализацией. А если хочешь глубже разобраться в этой сфере и понять, куда расти дальше, приходи на бесплатную диагностику: Ирина лично разберёт твою ситуацию."
   }
 };
 
@@ -602,8 +611,14 @@ function score(from, to){
   return answers.slice(from, to).reduce((sum, v)=>sum + (v || 0), 0);
 }
 
+// Ни одного ответа «В» и не больше двух «Б» (от 22 баллов из 24) — проблем в этой сфере нет.
+function allGood(){
+  return answers.every(v=>v >= 1) && answers.reduce((a,b)=>a+(b||0),0) >= 22;
+}
+
 // Результат — блок с наименьшим баллом. При равенстве: сначала род, потом страх проявляться, потом неуверенность.
 function pickResult(){
+  if(allGood()) return 'ok';
   const visible = score(0, 4);   // из 8
   const doubt = score(4, 8);     // из 8
   const roots = score(8, 12);    // из 8
@@ -620,9 +635,14 @@ function pickLevel(){
   return 'light';
 }
 
+const ctaDefault = document.getElementById('ctaText').textContent;
+
 function showResult(){
-  const r = results[pickResult()];
+  const key = pickResult();
+  const r = results[key];
+  document.getElementById('ctaText').textContent = r.cta || ctaDefault;
   const lvl = levels[pickLevel()];
+  document.getElementById('levelBlock').style.display = key === 'ok' ? 'none' : '';
   document.getElementById('resultTitle').textContent = r.title;
   document.getElementById('levelName').textContent = lvl.name;
   document.getElementById('levelText').textContent = lvl.text;

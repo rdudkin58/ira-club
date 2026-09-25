@@ -85,6 +85,34 @@ nav.days::-webkit-scrollbar{display:none}
 .copy.small{grid-column:2;width:auto;justify-self:start;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px}
 .img-hint{margin:0;padding:8px 0 12px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
 .foot{color:var(--muted);font-size:13px;padding-top:20px}
+.krug{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:14px 16px 16px;display:grid;gap:12px}
+.krug-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.krug-title{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.krug-note{font-size:12.5px;color:var(--muted)}
+.k-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.k{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.ring{width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.k-body{display:grid;gap:3px;min-width:0}
+.k-when{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.k-t{font-weight:600;font-size:15px}
+.k-say{margin:0;font-size:15px;overflow-wrap:anywhere}
+.k-hint{margin:0;font-size:13.5px;color:var(--muted)}
+.guide{padding-block:32px 12px;border-bottom:1px solid var(--line);display:grid;gap:14px;scroll-margin-top:80px}
+.guide h2{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:30px;font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+.guide>p{margin:0;max-width:60ch}
+.rows{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.row{display:grid;grid-template-columns:minmax(96px,30%) 1fr;gap:4px 14px;padding:11px 14px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row dt{font-weight:600;font-size:14.5px}
+.row dd{margin:0;font-size:15px}
+.more{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+.more summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:14.5px;color:var(--gold)}
+.more summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.more-body{padding:0 0 14px;display:grid;gap:8px;font-size:15px}
+.more-body h3{margin:8px 0 0;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.more-body p{margin:0}
+.more-body ul{margin:0;padding-left:18px;display:grid;gap:4px}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{margin:0}
 </style>
@@ -95,14 +123,15 @@ body{margin:0}
   <div class="top">
     <div class="eyebrow">ВРЕМЯ ПРОБУЖДЕНИЯ с ИРИНОЙ</div><div class="range">28 сентября – 4 октября 2026</div>
     <h1>Деньги утекают сквозь пальцы</h1>
-    <p class="lead">Семь постов на неделю, по одному в день. Под каждым кнопка, которая копирует текст, чтобы вставить его в Telegram.</p>
+    <p class="lead">Семь постов на неделю, по одному в день, и к каждому дню кружочки. Под каждым постом кнопка, которая копирует текст, чтобы вставить его в Telegram.</p>
     <div class="rules">
       <div><b>Рубрики:</b> тема недели, #практика, кейс, #спрашивают, #послание (карты «Две жизни»), закулисье, #сериал.</div>
-      <div><b>На диагностику зовём только в среду и субботу.</b> В остальные дни без продажи.</div>
+      <div><b>На диагностику зовём только в среду и субботу</b>, и в постах, и в кружочках. В остальные дни без продажи.</div>
+      <div><b>Кружочки:</b> три в день — утро, день, вечер, каждый до минуты. Текст в кружке — подсказка, говори своими словами. Если три пока тяжело, начни с одного. Шпаргалка и розыгрыш — внизу страницы.</div>
       <div>Жёлтые блоки «Перед публикацией» — что сделать до того, как выложить пост.</div>
     </div>
   </div>
-  <nav class="days" aria-label="Дни недели"><a class="chip" href="#mon"><span>Пн</span><small>28.09</small></a><a class="chip" href="#tue"><span>Вт</span><small>29.09</small></a><a class="chip" href="#wed"><span>Ср</span><small>30.09</small></a><a class="chip" href="#thu"><span>Чт</span><small>01.10</small></a><a class="chip" href="#fri"><span>Пт</span><small>02.10</small></a><a class="chip" href="#sat"><span>Сб</span><small>03.10</small></a><a class="chip" href="#sun"><span>Вс</span><small>04.10</small></a></nav>
+  <nav class="days" aria-label="Дни недели"><a class="chip" href="#mon"><span>Пн</span><small>28.09</small></a><a class="chip" href="#tue"><span>Вт</span><small>29.09</small></a><a class="chip" href="#wed"><span>Ср</span><small>30.09</small></a><a class="chip" href="#thu"><span>Чт</span><small>01.10</small></a><a class="chip" href="#fri"><span>Пт</span><small>02.10</small></a><a class="chip" href="#sat"><span>Сб</span><small>03.10</small></a><a class="chip" href="#sun"><span>Вс</span><small>04.10</small></a><a class="chip" href="#krug"><span>Кружки</span><small>шпаргалка</small></a><a class="chip" href="#rozygrysh"><span>Розыгрыш</span><small>12–18.10</small></a></nav>
   <section class="day" id="mon">
 <header class="day-h"><div class="when"><span class="dname">Понедельник</span><span class="date">28.09</span></div>
 <div class="tags"><span class="tag">тема недели</span></div></header>
@@ -133,11 +162,17 @@ body{margin:0}
 А что из этого откликнулось тебе сильнее всего? Напиши в комментариях, я читаю каждое 🤍</div>
 <button class="copy" type="button" data-t="t0" id="c0">Скопировать текст</button></div>
 
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро · до поста</div><div class="k-t">Старт кружков</div><p class="k-say">«Я долго боялась записывать кружки. Вот, записываю. Теперь я буду здесь каждый день, живьём. А эта неделя — про деньги, которые утекают сквозь пальцы. Скоро выложу пост, не пропусти».</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">Тест</div><p class="k-say">«Я выложила тест „Куда утекают твои деньги?“. 12 вопросов. Пройди и напиши в комментариях, что вышло у тебя: утечка, потолок или родовой сценарий. Ссылка в посте выше».</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер</div><div class="k-t">Пендаль</div><p class="k-say">«„Займусь деньгами с октября“? Октябрь уже в четверг. А состояние, из которого ты тратишь, само не поменяется. Начни с малого: пройди тест сегодня».</p></div></li>
+</ol></div>
 </section>
 <section class="day" id="tue">
 <header class="day-h"><div class="when"><span class="dname">Вторник</span><span class="date">29.09</span></div>
 <div class="tags"><span class="tag">#практика</span></div></header>
-<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Под постом текст практики для голоса. Наговори его голосом или кружком, медленно и с паузами, и выложи сразу после поста.</li></ul></div>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Под постом текст практики для голоса. Наговори его голосовым сообщением, медленно и с паузами (в кружок практика не влезет: он до минуты), и выложи сразу после поста.</li></ul></div>
 <details class="img"><summary>Промт для картинки</summary>
 <div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir1">Женщина 40–45 лет сидит на диване, укутавшись в вязаный плед, глаза закрыты, одна ладонь на груди, другая на животе, лицо спокойное, рядом горит свеча, утренний свет из окна, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir1">Скопировать</button></div>
 <div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie1">A woman in her early 40s sits on a sofa wrapped in a knitted blanket, eyes closed, one palm on her chest and the other on her belly, peaceful face, a lit candle nearby, morning light from the window, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie1">Скопировать</button></div>
@@ -168,7 +203,7 @@ body{margin:0}
 
 Напиши в комментариях одно слово: какое состояние у тебя повторилось чаще всего?</div>
 <button class="copy" type="button" data-t="t1" id="c1">Скопировать текст</button></div>
-<div class="voice"><div class="voice-h">Текст для голоса</div><p class="voice-note">Не для публикации текстом: наговори это голосом или кружком, медленно, с паузами. Займёт около 4–5 минут.</p><div class="voice-text" id="v1">Привет, родная. Устройся поудобнее. Если можешь, закрой глаза.
+<div class="voice"><div class="voice-h">Текст для голоса</div><p class="voice-note">Не для публикации текстом: наговори это голосовым сообщением, медленно, с паузами. Займёт около 4–5 минут.</p><div class="voice-text" id="v1">Привет, родная. Устройся поудобнее. Если можешь, закрой глаза.
 
 Сделай глубокий вдох… и медленный выдох. Ещё раз. Вдох… и выдох. Почувствуй, как опускаются плечи.
 
@@ -213,6 +248,12 @@ body{margin:0}
 Сделай глубокий вдох… выдох. Пошевели пальцами рук и ног. И когда будешь готова, открой глаза.
 
 Напиши мне в комментариях одно слово: какое чувство ты сегодня увидела. Я прочитаю каждое 🤍</div><button class="copy" type="button" data-t="v1">Скопировать текст для голоса</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Число дня</div><p class="k-say">«Доброе утро! Сегодня день числа __. Это день про __. Сегодня легко даётся __. Задание на день: __».</p><p class="k-hint">Число дня считаешь ты, это твоя фишка: у обычных психологов такого нет.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">Я сделала практику сама</div><p class="k-say">«Я сегодня сама сделала практику из поста. И вот что увидела про себя: __. Сделай и ты: там 10 минут и голосовое ниже».</p><p class="k-hint">Расскажи честно, из своей жизни. Это сильнее любого совета.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер</div><div class="k-t">Ваши слова</div><p class="k-say">«Читаю ваши слова в комментариях. Чаще всего вы пишете „__“. Давай про это…» — и одна мысль про самое частое слово.</p><p class="k-hint">Без имён: просто «многие написали».</p></div></li>
+</ol></div>
 </section>
 <section class="day" id="wed">
 <header class="day-h"><div class="when"><span class="dname">Среда</span><span class="date">30.09</span></div>
@@ -244,6 +285,12 @@ body{margin:0}
 P.S. Сегодня в 11:00 в клубе «Моё состояние» последний эфир месяца про деньги: вопросы, ответы и разборы. Если хочешь каждую среду приходить на такие эфиры и быть среди своих, вот клуб 👉 <a href="https://rdudkin58.github.io/ira-club/" target="_blank" rel="noopener">https://rdudkin58.github.io/ira-club/</a> 🤍</div>
 <button class="copy" type="button" data-t="t2" id="c2">Скопировать текст</button></div>
 
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро · до 10:30</div><div class="k-t">Эфир в клубе</div><p class="k-say">«Сегодня в 11:00 последний эфир месяца про деньги в клубе „Моё состояние“: вопросы, ответы, разборы. Если ты в клубе — приходи со своим вопросом».</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">После эфира</div><div class="k-t">Одна мысль с эфира</div><p class="k-say">«Только что закончился эфир. Одна мысль, которую я хочу, чтобы услышала ты: __».</p><p class="k-hint">Без подробностей про участниц.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Узнала себя?</div><p class="k-say">«Сегодня я рассказала историю женщины, которая сливала деньги из-за маминого „богатые — плохие“. Если узнала себя, напиши мне слово ДИАГНОСТИКА. 40 минут, бесплатно. Найдём, откуда утекают твои деньги».</p></div></li>
+</ol></div>
 </section>
 <section class="day" id="thu">
 <header class="day-h"><div class="when"><span class="dname">Четверг</span><span class="date">01.10</span></div>
@@ -274,6 +321,12 @@ P.S. Сегодня в 11:00 в клубе «Моё состояние» пос�
 А у тебя так бывает? Напиши в комментариях, что обычно «случается», когда появляются деньги.</div>
 <button class="copy" type="button" data-t="t3" id="c3">Скопировать текст</button></div>
 
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Первое октября</div><p class="k-say">«Первое октября, новый месяц. Сегодня день числа __. Напиши одно слово в комментарии: чего ты хочешь от октября в деньгах?»</p><p class="k-hint">Если тема клуба на октябрь уже решена, скажи и о ней.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">У меня тоже так было</div><p class="k-say">«Помню, как у меня самой: только появились деньги — и __». Потом: «А у тебя что обычно „случается“? Напиши под постом».</p><p class="k-hint">Если своей такой истории нет: «Вспомни, что случилось через неделю после того, как у тебя появились свободные деньги».</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер</div><div class="k-t">Денежный вдох</div><p class="k-say">«Положи руку на живот. На вдохе скажи себе: „Мне можно иметь“. На выдохе: „Мне безопасно“. Три раза. Вот так. Деньгам нужно место, где спокойно».</p></div></li>
+</ol></div>
 </section>
 <section class="day" id="fri">
 <header class="day-h"><div class="when"><span class="dname">Пятница</span><span class="date">02.10</span></div>
@@ -301,6 +354,12 @@ P.S. Сегодня в 11:00 в клубе «Моё состояние» пос�
 Жду твоё число ⬇️</div>
 <button class="copy" type="button" data-t="t4" id="c4">Скопировать текст</button></div>
 
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Число дня</div><p class="k-say">«Доброе утро! Сегодня день числа __. Это день про __. Задание на день: __».</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">Моя карта</div><p class="k-say">«Я сегодня вытянула карту для себя. Смотри, что мне выпало: __. А ты напиши под постом число от 1 до 60 — пришлю тебе послание твоей карты».</p><p class="k-hint">Покажи колоду «Две жизни» в кадре.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер</div><div class="k-t">Послания вслух</div><p class="k-say">«Вы прислали столько чисел! Несколько посланий прочитаю вслух. Та, что выбрала __, это тебе…»</p><p class="k-hint">Называй число, а не имя.</p></div></li>
+</ol></div>
 </section>
 <section class="day" id="sat">
 <header class="day-h"><div class="when"><span class="dname">Суббота</span><span class="date">03.10</span></div>
@@ -333,6 +392,12 @@ P.S. Сегодня в 11:00 в клубе «Моё состояние» пос�
 40 минут, бесплатно. Без давления: после диагностики ты сама решаешь, что дальше.</div>
 <button class="copy" type="button" data-t="t5" id="c5">Скопировать текст</button></div>
 
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Минута тишины</div><p class="k-say">«Суббота. Давай просто минуту побудем в тишине. Сядь удобно, глаза открыты, смотри, как идут мысли. Не держи их и не гони. Я с тобой».</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День</div><div class="k-t">Мой рабочий уголок</div><p class="k-say">«Покажу, откуда я провожу сессии и диагностики. Вот мой стол, мой чай, мой блокнот…»</p><p class="k-hint">Удобно снять в тот же день, что и фото к посту.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Что будет на диагностике</div><p class="k-say">«Многие боятся записаться, потому что не знают, что там будет. Рассказываю: 40 минут, ты говоришь, что болит, я ищу корень и показываю, что можно убрать. Без давления, решаешь ты. Напиши мне ДИАГНОСТИКА».</p></div></li>
+</ol></div>
 </section>
 <section class="day" id="sun">
 <header class="day-h"><div class="when"><span class="dname">Воскресенье</span><span class="date">04.10</span></div>
@@ -371,6 +436,119 @@ P.S. Сегодня в 11:00 в клубе «Моё состояние» пос�
 Продолжение следует…</div>
 <button class="copy" type="button" data-t="t6" id="c6">Скопировать текст</button></div>
 
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Вопрос себе</div><p class="k-say">«Воскресенье. Вопрос себе: что я сделала для себя на этой неделе? Не для детей, не для мужа, не для работы. Для себя».</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">Как назовёшь свой счёт?</div><p class="k-say">«Героиня нашего сериала назвала счёт „На светлый день“. А как бы ты назвала свой? Напиши в комментариях».</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер</div><div class="k-t">Итог недели</div><p class="k-say">«Неделя про деньги закончилась. Одна мысль, которую я хочу, чтобы ты унесла с собой: деньги утекают не из кошелька, а из состояния. А завтра расскажу, как я была учительницей начальных классов».</p><p class="k-hint">Завтра, 5 октября, День учителя.</p></div></li>
+</ol></div>
+</section>
+<section class="guide" id="krug">
+  <h2>Кружочки: шпаргалка</h2>
+  <p>Кружок — это твоё лицо и голос. Подписчица видит живого человека, а не «эксперта из телевизора». Твоя сила — вдохновлять и давать пендаль, и в кружке она работает лучше всего.</p>
+  <dl class="rows">
+    <div class="row"><dt>Утро, 8:00–9:30</dt><dd>«Число дня» или минутная практика</dd></div>
+    <div class="row"><dt>День, 12:00–14:00</dt><dd>Кружок к посту дня: свой пример, продолжение, вопрос</dd></div>
+    <div class="row"><dt>Вечер, 19:00–21:00</dt><dd>Практика перед сном, ответ на комментарии, пендаль, итог</dd></div>
+    <div class="row"><dt>Когда захочется</dt><dd>Живое: закулисье, прогулка, книга, реакция на жизнь</dd></div>
+  </dl>
+  <p>Лучше каждый день по одному кружку, чем три в понедельник и тишина до пятницы. На диагностику зовём только в среду и субботу.</p>
+
+  <details class="more"><summary>Как записывать</summary><div class="more-body"><ul>
+    <li>До 60 секунд, одна мысль. Больше мыслей — 2–3 кружка подряд.</li>
+    <li>Первые 3 секунды — зацепка: вопрос или сильная фраза. Без «Всем привет, мои дорогие, сегодня я хочу поговорить…».</li>
+    <li>В ленте кружок часто начинает играть без звука, поэтому первое, что видно, — лицо и эмоция.</li>
+    <li>Свет — лицом к окну, телефон на уровне глаз, вокруг тихо.</li>
+    <li>Не перезаписывай по десять раз. Оговорилась — улыбнись и продолжай: живость важнее идеальности.</li>
+    <li>В конце — одно действие: реакция, слово в комментариях, тест. «ДИАГНОСТИКА» — только в среду и субботу.</li>
+    <li>Подпись к кружку добавить нельзя. Ссылку отправляй следующим сообщением.</li>
+    <li>Можно записать 2–3 кружка утром и поставить на время: записывай с замочком (свайп вверх), потом удерживай кнопку «Отправить» → «Отправить позже». Но хотя бы один кружок в день — вживую.</li>
+    <li>Длинную практику, как во вторник, записывай голосовым: в кружок она не влезет.</li>
+    <li>Про клиенток — без имён и узнаваемых деталей. Кейсы — только с их согласия.</li>
+  </ul></div></details>
+
+  <details class="more"><summary>Темы про запас</summary><div class="more-body">
+    <h3>Число дня</h3>
+    <p>«Сегодня день числа __. Это день про __. Легко даётся __. Осторожно с __. Задание: __». Отдельная серия — «Твоё число рождения»: по кружку на каждое число. Сила, ловушка в отношениях, ловушка в деньгах. Такие кружки пересылают подругам.</p>
+    <h3>Минутные практики</h3>
+    <ul><li>Вернуть себя за 60 секунд: ладонь на сердце, стопы в пол, три медленных выдоха.</li><li>Стоп-кран перед ссорой: что сделать, когда хочется резко ответить мужу.</li><li>Выдох обиды.</li><li>Минута тишины из раджа-йоги.</li><li>Фраза себе в зеркало утром.</li><li>«Спасибо, тело» перед сном.</li></ul>
+    <h3>Обиды</h3>
+    <ul><li>Почему обида на маму не уходит, даже если ты всё поняла головой.</li><li>Что на самом деле под обидой на мужа.</li><li>Обида — это не про него. Это про тебя. И это хорошая новость.</li></ul>
+    <h3>Деньги</h3>
+    <ul><li>Денежный потолок: почему ты зарабатываешь «как мама».</li><li>Почему нет подушки, даже когда доход вырос.</li><li>Страх успеха: «а вдруг получится?»</li></ul>
+    <h3>Проявленность</h3>
+    <ul><li>Страх, что тебя увидят.</li><li>Как отличить интуицию от страха.</li></ul>
+    <h3>Отношения</h3>
+    <ul><li>Почему «нормальные мужчины не попадаются».</li><li>Одиночество рядом с мужем.</li><li>Как выйти из позиции жертвы и не начать себя грызть.</li></ul>
+    <h3>Мифы</h3>
+    <ul><li>«Терапия — это годы». Нет: одна сессия — одна боль стирается.</li><li>«Обиду надо проговорить сто раз».</li><li>«Сначала разберись с детством, потом живи».</li><li>«Нумерология — это гадание».</li><li>«Позитивное мышление всё решает».</li></ul>
+    <h3>Моя история</h3>
+    <ul><li>Как наставник сказал: «Развернись к себе».</li><li>Я была обидчивой. Очень.</li><li>Я по образованию учитель начальных классов.</li><li>14 лет назад — фэн-шуй и первые ученики.</li><li>Что мне лично дала регрессия.</li><li>Почему я не держу клиенток годами.</li><li>Что я делаю, когда у меня самой плохое состояние.</li><li>Почему меня называют необычным психологом.</li></ul>
+    <h3>Закулисье</h3>
+    <ul><li>«Только что вышла с сессии и сижу улыбаюсь».</li><li>Готовлюсь к эфиру.</li><li>Прогулка, осень, разговор про отпускание.</li><li>Книга, музыка, нейрографика — как темы в клубе.</li><li>Мой вечерний ритуал.</li></ul>
+    <h3>Пендаль</h3>
+    <ul><li>«Хватит ждать, пока станет не страшно. Не станет. Иди со страхом».</li><li>«Ты не слишком много хочешь. Ты хочешь ровно столько, сколько тебе нужно».</li><li>«Посчитай, сколько лет у тебя забрала эта обида».</li><li>«Лёгкость — не награда за страдания».</li></ul>
+    <h3>Серии</h3>
+    <ul><li>«7 дней к равновесию»: утром задание, вечером «как прошло?».</li><li>«5 утечек денег» — по одной в день.</li><li>«Обиды: на маму, на папу, на мужа, на подругу, на себя».</li></ul>
+  </div></details>
+
+  <details class="more"><summary>Первые фразы</summary><div class="more-body"><ul>
+    <li>«Если ты сейчас листаешь ленту вместо того, чтобы спать, — это кружок для тебя».</li>
+    <li>«Стоп. Выдохни. Вот так. А теперь скажи себе…»</li>
+    <li>«Мне сегодня написали: „…“. Знаешь, что я ответила?»</li>
+    <li>«Три признака, что деньги утекают не из-за зарплаты».</li>
+    <li>«Я 14 лет в этой работе. И вот чего я больше никогда не делаю».</li>
+    <li>«Хочешь, скажу, почему он так себя ведёт? Только тебе не понравится».</li>
+    <li>«Ты не ленивая. Ты уставшая. Это разные вещи».</li>
+    <li>«Самая дорогая вещь в твоей жизни — обида. Сейчас посчитаем».</li>
+    <li>«Я тоже когда-то была жертвой. Вот как я это поняла».</li>
+    <li>«Если ты родилась 7, 16 или 25 числа — смотри до конца».</li>
+    <li>«Одна фраза, после которой у моих клиенток меняется лицо».</li>
+    <li>«Это не про деньги. Совсем».</li>
+    <li>«Сейчас будет неудобный вопрос».</li>
+    <li>«Только что вышла с сессии. Хочу сказать тебе одну вещь».</li>
+    <li>«Давай за минуту вернём тебе состояние. Прямо сейчас».</li>
+    <li>«Ты думаешь, что с тобой что-то не так. Давай проверим».</li>
+    <li>«Почему „займусь в следующем месяце“ — самая дорогая фраза».</li>
+    <li>«Спорим, ты сейчас сидишь с напряжёнными плечами?»</li>
+    <li>«Меня называют необычным психологом. Сейчас объясню почему».</li>
+    <li>«Муж, мама, деньги. Выбирай, с чего начнём».</li>
+  </ul></div></details>
+
+  <details class="more"><summary>Поводы до 1 ноября</summary><div class="more-body">
+    <dl class="rows">
+      <div class="row"><dt>пн 5.10</dt><dd>День учителя: «я ведь сама учитель начальных классов…»</dd></div>
+      <div class="row"><dt>12–18.10</dt><dd>Розыгрыш (ниже)</dd></div>
+      <div class="row"><dt>ср 14.10</dt><dd>Покров: по традиции в этот день просили о женихе. Кружок про то, как создать пару</dd></div>
+      <div class="row"><dt>24–31.10</dt><dd>Последняя неделя пробного периода клуба: каждый день по кружку про клуб</dd></div>
+      <div class="row"><dt>вс 1.11</dt><dd>Новые тарифы клуба, приветствие новым участницам</dd></div>
+    </dl>
+  </div></details>
+</section>
+
+<section class="guide" id="rozygrysh">
+  <h2>Розыгрыш 12–18 октября</h2>
+  <p>Итоги — в воскресенье 18.10 вечером, кружком.</p>
+  <dl class="rows">
+    <div class="row"><dt>Почему тогда</dt><dd>К середине октября подписчицы уже две недели видят тебя в кружках. После розыгрыша остаются две недели пробного периода клуба, и всех участниц можно позвать в клуб до 31.10. Победительницы успеют пройти сессии, и в ноябре будут свежие отзывы.</dd></div>
+    <div class="row"><dt>Призы</dt><dd>Главный — индивидуальная сессия (6 000 ₽). Ещё 2–3 приза — месяц в клубе «Моё состояние». «Равновесие» не разыгрываем: главный продукт должен цениться.</dd></div>
+    <div class="row"><dt>Условия</dt><dd>Подписка на канал и одно слово в комментарии под кружком-анонсом: что ты хочешь убрать из своей жизни — обиду, страх, безденежье, одиночество… По желанию — переслать анонс подруге. Без оплаты: если участие требует покупки, по закону это уже лотерея.</dd></div>
+    <div class="row"><dt>Как часто</dt><dd>Не чаще раза в 1,5–2 месяца, иначе подписчицы привыкают ждать бесплатного. Следующий повод — перезапуск марафона: разыграть места.</dd></div>
+  </dl>
+
+  <div class="krug"><div class="krug-h"><span class="krug-title">Кружочки розыгрыша</span></div>
+  <ol class="k-list">
+    <li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">пн 12.10</div><div class="k-t">Анонс</div><p class="k-say">Что разыгрываю и почему. Правила — текстом следом.</p></div></li>
+    <li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">вт 13.10 – сб 17.10</div><div class="k-t">Напоминание и разбор</div><p class="k-say">Каждый день: «Многие написали „страх“. Давай про него».</p></div></li>
+    <li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">вс 18.10, вечер</div><div class="k-t">Итоги</div><p class="k-say">Выбери победительниц на камеру, через бота или генератор случайных чисел, чтобы было честно и видно. Поздравь.</p></div></li>
+    <li class="k"><span class="ring" aria-hidden="true">4</span><div class="k-body"><div class="k-when">ср 21.10 <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Для всех, кто участвовал</div><p class="k-say">Бесплатная диагностика и приглашение в клуб до 31 октября. Здесь можно назвать цену основательницы, если решишь её озвучивать.</p></div></li>
+  </ol></div>
+
+  <details class="more" open><summary>После розыгрыша</summary><div class="more-body"><ul>
+    <li>Договорись с победительницами, что после сессий они расскажут, как было (с согласия, можно без имени). Это отзывы и кейсы на ноябрь.</li>
+    <li>Сохрани слова из комментариев: это темы для кружков и постов на месяц.</li>
+    <li>Посчитай: сколько было участниц, сколько пришло новых подписчиц, сколько написали «ДИАГНОСТИКА», сколько вступили в клуб.</li>
+  </ul></div></details>
 </section>
   <p class="foot">Все тексты на «ты» и в женском роде. Имена клиенток не упоминаются.</p>
 </div>

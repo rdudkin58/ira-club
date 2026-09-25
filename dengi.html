@@ -18,27 +18,32 @@
 <style>
   :root{
     --ivory:#FBF7F1;
-    --cream:#F6EEE3;
-    --sand:#EFE3D2;
-    --blush:#F5E3D7;
-    --gold:#B8904F;
-    --gold-light:#DCC194;
-    --gold-deep:#8C6832;
+    --cream:#F8ECDA;
+    --sand:#F0DDC0;
+    --blush:#F8DCC8;
+    --gold:#C3943F;
+    --gold-light:#E8C98A;
+    --gold-deep:#8E6420;
     --espresso:#2A201A;
     --espresso-2:#35291F;
     --ink:#33291F;
-    --muted:#7A6B5E;
-    --line:rgba(140,104,50,0.22);
-    --gold-grad:linear-gradient(135deg,#DDBF86 0%,#B8904F 48%,#94703A 100%);
+    --muted:#6E5D4E;
+    --line:rgba(176,128,52,0.34);
+    --gold-grad:linear-gradient(135deg,#F2D38F 0%,#D2A04A 45%,#9C6E25 100%);
     --serif:'Cormorant Garamond', 'Times New Roman', serif;
     --sans:'Manrope', system-ui, -apple-system, sans-serif;
     --ease:cubic-bezier(.16,1,.3,1);
-    --shadow:0 22px 44px -28px rgba(90,64,30,.45);
+    --shadow:0 26px 50px -26px rgba(150,100,30,.5);
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    background:var(--ivory) linear-gradient(180deg, var(--cream) 0, var(--ivory) 480px) no-repeat;
+    background:
+      radial-gradient(ellipse 70% 420px at 100% 0, rgba(242,211,143,.45), transparent 70%),
+      radial-gradient(ellipse 60% 380px at 0 60px, rgba(248,220,200,.7), transparent 70%),
+      linear-gradient(180deg, var(--cream) 0, var(--ivory) 560px) no-repeat,
+      var(--ivory);
+    background-repeat:no-repeat;
     color:var(--ink);
     font-family:var(--sans);
     font-size:16px;
@@ -118,6 +123,7 @@
     padding:10px 26px;
     background:#fff;
     border:1px solid var(--line);
+    border-top:3px solid var(--gold);
     border-radius:18px;
     box-shadow:var(--shadow);
   }
@@ -143,7 +149,7 @@
   }
   .scenario-list li::before{
     content:"✦"; flex-shrink:0;
-    color:var(--gold); font-size:11px; line-height:24px;
+    color:var(--gold); font-size:13px; line-height:24px;
   }
   .start-row{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
   .start-note{font-size:13px; color:var(--muted);}
@@ -155,12 +161,13 @@
     font:600 11px/1 var(--sans); letter-spacing:.2em; text-transform:uppercase;
     color:var(--gold-deep); margin-bottom:12px;
   }
-  .progress-track{height:3px; background:var(--sand); border-radius:3px; overflow:hidden;}
-  .progress-fill{height:100%; width:8%; background:var(--gold-grad); border-radius:3px; transition:width .45s var(--ease);}
+  .progress-track{height:6px; background:var(--sand); border-radius:3px; overflow:hidden;}
+  .progress-fill{height:100%; width:8%; background:var(--gold-grad); border-radius:3px; box-shadow:0 0 12px rgba(210,160,74,.55); transition:width .45s var(--ease);}
   .quiz-card{
     margin-top:26px;
     background:#fff;
     border:1px solid var(--line);
+    border-top:3px solid var(--gold);
     border-radius:22px;
     padding:36px 30px 26px;
     box-shadow:var(--shadow);
@@ -185,18 +192,18 @@
     transition:border-color .25s ease, background-color .25s ease, transform .4s var(--ease);
   }
   @media (hover:hover){
-    .options:not(.no-hover) .option:hover{border-color:var(--gold); background:var(--ivory);}
+    .options:not(.no-hover) .option:hover{border-color:var(--gold); background:var(--cream);}
     .options:not(.no-hover) .option:hover .letter{background:var(--gold-grad); color:#fff; border-color:transparent;}
   }
   .option:active{transform:scale(.99);}
-  .option.selected{border-color:var(--gold); background:var(--cream);}
+  .option.selected{border-color:var(--gold); background:var(--cream); box-shadow:0 0 0 1px var(--gold) inset;}
   .option .letter{
     flex-shrink:0;
     width:32px; height:32px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--gold-light);
-    background:var(--ivory);
-    font:italic 500 18px/1 var(--serif);
+    border:1px solid var(--gold);
+    background:var(--cream);
+    font:italic 600 18px/1 var(--serif);
     color:var(--gold-deep);
     transition:background .25s ease, color .25s ease, border-color .25s ease;
   }
@@ -229,7 +236,7 @@
   }
   .level{display:flex; flex-direction:column; align-items:center; gap:12px; margin:-6px auto 30px; max-width:30em; text-align:center;}
   .level-bar{display:flex; gap:6px;}
-  .level-bar span{width:36px; height:4px; border-radius:4px; background:var(--sand);}
+  .level-bar span{width:36px; height:6px; border-radius:4px; background:var(--sand);}
   .level-bar span.on{background:var(--gold-grad);}
   .level-text{font-size:14.5px; line-height:1.6; color:var(--muted);}
   .level-text b{font-weight:600; color:var(--gold-deep);}
@@ -238,7 +245,7 @@
     margin:26px 0 0;
     padding:20px 24px;
     background:var(--cream);
-    border-left:2px solid var(--gold);
+    border-left:3px solid var(--gold);
     border-radius:0 14px 14px 0;
   }
   .thought-box p{font:italic 500 21px/1.4 var(--serif); color:var(--espresso);}
@@ -247,9 +254,9 @@
     padding:44px 32px 38px;
     border-radius:24px;
     text-align:center;
-    color:#D9CCBB;
+    color:#E8DCCB;
     background:
-      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(220,193,148,.18), transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(242,211,143,.32), transparent 70%),
       var(--espresso);
     box-shadow:0 30px 60px -30px rgba(42,32,26,.7);
   }
@@ -298,13 +305,13 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#DDBF86"/>
-      <stop offset=".48" stop-color="#B8904F"/>
-      <stop offset="1" stop-color="#94703A"/>
+      <stop offset="0" stop-color="#F2D38F"/>
+      <stop offset=".45" stop-color="#D2A04A"/>
+      <stop offset="1" stop-color="#9C6E25"/>
     </linearGradient>
     <radialGradient id="badgeFill" cx=".38" cy=".32" r=".8">
       <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#F6EEE3"/>
+      <stop offset="1" stop-color="#F8ECDA"/>
     </radialGradient>
     <path id="spark" d="M0 -10 Q1.4 -1.4 10 0 Q1.4 1.4 0 10 Q-1.4 1.4 -10 0 Q-1.4 -1.4 0 -10 Z"/>
   </defs>

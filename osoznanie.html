@@ -208,7 +208,9 @@
     color:var(--ink);
     transition:all .15s ease;
   }
-  .option:hover{border-color:var(--blue-mid); background:rgba(201,228,197,0.35);}
+  @media (hover:hover){
+    .options:not(.no-hover) .option:hover{border-color:var(--blue-mid); background:rgba(201,228,197,0.35);}
+  }
   .option .letter{
     flex-shrink:0;
     width:30px;height:30px;border-radius:50%;
@@ -503,6 +505,10 @@ function renderQuestion(){
     btn.onclick = ()=>selectAnswer(idx);
     optsWrap.appendChild(btn);
   });
+  // После ответа не подсвечиваем вариант под курсором или пальцем: подсветка вернётся, когда мышь сдвинется.
+  if(document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  optsWrap.classList.add('no-hover');
+  optsWrap.onmousemove = ()=>{ optsWrap.classList.remove('no-hover'); optsWrap.onmousemove = null; };
 }
 
 function selectAnswer(idx){

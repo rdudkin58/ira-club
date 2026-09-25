@@ -226,9 +226,19 @@
   .why{
     position:relative; overflow:hidden;
     background:
-      radial-gradient(50% 70% at 100% 0%, rgba(220,193,148,.10), transparent 70%),
-      var(--espresso);
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,226,160,.35), transparent 70%),
+      linear-gradient(135deg, #B5803C 0%, #95622A 55%, #74491C 100%);
   }
+  .why .eyebrow{color:#FCE3B2;}
+  .why .quote{color:#fff;}
+  .why .quote::before{color:#FCE3B2; opacity:.8;}
+  .why .quote em{background:none; color:#FCE3B2;}
+  .why .quote-sign{color:#FCE3B2;}
+  .why .why-grid{grid-template-columns:1fr; gap:0; justify-items:center; text-align:center; max-width:1140px;}
+  .why .quote{font-size:clamp(28px,3.1vw,44px);}
+  .why .eyebrow{justify-content:center;}
+  .why .why-text{margin-top:48px; padding:36px 0 0; border-left:0; border-top:1px solid rgba(252,227,178,.45); max-width:640px;}
+  .why .why-text p{font-size:clamp(17px,1.5vw,20px); line-height:1.6; color:#FBEEDB;}
   .why-grid{display:grid; grid-template-columns:7fr 5fr; gap:96px; align-items:start;}
   .quote{
     position:relative;
@@ -635,14 +645,15 @@
   <div class="wrap why-grid">
     <div class="reveal">
       <div class="eyebrow">Почему это происходит</div>
-      <p class="quote">Состояние — это не то, что появляется после сессии. Это то, что <em>создаётся осознанно, ежедневно.</em></p>
+      <div class="quote">
+        <p>Состояние — это не то, что появляется после&nbsp;сессии.<br>
+        Хотя оно точно меняется после&nbsp;неё.<br>
+        Состояние — это то, что <em>создаётся осознанно, ежедневно.</em></p>
+      </div>
       <div class="quote-sign">Ирина Дудкина</div>
     </div>
     <div class="why-text reveal d1">
-      <p><strong>Просто проработка боли без умения поддерживать своё состояние в моменте не даст изменений.</strong></p>
-      <p>Ко мне приходит женщина. Мы находим установку — снимаем болевой заряд, вину, например. Она не чувствует больше вину после сессии.</p>
-      <p>И вот здесь важно встроить в свою жизнь практики, которые помогают изменять состояние в моменте, поддерживать его. Научиться понимать себя, свои состояния и эмоции.</p>
-      <p>Именно это женщина получает в клубе: практики, упражнения, техники и разборы.</p>
+      <p>Понимать себя, свои состояния и эмоции&nbsp;—<br>именно этому женщина учится в клубе, получая разборы, практики, упражнения, техники.</p>
     </div>
   </div>
 </section>

@@ -461,7 +461,7 @@
 
     <div class="result-kicker"><span class="eyebrow">Твой результат</span></div>
     <h2 class="result-title" id="resultTitle"></h2>
-    <div class="level">
+    <div class="level" id="levelBlock">
       <div class="level-bar" id="levelBar" aria-hidden="true"><span></span><span></span><span></span></div>
       <p class="level-text"><b id="levelName"></b> <span id="levelText"></span></p>
     </div>
@@ -474,7 +474,7 @@
     <div class="cta-card">
       <div class="eyebrow">Бесплатно · 40 минут</div>
       <h2>Напиши Ирине <em>«ДИАГНОСТИКА»</em></h2>
-      <p>Тест показал направление. А на бесплатной диагностике Ирина лично разберёт твою ситуацию и покажет корень: почему с деньгами у тебя происходит именно так — и как это можно решить.</p>
+      <p id="ctaText">Тест показал направление. А на бесплатной диагностике Ирина лично разберёт твою ситуацию и покажет корень: почему с деньгами у тебя происходит именно так — и как это можно решить.</p>
       <a class="btn btn-gold" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Написать Ирине</a>
       <div class="cta-note">Telegram · @IrinaDudkina</div>
     </div>
@@ -538,6 +538,15 @@ const results = {
       "Это не твоя вина. Такие сценарии передаются в роду из поколения в поколение и работают тихо, из глубины: через вину, когда у тебя становится больше, чем у родных, через обиды, через верность «своим». Пока сценарий не увиден, он решает за тебя. Когда увиден — его можно отпустить."
     ],
     thought:"Главный вопрос для тебя сейчас: чей сценарий ты проживаешь в деньгах — и готова ли вернуть себе свой?"
+  },
+  ok:{
+    title:"С деньгами у тебя в целом всё хорошо",
+    body:[
+      "По твоим ответам деньги у тебя не утекают, потолок не давит, а семейные сценарии не решают за тебя. Ты спокойно называешь свою цену, умеешь откладывать и радуешься, когда денег становится больше. Это редкость — и твоя заслуга.",
+      "И всё же даже при хорошей опоре всегда есть куда расти: следующий уровень дохода, больше лёгкости и удовольствия от денег."
+    ],
+    thought:"Главный вопрос для тебя сейчас: каким будет твой следующий денежный уровень — и что поможет выйти на него легко?",
+    cta:"Тест не нашёл у тебя проблем с деньгами. А если хочешь глубже разобраться в этой сфере и понять, куда расти дальше, приходи на бесплатную диагностику: Ирина лично разберёт твою ситуацию."
   }
 };
 
@@ -617,8 +626,14 @@ function score(from, to){
   return answers.slice(from, to).reduce((sum, v)=>sum + (v || 0), 0);
 }
 
+// Ни одного ответа «В» и не больше двух «Б» (от 22 баллов из 24) — проблем в этой сфере нет.
+function allGood(){
+  return answers.every(v=>v >= 1) && answers.reduce((a,b)=>a+(b||0),0) >= 22;
+}
+
 // Результат — блок с наименьшим баллом. При равенстве: сначала род, потом утечка, потом потолок.
 function pickResult(){
+  if(allGood()) return 'ok';
   const leak = score(0, 4);      // из 8
   const ceiling = score(4, 8);   // из 8
   const roots = score(8, 12);    // из 8
@@ -635,9 +650,14 @@ function pickLevel(){
   return 'light';
 }
 
+const ctaDefault = document.getElementById('ctaText').textContent;
+
 function showResult(){
-  const r = results[pickResult()];
+  const key = pickResult();
+  const r = results[key];
+  document.getElementById('ctaText').textContent = r.cta || ctaDefault;
   const lvl = levels[pickLevel()];
+  document.getElementById('levelBlock').style.display = key === 'ok' ? 'none' : '';
   document.getElementById('resultTitle').textContent = r.title;
   document.getElementById('levelName').textContent = lvl.name;
   document.getElementById('levelText').textContent = lvl.text;

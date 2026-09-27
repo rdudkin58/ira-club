@@ -204,17 +204,10 @@
 
   /* ---------- for whom ---------- */
 
-  .pain-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 72px; counter-reset:pain;}
+  .pain-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 72px;}
   .pain{
-    display:grid; grid-template-columns:56px 1fr; gap:8px;
     padding:30px 0;
     border-top:1px solid var(--line);
-    counter-increment:pain;
-  }
-  .pain::before{
-    content:counter(pain, decimal-leading-zero);
-    font-family:var(--serif); font-style:italic; font-size:22px; line-height:1.2;
-    color:var(--gold);
   }
   .pain p{font-size:16px; color:var(--ink); line-height:1.65;}
 
@@ -529,7 +522,7 @@
     .sec-head{margin-bottom:48px;}
     .sec-head .lede{justify-self:start;}
     .pain-grid{grid-template-columns:1fr;}
-    .pain{grid-template-columns:44px 1fr; padding:22px 0;}
+    .pain{padding:22px 0;}
     .pain p{font-size:15.5px;}
     .why-text{margin-top:0; padding-left:24px;}
     .features{grid-template-columns:1fr;}
@@ -595,7 +588,7 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <div class="eyebrow reveal">Закрытый клуб Ирины Дудкиной</div>
-      <h1 class="reveal d1"><em>Начать жить<br>из<br><span class="caps">равновесия.</span></em><br><span class="it">Перестать выживать.</span></h1>
+      <h1 class="reveal d1"><em>Начни жить<br>из<br><span class="caps">равновесия.</span></em><br><span class="it">Перестань выживать.</span></h1>
       <p class="hero-sub reveal d2">Закрытое пространство для женщин, которые хотят обрести внутреннюю опору и научиться менять своё состояние — каждый день, в моменте.</p>
       <div class="hero-actions reveal d2">
         <a class="btn btn-gold" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Вступить в клуб</a>

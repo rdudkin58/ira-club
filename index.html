@@ -284,15 +284,12 @@
   .results{background:linear-gradient(180deg, var(--cream), var(--blush));}
   .results-grid{display:grid; grid-template-columns:5fr 7fr; gap:96px; align-items:start;}
   .results-thesis{margin-top:36px; font-family:var(--serif); font-style:italic; font-size:24px; line-height:1.4; color:var(--gold-deep); max-width:420px;}
-  .results-list{list-style:none; counter-reset:res;}
+  .results-list{list-style:none;}
   .results-list li{
-    counter-increment:res;
-    display:grid; grid-template-columns:64px 1fr; align-items:baseline;
     padding:26px 0; border-top:1px solid var(--line);
     font-family:var(--serif); font-size:clamp(24px,2.4vw,32px); line-height:1.25; color:var(--espresso);
   }
   .results-list li:last-child{border-bottom:1px solid var(--line);}
-  .results-list li::before{content:counter(res, upper-roman); font-size:18px; font-style:italic; color:var(--gold);}
 
   /* ---------- mentor ---------- */
 
@@ -386,6 +383,7 @@
   .plus::after{transform:rotate(90deg);}
   .faq-item[open] .plus{transform:rotate(45deg);}
   .faq-answer{padding:0 56px 30px 0; font-size:16px; color:var(--muted); max-width:780px;}
+  .faq-answer a{color:var(--gold-deep); border-bottom:1px solid currentColor;}
 
   /* ---------- final cta ---------- */
 
@@ -671,7 +669,8 @@
       <div class="feature reveal">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2"/><path d="M8 8a5.7 5.7 0 000 8M16 8a5.7 5.7 0 010 8M5.2 5.2a9.6 9.6 0 000 13.6M18.8 5.2a9.6 9.6 0 010 13.6"/></svg>
         <h3>Живые эфиры и разборы</h3>
-        <p>Каждую среду в 11:00 по Москве — разборы ситуаций участниц и практики на состояние. Приходи вживую, а если не получилось — запись появится после эфира.</p>
+        <p>Каждую среду в 11:00 по Москве — разборы ситуаций участниц и практики на состояние.<br>
+        Приходи вживую, а если не получилось — запись появится после эфира.</p>
       </div>
       <div class="feature reveal d1">
         <svg viewBox="0 0 24 24"><path d="M5 19c9 0 14-6 14-14C10 5 5 10 5 19z"/><path d="M5 19l7.5-7.5"/></svg>
@@ -709,7 +708,7 @@
     <div class="reveal">
       <div class="eyebrow">Результаты</div>
       <h2>Результаты <em>участниц</em></h2>
-      <p class="results-thesis">Это подтверждает главное: состояние можно научиться менять. Создавать его ежедневно, в моменте.</p>
+      <p class="results-thesis">подтверждают главное: состояние можно научиться менять, создавая его ежедневно, в моменте.</p>
     </div>
     <ol class="results-list reveal d1">
       <li>Снижение ежедневной тревоги</li>
@@ -733,7 +732,7 @@
       <div class="mentor-roles">Интегративный психолог · Нумеролог · Энерготерапевт</div>
       <div class="mentor-text">
         <p>14 лет опыта работы с женщинами.<br>Более 1000 клиенток из разных стран.<br>Работаю через навигацию нумерологии, считывание поля, нахожу первопричины и болевые заряды страданий.</p>
-        <p>Использую расстановки, энерготерапию, метод раджа-йоги.</p>
+        <p>Использую расстановки, энерготерапию, методы раджайоги.</p>
       </div>
       <div class="stats">
         <div><div class="stat-num">14 лет</div><div class="stat-label">работы с женщинами</div></div>
@@ -760,7 +759,7 @@
           <li>База знаний</li>
           <li>Закрытое сообщество</li>
           <li class="off"><span class="sr-only">Не входит: </span><s>2 индивидуальные сессии</s></li>
-          <li class="off"><span class="sr-only">Не входит: </span><s>Энергочистка</s></li>
+          <li>Энергочистка</li>
         </ul>
         <a class="btn btn-line" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Занять место</a>
       </div>
@@ -774,7 +773,7 @@
           <li>База знаний</li>
           <li>Закрытое сообщество</li>
           <li>2 индивидуальные сессии</li>
-          <li>Энергочистка</li>
+          <li>Энергочистка ежемесячно</li>
         </ul>
         <a class="btn btn-gold" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Занять место</a>
       </div>
@@ -801,15 +800,15 @@
       </details>
       <details class="faq-item">
         <summary>Что делать, если пропустила эфир?<span class="plus"></span></summary>
-        <div class="faq-answer">Запись выкладываем в клуб после каждого эфира — посмотришь в удобное время. Исключение — энергочистки: они работают только вживую.</div>
+        <div class="faq-answer">Запись выкладываем в клуб после каждого эфира — посмотришь в удобное время.<br>Исключение — энергочистка: пройти её можно, присутствуя на эфире.</div>
       </details>
       <details class="faq-item">
         <summary>Есть ли запись?<span class="plus"></span></summary>
-        <div class="faq-answer">Да. Запись выкладываем в клуб после каждого эфира, кроме энергочисток — они работают только вживую. А в базе знаний собраны материалы для самостоятельной работы.</div>
+        <div class="faq-answer">Да.<br>Запись выкладываем в клуб после эфира, кроме эфиров с энергочистками. А в базе знаний собраны материалы для самостоятельной работы.</div>
       </details>
       <details class="faq-item">
         <summary>Можно ли попробовать бесплатно?<span class="plus"></span></summary>
-        <div class="faq-answer">Перед вступлением ты можешь обсудить свою ситуацию с Ириной на диагностике — напиши «ДИАГНОСТИКА» в Telegram.</div>
+        <div class="faq-answer">Перед вступлением ты можешь пройти индивидуальную бесплатную диагностику с Ириной — напиши «ДИАГНОСТИКА» в Telegram <a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">@IrinaDudkina</a></div>
       </details>
     </div>
   </div>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-balance-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-balance-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-balance-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-balance-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon-balance-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../favicon-balance-512.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon-balance.png">
+<title>Неделя про силы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FAF6EE;
+  --surface:#FFFDF8;
+  --ink:#2B2620;
+  --muted:#7A6F60;
+  --line:#E7DDCB;
+  --gold:#A8823A;
+  --gold-soft:#F3E9D3;
+  --todo-bg:#FBF3E1;
+  --todo-line:#E4CF9F;
+  --cta:#8A5A2B;
+  --cta-bg:#F4E4D2;
+  --focus:#A8823A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1C1915;--surface:#25211B;--ink:#EFE7D8;--muted:#A99C87;--line:#3A342A;
+    --gold:#D4B06A;--gold-soft:#3A3122;--todo-bg:#2E2718;--todo-line:#5A4A2A;
+    --cta:#E7B98A;--cta-bg:#3D2E20;--focus:#D4B06A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1C1915;--surface:#25211B;--ink:#EFE7D8;--muted:#A99C87;--line:#3A342A;
+  --gold:#D4B06A;--gold-soft:#3A3122;--todo-bg:#2E2718;--todo-line:#5A4A2A;
+  --cta:#E7B98A;--cta-bg:#3D2E20;--focus:#D4B06A;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:680px;margin:0 auto}
+.top{padding-block:32px 8px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.range{color:var(--muted);font-size:14px;margin-top:4px;font-variant-numeric:tabular-nums}
+h1{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(34px,8vw,46px);line-height:1.05;margin:.3em 0 .25em;text-wrap:balance}
+.lead{color:var(--muted);margin:0;max-width:60ch}
+.rules{margin:20px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:grid;gap:6px;font-size:14.5px}
+.rules b{font-weight:600}
+nav.days{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);margin-inline:-16px;padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav.days::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;min-width:52px;padding:6px 8px;border-radius:10px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--surface)}
+.chip span{font-weight:700;font-size:14px}
+.chip small{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip:focus-visible,.copy:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.day{padding-block:28px 8px;border-bottom:1px solid var(--line);scroll-margin-top:80px;display:grid;gap:14px}
+.day-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 12px}
+.when{display:flex;align-items:baseline;gap:10px}
+.dname{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:600;line-height:1}
+.date{color:var(--muted);font-variant-numeric:tabular-nums;font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.tag.cta{background:var(--cta-bg);color:var(--cta);font-weight:600}
+.todo{background:var(--todo-bg);border:1px solid var(--todo-line);border-radius:12px;padding:12px 14px;font-size:14.5px}
+.todo-h{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:4px}
+.todo ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.post{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.post-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px 16px 12px;font-size:15.5px}
+.post-text a{color:var(--gold)}
+.copy{display:block;width:100%;border:0;border-top:1px solid var(--line);background:var(--gold-soft);color:var(--ink);font:600 15px/1 "Manrope",system-ui,sans-serif;padding:14px;cursor:pointer}
+.copy:hover{filter:brightness(.97)}
+.copy.done{background:var(--gold);color:var(--bg)}
+.voice{border:1px dashed var(--todo-line);border-radius:14px;background:var(--todo-bg);overflow:hidden}
+.voice-h{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);padding:14px 16px 0}
+.voice-note{margin:4px 16px 0;font-size:14px;color:var(--muted)}
+.voice-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px 16px 14px;font-size:15.5px}
+.pause{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 10px}
+.img{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+.img summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:14.5px;color:var(--gold)}
+.img-note{margin:0 0 10px;font-size:14px}
+.img-row{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.lang{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);padding-top:3px}
+.img-text{font-size:14px;overflow-wrap:anywhere}
+.copy.small{grid-column:2;width:auto;justify-self:start;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px}
+.img-hint{margin:0;padding:8px 0 12px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+.foot{color:var(--muted);font-size:13px;padding-top:20px}
+.krug{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:14px 16px 16px;display:grid;gap:12px}
+.krug-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.krug-title{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.krug-note{font-size:12.5px;color:var(--muted)}
+.k-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.k{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.ring{width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.k-body{display:grid;gap:3px;min-width:0}
+.k-when{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.k-t{font-weight:600;font-size:15px}
+.k-say{margin:0;font-size:15px;overflow-wrap:anywhere}
+.k-hint{margin:0;font-size:13.5px;color:var(--muted)}
+.guide{padding-block:32px 12px;border-bottom:1px solid var(--line);display:grid;gap:14px;scroll-margin-top:80px}
+.guide h2{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:30px;font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+.guide>p{margin:0;max-width:60ch}
+.rows{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.row{display:grid;grid-template-columns:minmax(96px,30%) 1fr;gap:4px 14px;padding:11px 14px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row dt{font-weight:600;font-size:14.5px}
+.row dd{margin:0;font-size:15px}
+.more{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+.more summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:14.5px;color:var(--gold)}
+.more summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.more-body{padding:0 0 14px;display:grid;gap:8px;font-size:15px}
+.more-body h3{margin:8px 0 0;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.more-body p{margin:0}
+.more-body ul{margin:0;padding-left:18px;display:grid;gap:4px}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+.num{font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--todo-line);color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+.why{margin:0;font-size:15px;color:var(--ink);max-width:62ch}
+.rub{margin:16px 0 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.rub .row{grid-template-columns:44px minmax(110px,32%) 1fr}
+.rub .d{font-weight:700;font-size:14.5px}
+.rub .h{font-weight:600;font-size:14.5px;color:var(--gold);overflow-wrap:anywhere}
+.rub .w{font-size:14.5px}
+@media (max-width:420px){.rub .row{grid-template-columns:36px 1fr}.rub .w{grid-column:2}}
+.k-when .series{color:var(--gold);font-weight:600}
+.weeks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wk{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:12px 14px;display:grid;gap:4px}
+.wk-d{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.wk-t{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:600;line-height:1.15}
+.wk p{margin:0;font-size:15px}
+
+html,body{margin:0}
+.back{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:14px;font-weight:600;color:var(--gold);text-decoration:none}
+.back:hover{text-decoration:underline}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="plany-453ad0ea.html">← Все контент-планы</a>
+  <div class="top">
+    <div class="eyebrow">ВРЕМЯ ПРОБУЖДЕНИЯ с ИРИНОЙ</div><div class="range">5 – 11 октября 2026</div>
+    <h1>Куда утекают твои силы</h1>
+    <p class="lead">Сквозная тема недели: режим выживания и утечки сил. Семь постов, по одному в день, к каждому дню три кружочка и промт для картинки. Под каждым постом кнопка, которая копирует текст, чтобы вставить его в Telegram.</p>
+    <div class="rules">
+      <div><b>Почему эта тема.</b> В сентябре в канале были занятость, тревога, осенний урожай, равноденствие, а на прошлой неделе деньги. Неделя про деньги закончилась мыслью «деньги утекают из состояния». Теперь разбираем, куда утекает само состояние. В октябре сил у женщин меньше всего: день короче, а впереди «успеть всё до Нового года». 7 октября в клубе эфир про состояние и энергочистка, а тест «Про твоё состояние» в канале ещё не звучал.</div>
+      <div><b>Кружочки:</b> утром «Число дня», днём к посту, вечером серия «Утечки сил»: каждый вечер одна утечка и как её закрыть, в воскресенье итог. Серия возвращает: хочется досмотреть до конца. Каждый кружок до минуты, текст — подсказка, говори своими словами. Под кружком серым написан его смысл.</div>
+      <div><b>Число дня</b> посчитано так же, как в твоих постах: сумма всех цифр даты с годом (1.10.2026 → 12 → 3). Сверь.</div>
+      <div><b>На диагностику зовём только в среду и субботу</b>, и в постах, и в кружочках.</div>
+      <div><b>Клуб</b> везде называем так: закрытый клуб «МОЁ СОСТОЯНИЕ» — в кавычках и заглавными буквами.</div>
+      <div>Жёлтые блоки «Перед публикацией» — что сделать до того, как выложить пост.</div>
+    </div>
+    <dl class="rub" aria-label="Рубрики недели">
+      <div class="row"><dt class="d">Пн</dt><dd class="h">#тема_недели</dd><dd class="w">Открываем тему, тест про состояние</dd></div>
+      <div class="row"><dt class="d">Вт</dt><dd class="h">#практика</dd><dd class="w">Найти свои трещины, практика голосом</dd></div>
+      <div class="row"><dt class="d">Ср</dt><dd class="h">#кейс</dd><dd class="w">История клиентки, зовём на диагностику</dd></div>
+      <div class="row"><dt class="d">Чт</dt><dd class="h">#спрашивают</dd><dd class="w">Ответ на частый вопрос про усталость</dd></div>
+      <div class="row"><dt class="d">Пт</dt><dd class="h">#послание</dd><dd class="w">Карта «Две жизни»: где брать силы</dd></div>
+      <div class="row"><dt class="d">Сб</dt><dd class="h">#моя_история</dd><dd class="w">Личный пост с твоим фото, зовём на диагностику</dd></div>
+      <div class="row"><dt class="d">Вс</dt><dd class="h">#сериал</dd><dd class="w">«Записки дневника обычной женщины»</dd></div>
+    </dl>
+  </div>
+  <nav class="days" aria-label="Дни недели"><a class="chip" href="#mon"><span>Пн</span><small>05.10</small></a><a class="chip" href="#tue"><span>Вт</span><small>06.10</small></a><a class="chip" href="#wed"><span>Ср</span><small>07.10</small></a><a class="chip" href="#thu"><span>Чт</span><small>08.10</small></a><a class="chip" href="#fri"><span>Пт</span><small>09.10</small></a><a class="chip" href="#sat"><span>Сб</span><small>10.10</small></a><a class="chip" href="#sun"><span>Вс</span><small>11.10</small></a><a class="chip" href="#oktyabr"><span>Октябрь</span><small>темы дальше</small></a><a class="chip" href="#krug"><span>Кружки</span><small>как снимать</small></a></nav>
+<section class="day" id="mon">
+<header class="day-h"><div class="when"><span class="dname">Понедельник</span><span class="date">05.10</span></div>
+<div class="tags"><span class="tag">#тема_недели</span><span class="tag">День учителя</span><span class="num">число дня 7</span></div></header>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Проверь, что тест про состояние открывается.</li><li>Сегодня День учителя. Если вчера в кружке обещала рассказать, как была учительницей, дневной кружок как раз про это.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir0">Женщина 40–45 лет славянской внешности вечером сидит на пуфе в прихожей в осеннем пальто, одна туфля снята, голова откинута к стене, глаза закрыты, усталое лицо, в руке ключи, у ног пакет с продуктами, тёплый свет торшера, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir0">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie0">A Slavic woman in her early 40s sits on a pouf in the hallway in the evening, still wearing her autumn coat, one shoe off, head leaning back against the wall, eyes closed, tired face, keys in her hand, a grocery bag at her feet, warm floor-lamp light, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie0">Скопировать</button></div>
+<p class="img-hint">В ChatGPT подходит любой. Русский — ещё для Шедеврума и Кандинского, английский — для Midjourney.</p></details>
+<div class="post"><div class="post-text" id="t0">#тема_недели
+
+КУДА УТЕКАЮТ ТВОИ СИЛЫ
+
+Скажи честно: когда ты в последний раз просыпалась отдохнувшей? 🍂
+
+Не «нормально поспала». А открыла глаза, и внутри сила, желание, лёгкость.
+
+Если вспомнить не получается, проверь, узнаёшь ли ты себя:
+
+— просыпаешься, а внутри уже список дел и тяжесть;
+— выходные не восстанавливают, а отпуска хватает на три дня;
+— всё держишь под контролем, потому что «если не я, то кто»;
+— можешь сорваться на детей или мужа из-за мелочи, а потом грызёшь себя;
+— живёшь с мыслью «вот закончу это и отдохну». Но «это» не заканчивается никогда.
+
+Родная, это не характер и не возраст. И даже не осень, хотя осенью это видно сильнее всего.
+Это режим выживания.
+
+На прошлой неделе мы говорили, что деньги утекают не из кошелька, а из состояния. А сегодня я спрошу: куда утекает само состояние?
+
+Силы уходят не на дела. Дела — честная трата: сделала, устала, отдохнула, восстановилась.
+Силы утекают туда, где ты их не замечаешь:
+💭 в тревогу и попытки всё предусмотреть;
+💭 в обиды, которые ты прокручиваешь по ночам;
+💭 в чужие эмоции и задачи, которые ты взяла на себя;
+💭 в вину за каждую минуту отдыха.
+
+Пока эти трещины открыты, тебя не наполнит ни сон, ни отпуск. Вода льётся и тут же уходит.
+
+Эту неделю мы посвятим тому, чтобы найти твои утечки и закрыть их. Каждый вечер в кружочке — одна утечка и как её закрыть.
+
+Начни прямо сегодня: пройди мой тест «В каком состоянии ты живёшь большую часть времени?». 12 вопросов, и ты увидишь, что забирает твои силы: режим выживания, эмоциональные качели или жизнь для всех, кроме себя.
+👉 <a href="https://rdudkin58.github.io/ira-club/sostoyanie.html" target="_blank" rel="noopener">https://rdudkin58.github.io/ira-club/sostoyanie.html</a>
+
+А на сколько процентов заряжена твоя батарейка прямо сейчас? Напиши цифру в комментариях 🤍</div>
+<button class="copy" type="button" data-t="t0" id="c0">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Число дня: 7</div><p class="k-say">«Доброе утро! Сегодня день семёрки. Семёрка — число тишины и внутреннего голоса. День не бежать, а прислушаться. И это лучшее начало для нашей недели, потому что она про то, куда утекают твои силы. А утечку не закроешь, пока её не услышишь. Задание на сегодня: три раза за день остановись и спроси себя: „Как я сейчас?“ Не „что надо сделать“, а „как я“».</p><p class="k-hint">Число посчитано, как ты считаешь в постах: все цифры даты с годом, 5.10.2026 → 16 → 7. Смысл: утечку не закрыть, пока её не замечаешь.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · День учителя</div><div class="k-t">Перемена</div><p class="k-say">«Сегодня День учителя. А я ведь по образованию учитель начальных классов. И знаешь, что я помню лучше всего? Перемены. Звенит звонок, и дети бегут, смеются, отдыхают. Никто не говорит первокласснику: „Перемену надо заслужить“. Это правило: позанимался — отдохни. А теперь скажи честно: когда у тебя последний раз была перемена? Сегодня поставь себе три будильника и устрой три перемены по пять минут. Это не лень. Это школьное правило».</p><p class="k-hint">Смысл: отдых — не награда, а часть ритма. Детям его дают по правилу, а взрослая женщина отнимает его у себя сама.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер · <span class="series">серия «Утечки сил»</span></div><div class="k-t">Утечка 1. Не замечать, что ты на нуле</div><p class="k-say">«Когда у телефона остаётся десять процентов, ты сразу ищешь зарядку. А когда десять процентов у тебя самой, ты это замечаешь? Чаще всего нет. Ты просто сильнее сжимаешь зубы и делаешь дальше. Это первая утечка сил: жить на автопилоте и не спрашивать себя, как ты. Сегодня перед сном спроси: на сколько процентов я сейчас? И что разрядило меня сильнее всего? Ничего не исправляй. Просто заметь. Завтра будем искать, где трещина».</p><p class="k-hint">Серия недели: каждый вечер одна утечка и как её закрыть, в воскресенье итог.</p></div></li>
+</ol></div>
+</section>
+<section class="day" id="tue">
+<header class="day-h"><div class="when"><span class="dname">Вторник</span><span class="date">06.10</span></div>
+<div class="tags"><span class="tag">#практика</span><span class="num">число дня 8</span></div></header>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Под постом текст практики для голоса. Наговори его голосовым сообщением, медленно и с паузами, и выложи сразу после поста: в кружок практика не влезет.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir1">Глиняный кувшин с тонкой трещиной стоит на льняной скатерти у окна, из трещины по капле сочится вода, женские ладони бережно обнимают кувшин, рядом осенние листья, утренний свет, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir1">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie1">A clay jug with a thin crack stands on a linen tablecloth by the window, water slowly seeping drop by drop through the crack, a woman's hands gently holding the jug, autumn leaves nearby, morning light, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie1">Скопировать</button></div>
+<p class="img-hint">В ChatGPT подходит любой. Русский — ещё для Шедеврума и Кандинского, английский — для Midjourney.</p></details>
+<div class="post"><div class="post-text" id="t1">#практика
+
+ГДЕ У ТЕБЯ ТРЕЩИНА?
+
+Представь, что ты — сосуд 🏺
+Каждое утро он наполняется: сон, чай, солнце, объятия, любимое дело.
+А к обеду он уже пустой. Хотя ничего особенного ты ещё не сделала.
+
+Значит, где-то трещина. И скорее всего, не одна.
+
+Сегодня предлагаю их найти. Займёт 15 минут. Возьми лист и ручку.
+
+1️⃣ Раздели лист на две колонки: «Забирает силы» и «Наполняет».
+Вспомни последние три дня и запиши всё: людей, разговоры, мысли, дела, обещания. Даже мелочи. Особенно мелочи.
+
+2️⃣ Посмотри на колонку «Забирает» и поставь галочку там, где это не твоё. Чужая задача, которую ты взяла, потому что «быстрее самой». Чужое настроение, которое ты весь вечер носила в себе. Обещание, которое ты дала, потому что неудобно отказать.
+
+3️⃣ Выбери одну трещину, которую закроешь на этой неделе. Только одну. Одно «нет». Одну задачу, которую отдашь. Одну мысль, которую перестанешь пережёвывать.
+
+4️⃣ А из колонки «Наполняет» выбери что-то одно и подари себе сегодня. Хотя бы 10 минут.
+
+Колонка «Наполняет» почти у всех короче. Иногда в ней всего две строчки. Если у тебя так же, это не приговор. Это честная картинка, с которой уже можно работать 🤍
+
+Ниже практика голосом ⬇️ Включи её, когда будет 5 минут тишины. В ней мы вернём силы, которые ты оставила в чужих делах и разговорах.
+
+Напиши в комментариях: какую одну трещину ты закроешь на этой неделе?</div>
+<button class="copy" type="button" data-t="t1" id="c1">Скопировать текст</button></div>
+<div class="voice"><div class="voice-h">Текст для голоса</div><p class="voice-note">Не для публикации текстом: наговори это голосовым сообщением, медленно, с паузами. Займёт около 4–5 минут.</p><div class="voice-text" id="v1">Привет, родная. Устройся удобно. Если можешь, закрой глаза.
+
+Сделай глубокий вдох… и медленный выдох. Ещё раз. Почувствуй опору под собой: стул, диван, пол. Тебя держат. Можно немного расслабиться.
+
+<span class="pause">пауза</span>
+
+Представь, что внутри тебя сосуд. Посмотри, какой он. Глиняный, стеклянный, хрустальный — какой увидится. И посмотри, сколько в нём сейчас воды. До краёв? Половина? Или только на донышке? Просто заметь, без оценки.
+
+<span class="pause">пауза</span>
+
+А теперь посмотри внимательнее на стенки. Где-то есть трещина, через которую уходит вода. Посмотри, куда она ведёт. Может быть, к человеку. К разговору, после которого тебе было тяжело. К делу, которое ты взяла на себя, хотя оно не твоё. К старой обиде. К тревоге о будущем.
+
+<span class="pause">пауза</span>
+
+Пусть придёт одна картинка. Самая сильная.
+Посмотри на неё спокойно. Тебе не нужно сейчас ничего решать. Ты просто видишь: вот сюда уходят мои силы.
+
+<span class="pause">пауза</span>
+
+А теперь скажи про себя, медленно: «Я вижу, куда уходят мои силы. Я забираю свою силу обратно. И возвращаю тебе то, что твоё».
+
+Представь, как из этой ситуации, от этого человека к тебе возвращается свет. Тёплый, золотой. Он входит в тебя с каждым вдохом. А всё чужое — чужая тревога, чужие ожидания, чужая ответственность — уходит с выдохом туда, где ему место.
+
+Вдох — забираю своё. Выдох — отдаю чужое.
+
+<span class="pause">пауза</span>
+
+Ещё раз. Вдох — забираю своё. Выдох — отдаю чужое.
+
+<span class="pause">пауза</span>
+
+Теперь посмотри на трещину. Положи на неё ладонь, как будто гладишь. И представь, как она затягивается. Медленно, бережно. Как заживает царапина.
+
+<span class="pause">пауза</span>
+
+Посмотри, как наполняется твой сосуд. Золотой свет поднимается выше и выше. До середины. Ещё выше. До краёв.
+Побудь в этом. Почувствуй, где в теле сейчас тепло.
+
+<span class="pause">пауза</span>
+
+Скажи себе: «Мои силы — мои. Я имею право беречь их. Я имею право наполняться».
+
+<span class="pause">пауза</span>
+
+Сделай глубокий вдох… выдох. Пошевели пальцами рук и ног. И когда будешь готова, открой глаза.
+
+Напиши мне в комментариях, какую картинку ты увидела. Я прочитаю каждую 🤍</div>
+<button class="copy" type="button" data-t="v1">Скопировать текст для голоса</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Число дня: 8</div><p class="k-say">«Доброе утро! Сегодня день восьмёрки. Восьмёрка — число силы и управления. Но сила восьмёрки не в том, чтобы тащить всё на себе. Она в том, чтобы решать, куда пойдёт твоя энергия. Как хорошая хозяйка решает, на что потратить деньги. Задание на сегодня: вычеркни из списка одно дело. Отдай, перенеси или откажись. И заметь, что почувствуешь: вину или облегчение».</p><p class="k-hint">6.10.2026 → 17 → 8. Смысл: сила — это управление, а не выносливость.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">Моя трещина</div><p class="k-say">«Я сделала практику из поста сама. И знаешь, какая у меня самая большая трещина? __. Да, даже у психолога они есть. Найти свою утечку не стыдно, это первый шаг, чтобы её закрыть. Сделай практику и ты: там 15 минут и голосовое под постом. А потом напиши, какую трещину закроешь на этой неделе».</p><p class="k-hint">Расскажи свою настоящую утечку. Например, телефон и привычка сразу всем отвечать, как в твоём посте 14 сентября, когда сгорел обед. Личный пример сильнее любого совета.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер · <span class="series">серия «Утечки сил»</span></div><div class="k-t">Утечка 2. Чужое</div><p class="k-say">«Вторая утечка сил — чужое. Чужое настроение, которое ты принесла домой после разговора. Чужая задача, которую ты взяла, потому что „быстрее самой“. Ты несёшь это, как тяжёлые сумки, только невидимые. Давай отдадим. Вспомни, чьё ты сегодня несла. Представь этого человека и скажи про себя: „Я возвращаю тебе твоё. И забираю своё“. На выдохе отдаёшь, на вдохе забираешь. Три раза. Чувствуешь, стало легче?»</p><p class="k-hint">Смысл: устаёшь не от своего, а от чужого, взятого на себя.</p></div></li>
+</ol></div>
+</section>
+<section class="day" id="wed">
+<header class="day-h"><div class="when"><span class="dname">Среда</span><span class="date">07.10</span></div>
+<div class="tags"><span class="tag">#кейс</span><span class="tag">эфир клуба 11:00</span><span class="num">число дня 9</span><span class="tag cta">зовём на диагностику</span></div></header>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Кейс из твоего поста от 29 апреля (бабушка выживала в войну). Сверь детали, имени клиентки нет.</li><li>В P.S. эфир клуба в 11:00 и цена, как в твоём посте 30 сентября.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir2">Старая выцветшая фотография молодой женщины в платке в деревянной рамке стоит на комоде, рядом кружевная салфетка, чашка чая и веточка рябины, женская рука бережно касается рамки, тёплый осенний свет, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir2">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie2">An old faded photograph of a young woman in a headscarf in a wooden frame on a dresser, a lace doily, a cup of tea and a sprig of rowan berries beside it, a woman's hand gently touching the frame, warm autumn light, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie2">Скопировать</button></div>
+<p class="img-hint">В ChatGPT подходит любой. Русский — ещё для Шедеврума и Кандинского, английский — для Midjourney.</p></details>
+<div class="post"><div class="post-text" id="t2">#кейс
+
+ОНА НЕ УМЕЛА РАССЛАБЛЯТЬСЯ.
+ПОТОМУ ЧТО КОГДА-ТО ЭТО БЫЛО ОПАСНО ДЛЯ ЖИЗНИ
+
+Ко мне пришла женщина, которая постоянно срывалась на мужа и детей.
+Она говорила: «Я же живая, я не могу всё держать в себе».
+А после каждой ссоры приходила вина. Она заедала её, плохо спала, а утром всё начиналось по кругу.
+
+Со стороны это выглядело как характер: «вспыльчивая», «нервная».
+Но когда мы начали работать, нашлось другое.
+
+Её бабушка выживала в войну. И передала дальше то, что тогда спасало жизнь: «Расслабляться опасно».
+А мама каждый день жаловалась на судьбу. И девочка усвоила: быть живой — значит страдать.
+
+Представляешь? Взрослая женщина в мирной жизни, с мужем и детьми, жила так, будто вокруг война. Тело всё время в напряжении, психика всё время начеку. И любая мелочь становилась последней каплей.
+
+Это и есть режим выживания. И очень часто он даже не твой. Он из рода.
+
+Мы убрали эти заряды, первопричины.
+И она начала чувствовать эмоции, но не застревать в них. Раздражение приходит и уходит, а внутри остаётся спокойствие. Изменилась она, и изменились отношения дома.
+
+Если ты узнаёшь себя, если не можешь расслабиться даже тогда, когда всё хорошо, возможно, это тоже не твой характер. Это старая программа, и её можно убрать.
+
+Напиши мне слово ДИАГНОСТИКА 👉 @IrinaDudkina
+Бесплатно, 40 минут. Найдём, откуда у тебя этот режим выживания, и я покажу, что с этим делать. Без давления: решение всегда за тобой.
+
+P.S. Сегодня в 11:00 в закрытом клубе «МОЁ СОСТОЯНИЕ» эфир про состояние и энергочистка. Энергочистку я провожу только вживую, в записи её не будет. До 31 октября участие в клубе — 1 300 ₽ в месяц 👉 <a href="https://rdudkin58.github.io/ira-club/" target="_blank" rel="noopener">https://rdudkin58.github.io/ira-club/</a> 🤍</div>
+<button class="copy" type="button" data-t="t2" id="c2">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро · до 10:30</div><div class="k-t">Число дня: 9 и энергочистка</div><p class="k-say">«Доброе утро! Сегодня день девятки. Девятка — число завершения: день отпускать то, что отжило. И как раз сегодня в 11:00 в закрытом клубе „МОЁ СОСТОЯНИЕ“ энергочистка. Смотри: душ ты принимаешь каждый день. А своё состояние, своё поле не чистишь годами. Хотя в нём оседает всё: чужие слова, тревога, обиды. Если ты в клубе, будь онлайн. Энергочистку я провожу только вживую, в записи её не будет».</p><p class="k-hint">7.10.2026 → 18 → 9. Смысл: чистка — такая же гигиена, как душ, только для состояния.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">После эфира</div><div class="k-t">Одна мысль с эфира</div><p class="k-say">«Только что закончился эфир про состояние. Одна мысль, которую я хочу, чтобы услышала и ты: __».</p><p class="k-hint">Без подробностей про участниц. Например, что чаще всего забирает силы у женщин, которые были на эфире.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер · <span class="series">серия «Утечки сил»</span> <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Утечка 3. «Расслабляться опасно»</div><p class="k-say">«Третья утечка сил досталась тебе от рода. Сегодня я рассказала про женщину, которая не могла расслабиться, потому что её бабушка выживала в войну. Проверь себя прямо сейчас: что ты чувствуешь, когда ничего не делаешь? Покой? Или вину и тревогу, будто сейчас что-то случится? Если второе, это не характер. Это сценарий, и он даже не твой. Его можно убрать. Напиши мне слово ДИАГНОСТИКА: 40 минут, бесплатно, найдём, откуда он».</p><p class="k-hint">Смысл: режим выживания часто передаётся по роду. Это не слабость.</p></div></li>
+</ol></div>
+</section>
+<section class="day" id="thu">
+<header class="day-h"><div class="when"><span class="dname">Четверг</span><span class="date">08.10</span></div>
+<div class="tags"><span class="tag">#спрашивают</span><span class="num">число дня 1</span></div></header>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Клиентка с болями в шее — из твоего поста от 16 мая («Тело не врёт»). Сверь детали.</li><li>Если решишь провести открытый эфир сегодня в 19:00, вечером запиши кружок «Через час эфир», а «Утечку 4» — после эфира. План эфиров — в канале «Задачи Клоду» от 30 сентября.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir3">Женщина 40–45 лет утром сидит на краю кровати в мягкой пижаме, одной рукой держится за шею, глаза полузакрыты, усталое лицо, на тумбочке стакан воды, за окном серое осеннее утро, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir3">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie3">A woman in her early 40s sits on the edge of her bed in the morning in soft pajamas, one hand on the back of her neck, eyes half closed, tired face, a glass of water on the nightstand, grey autumn morning outside the window, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie3">Скопировать</button></div>
+<p class="img-hint">В ChatGPT подходит любой. Русский — ещё для Шедеврума и Кандинского, английский — для Midjourney.</p></details>
+<div class="post"><div class="post-text" id="t3">#спрашивают
+
+«Ирина, я сплю по восемь часов, а просыпаюсь уставшей. Почему?»
+
+Ох, как часто я это слышу 🤍
+
+Смотри. Сон восстанавливает тело. Но если днём ты не прожила то, что с тобой случилось, ночью психика доделывает эту работу за тебя.
+Непроговорённая обида. Невыплаканные слёзы. Тревога, с которой ты весь день «держала лицо». Разговор, который ты мысленно ведёшь уже в десятый раз.
+Тело лежит, а внутри идёт ночная смена. Утром ты и встаёшь, как после неё.
+
+И тело об этом говорит. Очень честно.
+
+У меня была клиентка, 45 лет. Пришла с постоянной усталостью, болями в шее и мигренями. Врачи разводили руками: «Здорова».
+Когда мы начали работать, всё стало понятно. Шея болела, потому что она тащила всё на себе. Голова — потому что она не разрешала себе отдыхать.
+
+Тело не врёт. Оно говорит то, о чём ты молчишь.
+
+Что можно сделать уже сегодня, за 10 минут до сна:
+1️⃣ Возьми лист и выпиши всё, что крутится в голове: дела, обиды, страхи. Не красиво, а как есть. Пусть это полежит на бумаге, а не в тебе.
+2️⃣ Спроси себя: какое чувство я сегодня не прожила? И просто назови его: «Мне было обидно». «Мне было страшно».
+3️⃣ Положи ладонь туда, где в теле больше всего напряжения, и скажи: «Я тебя слышу. Сейчас можно отдыхать».
+
+Попробуй так неделю и посмотри, как ты будешь просыпаться.
+
+А ты как просыпаешься? Напиши в комментариях: отдохнувшей или «как будто не спала»?</div>
+<button class="copy" type="button" data-t="t3" id="c3">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Число дня: 1</div><p class="k-say">«Доброе утро! Сегодня день единицы. Единица — число „я“, число начала и первого шага. И я предлагаю тебе маленькую революцию: первое, что ты сделаешь сегодня, сделай для себя. Не кофе мужу, не ответ в рабочий чат, не завтрак детям. Пять минут для себя. Посмотри, как от этого изменится весь день».</p><p class="k-hint">8.10.2026 → 19 → 1. Смысл: когда ты в самом конце своего списка, силы до тебя просто не доходят.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">Тело не врёт</div><p class="k-say">«Спорим, у тебя сейчас напряжены плечи? Опусти их. Вот так. А теперь положи руку туда, где в теле больше всего напряжения. Шея? Голова? Спина? И спроси: „Что ты хочешь мне сказать?“ У моей клиентки шея болела, потому что она тащила всё на себе. А голова — потому что она не разрешала себе отдыхать. Тело первым показывает, где утекают силы. Просто послушай его».</p><p class="k-hint">Смысл: тело замечает утечку раньше головы. Клиентка та же, что в посте, без имени.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер · <span class="series">серия «Утечки сил»</span></div><div class="k-t">Утечка 4. Непрожитое</div><p class="k-say">«Четвёртая утечка — непрожитое за день. Ты весь день держала лицо: на работе, с мамой, с детьми. А чувства никуда не делись. Они ждут ночи, и ночью психика доделывает работу за тебя. Давай отпустим сейчас. Положи руку на грудь. Вдохни. И на выдохе скажи про себя: „Я отпускаю этот день“. Ещё раз. И ещё. Всё, что не успела, подождёт до утра. А ты сейчас отдыхай».</p><p class="k-hint">Смысл: ночь не для того, чтобы доживать день.</p></div></li>
+</ol></div>
+</section>
+<section class="day" id="fri">
+<header class="day-h"><div class="when"><span class="dname">Пятница</span><span class="date">09.10</span></div>
+<div class="tags"><span class="tag">#послание</span><span class="num">число дня 2</span></div></header>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>В комментариях отвечай каждой посланием её карты.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary><p class="img-note">Если есть фото твоей колоды «Две жизни» (одна карта рубашкой вверх), лучше взять его.</p>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir4">Колода метафорических карт на деревянном столе, женская рука держит одну карту рубашкой вверх у груди, рядом горящая свеча, чашка травяного чая и гроздь рябины, тёплый вечерний свет, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir4">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie4">A deck of metaphorical cards on a wooden table, a woman's hand holding one card face down close to her chest, a lit candle, a cup of herbal tea and a cluster of rowan berries nearby, warm evening light, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie4">Скопировать</button></div>
+<p class="img-hint">В ChatGPT подходит любой. Русский — ещё для Шедеврума и Кандинского, английский — для Midjourney.</p></details>
+<div class="post"><div class="post-text" id="t4">#послание
+
+Карта недели: где мне брать силы? 🃏
+
+Всю неделю мы искали, куда утекают твои силы. Находили трещины, возвращали своё, отпускали чужое.
+
+А сегодня главный вопрос. Не «куда уходит», а «откуда приходит». Где твой источник?
+
+Спросим об этом не голову, а глубину.
+Колода «Две жизни» создана по мотивам романа Конкордии Антаровой о внутренней силе человека. Её карты помогают услышать то, что ты давно знаешь, но не говоришь себе вслух.
+
+Как получить своё послание:
+1️⃣ Сядь удобно, положи руку на сердце, сделай пару глубоких вдохов.
+2️⃣ Спроси себя: «Где мне сейчас брать силы?»
+3️⃣ Напиши в комментариях любое число от 1 до 60, первое, что пришло.
+
+Я пришлю тебе послание твоей карты. Прочитай его медленно и послушай, что откликнется внутри.
+
+Жду твоё число ⬇️</div>
+<button class="copy" type="button" data-t="t4" id="c4">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Число дня: 2</div><p class="k-say">«Доброе утро! Сегодня день двойки. Двойка — число мягкости и принятия. Сегодня день не „сделать самой“, а принять: помощь, заботу, комплимент. Задание: на любое предложение помощи отвечай „да, спасибо“. Без „да я сама“ и без „не надо, неудобно“. Просто „да, спасибо“. Заметь, как это трудно. И как это наполняет».</p><p class="k-hint">9.10.2026 → 20 → 2. Смысл: «я всё сама» — одна из самых больших утечек. Принимать — тоже источник сил.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">Моя карта</div><p class="k-say">«Я вытянула карту для себя с тем же вопросом: где мне сейчас брать силы? Смотри, что выпало: __. А ты напиши под постом число от 1 до 60, пришлю тебе послание твоей карты».</p><p class="k-hint">Покажи колоду «Две жизни» в кадре.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер · <span class="series">серия «Утечки сил»</span></div><div class="k-t">Утечка 5. Жизнь без удовольствия</div><p class="k-say">«Пятница — день Венеры, планеты удовольствия. И вот пятая утечка сил: жить без удовольствия. Ты думаешь, удовольствие — это награда. Когда всё сделано, тогда можно. А это топливо. Без него ты едешь на пустом баке и удивляешься, почему не едется. Что сегодня даст тебе удовольствие? Не полезное, а приятное. Ванна, музыка, вкусный чай, танец на кухне. Сделай это до сна. Просто так».</p><p class="k-hint">Смысл: удовольствие — источник сил, а не награда за труды.</p></div></li>
+</ol></div>
+</section>
+<section class="day" id="sat">
+<header class="day-h"><div class="when"><span class="dname">Суббота</span><span class="date">10.10</span></div>
+<div class="tags"><span class="tag">#моя_история</span><span class="num">число дня 3</span><span class="tag cta">зовём на диагностику</span></div></header>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Пост от твоего лица. Проверь, что всё так, и поправь под себя. В пункте 5 вставь своё: прогулка, ванна, музыка, разговор с близкими.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary><p class="img-note">Пост личный, поэтому картинка с твоим лицом. Сделай селфи у окна при дневном свете и загрузи в ChatGPT вместе с промтом.</p>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir5">Возьми моё фото за основу. Лицо сохрани полностью без изменений: черты, форму лица, возраст, цвет глаз и причёску. Сделай реалистичное фото: я сижу у окна в мягком светлом вязаном свитере, держу двумя руками чашку чая, взгляд спокойный, лёгкая улыбка, за окном золотые осенние деревья, мягкий утренний свет, тёплые тона слоновой кости и золота, уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir5">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie5">Use my photo as the base. Keep my face exactly as it is: features, face shape, age, eye colour and hairstyle. Create a realistic photo: I am sitting by a window in a soft light knitted sweater, holding a cup of tea with both hands, calm gaze, gentle smile, golden autumn trees outside, soft morning light, warm ivory and gold tones, cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie5">Скопировать</button></div>
+<p class="img-hint">В ChatGPT подходит любой. Русский — ещё для Шедеврума и Кандинского, английский — для Midjourney.</p></details>
+<div class="post"><div class="post-text" id="t5">#моя_история
+
+ЧТО Я ДЕЛАЮ, КОГДА У МЕНЯ САМОЙ НЕТ СИЛ
+
+Думаешь, у психолога не бывает плохих дней? 😉
+Бывают. И у меня тоже.
+
+Бывает, просыпаюсь, и всё не так. Тяжело, тревожно, ничего не хочется. В такие дни и мне хочется себя отругать: «Ты же психолог, ты должна быть в ресурсе». Но я знаю: от этого становится только хуже.
+
+Поэтому я делаю по-другому. Расскажу честно, по шагам.
+
+1️⃣ Я признаю. Говорю себе: «Да, мне сейчас плохо. Я устала». Не борюсь и не делаю вид, что всё хорошо. Это первое и самое важное.
+
+2️⃣ Я останавливаюсь. Минута тишины: сажусь, глаза открыты, просто смотрю, как идут мысли. Не держу их и не гоню. Это из раджа-йоги, и это возвращает меня быстрее всего.
+
+3️⃣ Я ищу, где утечка. Спрашиваю себя: «Что я взяла чужого? Где сказала „да“, когда хотела сказать „нет“? Что я не прожила?» Почти всегда ответ приходит сразу.
+
+4️⃣ Я убираю лишнее. Отменяю то, что можно отменить. Без вины. Мир не рухнет, если я перенесу одну встречу.
+
+5️⃣ Я наполняюсь. __
+
+Плохие дни бывают у всех. Разница в том, сколько ты в них живёшь: день или годы.
+
+И если плохие дни у тебя давно уже не дни, а месяцы, если силы не возвращаются ни после отпуска, ни после практик, значит, дело глубже. В корне, до которого практикой не дотянуться.
+
+Для этого и нужна диагностика. Мы находим, откуда утекает твоё состояние, и я показываю, что можно убрать.
+
+Напиши мне слово ДИАГНОСТИКА 👉 @IrinaDudkina
+40 минут, бесплатно. Без давления: после диагностики ты сама решаешь, что дальше 🤍</div>
+<button class="copy" type="button" data-t="t5" id="c5">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Число дня: 3</div><p class="k-say">«Доброе утро! Сегодня день тройки — число голоса и самовыражения. И вот о чём я хочу сказать: невысказанное тоже забирает силы. Каждое „промолчу, чтобы не ссориться“ остаётся внутри и тянет энергию. Сегодня скажи вслух одну вещь, которую давно держишь в себе. Не обязательно тому человеку. Можно себе: в машине, в душе, на прогулке. А можно просто спеть. Голос — это выход».</p><p class="k-hint">10.10.2026 → 12 → 3. Смысл: всё несказанное копится внутри.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День</div><div class="k-t">Как я наполняюсь</div><p class="k-say">«Покажу, как я провожу субботу, когда хочу наполниться: __. И одно правило, которое я себе разрешила: __».</p><p class="k-hint">Сними по ходу дня то, что у тебя правда есть: прогулку, чай, плед, музыку. Правило — например, до обеда никаких дел. Удобно снять в тот же день, что и селфи к посту.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер · <span class="series">серия «Утечки сил»</span> <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Утечка 6. «Потом»</div><p class="k-say">«Шестая утечка — „потом“. Отдохну в отпуске. Займусь собой, когда дети вырастут. Уйду с этой работы, когда будет подушка. А теперь посчитай, сколько лет ты уже живёшь в „потом“. Отложенная жизнь — самая дорогая утечка, потому что её не вернуть. Если чувствуешь, что застряла, приходи на диагностику. 40 минут, бесплатно. Найдём, что держит тебя в „потом“. Напиши мне слово ДИАГНОСТИКА».</p><p class="k-hint">Пендаль недели. Смысл: «потом» — это время, которое уходит прямо сейчас.</p></div></li>
+</ol></div>
+</section>
+<section class="day" id="sun">
+<header class="day-h"><div class="when"><span class="dname">Воскресенье</span><span class="date">11.10</span></div>
+<div class="tags"><span class="tag">#сериал</span><span class="num">число дня 4</span></div></header>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Серия подводит к неделе про отношения: героине предстоит разговор с мужем.</li></ul></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir6">Открытый бумажный дневник с ручкой на смятом одеяле, рядом чашка какао и вязаный плед, на подоконнике маленькая тыква и осенние листья, воскресное утреннее солнце, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, вертикальный кадр 4:5</div><button class="copy small" type="button" data-t="ir6">Скопировать</button></div>
+<div class="img-row"><span class="lang">EN</span><div class="img-text" id="ie6">An open paper diary with a pen lying on a rumpled duvet, a cup of cocoa and a knitted blanket beside it, a small pumpkin and autumn leaves on the windowsill, Sunday morning sun, realistic photo, soft natural light, warm ivory and gold tones, calm cozy mood, no text, no logos, vertical 4:5</div><button class="copy small" type="button" data-t="ie6">Скопировать</button></div>
+<p class="img-hint">В ChatGPT подходит любой. Русский — ещё для Шедеврума и Кандинского, английский — для Midjourney.</p></details>
+<div class="post"><div class="post-text" id="t6">#сериал
+
+ЗАПИСКИ ДНЕВНИКА ОБЫЧНОЙ ЖЕНЩИНЫ
+
+Сегодня воскресенье. И сегодня я провела эксперимент: до обеда ничего не делать 🍂
+
+Звучит смешно, да? Как будто это легко.
+
+Я проснулась в восемь. Первая мысль была не «как хорошо, выходной», а «надо закинуть стирку». Я заставила себя остаться в кровати.
+Через десять минут: «В холодильнике пусто». Я осталась.
+Ещё через пять: «Мама просила позвонить».
+А потом я услышала её голос. Так ясно, будто она стояла в дверях: «Чего разлеглась? Дел полно».
+
+И я вдруг заплакала.
+
+Потому что вспомнила: мама никогда не лежала. Ни в выходной, ни когда болела. Она всегда была уставшей и всегда на ногах. И я с детства знала: хорошая женщина устаёт. Если не устала, значит, плохо старалась.
+
+Я всю жизнь доказывала, что я хорошая. Своей усталостью.
+
+Я лежала и плакала, а потом стало тихо. Я смотрела, как солнце медленно ползёт по стене. И вдруг почувствовала то, чего не чувствовала очень давно. Не «отдохнула, чтобы потом сделать больше». А просто: мне хорошо. Здесь. Сейчас.
+
+Встала я в двенадцать. Стирка подождала. Холодильник подождал. Мир не рухнул.
+
+Потом я написала на стикере и приклеила на зеркало: «Мне можно отдыхать. Просто так».
+
+Вечером муж спросил: «Что с тобой? Ты какая-то другая». А я не знала, что ответить. Кажется, нам предстоит разговор. И впервые за много лет я не скажу ему «всё нормально».
+
+Продолжение следует…</div>
+<button class="copy" type="button" data-t="t6" id="c6">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">Утро</div><div class="k-t">Число дня: 4</div><p class="k-say">«Доброе утро! Сегодня день четвёрки. Четвёрка — число опоры и порядка. Хороший день, чтобы навести порядок. Только не в шкафу, а в неделе. Открой календарь на следующую неделю и впиши туда три перемены для себя. Прямо как встречи, со временем. Отдых, которого нет в расписании, обычно не случается».</p><p class="k-hint">11.10.2026 → 13 → 4. Смысл: силам нужна опора, отдых тоже планируют.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">День · после поста</div><div class="k-t">«Чего разлеглась?»</div><p class="k-say">«Героиня нашего сериала сегодня услышала мамин голос: „Чего разлеглась?“ А какая фраза звучит у тебя в голове, когда ты отдыхаешь? „Лентяйка“? „Сначала дела“? „Отдыхать будешь на пенсии“? Напиши её в комментариях. Когда видишь такую фразу написанной, она теряет половину силы. Потому что становится видно: это не твой голос».</p><p class="k-hint">Смысл: вина за отдых — чаще всего чужой голос из детства.</p></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-when">Вечер · <span class="series">серия «Утечки сил»</span></div><div class="k-t">Итог недели</div><p class="k-say">«Неделя про силы закончилась. Мы нашли шесть утечек: не замечать, что ты на нуле; нести чужое; родовое „расслабляться опасно“; непрожитое за день; жизнь без удовольствия и „потом“. Какая из них твоя? Напиши номер в комментариях. И одна мысль, которую я хочу, чтобы ты унесла с собой: ты не батарейка, которую надо добить до нуля. Ты сосуд, который можно наполнять. А со следующей недели говорим про отношения».</p><p class="k-hint">Номера в комментариях покажут, какую утечку разобрать подробнее в следующих кружках.</p></div></li>
+</ol></div>
+</section>
+<section class="guide" id="oktyabr">
+  <h2>Дальше по октябрю</h2>
+  <p>Предлагаю вести канал вслед за эфирами клуба: каждую неделю та же сфера, что в среду на эфире. Тогда посты прогревают к клубу сами, без отдельной продажи.</p>
+  <ol class="weeks">
+    <li class="wk"><span class="wk-d">12–18 октября</span><span class="wk-t">Почему рядом с ним я теряю себя</span><p>Отношения. 14.10 эфир клуба про отношения и Покров, когда по традиции просили о женихе. Тест «Про твои отношения». Если решишь проводить розыгрыш 12–18.10, он ложится сюда.</p></li>
+    <li class="wk"><span class="wk-d">19–25 октября</span><span class="wk-t">Разрешить себе иметь</span><p>Деньги глубже: денежный потолок, страх больших денег, «стыдно брать». 21.10 эфир клуба про деньги и день, когда участниц розыгрыша зовём на диагностику и в клуб.</p></li>
+    <li class="wk"><span class="wk-d">26 октября – 1 ноября</span><span class="wk-t">Выйти из тени</span><p>Реализация и страх проявляться. 28.10 эфир клуба про реализацию, тест «Про твою реализацию». Последняя неделя цены 1 300 ₽ в клубе: здесь можно каждый день по кружку про клуб.</p></li>
+  </ol>
+</section>
+<section class="guide" id="krug">
+  <h2>Кружочки: как снимать</h2>
+  <dl class="rows">
+    <div class="row"><dt>Утро, 8:00–9:30</dt><dd>«Число дня»: число, его смысл и одно задание на день</dd></div>
+    <div class="row"><dt>День, 12:00–14:00</dt><dd>Кружок к посту дня: свой пример, продолжение, вопрос</dd></div>
+    <div class="row"><dt>Вечер, 19:00–21:00</dt><dd>Серия «Утечки сил»: одна утечка и короткая практика</dd></div>
+  </dl>
+  <details class="more"><summary>Как записывать</summary><div class="more-body"><ul>
+    <li>До 60 секунд, одна мысль. Больше мыслей — 2–3 кружка подряд.</li>
+    <li>Первые 3 секунды — зацепка: вопрос или сильная фраза. Без «Всем привет, мои дорогие, сегодня я хочу поговорить…».</li>
+    <li>В ленте кружок часто начинает играть без звука, поэтому первое, что видно, — лицо и эмоция.</li>
+    <li>Свет — лицом к окну, телефон на уровне глаз, вокруг тихо.</li>
+    <li>Оговорилась — улыбнись и продолжай: живость важнее идеальности.</li>
+    <li>В конце — одно действие: реакция, слово или число в комментариях. «ДИАГНОСТИКА» — только в среду и субботу.</li>
+    <li>Подпись к кружку добавить нельзя. Ссылку отправляй следующим сообщением.</li>
+    <li>Можно записать 2–3 кружка утром и поставить на время: удерживай кнопку «Отправить» → «Отправить позже». Но хотя бы один кружок в день — вживую.</li>
+    <li>Если три кружка в день пока тяжело, начни с вечерней серии: она держит всю неделю.</li>
+    <li>Про клиенток — без имён и узнаваемых деталей.</li>
+  </ul></div></details>
+  <p>Шпаргалка с темами про запас, первые фразы и план розыгрыша 12–18 октября — на странице прошлой недели: <a href="nedelya-dengi-2977edfd.html" target="_blank" rel="noopener">«Неделя про деньги»</a>.</p>
+</section>
+  <p class="foot">Все тексты на «ты» и в женском роде. Имена клиенток не упоминаются. Кейсы взяты из твоих постов в канале.</p>
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.dataset.label=btn.textContent;
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.dataset.t);
+    var text=el.innerText;
+    function ok(){btn.textContent='Скопировано';btn.classList.add('done');setTimeout(function(){btn.textContent=btn.dataset.label;btn.classList.remove('done');},2000);}
+    function fallback(){
+      var r=document.createRange();r.selectNodeContents(el);
+      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+      btn.textContent='Текст выделен, скопируй вручную';
+    }
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,fallback);}
+      else fallback();
+    }catch(e){fallback();}
+  });
+});
+</script>
+</body>
+</html>

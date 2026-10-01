@@ -153,41 +153,73 @@ html,body{margin:0}
 .state.now{background:var(--gold);color:var(--bg)}
 .state.past{background:transparent;border:1px solid var(--line);color:var(--muted)}
 
+
+.lock-form{margin-top:24px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);display:grid;grid-template-columns:minmax(0,1fr);gap:10px;max-width:420px}
+.lock-label{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.lock-row{display:flex;gap:8px}
+.lock-row input{flex:1;min-width:0;width:100%;font:500 18px/1.2 "Manrope",system-ui,sans-serif;letter-spacing:.2em;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.lock-row input:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+.lock-row button{flex:0 0 auto;border:0;border-radius:10px;background:var(--gold);color:var(--bg);font:600 15px/1 "Manrope",system-ui,sans-serif;padding:0 18px;cursor:pointer}
+.lock-row button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.lock-row button:disabled{opacity:.7;cursor:progress}
+.lock-err{margin:0;font-size:14px;color:var(--cta)}
+.lock-wait .lock-form{visibility:hidden}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap" id="lock">
   <div class="top">
     <div class="eyebrow">ВРЕМЯ ПРОБУЖДЕНИЯ с ИРИНОЙ</div>
-    <h1>Контент-планы канала</h1>
-    <p class="lead">Планы по неделям: посты с кнопкой «Скопировать», кружочки на каждый день и промты для картинок. Новая неделя появляется сверху.</p>
+    <h1>Закрытая страница</h1>
+    <p class="lead">Здесь контент-планы канала. Введи пароль, чтобы открыть.</p>
   </div>
-  <ul class="plans">
-    <li class="plan"><a href="nedelya-sily-83a92c25.html" data-from="2026-10-05" data-to="2026-10-11">
-      <span class="plan-top"><span class="plan-d">5–11 октября</span><span class="state" hidden></span></span>
-      <span class="plan-t">Куда утекают твои силы</span>
-      <p class="plan-p">Режим выживания и утечки сил. Тест «Про твоё состояние», кейс, практика голосом, серия кружков «Утечки сил».</p>
-      <span class="plan-go">Открыть план →</span>
-    </a></li>
-    <li class="plan"><a href="nedelya-dengi-2977edfd.html" data-from="2026-09-28" data-to="2026-10-04">
-      <span class="plan-top"><span class="plan-d">28 сентября – 4 октября</span><span class="state" hidden></span></span>
-      <span class="plan-t">Деньги утекают сквозь пальцы</span>
-      <p class="plan-p">Тест «Куда утекают твои деньги?», кейс, карты «Две жизни», сериал. Внизу шпаргалка по кружкам и план розыгрыша.</p>
-      <span class="plan-go">Открыть план →</span>
-    </a></li>
-  </ul>
-  <p class="foot">Страница закрытая: открывается только по ссылке, с сайта на неё ссылок нет, поисковики её не показывают.</p>
+  <form class="lock-form" id="lock-form">
+    <label class="lock-label" for="lock-pass">Пароль</label>
+    <div class="lock-row">
+      <input id="lock-pass" type="password" inputmode="numeric" autocomplete="current-password" required>
+      <button type="submit" id="lock-btn">Открыть</button>
+    </div>
+    <p class="lock-err" id="lock-err" role="alert" hidden>Пароль не подошёл. Попробуй ещё раз.</p>
+  </form>
+  <noscript><p class="lead">Чтобы открыть страницу, включи JavaScript в браузере.</p></noscript>
 </div>
+<script type="application/json" id="lock-data">{"n":250000,"s":"veYe9b2PDSTQnLcf1AMqSQ==","i":"LinrLK/L0XgTqGmZ","c":"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"}</script>
 <script>
 (function(){
-  var now=new Date();var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-  document.querySelectorAll('.plan a').forEach(function(a){
-    var f=new Date(a.dataset.from+'T00:00:00'),t=new Date(a.dataset.to+'T00:00:00');
-    var s=a.querySelector('.state');
-    if(today>=f&&today<=t){s.textContent='эта неделя';s.className='state now';}
-    else if(today<f){s.textContent='впереди';s.className='state';}
-    else{s.textContent='прошла';s.className='state past';}
-    s.hidden=false;
+  var KEY='ira-posty-pass';
+  var D=JSON.parse(document.getElementById('lock-data').textContent);
+  var form=document.getElementById('lock-form'),input=document.getElementById('lock-pass'),
+      btn=document.getElementById('lock-btn'),err=document.getElementById('lock-err');
+  function bytes(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;}
+  function save(v){try{if(v)localStorage.setItem(KEY,v);else localStorage.removeItem(KEY);}catch(e){}}
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function unlock(p){
+    return crypto.subtle.importKey('raw',new TextEncoder().encode(p),'PBKDF2',false,['deriveKey'])
+      .then(function(k){return crypto.subtle.deriveKey({name:'PBKDF2',salt:bytes(D.s),iterations:D.n,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['decrypt']);})
+      .then(function(k){return crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(D.i)},k,bytes(D.c));})
+      .then(function(b){return JSON.parse(new TextDecoder().decode(b));});
+  }
+  function show(page){
+    document.documentElement.classList.remove('lock-wait');
+    document.body.innerHTML=page.h;
+    page.s.forEach(function(code){var e=document.createElement('script');e.textContent=code;document.body.appendChild(e);});
+    if(location.hash){var t=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(t)t.scrollIntoView();}
+  }
+  if(!(window.crypto&&crypto.subtle&&window.TextEncoder)){
+    err.textContent='Этот браузер не может открыть страницу. Открой её в Safari или Chrome.';err.hidden=false;return;
+  }
+  var p0=saved();
+  if(p0){
+    document.documentElement.classList.add('lock-wait');
+    unlock(p0).then(show,function(){save('');document.documentElement.classList.remove('lock-wait');});
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=input.value.trim();if(!v)return;
+    btn.disabled=true;btn.textContent='Открываю…';err.hidden=true;
+    unlock(v).then(function(page){save(v);show(page);},function(){
+      btn.disabled=false;btn.textContent='Открыть';err.hidden=false;input.select();
+    });
   });
 })();
 </script>

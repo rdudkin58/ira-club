@@ -206,6 +206,32 @@
   .faq-item{padding:20px 0 6px; border-bottom:1px solid var(--line);}
   .article .faq-q{font:500 22px/1.3 var(--serif); color:var(--espresso); margin-bottom:10px;}
 
+  /* ---------- фото ---------- */
+  .photo{position:relative; max-width:440px; margin:38px auto 40px;}
+  .photo .frame{position:relative;}
+  .photo .frame::before{
+    content:""; position:absolute; inset:0;
+    transform:translate(14px,14px);
+    border:1px solid var(--gold);
+    opacity:.55;
+  }
+  .photo img{position:relative; display:block; width:100%; height:auto; box-shadow:var(--shadow);}
+  .photo figcaption, .duo figcaption{
+    margin-top:24px; text-align:center;
+    font:italic 500 19px/1.35 var(--serif); color:var(--gold-deep);
+  }
+  .duo{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:34px 0 40px;}
+  .duo figure{margin:0;}
+  .duo .frame{position:relative;}
+  .duo .frame::before{
+    content:""; position:absolute; inset:0;
+    transform:translate(10px,10px);
+    border:1px solid var(--gold);
+    opacity:.55;
+  }
+  .duo img{position:relative; display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; box-shadow:var(--shadow);}
+  .duo figcaption{font-size:17px; margin-top:18px;}
+  .duo .label{display:block; font:600 10.5px/1 var(--sans); letter-spacing:.24em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; font-style:normal;}
   /* ---------- кнопка и призыв ---------- */
 
   .btn{
@@ -273,6 +299,10 @@
   }
   @media (max-width:480px){
     .wrap{padding:36px 16px 0;}
+    .photo{margin-right:14px;}
+    .duo{gap:16px; margin-right:10px;}
+    .duo .frame::before{transform:translate(7px,7px);}
+    .duo figcaption{font-size:15.5px;}
     .pain-list{padding:6px 20px;}
     .pain-list li{font-size:19px;}
     .case, .step{padding:20px 18px 6px;}
@@ -338,6 +368,16 @@
 
   <h2>Как я сама <em>к этому пришла</em></h2>
   <p>Я с детства была удобной. Про меня говорили: «Куда посадишь, там и сидит». Послушная хорошая девочка.</p>
+  <div class="duo">
+    <figure>
+      <div class="frame"><img src="obo-mne-detstvo.jpg" alt="Ирина в детстве" width="1000" height="805" loading="lazy" style="object-position:68% 40%"></div>
+      <figcaption><span class="label">Тогда</span>Послушная хорошая девочка</figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><img src="obo-mne-seychas.jpg" alt="Ирина Дудкина сейчас" width="904" height="1000" loading="lazy" style="object-position:50% 30%"></div>
+      <figcaption><span class="label">Сейчас</span>Живу из равновесия</figcaption>
+    </figure>
+  </div>
   <p>В 18 лет вышла замуж. По образованию я учитель начальных классов, а поработать успела и в детском саду, и бухгалтером, и в семейном бизнесе, и даже директором ломбарда.</p>
   <p>И всё это время я искала себя. Училась всему, что откликалось: фэн-шуй у Натальи Правдиной, нумерология (в том числе у Кристины Егиазаровой), врождённые таланты, регрессология, многомерные расстановки, целительство, раскрытие ясновидения. Стала сертифицированным экспертом и куратором марафонов сервиса «Эволюция». Каждый метод я сначала проверяла на себе, потом в работе с клиентами.</p>
   <p>Знаний становилось всё больше. А внутри всё равно чего-то не хватало. Деньги приходили и уходили. Я умела помогать другим, но шла мимо собственной боли.</p>
@@ -383,10 +423,18 @@
 
   <h2>Я не гуру. <em>Я иду рядом</em></h2>
   <p>Я не стою над тобой и не учу, как правильно жить. Я сама была там, где сейчас ты. Я знаю, каково это: отдаёшь себя, а в ответ пустота. И не знаешь, за что хвататься.</p>
+  <figure class="photo">
+    <div class="frame"><img src="obo-mne-ryadom.jpg" alt="Ирина Дудкина" width="998" height="1000" loading="lazy"></div>
+    <figcaption>Со мной можно не держать лицо</figcaption>
+  </figure>
   <p>Со мной можно не держать лицо. Можно быть уставшей, злой, растерянной. Я умею вдохновить и дать хороший пендаль, но работаю нежно и бережно.</p>
   <p>Я и сейчас исцеляю свои детские травмы, слоями: они поднимаются в разные периоды жизни. И я не боюсь показывать свою уязвимость. Потому что знаю: именно в ней моя настоящая сила.</p>
 
   <h2>Как проходит <em>работа</em></h2>
+  <figure class="photo">
+    <div class="frame"><img src="obo-mne-diagnostika.jpg" alt="Ирина на онлайн-сессии" width="882" height="1000" loading="lazy"></div>
+    <figcaption>Встречаемся онлайн, где бы ты ни жила</figcaption>
+  </figure>
   <div class="steps">
     <div class="step">
       <div class="step-num">Шаг 1</div>
@@ -427,6 +475,10 @@
   <h2>Приглашаю тебя <em>на диагностику</em></h2>
   <p>Не потому, что мне нужно что-то продать. А потому, что, пока ты не увидишь свою занозу, ты будешь биться в закрытую дверь. Терять силы, время, себя. Откладывать счастье на потом.</p>
   <p>Можно и дальше ждать «следующего месяца», «когда будут деньги», «когда станет полегче». Но само не станет. Заряд не рассосётся оттого, что его не трогают.</p>
+  <figure class="photo">
+    <div class="frame"><img src="obo-mne-priglashenie.jpg" alt="Ирина Дудкина в кресле с журналом" width="750" height="1000" loading="lazy"></div>
+    <figcaption>Жду тебя на диагностике</figcaption>
+  </figure>
   <p>Если внутри что-то отозвалось, сделай шаг.</p>
 
   <div class="cta-card">
@@ -437,6 +489,10 @@
     <div class="cta-note">Telegram · @IrinaDudkina</div>
   </div>
 
+  <figure class="photo">
+    <div class="frame"><img src="obo-mne-svoboda.jpg" alt="Ирина Дудкина на набережной" width="669" height="1000" loading="lazy"></div>
+    <figcaption>Лёгкость, свобода, спокойствие — это можно</figcaption>
+  </figure>
   <p class="closing">Жизнь — не черновик. И ждать больше не нужно.</p>
   <p class="signature">Обнимаю, твоя Ирина ❤️</p>
 

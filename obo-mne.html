@@ -220,7 +220,7 @@
     margin-top:24px; text-align:center;
     font:italic 500 19px/1.35 var(--serif); color:var(--gold-deep);
   }
-  .duo{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:34px 0 40px;}
+  .duo{display:grid; grid-template-columns:1.242fr 0.904fr; gap:22px; align-items:start; margin:34px 0 40px;}
   .duo figure{margin:0;}
   .duo .frame{position:relative;}
   .duo .frame::before{
@@ -229,7 +229,7 @@
     border:1px solid var(--gold);
     opacity:.55;
   }
-  .duo img{position:relative; display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; box-shadow:var(--shadow);}
+  .duo img{position:relative; display:block; width:100%; height:auto; box-shadow:var(--shadow);}
   .duo figcaption{font-size:17px; margin-top:18px;}
   .duo .label{display:block; font:600 10.5px/1 var(--sans); letter-spacing:.24em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; font-style:normal;}
   /* ---------- кнопка и призыв ---------- */
@@ -300,9 +300,7 @@
   @media (max-width:480px){
     .wrap{padding:36px 16px 0;}
     .photo{margin-right:14px;}
-    .duo{gap:16px; margin-right:10px;}
-    .duo .frame::before{transform:translate(7px,7px);}
-    .duo figcaption{font-size:15.5px;}
+    .duo{grid-template-columns:1fr; gap:34px; max-width:320px; margin-left:auto; margin-right:auto; padding-right:10px;}
     .pain-list{padding:6px 20px;}
     .pain-list li{font-size:19px;}
     .case, .step{padding:20px 18px 6px;}
@@ -370,11 +368,11 @@
   <p>Я с детства была удобной. Про меня говорили: «Куда посадишь, там и сидит». Послушная хорошая девочка.</p>
   <div class="duo">
     <figure>
-      <div class="frame"><img src="obo-mne-detstvo.jpg" alt="Ирина в детстве" width="1000" height="805" loading="lazy" style="object-position:68% 40%"></div>
+      <div class="frame"><img src="obo-mne-detstvo.jpg" alt="Ирина в детстве" width="1000" height="805" loading="lazy"></div>
       <figcaption><span class="label">Тогда</span>Послушная хорошая девочка</figcaption>
     </figure>
     <figure>
-      <div class="frame"><img src="obo-mne-seychas.jpg" alt="Ирина Дудкина сейчас" width="904" height="1000" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="frame"><img src="obo-mne-seychas.jpg" alt="Ирина Дудкина сейчас" width="904" height="1000" loading="lazy"></div>
       <figcaption><span class="label">Сейчас</span>Живу из равновесия</figcaption>
     </figure>
   </div>

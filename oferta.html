@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Публичная оферта — Ирина Дудкина</title>
+<meta name="description" content="Публичная оферта ИП Дудкиной Ирины Александровны: сессии, закрытый клуб «МОЁ СОСТОЯНИЕ», марафон «Твоё СОСТОЯНИЕ — ФУНДАМЕНТ». Оплата, доступ, возврат.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Публичная оферта — Ирина Дудкина">
+<meta property="og:description" content="Условия оказания услуг ИП Дудкиной Ирины Александровны.">
+<meta property="og:image" content="https://rdudkin58.github.io/ira-club/irina.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-balance-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-balance-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-balance-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-balance-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-balance-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-balance-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon-balance.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF7F1;
+    --cream:#F8ECDA;
+    --sand:#F0DDC0;
+    --blush:#F8DCC8;
+    --gold:#C3943F;
+    --gold-light:#E8C98A;
+    --gold-deep:#8E6420;
+    --espresso:#2A201A;
+    --ink:#33291F;
+    --muted:#6E5D4E;
+    --line:rgba(176,128,52,0.34);
+    --gold-grad:linear-gradient(135deg,#F2D38F 0%,#D2A04A 45%,#9C6E25 100%);
+    --serif:'Cormorant Garamond', 'Times New Roman', serif;
+    --sans:'Manrope', system-ui, -apple-system, sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --shadow:0 26px 50px -26px rgba(150,100,30,.5);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse 70% 420px at 100% 0, rgba(242,211,143,.45), transparent 70%),
+      radial-gradient(ellipse 60% 380px at 0 60px, rgba(248,220,200,.7), transparent 70%),
+      linear-gradient(180deg, var(--cream) 0, var(--ivory) 560px) no-repeat,
+      var(--ivory);
+    background-repeat:no-repeat;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.7;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-variant-numeric:lining-nums;
+  }
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--gold-light); color:var(--espresso);}
+  :focus-visible{outline:1px solid var(--gold); outline-offset:4px;}
+
+  .wrap{max-width:660px; margin:0 auto; padding:52px 24px 0;}
+
+  /* ---------- type ---------- */
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:14px;
+    font:600 11.5px/1 var(--sans);
+    letter-spacing:0.28em; text-transform:uppercase;
+    color:var(--gold-deep);
+    margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:32px; height:1px; background:currentColor; opacity:.7;}
+
+  h1{
+    font-family:var(--serif); font-weight:500; color:var(--espresso);
+    font-size:clamp(38px,8vw,56px); line-height:1.06; letter-spacing:-0.01em;
+    margin-bottom:22px;
+  }
+  h1 em, .cta-card h2 em{
+    font-style:italic;
+    background:var(--gold-grad);
+    -webkit-background-clip:text; background-clip:text;
+    color:transparent;
+    padding-right:.04em;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  }
+  .article .subtitle{
+    font-family:var(--serif); font-weight:500; color:var(--espresso);
+    font-size:clamp(25px,5.4vw,33px); line-height:1.18;
+    margin:-8px 0 26px;
+  }
+  .article .lead-line{
+    font:italic 500 clamp(22px,4.8vw,26px)/1.35 var(--serif);
+    color:var(--gold-deep);
+    margin-bottom:24px;
+  }
+
+  .article p{font-size:16.5px; margin-bottom:16px;}
+  .article p.accent{font-weight:600; color:var(--espresso);}
+  .article strong{font-weight:700; color:var(--espresso);}
+  .article a{color:var(--gold-deep); border-bottom:1px solid var(--line); transition:color .3s ease, border-color .3s ease;}
+  .article a:hover{color:var(--gold); border-color:var(--gold);}
+  .article h2{
+    font-family:var(--serif); font-weight:500; color:var(--espresso);
+    font-size:clamp(29px,6.2vw,38px); line-height:1.12;
+    margin:60px 0 20px;
+  }
+  .article h2 em{font-style:italic; color:var(--gold-deep);}
+
+  /* ---------- о себе ---------- */
+
+  .me{
+    display:grid; grid-template-columns:minmax(0,210px) 1fr; gap:34px; align-items:center;
+    margin:40px 0 8px;
+  }
+  .portrait{position:relative; width:100%;}
+  .portrait::before{
+    content:""; position:absolute; inset:0;
+    transform:translate(14px,14px);
+    border:1px solid var(--gold);
+    opacity:.55;
+  }
+  .portrait img{
+    position:relative; display:block;
+    width:100%; height:auto; aspect-ratio:4/5.2; object-fit:cover; object-position:50% 20%;
+  }
+  .me-name{font:500 30px/1.1 var(--serif); color:var(--espresso);}
+  .me-roles{margin:10px 0 16px; font:600 10.5px/1.7 var(--sans); letter-spacing:.2em; text-transform:uppercase; color:var(--muted);}
+  .me p{font-size:16px; margin-bottom:0;}
+
+  /* ---------- списки ---------- */
+
+  .pain-list{
+    list-style:none;
+    margin:0 0 24px;
+    padding:10px 26px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+  }
+  .pain-list li{
+    font:italic 500 20px/1.4 var(--serif);
+    color:var(--espresso);
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .pain-list li:last-child{border-bottom:none;}
+
+  .scenario-list{
+    list-style:none;
+    margin:6px 0 22px;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .scenario-list li{
+    display:flex; gap:14px; align-items:flex-start;
+    font-size:15.5px; line-height:1.5;
+    padding:15px 18px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:14px;
+  }
+  .scenario-list li::before{
+    content:"✦"; flex-shrink:0;
+    color:var(--gold); font-size:13px; line-height:24px;
+  }
+
+  .thought-box{
+    margin:8px 0 24px;
+    padding:20px 24px;
+    background:var(--cream);
+    border-left:3px solid var(--gold);
+    border-radius:0 14px 14px 0;
+  }
+  .article .thought-box p{font:italic 500 23px/1.4 var(--serif); color:var(--espresso); margin:0;}
+
+  .methods{list-style:none; display:flex; flex-direction:column; gap:22px; margin:6px 0 10px;}
+  .methods li{display:grid; grid-template-columns:18px 1fr; gap:12px; align-items:start; font-size:16.5px;}
+  .methods li::before{content:"✦"; color:var(--gold); font-size:13px; line-height:28px;}
+  .m-name{display:block; font:600 21px/1.3 var(--serif); color:var(--espresso); margin-bottom:4px;}
+
+  .cases{display:flex; flex-direction:column; gap:16px; margin:22px 0 26px;}
+  .case{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:18px;
+    padding:22px 24px 8px;
+    box-shadow:var(--shadow);
+  }
+  .case-title{font:italic 500 23px/1.25 var(--serif); color:var(--espresso); margin-bottom:10px;}
+  .case p{font-size:15.5px;}
+
+  .steps{display:flex; flex-direction:column; gap:14px; margin:6px 0 22px;}
+  .step{background:var(--cream); border:1px solid var(--line); border-radius:18px; padding:22px 24px 8px;}
+  .step-num{font:600 11px/1 var(--sans); letter-spacing:.22em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:10px;}
+  .step-title{font:500 24px/1.2 var(--serif); color:var(--espresso); margin-bottom:10px;}
+  .step ul{list-style:none; display:flex; flex-direction:column; gap:8px; margin:0 0 16px;}
+  .step ul li{display:grid; grid-template-columns:16px 1fr; gap:10px; font-size:15.5px; line-height:1.55;}
+  .step ul li::before{content:"✦"; color:var(--gold); font-size:12px; line-height:24px;}
+
+  .faq{border-top:1px solid var(--line); margin-bottom:10px;}
+  .faq-item{padding:20px 0 6px; border-bottom:1px solid var(--line);}
+  .article .faq-q{font:500 22px/1.3 var(--serif); color:var(--espresso); margin-bottom:10px;}
+
+  /* ---------- кнопка и призыв ---------- */
+
+  .btn{
+    position:relative; overflow:hidden; isolation:isolate;
+    display:inline-flex; align-items:center; justify-content:center; gap:12px;
+    max-width:100%;
+    height:58px; padding:0 38px;
+    border:none; border-radius:999px; cursor:pointer;
+    font:600 12px/1 var(--sans);
+    letter-spacing:0.22em; text-transform:uppercase;
+    white-space:nowrap;
+    transition:transform .5s var(--ease), box-shadow .5s var(--ease), background-color .4s ease, color .4s ease;
+  }
+  .btn-gold{background:var(--gold-grad); color:#fff; box-shadow:0 18px 36px -18px rgba(140,104,50,.75);}
+  .btn-gold::after{
+    content:""; position:absolute; inset:0; z-index:-1;
+    background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+    transform:translateX(-120%); transition:transform .9s var(--ease);
+  }
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 24px 44px -18px rgba(140,104,50,.85);}
+  .btn-gold:hover::after{transform:translateX(120%);}
+
+  .cta-card{
+    margin:34px 0 34px;
+    padding:44px 32px 38px;
+    border-radius:24px;
+    text-align:center;
+    color:#FBEEDB;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,226,160,.35), transparent 70%),
+      linear-gradient(135deg, #B5803C 0%, #95622A 55%, #74491C 100%);
+    box-shadow:0 30px 60px -30px rgba(116,73,28,.75);
+  }
+  .cta-card .eyebrow{color:#FCE3B2; margin-bottom:18px;}
+  .cta-card h2 em{background:none; color:#FCE3B2;}
+  .cta-card .btn-gold{background:var(--ivory); color:#7A4D1D; box-shadow:0 18px 36px -18px rgba(60,35,10,.7);}
+  .cta-card h2{
+    font-family:var(--serif); font-weight:500; color:#fff;
+    font-size:clamp(30px,6.6vw,40px); line-height:1.1;
+    margin:0 0 16px;
+  }
+  .article .cta-card p{font-size:15px; max-width:32em; margin:0 auto 28px;}
+  .cta-note{margin-top:16px; font:500 12.5px/1 var(--sans); letter-spacing:.08em; color:#F0D9B8;}
+
+  .article .closing{font:italic 500 clamp(23px,5vw,27px)/1.35 var(--serif); color:var(--espresso); margin-bottom:12px;}
+  .article p.signature{font:italic 500 22px/1.3 var(--serif); color:var(--gold-deep); margin-bottom:34px;}
+  .article p.ps{font-size:15px; color:var(--muted); padding-top:22px; border-top:1px solid var(--line);}
+  .article p.ps strong{color:var(--ink);}
+
+  /* ---------- footer ---------- */
+
+  footer{
+    max-width:660px; margin:64px auto 0; padding:26px 24px 40px;
+    border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center; gap:14px 28px; flex-wrap:wrap;
+    font-size:12.5px; color:var(--muted);
+  }
+  .footer-links{display:flex; gap:22px; flex-wrap:wrap;}
+  .footer-links a{font:600 11px/1.6 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep); transition:color .3s ease;}
+  .footer-links a:hover{color:var(--gold);}
+
+  @media (max-width:560px){
+    .me{grid-template-columns:1fr; gap:26px; justify-items:center; text-align:center;}
+    .portrait{max-width:240px; margin-right:14px;}
+  }
+  @media (max-width:480px){
+    .wrap{padding:36px 16px 0;}
+    .pain-list{padding:6px 20px;}
+    .pain-list li{font-size:19px;}
+    .case, .step{padding:20px 18px 6px;}
+    .btn{padding:0 28px;}
+    .cta-card{padding:36px 20px 32px;}
+    .cta-card .btn{width:100%;}
+    footer{padding:24px 16px 36px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .btn, .btn-gold::after{transition:none;}
+  }
+
+  /* ---------- факты и цены ---------- */
+
+  .facts{
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;
+    margin:30px 0 8px;
+  }
+  .fact{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:16px;
+    padding:16px 14px 14px;
+    box-shadow:var(--shadow);
+  }
+  .fact-label{font:600 10.5px/1.4 var(--sans); letter-spacing:.18em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:6px;}
+  .fact-value{font:500 22px/1.15 var(--serif); color:var(--espresso);}
+  .fact-note{font-size:13px; line-height:1.4; color:var(--muted); margin-top:4px;}
+
+  .req-row{display:grid; grid-template-columns:96px 1fr; gap:12px; padding:10px 0; border-top:1px solid var(--line); font-size:15.5px; line-height:1.55;}
+  .req-row:first-of-type{border-top:none; padding-top:2px;}
+  .req-row b{font:600 10.5px/2.2 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep);}
+  .case .req-weeks{list-style:none; display:flex; flex-direction:column; gap:6px; margin:0 0 16px; font-size:15.5px; line-height:1.5;}
+
+  .price-list{
+    list-style:none;
+    margin:6px 0 20px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:6px 24px;
+  }
+  .price-list li{
+    display:flex; justify-content:space-between; align-items:baseline; gap:18px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .price-list li:last-child{border-bottom:none;}
+  .price-name{font:500 21px/1.25 var(--serif); color:var(--espresso);}
+  .price-name small{display:block; font:400 14px/1.45 var(--sans); color:var(--muted); margin-top:4px;}
+  .price-sum{font:600 24px/1.1 var(--serif); color:var(--gold-deep); white-space:nowrap;}
+
+  @media (max-width:640px){
+    .facts{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:480px){
+    .price-list{padding:4px 18px;}
+    .price-list li{flex-direction:column; gap:6px;}
+    .req-row{grid-template-columns:1fr; gap:2px;}
+  }
+
+
+  /* ---------- реквизиты ---------- */
+
+  .footer-req{width:100%; font-size:12.5px; line-height:1.6; color:var(--muted);}
+  .footer-req a{color:var(--gold-deep); border-bottom:1px solid var(--line);}
+  .seller{
+    margin:6px 0 24px; padding:18px 24px 10px;
+    background:var(--cream); border:1px solid var(--line); border-radius:18px;
+  }
+  .seller .req-row b{line-height:2.2;}
+
+  .doc .edition{font-size:14px; color:var(--muted); margin-bottom:26px;}
+  .doc h2{font-size:clamp(25px,5.4vw,30px); margin:46px 0 14px;}
+  .doc p{font-size:15.5px; line-height:1.65; margin-bottom:12px;}
+  .doc ul{list-style:none; display:flex; flex-direction:column; gap:6px; margin:-4px 0 14px;}
+  .doc ul li{display:grid; grid-template-columns:16px 1fr; gap:10px; font-size:15.5px; line-height:1.6;}
+  .doc ul li::before{content:"✦"; color:var(--gold); font-size:11px; line-height:25px;}
+  .doc dl{margin:0 0 12px;}
+  .doc dt{font:600 15.5px/1.5 var(--sans); color:var(--espresso); margin-top:12px;}
+  .doc dd{font-size:15.5px; line-height:1.65; margin:2px 0 0;}
+  .formula{margin:6px 0 14px; padding:16px 20px; background:var(--cream); border-left:3px solid var(--gold); border-radius:0 14px 14px 0; font-size:15px; line-height:1.6;}
+  .formula b{font:600 16px/1.5 var(--sans); color:var(--espresso); display:block; margin-bottom:8px;}
+  .doc .accept{font-weight:600; color:var(--espresso); padding-top:20px; border-top:1px solid var(--line); margin-top:30px;}
+</style>
+</head>
+<body>
+
+<main class="wrap article doc">
+
+  <div class="eyebrow">Ирина Дудкина · Документы</div>
+  <h1>Публичная <em>оферта</em></h1>
+  <p class="lead-line">на оказание информационно-консультационных услуг, услуг психолого-энергетической поддержки, а также услуг по обучению и предоставлению доступа к обучающим материалам</p>
+  <p class="edition">Редакция от 2 октября 2026 г. Первая публикация — 15 августа 2026 г.</p>
+
+  <p>Настоящая оферта адресована неопределённому кругу физических лиц и является официальным предложением Индивидуального предпринимателя (далее – Исполнитель) заключить договор на указанных ниже условиях.</p>
+
+  <div class="seller">
+    <div class="req-row"><b>Исполнитель</b><span>ИП Дудкина Ирина Александровна</span></div>
+    <div class="req-row"><b>ИНН</b><span>583700521908</span></div>
+    <div class="req-row"><b>ОГРНИП</b><span>322583500057163</span></div>
+    <div class="req-row"><b>Адрес</b><span>Пенза</span></div>
+    <div class="req-row"><b>Телефон</b><span><a href="tel:+79273757868">+7 (927) 375-78-68</a></span></div>
+    <div class="req-row"><b>E-mail</b><span><a href="mailto:irina.dudkina.74@mail.ru">irina.dudkina.74@mail.ru</a></span></div>
+    <div class="req-row"><b>Telegram</b><span><a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">@IrinaDudkina</a></span></div>
+  </div>
+
+  <h2>1. Термины и определения</h2>
+  <p>1.1. В целях настоящей Оферты используются следующие термины:</p>
+  <dl>
+    <dt>Клиент (Заказчик)</dt>
+    <dd>Любое физическое лицо, принявшее условия Оферты (акцептовавшее её) и оплатившее Услуги.</dd>
+    <dt>Услуги</dt>
+    <dd>Комплекс информационно-консультационных и обучающих услуг, включающий:</dd>
+  </dl>
+  <ul>
+    <li>индивидуальные сессии (психологические, энергетические, нумерологические);</li>
+    <li>пакеты сессий;</li>
+    <li>доступ к закрытому клубу «МОЁ СОСТОЯНИЕ» с обучающими материалами (база знаний, эфиры, практики);</li>
+    <li>участие в онлайн-марафоне «Твоё СОСТОЯНИЕ — ФУНДАМЕНТ».</li>
+  </ul>
+  <dl>
+    <dt>Сессия</dt>
+    <dd>Индивидуальная онлайн-встреча продолжительностью 60 минут, в ходе которой Исполнитель применяет методы психологии, энерготерапии и нумерологии для проработки запроса Клиента.</dd>
+    <dt>Пакет сессий</dt>
+    <dd>Набор из 2, 3, 4 или 8 сессий, оплачиваемых единовременно.</dd>
+    <dt>Клуб «МОЁ СОСТОЯНИЕ» (далее – Клуб)</dt>
+    <dd>Закрытое сообщество (на платформе Telegram или иной) с доступом к:</dd>
+  </dl>
+  <ul>
+    <li>базе знаний (видео-, аудио-, текстовые материалы, чек-листы, практики);</li>
+    <li>еженедельным обучающим эфирам (вебинарам) с обратной связью;</li>
+    <li>записям прошедших эфиров;</li>
+    <li>чату для общения и вопросов Исполнителю.</li>
+  </ul>
+  <dl>
+    <dt>Марафон «Твоё СОСТОЯНИЕ — ФУНДАМЕНТ» (далее – Марафон)</dt>
+    <dd>Онлайн-программа длительностью 6 дней, которую Клиент проходит самостоятельно в Telegram: записи эфиров Исполнителя, аудиопрактики и задания присылает Telegram-бот Марафона, по одному дню ежедневно. Участники Марафона получают доступ к чату Марафона для вопросов Исполнителю.</dd>
+    <dt>Эфир</dt>
+    <dd>Групповое онлайн-занятие в формате вебинара (на платформе Zoom, Telegram или др.) с трансляцией, обучением и практическими упражнениями.</dd>
+    <dt>Обучающие материалы</dt>
+    <dd>Любые авторские материалы (тексты, видео, аудио, презентации, задания), предоставляемые Исполнителем Клиенту в рамках Клуба, Марафона или отдельных курсов.</dd>
+    <dt>Доступ</dt>
+    <dd>Предоставление Клиенту возможности просматривать, изучать и использовать Обучающие материалы в личных целях в течение оплаченного периода.</dd>
+    <dt>Модуль</dt>
+    <dd>Логически завершённый блок Обучающих материалов (например, тема эфира или раздел базы знаний), доступ к которому открывается последовательно или единовременно.</dd>
+  </dl>
+
+  <h2>2. Предмет договора (оферты)</h2>
+  <p>2.1. Исполнитель обязуется оказать Клиенту выбранные им Услуги (индивидуальные сессии, доступ к Клубу и/или участие в Марафоне), а Клиент обязуется оплатить их в порядке и сроки, установленные настоящей Офертой.</p>
+  <p>2.2. Клиент самостоятельно выбирает объём Услуг из перечня, опубликованного на сайте Исполнителя или в прайс-листе:</p>
+  <ul>
+    <li>разовая сессия;</li>
+    <li>пакет сессий (2, 3, 4 или 8);</li>
+    <li>доступ к Клубу (на 1 месяц или 1 год);</li>
+    <li>участие в Марафоне.</li>
+  </ul>
+  <p>2.3. Услуги носят информационно-консультационный и обучающий характер, не являются медицинскими вмешательствами и не заменяют профессиональную медицинскую, психиатрическую или психотерапевтическую помощь, предусмотренную лицензией. Результаты зависят от индивидуальных особенностей и усилий Клиента.</p>
+  <p>2.4. Предоставление доступа к Обучающим материалам является действием, считающимся оказанием части Услуг. С момента открытия доступа к конкретному модулю (эфиру, блоку материалов) этот модуль считается полученным Клиентом в полном объёме.</p>
+
+  <h2>3. Порядок заключения договора (акцепт)</h2>
+  <p>3.1. Настоящая Оферта размещается на официальном сайте Исполнителя, в описании Клуба, а также может быть направлена Клиенту по электронной почте или в мессенджере.</p>
+  <p>3.2. Акцептом Оферты признаётся совершение Клиентом одного из следующих действий:</p>
+  <ul>
+    <li>оплата любой Услуги (полностью или частично, если это предусмотрено);</li>
+    <li>заполнение регистрационной формы на сайте/в клубе и подтверждение ознакомления с Офертой;</li>
+    <li>письменное (в том числе электронное) заявление о присоединении к договору.</li>
+  </ul>
+  <p>3.3. С момента акцепта договор считается заключённым в простой письменной форме и действует до полного исполнения сторонами обязательств.</p>
+  <p>3.4. Клиент гарантирует, что до момента оплаты он ознакомлен со стоимостью, объёмом и порядком оказания Услуг, а также с условиями настоящей Оферты.</p>
+
+  <h2>4. Стоимость и порядок оплаты</h2>
+  <p>4.1. Цены на Услуги устанавливаются в рублях РФ и указываются:</p>
+  <ul>
+    <li>в прайс-листе на сайте Исполнителя;</li>
+    <li>в описании Клуба, Марафона и пакетов;</li>
+    <li>в счёте или ссылке на оплату, направленной Клиенту.</li>
+  </ul>
+  <p>4.2. Оплата производится предварительно в размере 100% стоимости выбранной Услуги (если иное не оговорено отдельно).</p>
+  <p>4.3. Способы оплаты: банковская карта, электронный кошелёк, перевод по реквизитам – указываются в платёжных реквизитах Исполнителя.</p>
+  <p>4.4. Стоимость пакетов включает скидку по сравнению с разовыми сессиями. Актуальные цены размещены на сайте и могут изменяться Исполнителем в одностороннем порядке, но не ранее чем через 5 дней после публикации новой редакции Оферты.</p>
+  <p>4.5. Оплата может производиться частями по индивидуальному графику, согласованному с Исполнителем. В этом случае доступ к Услугам предоставляется после поступления каждого платежа в соответствии с графиком.</p>
+  <p>4.6. Оплата банковской картой производится на защищённой странице платёжного сервиса Робокасса; Исполнитель не получает и не хранит данные банковской карты Клиента. Кассовый чек направляется Клиенту в электронном виде на адрес электронной почты или номер телефона, указанные при оплате.</p>
+
+  <h2>5. Права и обязанности Сторон</h2>
+  <p>5.1. Исполнитель обязуется:</p>
+  <ul>
+    <li>оказывать Услуги надлежащего качества, добросовестно, в соответствии с заявленными методами (психология, энерготерапия, нумерология);</li>
+    <li>соблюдать конфиденциальность информации, полученной от Клиента (за исключением случаев, предусмотренных законом);</li>
+    <li>предоставить Клиенту доступ к Клубу и материалам в полном объёме, соответствующем выбранному тарифу;</li>
+    <li>проводить сессии в оговорённое время; при невозможности – предупредить Клиента не менее чем за 24 часа и согласовать новое время;</li>
+    <li>по окончании пакета сессий предоставить краткий письменный отчёт (по желанию Клиента);</li>
+    <li>организовать и обеспечить надлежащее оказание Услуг в установленные сроки.</li>
+  </ul>
+  <p>5.2. Исполнитель имеет право:</p>
+  <ul>
+    <li>самостоятельно определять формы и методы оказания Услуг (в том числе последовательность открытия модулей);</li>
+    <li>вносить изменения в программу Клуба, состав эфиров, наполнение базы знаний, уведомив об этом участников не менее чем за 7 дней;</li>
+    <li>приостанавливать доступ Клиента к Клубу в случае нарушения правил сообщества (грубость, спам, реклама, распространение материалов);</li>
+    <li>отказать в оказании Услуг, если Клиент ведёт себя некорректно или его запрос не соответствует профилю (например, требует медицинского диагноза);</li>
+    <li>привлекать для оказания Услуг третьих лиц без дополнительного согласования, неся за них ответственность;</li>
+    <li>приостановить оказание Услуг в случае непоступления оплаты в срок.</li>
+  </ul>
+  <p>5.3. Клиент обязуется:</p>
+  <ul>
+    <li>предоставить достоверные данные (ФИО, контакты) и подробно описать свой запрос;</li>
+    <li>соблюдать расписание сессий, подключаться к встречам вовремя; опоздание более чем на 15 минут считается пропуском сессии без права переноса;</li>
+    <li>выполнять рекомендованные практики между сессиями и самостоятельно работать над своим состоянием;</li>
+    <li>не передавать, не копировать, не распространять, не публиковать предоставленные Исполнителем Обучающие материалы (включая записи эфиров, тексты, аудио, видео) третьим лицам, а также не использовать их в коммерческих целях. Любое использование материалов возможно только с письменного согласия Исполнителя;</li>
+    <li>не размещать материалы на открытых или закрытых интернет-ресурсах, не сохранять их для массового использования;</li>
+    <li>соблюдать правила Клуба (не разглашать ссылки на чаты и каналы, не спамить, не рекламировать свои услуги без согласования);</li>
+    <li>оплатить Услуги в установленный срок;</li>
+    <li>самостоятельно обеспечивать техническую возможность получения Услуг (наличие интернета, программного обеспечения, совместимых устройств);</li>
+    <li>выполнять задания и рекомендации Исполнителя в установленные сроки (дедлайны), если они предусмотрены программой.</li>
+  </ul>
+  <p>5.4. Клиент имеет право:</p>
+  <ul>
+    <li>получать квалифицированную помощь в рамках выбранного формата;</li>
+    <li>задавать вопросы Исполнителю в чате Клуба (в рамках разумного объёма);</li>
+    <li>отказаться от дальнейших сессий, уведомив Исполнителя за 48 часов до следующей встречи (в этом случае оплаченные сессии не возвращаются, но могут быть использованы в течение 30 дней, если иное не оговорено);</li>
+    <li>расторгнуть договор в одностороннем порядке с возвратом денег за неоказанные услуги (за вычетом фактически понесённых расходов) – см. раздел 9.</li>
+  </ul>
+
+  <h2>6. Порядок проведения сессий, работы Клуба и Марафона</h2>
+  <p>6.1. После оплаты Клиент выбирает удобное время сессии через календарь Исполнителя (или согласовывает в переписке).</p>
+  <p>6.2. Сессии проводятся дистанционно с использованием программ видеосвязи (Zoom, Google Meet, Telegram и др.). Ссылка направляется Клиенту за 30 минут до начала.</p>
+  <p>6.3. Пакет сессий должен быть использован в течение 60 дней с момента первой сессии, если стороны не договорились об ином. Неиспользованные сессии сгорают.</p>
+  <p>6.4. Доступ к Клубу предоставляется на выбранный период (1 месяц или 1 год) с момента оплаты. В течение этого периода Клиент получает:</p>
+  <ul>
+    <li>доступ к закрытому чату/каналу;</li>
+    <li>архив и новые записи эфиров;</li>
+    <li>базу знаний (структурированные материалы по психологии, энергетике, нумерологии);</li>
+    <li>практики для самостоятельного выполнения (аудио-, видеомедитации, упражнения).</li>
+  </ul>
+  <p>6.5. Эфиры проводятся по расписанию, которое публикуется в Клубе. Записи эфиров сохраняются в базе знаний на весь период подписки.</p>
+  <p>6.6. Если Клиент не подключился к эфиру в прямом эфире, он может просмотреть запись. Это не считается неоказанием услуги, так как доступ к записи предоставлен.</p>
+  <p>6.7. В случае технических сбоев на стороне Исполнителя (срыв эфира, недоступность платформы) Исполнитель обязуется провести эфир в перенесённое время или предоставить запись в течение 3 рабочих дней.</p>
+  <p>6.8. Доступ к Марафону открывается после подтверждения оплаты: Telegram-бот Марафона присылает Клиенту ссылку на чат Марафона и материалы подготовки. Первый день Марафона приходит в ближайшие 9:00 по московскому времени, далее – по одному дню ежедневно, всего 6 дней. Эфиры Марафона предоставляются в записи, Клиент проходит Марафон в своём темпе. Для участия в Марафоне Клиенту необходим аккаунт в Telegram.</p>
+
+  <h2>7. Ответственность Сторон</h2>
+  <p>7.1. Исполнитель не несёт ответственности за ухудшение состояния Клиента, если оно вызвано невыполнением рекомендаций, сокрытием важной информации или нарушением режима сессий.</p>
+  <p>7.2. Исполнитель не гарантирует достижение конкретных результатов (избавление от обид, вины и т.п.), поскольку они зависят от многих факторов, включая активность самого Клиента.</p>
+  <p>7.3. Исполнитель не возмещает моральный вред и упущенную выгоду, связанные с использованием или невозможностью использования Услуг.</p>
+  <p>7.4. Ответственность Исполнителя за неоказание или ненадлежащее оказание Услуг ограничивается стоимостью конкретной оплаченной Услуги.</p>
+  <p>7.5. За нарушение сроков оказания Услуг (если это произошло по вине Исполнителя) Клиент вправе потребовать уменьшения цены или расторжения договора с возвратом средств.</p>
+  <p>7.6. Стороны освобождаются от ответственности при наступлении форс-мажорных обстоятельств (стихийные бедствия, военные действия, изменения законодательства и т.п.), если они своевременно уведомили другую сторону.</p>
+  <p>7.7. За нарушение авторских прав (распространение, копирование, передача материалов третьим лицам) Клиент уплачивает Исполнителю штраф в размере 3-кратной стоимости оплаченной Услуги (тарифа) за каждый факт нарушения, а также возмещает все понесённые убытки. Исполнитель вправе также заблокировать доступ Клиента без возврата оплаты.</p>
+
+  <h2>8. Конфиденциальность и защита персональных данных</h2>
+  <p>8.1. Исполнитель обязуется не разглашать личную информацию, полученную от Клиента (имя, контакты, содержание сессий, вопросы в чате), за исключением случаев, предусмотренных законодательством РФ.</p>
+  <p>8.2. Клиент даёт согласие на обработку своих персональных данных (ФИО, телефон, e-mail, платёжные данные) в целях заключения и исполнения договора, а также для информирования о новостях и акциях Исполнителя (в том числе рекламных рассылок). Согласие действует до момента его отзыва в письменной форме.</p>
+  <p>8.3. Исполнитель принимает необходимые организационные и технические меры для защиты данных от неправомерного доступа.</p>
+  <p>8.4. Клиент даёт согласие на использование Исполнителем анонимизированных отзывов и упоминаний о результатах (без указания ФИО) в рекламных и маркетинговых целях.</p>
+
+  <h2>9. Порядок расторжения и возврата денежных средств</h2>
+  <p>9.1. Клиент вправе отказаться от договора в любое время, уведомив Исполнителя в письменной форме (e-mail или сообщение в мессенджере).</p>
+  <p>9.2. Возврат за сессии и пакеты сессий:</p>
+  <ul>
+    <li>при отказе до начала первой сессии – возврат 100% суммы за вычетом комиссии платёжных систем (не более 5%);</li>
+    <li>если первая сессия проведена, то при отказе от оставшихся сессий возврат производится за вычетом стоимости уже оказанных сессий (по цене разовой сессии на момент оплаты) и фактических расходов (организационные затраты – не более 30% от стоимости пакета).</li>
+  </ul>
+  <p>9.3. Возврат за доступ к Клубу (обучающие материалы):</p>
+  <ul>
+    <li>доступ к Клубу является платным на период, и возврат за него не производится, если Клиент активировал доступ (вошёл в чат/канал) или участвовал в эфирах (факт входа фиксируется). Если доступ не был активирован в течение 7 дней с момента оплаты – возврат 100% стоимости подписки;</li>
+    <li>если программа Клуба разбита на модули (например, месячные темы), то при расторжении договора возврат рассчитывается по формуле:</li>
+  </ul>
+  <div class="formula">
+    <b>Возврат = Цобщ – (Смодуля × Коткрытых модулей + Рфакт),</b>
+    где Цобщ – общая стоимость подписки;<br>
+    Смодуля – стоимость одного модуля (определяется как Цобщ / общее количество модулей за период);<br>
+    Коткрытых модулей – количество модулей, доступ к которым был предоставлен Клиенту на момент расторжения;<br>
+    Рфакт – фактически понесённые расходы Исполнителя (организация, подготовка материалов, работа кураторов), которые оцениваются в размере 20% от стоимости подписки.
+  </div>
+  <p>Модуль считается полученным, если Исполнитель открыл к нему доступ на платформе или провёл соответствующий эфир (даже если Клиент не присутствовал).</p>
+  <p>9.4. Возврат осуществляется в течение 14 рабочих дней с момента получения письменного заявления Клиента, на ту же банковскую карту или счёт, с которого была произведена оплата.</p>
+  <p>9.5. При расторжении договора по инициативе Клиента после получения доступа к материалам, возврат производится только за неоткрытые модули (если такие есть) в соответствии с п. 9.3.</p>
+  <p>9.6. Возврат за Марафон:</p>
+  <ul>
+    <li>при отказе до того, как Telegram-бот Марафона прислал Клиенту первый день, – возврат 100% стоимости за вычетом комиссии платёжной системы (не более 5%);</li>
+    <li>после этого возврат производится за дни Марафона, которые ещё не пришли Клиенту: Возврат = стоимость Марафона / 6 × количество неполученных дней. День Марафона считается полученным, когда бот прислал его Клиенту, даже если Клиент не открыл материалы.</li>
+  </ul>
+
+  <h2>10. Заверения и гарантии Сторон</h2>
+  <p>10.1. Исполнитель заверяет, что применяет упрощённую систему налогообложения (УСН) и не является плательщиком НДС.</p>
+  <p>10.2. Клиент заверяет, что:</p>
+  <ul>
+    <li>имеет законные права вступать в договорные отношения;</li>
+    <li>осознаёт ответственность за использование материалов;</li>
+    <li>вся предоставленная информация достоверна и актуальна.</li>
+  </ul>
+
+  <h2>11. Заключительные положения</h2>
+  <p>11.1. Настоящая Оферта регулируется законодательством Российской Федерации.</p>
+  <p>11.2. Все споры решаются путём переговоров. При недостижении согласия спор передаётся в суд по месту нахождения Исполнителя (г. Пенза) с соблюдением досудебного претензионного порядка (срок рассмотрения претензии – 5 рабочих дней).</p>
+  <p>11.3. Исполнитель вправе вносить изменения в Оферту в одностороннем порядке. Новая редакция вступает в силу с момента её публикации на сайте или в Клубе. Если Клиент продолжает пользоваться Услугами после изменений, это означает его согласие с новой редакцией.</p>
+  <p>11.4. Если какие-либо условия Оферты признаны недействительными, это не влияет на действительность остальных условий.</p>
+  <p>11.5. Стороны подтверждают, что юридически значимые уведомления могут направляться по электронной почте и мессенджерам, указанным при регистрации.</p>
+  <p>11.6. Исполнитель не несёт ответственности за несоответствие услуги субъективным ожиданиям Клиента, а также за недостижение финансовых или иных результатов, если это не было прямо оговорено.</p>
+
+  <h2>12. Реквизиты Исполнителя</h2>
+  <div class="seller">
+    <div class="req-row"><b>Исполнитель</b><span>ИП Дудкина Ирина Александровна</span></div>
+    <div class="req-row"><b>ИНН</b><span>583700521908</span></div>
+    <div class="req-row"><b>ОГРНИП</b><span>322583500057163</span></div>
+    <div class="req-row"><b>Адрес</b><span>Пенза</span></div>
+    <div class="req-row"><b>Телефон</b><span><a href="tel:+79273757868">+7 (927) 375-78-68</a></span></div>
+    <div class="req-row"><b>E-mail</b><span><a href="mailto:irina.dudkina.74@mail.ru">irina.dudkina.74@mail.ru</a></span></div>
+    <div class="req-row"><b>Telegram</b><span><a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">@IrinaDudkina</a></span></div>
+  </div>
+
+  <p class="accept">Акцептуя настоящую Оферту, Клиент подтверждает, что прочитал, понял и согласен со всеми её условиями, включая правила использования материалов и порядок возврата.</p>
+
+</main>
+
+<footer>
+  <div class="footer-req">ИП Дудкина Ирина Александровна · ИНН 583700521908 · ОГРНИП 322583500057163 · г. Пенза · <a href="tel:+79273757868">+7 (927) 375-78-68</a> · <a href="mailto:irina.dudkina.74@mail.ru">irina.dudkina.74@mail.ru</a></div>
+  <span>© 2026 Ирина Дудкина</span>
+  <div class="footer-links">
+    <a href="index.html">Закрытый клуб «МОЁ СОСТОЯНИЕ»</a>
+    <a href="marafon.html">Марафон</a>
+    <a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Написать Ирине</a>
+  </div>
+</footer>
+
+</body>
+</html>

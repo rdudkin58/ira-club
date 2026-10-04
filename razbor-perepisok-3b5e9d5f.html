@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Разбор переписок — база клиенток</title>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-balance-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-balance-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-balance-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-balance-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-balance-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-balance-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon-balance.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  :root{
+    --ivory:#FBF7F1; --cream:#F8ECDA; --sand:#F0DDC0;
+    --gold:#C3943F; --gold-deep:#8E6420; --amber:#A4520F;
+    --ink:#33291F; --muted:#6E5D4E; --line:rgba(176,128,52,0.34);
+    --serif:'Cormorant Garamond','Times New Roman',serif;
+    --sans:'Manrope',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ivory);color:var(--ink);font:16px/1.6 var(--sans)}
+  .wrap{max-width:1100px;margin:0 auto;padding:32px 16px 64px}
+  h1{font:600 clamp(32px,6vw,48px)/1.1 var(--serif);margin:0 0 8px;color:var(--amber)}
+  h2{font:600 26px/1.2 var(--serif);margin:32px 0 12px}
+  .lead{color:var(--muted);max-width:720px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin:16px 0}
+  .safe{background:var(--cream);border-color:var(--gold)}
+  ol{padding-left:22px;margin:8px 0} li{margin:6px 0}
+  .drop{display:block;border:2px dashed var(--gold);border-radius:18px;padding:28px 16px;text-align:center;cursor:pointer;background:#fff}
+  .drop:hover,.drop.over{background:var(--cream)}
+  .drop b{display:block;font-size:18px;margin-bottom:4px}
+  .drop input{display:none}
+  .btn{display:inline-block;border:0;border-radius:999px;padding:12px 22px;font:600 15px var(--sans);cursor:pointer;background:linear-gradient(135deg,#D38B2A,#A4520F);color:#fff;margin:4px 8px 4px 0}
+  .btn.light{background:#fff;color:var(--amber);border:1px solid var(--gold)}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+  .stat{flex:1 1 140px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+  .stat b{display:block;font:600 30px/1 var(--serif);color:var(--amber)}
+  .stat span{font-size:13px;color:var(--muted)}
+  .msg{color:var(--muted);font-size:14px;min-height:22px}
+  .err{color:#a33}
+  .tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:var(--sand);position:sticky;top:0;white-space:nowrap}
+  td.note{color:var(--muted);min-width:240px}
+  tr.check td:first-child{border-left:4px solid var(--amber)}
+  label.f{font-size:14px;color:var(--muted)}
+  label.only{display:block;margin-top:8px;cursor:pointer}
+  #result{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Разбор переписок</h1>
+  <p class="lead">Страница находит в выгрузке Telegram женщин, которые были у Ирины на диагностике или сессии, и собирает их в таблицу Excel для базы клиенток.</p>
+
+  <div class="card safe">
+    <b>Переписки никуда не уходят.</b> Файл читается только в этом браузере, на твоём компьютере: страница ничего не отправляет ни на сайт, ни Claude, ни в интернет. Готовую таблицу сохрани на Яндекс Диск.
+  </div>
+
+  <h2>1. Выгрузи переписки</h2>
+  <div class="card">
+    В Telegram Desktop на компьютере, войдя в нужный аккаунт:
+    <ol>
+      <li>Настройки → Продвинутые настройки → «Экспорт данных из Telegram».</li>
+      <li>Отметь «Информация об аккаунте», «Список контактов» и «Личные чаты». Остальное сними: фото, видео, голосовые и файлы не нужны.</li>
+      <li>Внизу формат — «Машиночитаемый JSON». Нажми «Экспортировать».</li>
+      <li>В папке выгрузки будет файл <b>result.json</b>.</li>
+    </ol>
+    Так по очереди для каждого аккаунта: основного @IrinaDudkina и трёх для рассылок. Файлы можно выбрать сразу все, одна женщина из разных аккаунтов соберётся в одну строку.
+  </div>
+
+  <h2>2. Выбери файлы</h2>
+  <label class="drop" id="drop">
+    <b>Выбрать result.json</b>
+    <span class="msg">или перетащи сюда, можно несколько</span>
+    <input type="file" id="files" accept=".json,application/json" multiple>
+  </label>
+  <p class="msg" id="msg"></p>
+
+  <div id="result">
+    <h2>3. Что нашлось</h2>
+    <div class="stats" id="stats"></div>
+    <p>
+      <button class="btn" id="xlsx">Скачать Excel</button>
+      <button class="btn light" id="csv">Скачать CSV</button>
+      <label class="f only"><input type="checkbox" id="onlycheck"> показать только «проверить»</label>
+    </p>
+    <div class="card">
+      <b>Как страница решает.</b> Встреча — Ирина прислала ссылку на Телебосс, Зум, Телемост или Сбер Джаз. Первая встреча без оплаты перед ней — диагностика. Если в переписке есть чек или «оплата пришла» — встречи после оплаты считаются сессиями. Ссылку на открытый эфир канала страница не считает встречей. Строки с янтарной полоской слева — «проверить»: там страница не уверена, причина в заметках. Ника в выгрузке Telegram нет, поэтому в таблице есть номер в Telegram и ссылка на чат.
+    </div>
+    <div class="tablebox"><table id="tbl"></table></div>
+  </div>
+</div>
+
+<script>
+// Признаки (по голосовому Ирины 4.10.2026): ссылка на встречу = была встреча; чек = оплата, значит сессия.
+const MEET = /(teleboss\.ru|zoom\.us|zoom\.com|telemost\.yandex|telemost\.360\.yandex|jazz\.sber|salutejazz|meet\.google)/i;
+const EFIR = /aSIfJ4OX6X/i; // комната открытых эфиров канала: это не диагностика
+const CLIENT_PAID = /(перевела|перевёл|перевел|оплатила|оплатил|оплачено|оплачиваю|отправила чек|вот чек|чек об оплате|скрин оплаты|квитанц)/i;
+const NEAR_PAY = /(чек|оплат|перевел|перевела|перевод|квитанц|предоплат)/i;
+const OWNER_PAID = /(оплат[ау]\s+(получила|пришла|поступила|прошла)|получила\s+оплату|деньги\s+(пришли|получила)|оплата\s+есть|спасибо\s+за\s+оплату)/i;
+const PRODUCTS = [[/равновеси/i,'Равновесие'],[/(^|\D)20[\s ]?000(\D|$)/,'Равновесие'],[/(^|\D)(6|10)[\s ]?000(\D|$)/,'Пробная сессия'],[/(^|\D)(1[\s ]?300|2[\s ]?600|26[\s ]?000)(\D|$)/,'Клуб'],[/клуб/i,'Клуб'],[/марафон|(^|\D)990(\D|$)/i,'Марафон']];
+
+const DAY = 864e5;
+const $ = (id) => document.getElementById(id);
+const fmt = (t) => t ? new Date(t).toLocaleDateString('ru-RU') : '';
+const textOf = (m) => {
+  const t = m.text;
+  if (typeof t === 'string') return t;
+  if (Array.isArray(t)) return t.map((p) => typeof p === 'string' ? p : (p.text || '') + (p.href ? ' ' + p.href : '')).join('');
+  return '';
+};
+const linksOf = (m) => (m.text_entities || []).map((e) => (e.href || '') + ' ' + (e.text || '')).join(' ');
+const timeOf = (m) => m.date_unixtime ? Number(m.date_unixtime) * 1000 : Date.parse(m.date);
+const hasAttach = (m) => !!(m.photo || m.file || m.media_type);
+const short = (s) => { s = s.replace(/\s+/g, ' ').trim(); return s.length > 70 ? s.slice(0, 70) + '…' : s; };
+
+const people = new Map();
+
+function analyze(data, fileName) {
+  const me = data.personal_information || {};
+  const ownerName = [me.first_name, me.last_name].filter(Boolean).join(' ') || (me.username ? '@' + me.username : fileName);
+  const account = me.username ? '@' + me.username : ownerName;
+  const phones = new Map(), phonesByName = new Map();
+  for (const c of (data.contacts && data.contacts.list) || []) {
+    const name = [c.first_name, c.last_name].filter(Boolean).join(' ').trim().toLowerCase();
+    if (c.user_id) phones.set(String(c.user_id), c.phone_number);
+    if (name && c.phone_number) phonesByName.set(name, c.phone_number);
+  }
+  const chats = data.chats ? data.chats.list : (data.messages ? [data] : []);
+  let n = 0;
+  for (const chat of chats) {
+    if (chat.type !== 'personal_chat' || !Array.isArray(chat.messages)) continue;
+    n++;
+    const peer = 'user' + chat.id;
+    const msgs = chat.messages.filter((m) => m.type === 'message');
+    const isOwner = me.user_id ? (m) => m.from_id === 'user' + me.user_id : (m) => m.from_id !== peer;
+    const meetings = [], pays = [];
+    let efir = false, product = '';
+    msgs.forEach((m, i) => {
+      const t = timeOf(m), txt = textOf(m), all = txt + ' ' + linksOf(m);
+      for (const [re, p] of PRODUCTS) if (re.test(txt) && (!product || p === 'Равновесие')) { if (NEAR_PAY.test(txt) || /равновеси|клуб|марафон/i.test(txt)) product = p; }
+      if (isOwner(m)) {
+        if (MEET.test(all)) { if (EFIR.test(all)) efir = true; else meetings.push(t); }
+        if (OWNER_PAID.test(txt)) pays.push({ t, why: 'Ирина: «' + short(txt) + '»' });
+      } else {
+        if (CLIENT_PAID.test(txt)) pays.push({ t, why: '«' + short(txt) + '»' });
+        else if (hasAttach(m)) {
+          const near = msgs.slice(Math.max(0, i - 3), i + 4).filter((x) => Math.abs(timeOf(x) - t) < 2 * DAY);
+          if (near.some((x) => NEAR_PAY.test(textOf(x)))) pays.push({ t, why: 'фото или файл рядом со словом про оплату' });
+        }
+      }
+    });
+    if (!meetings.length && !pays.length) continue; // не клиентка: не было ни встречи, ни оплаты
+
+    const key = String(chat.id);
+    const p = people.get(key) || { id: chat.id, name: chat.name || 'без имени', accounts: new Set(), meetings: [], pays: [], efir: false, product: '', last: 0, phone: '' };
+    p.accounts.add(account);
+    p.meetings.push(...meetings); p.pays.push(...pays);
+    p.efir = p.efir || efir; p.product = p.product || product;
+    p.last = Math.max(p.last, ...msgs.map(timeOf).filter(Boolean));
+    p.phone = p.phone || phones.get(key) || phonesByName.get(String(chat.name || '').trim().toLowerCase()) || '';
+    people.set(key, p);
+  }
+  return n;
+}
+
+// Встречи в один день считаем одной; оплаты в один день — одной.
+const byDay = (arr, get = (x) => x) => {
+  const seen = new Set(), out = [];
+  for (const x of [...arr].sort((a, b) => get(a) - get(b))) { const d = new Date(get(x)).toDateString(); if (!seen.has(d)) { seen.add(d); out.push(x); } }
+  return out;
+};
+
+function rows() {
+  const out = [];
+  for (const p of people.values()) {
+    const meetings = byDay(p.meetings), pays = byDay(p.pays, (x) => x.t);
+    const firstPay = pays.length ? pays[0].t : Infinity;
+    let diag = null; const sessions = [];
+    for (const t of meetings) {
+      if (new Date(t).toDateString() === new Date(firstPay).toDateString() || t > firstPay) sessions.push(t);
+      else if (!diag) diag = t;
+      else sessions.push(t);
+    }
+    const check = [];
+    if (pays.length && !meetings.length) check.push('нашла оплату, но нет ссылки на встречу');
+    if (!pays.length && meetings.length > 1) check.push(`встреч ${meetings.length}, а чека не нашла: возможно, сессии без чека в переписке`);
+    if (pays.length && !diag) check.push('оплата была раньше первой ссылки: где диагностика?');
+    const notes = [];
+    if (pays.length) notes.push('Оплата: ' + pays.map((x) => fmt(x.t) + ' ' + x.why).join('; '));
+    if (p.efir) notes.push('звала на открытый эфир');
+    if (p.accounts.size > 1) notes.push('есть в нескольких аккаунтах');
+    out.push({
+      check: check.length > 0,
+      'Имя и фамилия': p.name,
+      'Ник в Telegram': '',
+      'Телефон': p.phone,
+      'Откуда (аккаунт)': [...p.accounts].join(', '),
+      'Диагностика, дата': fmt(diag),
+      'Сессии, даты': sessions.map(fmt).join(', '),
+      'Оплатила (чек)': pays.length ? 'да' : 'нет',
+      'Продукт': p.product || (pays.length ? '' : 'Диагностика'),
+      'Статус': pays.length ? 'Была в работе' : 'Только диагностика',
+      'Запрос': '',
+      'Проверить': check.join('; '),
+      'Заметки': notes.join('. '),
+      'Номер в Telegram': String(p.id),
+      'Ссылка на чат': 'tg://user?id=' + p.id,
+      'Последнее сообщение': fmt(p.last),
+      _last: p.last,
+    });
+  }
+  return out.sort((a, b) => b._last - a._last);
+}
+
+let table = [];
+const COLS = ['Имя и фамилия','Телефон','Откуда (аккаунт)','Диагностика, дата','Сессии, даты','Оплатила (чек)','Продукт','Статус','Проверить','Заметки','Последнее сообщение'];
+const EXPORT = ['Имя и фамилия','Ник в Telegram','Телефон','Откуда (аккаунт)','Диагностика, дата','Сессии, даты','Оплатила (чек)','Продукт','Статус','Запрос','Проверить','Заметки','Номер в Telegram','Ссылка на чат','Последнее сообщение'];
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+function render() {
+  const only = $('onlycheck').checked;
+  const list = only ? table.filter((r) => r.check) : table;
+  $('tbl').innerHTML = '<tr>' + COLS.map((c) => `<th>${c}</th>`).join('') + '</tr>' +
+    list.map((r) => `<tr class="${r.check ? 'check' : ''}">` + COLS.map((c) => `<td class="${c === 'Заметки' || c === 'Проверить' ? 'note' : ''}">${esc(r[c])}</td>`).join('') + '</tr>').join('');
+  const s = (label, v) => `<div class="stat"><b>${v}</b><span>${label}</span></div>`;
+  $('stats').innerHTML = s('женщин в таблице', table.length) + s('были на диагностике', table.filter((r) => r['Диагностика, дата']).length) +
+    s('оплачивали', table.filter((r) => r['Оплатила (чек)'] === 'да').length) + s('проверить', table.filter((r) => r.check).length);
+  $('result').style.display = 'block';
+}
+
+async function load(files) {
+  const msg = $('msg');
+  msg.className = 'msg';
+  let chats = 0;
+  for (const f of files) {
+    msg.textContent = `Читаю ${f.name}…`;
+    try {
+      const data = JSON.parse(await f.text());
+      chats += analyze(data, f.name);
+    } catch (e) {
+      msg.className = 'msg err';
+      msg.textContent = `Не получилось прочитать ${f.name}: это точно result.json из экспорта в формате JSON?`;
+      return;
+    }
+  }
+  table = rows();
+  msg.textContent = `Готово: просмотрено личных чатов — ${chats}. Можно добавить файлы других аккаунтов, они допишутся в ту же таблицу.`;
+  render();
+}
+
+const plain = () => table.map((r) => Object.fromEntries(EXPORT.map((c) => [c, r[c]])));
+const stamp = () => new Date().toISOString().slice(0, 10);
+$('xlsx').onclick = () => {
+  if (!window.XLSX) return $('csv').onclick();
+  const ws = XLSX.utils.json_to_sheet(plain(), { header: EXPORT });
+  ws['!cols'] = EXPORT.map((c) => ({ wch: c === 'Заметки' || c === 'Проверить' ? 50 : Math.max(14, c.length + 2) }));
+  ws['!freeze'] = { xSplit: 0, ySplit: 1 };
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Клиентки');
+  XLSX.writeFile(wb, `baza-klientok-${stamp()}.xlsx`);
+};
+$('csv').onclick = () => {
+  const q = (v) => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  const csv = [EXPORT.map(q).join(';'), ...plain().map((r) => EXPORT.map((c) => q(r[c])).join(';'))].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' }));
+  a.download = `baza-klientok-${stamp()}.csv`;
+  a.click();
+};
+$('onlycheck').onchange = render;
+$('files').onchange = (e) => load([...e.target.files]);
+const drop = $('drop');
+drop.ondragover = (e) => { e.preventDefault(); drop.classList.add('over'); };
+drop.ondragleave = () => drop.classList.remove('over');
+drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove('over'); load([...e.dataTransfer.files]); };
+</script>
+</body>
+</html>

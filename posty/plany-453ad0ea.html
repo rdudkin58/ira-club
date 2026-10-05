@@ -195,10 +195,30 @@ html,body{margin:0}
   function save(v){try{if(v)localStorage.setItem(KEY,v);else localStorage.removeItem(KEY);}catch(e){}}
   function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function unlock(p){
+    if(!(window.crypto&&crypto.subtle))return unlockForge(p);
     return crypto.subtle.importKey('raw',new TextEncoder().encode(p),'PBKDF2',false,['deriveKey'])
       .then(function(k){return crypto.subtle.deriveKey({name:'PBKDF2',salt:bytes(D.s),iterations:D.n,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['decrypt']);})
       .then(function(k){return crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(D.i)},k,bytes(D.c));})
       .then(function(b){return JSON.parse(new TextDecoder().decode(b));});
+  }
+  // На адресе без https браузер не даёт crypto.subtle: расшифровываем библиотекой forge.
+  var forgeP=null;
+  function loadForge(){
+    if(window.forge)return Promise.resolve(window.forge);
+    if(!forgeP)forgeP=new Promise(function(ok,no){var s=document.createElement('script');
+      s.src='https://cdnjs.cloudflare.com/ajax/libs/forge/1.3.1/forge.min.js';
+      s.onload=function(){ok(window.forge);};s.onerror=function(){forgeP=null;no(new Error('forge'));};document.head.appendChild(s);});
+    return forgeP;
+  }
+  function unlockForge(p){
+    return loadForge().then(function(f){return new Promise(function(ok){setTimeout(ok,30);}).then(function(){
+      var key=f.pkcs5.pbkdf2(f.util.encodeUtf8(p),atob(D.s),D.n,32,f.md.sha256.create());
+      var c=atob(D.c),tag=c.slice(-16),d=f.cipher.createDecipher('AES-GCM',key);
+      d.start({iv:atob(D.i),tagLength:128,tag:f.util.createBuffer(tag)});
+      d.update(f.util.createBuffer(c.slice(0,-16)));
+      if(!d.finish())throw new Error('pass');
+      return JSON.parse(f.util.decodeUtf8(d.output.getBytes()));
+    });});
   }
   function show(page){
     document.documentElement.classList.remove('lock-wait');
@@ -206,7 +226,7 @@ html,body{margin:0}
     page.s.forEach(function(code){var e=document.createElement('script');e.textContent=code;document.body.appendChild(e);});
     if(location.hash){var t=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(t)t.scrollIntoView();}
   }
-  if(!(window.crypto&&crypto.subtle&&window.TextEncoder)){
+  if(!(window.Promise&&window.TextEncoder&&window.JSON)){
     err.textContent='Этот браузер не может открыть страницу. Открой её в Safari или Chrome.';err.hidden=false;return;
   }
   var p0=saved();

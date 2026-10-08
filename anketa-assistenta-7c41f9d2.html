@@ -95,7 +95,7 @@
     fetch(ENDPOINT,{method:'POST',headers:{'content-type':'text/plain;charset=UTF-8'},body:JSON.stringify(d)})
       .then(function(r){return r.json();})
       .then(function(j){
-        if(j&&j.ok){F.style.display='none';say('ok','<b>Анкета отправлена.</b> Спасибо! Ирина прочитает её и напишет тебе в Telegram.');}
+        if(j&&j.ok){F.style.display='none';document.querySelector('.lead').style.display='none';document.querySelector('.note').style.display='none';document.querySelector('h1').innerHTML='Анкета <em>отправлена</em>';window.scrollTo({top:0,behavior:'smooth'});say('ok','<b>Анкета отправлена.</b> Спасибо! Ирина прочитает её и напишет тебе в Telegram.');}
         else{B.disabled=false;B.textContent='Отправить анкету';fallback();}
       })
       .catch(function(){B.disabled=false;B.textContent='Отправить анкету';fallback();});

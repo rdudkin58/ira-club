@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Все тесты Ирины Дудкиной — выбери свою тему</title>
+<meta name="description" content="Все 12 тестов Ирины Дудкиной в одном месте: состояние, корни, деньги, отношения. 12 вопросов, 2–3 минуты на каждый.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Все тесты Ирины Дудкиной в одном месте">
+<meta property="og:description" content="12 тестов по 2–3 минуты: состояние, корни, деньги, отношения. Выбери свою тему.">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-balance-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-balance-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-balance-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-balance-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-balance-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-balance-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon-balance.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF7F1;
+    --cream:#F8ECDA;
+    --sand:#F0DDC0;
+    --blush:#F8DCC8;
+    --gold:#C3943F;
+    --gold-light:#E8C98A;
+    --gold-deep:#8E6420;
+    --espresso:#2A201A;
+    --espresso-2:#35291F;
+    --ink:#33291F;
+    --muted:#6E5D4E;
+    --line:rgba(176,128,52,0.34);
+    --gold-grad:linear-gradient(135deg,#F2D38F 0%,#D2A04A 45%,#9C6E25 100%);
+    --serif:'Cormorant Garamond', 'Times New Roman', serif;
+    --sans:'Manrope', system-ui, -apple-system, sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --shadow:0 26px 50px -26px rgba(150,100,30,.5);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top:70px;}
+  body{background:var(--ivory); color:var(--ink); font:16px/1.6 var(--sans); -webkit-font-smoothing:antialiased; font-variant-numeric:lining-nums;}
+  a{color:inherit; text-decoration:none;}
+  :focus-visible{outline:1px solid var(--gold); outline-offset:4px;}
+  .wrap{max-width:660px; margin:0 auto; padding:44px 24px 0;}
+  .top{text-align:center;}
+  .eyebrow{display:inline-flex; align-items:center; gap:12px; font:600 11.5px/1 var(--sans); letter-spacing:.22em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:18px;}
+  .eyebrow::before,.eyebrow::after{content:""; width:32px; height:1px; background:currentColor; opacity:.7;}
+  h1,h2{font-family:var(--serif); font-weight:500; color:var(--espresso); letter-spacing:-.01em;}
+  h1{font-size:clamp(40px,7vw,58px); line-height:1.04;}
+  h1 em{font-style:italic; color:var(--gold-deep);}
+  .lede{color:var(--muted); font-size:16px; margin:16px auto 0; max-width:480px;}
+  .prog{background:var(--cream); border-radius:16px; padding:15px 18px; margin-top:26px; font-size:14.5px; color:var(--muted);}
+  .prog b{color:var(--espresso);}
+  .bar{height:6px; background:var(--sand); border-radius:6px; margin-top:9px; overflow:hidden;}
+  .bar i{display:block; height:100%; width:0; background:var(--gold-grad); border-radius:6px;}
+  .tabs{position:sticky; top:0; z-index:5; background:var(--ivory); display:flex; gap:8px; overflow-x:auto; padding:14px 0 12px; margin-top:22px; border-bottom:1px solid var(--line); scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tabs a{flex:none; border:1px solid var(--gold-light); border-radius:30px; padding:10px 15px; font:600 13px/1 var(--sans); color:var(--gold-deep); background:#fff; transition:background .3s ease, color .3s ease;}
+  .tabs a.on{background:var(--espresso); color:var(--gold-light); border-color:var(--espresso);}
+  .grp{padding-top:10px;}
+  .grp h2{font-size:32px; line-height:1.1; margin:26px 0 4px;}
+  .grp .sub{color:var(--muted); font-size:14.5px; margin-bottom:6px;}
+  .row{display:flex; align-items:center; gap:14px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .ic{flex:none; width:44px; height:44px; border-radius:50%; background:var(--cream); display:grid; place-items:center; font:500 21px/1 var(--serif); color:var(--gold-deep);}
+  .ic svg{width:18px; height:18px; stroke:#fff; stroke-width:2.4; fill:none; stroke-linecap:round; stroke-linejoin:round;}
+  .row.done .ic{background:var(--gold-grad);}
+  .tx{flex:1; min-width:0;}
+  .tx b{display:block; font:500 21px/1.15 var(--serif); color:var(--espresso);}
+  .tx span{display:block; font:italic 17px/1.3 var(--serif); color:var(--gold-deep); margin-top:2px;}
+  .tx small{display:none; font:600 10.5px/1.4 var(--sans); color:var(--gold); letter-spacing:.1em; text-transform:uppercase; margin-top:4px;}
+  .row.done .tx small{display:block;}
+  .ar{flex:none; color:var(--gold); font-size:20px; transition:transform .3s ease;}
+  .row:hover .ar{transform:translateX(4px);}
+  .cta-card{background:linear-gradient(135deg,#A9773C,#8C5E2A); color:#fff; border-radius:22px; padding:38px 26px 34px; text-align:center; margin-top:44px;}
+  .cta-card h2{color:#fff; font-size:34px; line-height:1.12;}
+  .cta-card p{font-size:15.5px; opacity:.93; margin:12px auto 22px; max-width:420px;}
+  .cta-card .btn{display:inline-flex; align-items:center; justify-content:center; height:54px; padding:0 34px; background:#fff; color:var(--gold-deep); border-radius:40px; font:600 14.5px/1 var(--sans); letter-spacing:.02em;}
+  .cta-note{margin-top:14px; font:500 12.5px/1 var(--sans); letter-spacing:.08em; color:#F0D9B8;}
+  /* ---------- footer ---------- */
+
+  footer{
+    max-width:660px; margin:64px auto 0; padding:26px 24px 40px;
+    border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center; gap:14px 28px; flex-wrap:wrap;
+    font-size:12.5px; color:var(--muted);
+  }
+  .footer-links{display:flex; gap:22px; flex-wrap:wrap;}
+  .footer-links a{font:600 11px/1.6 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep); transition:color .3s ease;}
+  .footer-links a:hover{color:var(--gold);}
+  @media (max-width:480px){
+    .wrap{padding:30px 16px 0;}
+    .tx b{font-size:20px;}
+    .cta-card{padding:34px 20px 30px;}
+    .cta-card .btn{width:100%;}
+    footer{padding:24px 16px 36px;}
+  }
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113425037', 'ym');
+  ym(113425037, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<noscript><div><img src="https://mc.yandex.ru/watch/113425037" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<main class="wrap">
+  <div class="top">
+    <div class="eyebrow">Тесты Ирины</div>
+    <h1>Все <em>тесты</em> в&nbsp;одном месте</h1>
+    <p class="lede">12 тестов, в каждом 12 вопросов и 2–3 минуты. Выбери тему, которая откликается. Пройденные тесты отмечаются галочкой.</p>
+  </div>
+  <div class="prog" id="prog" hidden>Ты прошла <b id="progN">0 из 12</b> тестов<div class="bar"><i id="progBar"></i></div></div>
+  <nav class="tabs" id="tabs" aria-label="Темы тестов"></nav>
+  <div id="list"></div>
+
+  <div class="cta-card">
+    <h2>Прошла тесты?</h2>
+    <p>Напиши Ирине «ДИАГНОСТИКА» и расскажи свои результаты. За 40 минут она найдёт корень и покажет, что с ним можно сделать.</p>
+    <a class="btn" href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Написать Ирине «ДИАГНОСТИКА»</a>
+    <div class="cta-note">Бесплатно · онлайн · 40 минут</div>
+  </div>
+</main>
+
+<footer>
+  <span>© 2026 Ирина Дудкина</span>
+  <div class="footer-links">
+    <a href="index.html">Закрытый клуб «МОЁ СОСТОЯНИЕ»</a>
+    <a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">Написать Ирине</a>
+  </div>
+</footer>
+
+<script>
+// Порядок тем — как выбрала Ирина (9.10.2026): состояние, корни, деньги, отношения.
+// Пройденный тест отмечается: каждый тест на экране результата пишет localStorage «test-done-<страница>».
+const GROUPS = [
+  ['sostoyanie-grp','Я и моё состояние','Силы, энергия, тело',[
+    ['sostoyanie','Про твоё состояние','В каком состоянии ты живёшь большую часть времени?'],
+    ['zhenskaya-energiya','Про твою женскую энергию','В какой энергии ты живёшь?'],
+    ['telo','Про твоё тело','О чём молчит твоё тело?']]],
+  ['korni','Корни','Что пришло из семьи и детства',[
+    ['mama','Про твою маму','Что ты унесла из отношений с мамой?'],
+    ['papa','Про твоего папу','Что ты унесла из отношений с папой?']]],
+  ['dengi-grp','Деньги и дело','Доход, проявленность, вера в себя',[
+    ['dengi','Про твои деньги','Куда утекают твои деньги?'],
+    ['realizatsiya','Про твою реализацию','Что держит тебя в тени?'],
+    ['uverennost','Про твою уверенность','Что мешает тебе верить в себя?']]],
+  ['otnosheniya-grp','Отношения','С мужчиной — или чтобы они появились',[
+    ['otnosheniya','Про твои отношения','Что мешает твоим отношениям?'],
+    ['osoznanie','Про твоего мужчину','Что он чувствует, но не говорит?'],
+    ['obidy','Про твои обиды','Какая обида до сих пор держит тебя?'],
+    ['razvod','Про твой развод','Ты точно развелась — или только штамп поставила?']]]
+];
+function isDone(page){ try{ return localStorage.getItem('test-done-'+page) === '1'; }catch(e){ return false; } }
+const check = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+let n = 0, total = 0, done = 0;
+document.getElementById('tabs').innerHTML = GROUPS.map(g=>`<a href="#${g[0]}">${g[1]}</a>`).join('');
+document.getElementById('list').innerHTML = GROUPS.map(([id,title,sub,tests])=>
+  `<section class="grp" id="${id}"><h2>${title}</h2><p class="sub">${sub}</p>` +
+  tests.map(([page,name,q])=>{
+    n++; total++; const d = isDone(page); if(d) done++;
+    return `<a class="row${d?' done':''}" href="${page}.html"><span class="ic">${d?check:n}</span><span class="tx"><b>${name}</b><span>${q}</span><small>Пройден · можно ещё раз</small></span><span class="ar" aria-hidden="true">→</span></a>`;
+  }).join('') + '</section>').join('');
+if(done){
+  document.getElementById('prog').hidden = false;
+  document.getElementById('progN').textContent = done+' из '+total;
+  document.getElementById('progBar').style.width = (done/total*100)+'%';
+}
+// подсветка темы во вкладках при прокрутке
+const tabs = [...document.querySelectorAll('#tabs a')];
+function setTab(id){ tabs.forEach(t=>t.classList.toggle('on', t.getAttribute('href')==='#'+id)); }
+setTab(GROUPS[0][0]);
+if('IntersectionObserver' in window){
+  const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) setTab(e.target.id); }), {rootMargin:'-30% 0px -60% 0px'});
+  document.querySelectorAll('.grp').forEach(s=>io.observe(s));
+}
+</script>
+</body>
+</html>

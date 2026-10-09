@@ -23,81 +23,87 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Decode queued images
+      - name: Decode completed image tasks
         shell: bash
         run: |
           python3 <<'PY'
           import base64
           import json
-          import re
           from pathlib import Path
 
           queue = Path(".chatgpt/image-queue")
 
           if not queue.exists():
-              print("No image queue.")
+              print("No queue.")
               raise SystemExit(0)
 
           allowed_extensions = {".jpg", ".jpeg", ".png", ".webp"}
+          allowed_roots = {"images", "assets"}
 
           processed = []
 
-          for task_file in sorted(queue.glob("*.json")):
-              print(f"Processing {task_file}")
-
-              task = json.loads(task_file.read_text(encoding="utf-8"))
+          for manifest in sorted(queue.glob("*/manifest.json")):
+              task_dir = manifest.parent
+              task = json.loads(manifest.read_text(encoding="utf-8"))
 
               target = task.get("path", "").strip()
-              payload = task.get("base64", "").strip()
+              parts_count = int(task.get("parts", 0))
 
-              if not target or not payload:
-                  raise ValueError(f"Invalid task: {task_file}")
+              if not target or parts_count < 1:
+                  print(f"Skipping invalid task: {manifest}")
+                  continue
 
               target_path = Path(target)
 
-              # Security: only repository-relative paths.
               if target_path.is_absolute() or ".." in target_path.parts:
-                  raise ValueError(f"Unsafe target path: {target}")
+                  raise ValueError(f"Unsafe path: {target}")
 
-              # Security: image files only.
               if target_path.suffix.lower() not in allowed_extensions:
                   raise ValueError(f"Unsupported image type: {target_path.suffix}")
 
-              # Keep generated site images in these directories.
-              allowed_roots = {"images", "assets"}
-
-              if not target_path.parts or target_path.parts[0] not in allowed_roots:
+              if (
+                  not target_path.parts
+                  or target_path.parts[0] not in allowed_roots
+              ):
                   raise ValueError(
-                      f"Images may only be written under images/ or assets/: {target}"
+                      f"Target must be under images/ or assets/: {target}"
                   )
 
-              # Strip optional data-URL prefix.
-              payload = re.sub(
-                  r"^data:image/[^;]+;base64,",
-                  "",
-                  payload,
-                  flags=re.I
+              part_files = [
+                  task_dir / f"part-{n:03d}.txt"
+                  for n in range(1, parts_count + 1)
+              ]
+
+              if not all(p.exists() for p in part_files):
+                  print(f"Task incomplete, waiting: {task_dir}")
+                  continue
+
+              payload = "".join(
+                  p.read_text(encoding="utf-8").strip()
+                  for p in part_files
               )
 
               image_bytes = base64.b64decode(payload, validate=True)
 
-              if len(image_bytes) == 0:
+              if not image_bytes:
                   raise ValueError(f"Empty image: {target}")
 
-              # 15 MB safety limit per image.
               if len(image_bytes) > 15 * 1024 * 1024:
                   raise ValueError(f"Image too large: {target}")
 
               target_path.parent.mkdir(parents=True, exist_ok=True)
               target_path.write_bytes(image_bytes)
 
-              print(f"Created {target_path} ({len(image_bytes)} bytes)")
-              processed.append(task_file)
+              print(f"Created {target_path}: {len(image_bytes)} bytes")
 
-          for task_file in processed:
-              task_file.unlink()
+              processed.append(task_dir)
 
-          print(f"Processed {len(processed)} image(s).")
+          for task_dir in processed:
+              for p in task_dir.iterdir():
+                  p.unlink()
+              task_dir.rmdir()
+
+          print(f"Completed {len(processed)} task(s).")
           PY
 
       - name: Commit generated images
@@ -105,11 +111,14 @@ jobs:
         run: |
           if git status --porcelain | grep -q .; then
             git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config user.email \
+              "41898282+github-actions[bot]@users.noreply.github.com"
 
             git add -A
 
-            git commit -m "Add generated site images [image-upload-skip]"
+            git commit \
+              -m "Add generated site images [image-upload-skip]"
+
             git push
           else
             echo "Nothing to commit."

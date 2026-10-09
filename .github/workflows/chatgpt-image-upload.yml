@@ -1,0 +1,116 @@
+name: ChatGPT image upload
+
+on:
+  push:
+    paths:
+      - ".chatgpt/image-queue/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: chatgpt-image-upload
+  cancel-in-progress: false
+
+jobs:
+  install-images:
+    if: ${{ !contains(github.event.head_commit.message, '[image-upload-skip]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Decode queued images
+        shell: bash
+        run: |
+          python3 <<'PY'
+          import base64
+          import json
+          import re
+          from pathlib import Path
+
+          queue = Path(".chatgpt/image-queue")
+
+          if not queue.exists():
+              print("No image queue.")
+              raise SystemExit(0)
+
+          allowed_extensions = {".jpg", ".jpeg", ".png", ".webp"}
+
+          processed = []
+
+          for task_file in sorted(queue.glob("*.json")):
+              print(f"Processing {task_file}")
+
+              task = json.loads(task_file.read_text(encoding="utf-8"))
+
+              target = task.get("path", "").strip()
+              payload = task.get("base64", "").strip()
+
+              if not target or not payload:
+                  raise ValueError(f"Invalid task: {task_file}")
+
+              target_path = Path(target)
+
+              # Security: only repository-relative paths.
+              if target_path.is_absolute() or ".." in target_path.parts:
+                  raise ValueError(f"Unsafe target path: {target}")
+
+              # Security: image files only.
+              if target_path.suffix.lower() not in allowed_extensions:
+                  raise ValueError(f"Unsupported image type: {target_path.suffix}")
+
+              # Keep generated site images in these directories.
+              allowed_roots = {"images", "assets"}
+
+              if not target_path.parts or target_path.parts[0] not in allowed_roots:
+                  raise ValueError(
+                      f"Images may only be written under images/ or assets/: {target}"
+                  )
+
+              # Strip optional data-URL prefix.
+              payload = re.sub(
+                  r"^data:image/[^;]+;base64,",
+                  "",
+                  payload,
+                  flags=re.I
+              )
+
+              image_bytes = base64.b64decode(payload, validate=True)
+
+              if len(image_bytes) == 0:
+                  raise ValueError(f"Empty image: {target}")
+
+              # 15 MB safety limit per image.
+              if len(image_bytes) > 15 * 1024 * 1024:
+                  raise ValueError(f"Image too large: {target}")
+
+              target_path.parent.mkdir(parents=True, exist_ok=True)
+              target_path.write_bytes(image_bytes)
+
+              print(f"Created {target_path} ({len(image_bytes)} bytes)")
+              processed.append(task_file)
+
+          for task_file in processed:
+              task_file.unlink()
+
+          print(f"Processed {len(processed)} image(s).")
+          PY
+
+      - name: Commit generated images
+        shell: bash
+        run: |
+          if git status --porcelain | grep -q .; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+            git add -A
+
+            git commit -m "Add generated site images [image-upload-skip]"
+            git push
+          else
+            echo "Nothing to commit."
+          fi

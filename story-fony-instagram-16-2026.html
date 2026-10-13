@@ -55,14 +55,14 @@ function svgFor(item,num){
  const decorative=motif(m,accent,seed);
  const pos=(seed*17)%180;
  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" aria-label="Фон для сторис '+name.replace(/&/g,'&amp;')+'">'+
- '<defs><linearGradient id="bg" x1="0" y1="0" x2=".84" y2="1"><stop stop-color="'+bg+'"/><stop offset=".54" stop-color="'+bg+'"/><stop offset="1" stop-color="'+mid+'"/></linearGradient>'+
- '<radialGradient id="gl" cx=".74" cy=".7" r=".55"><stop stop-color="'+mid+'" stop-opacity=".58"/><stop offset="1" stop-color="'+mid+'" stop-opacity="0"/></radialGradient>'+
- '<linearGradient id="wave" x1="0" y1="0" x2="1" y2=".75"><stop stop-color="'+mid+'" stop-opacity=".58"/><stop offset="1" stop-color="'+accent+'" stop-opacity=".12"/></linearGradient>'+
- '<pattern id="grain" width="92" height="97" patternUnits="userSpaceOnUse"><circle cx="18" cy="13" r="1.5" fill="'+accent+'" opacity=".17"/><circle cx="65" cy="45" r="1" fill="'+accent+'" opacity=".13"/><circle cx="33" cy="84" r="1.2" fill="'+accent+'" opacity=".13"/></pattern></defs>'+
- '<rect width="1080" height="1920" fill="url(#bg)"/><rect width="1080" height="1920" fill="url(#gl)"/><rect width="1080" height="1920" fill="url(#grain)"/>'+
+ '<defs><linearGradient id="bg'+num+'" x1="0" y1="0" x2=".84" y2="1"><stop stop-color="'+bg+'"/><stop offset=".54" stop-color="'+bg+'"/><stop offset="1" stop-color="'+mid+'"/></linearGradient>'+
+ '<radialGradient id="gl'+num+'" cx=".74" cy=".7" r=".55"><stop stop-color="'+mid+'" stop-opacity=".58"/><stop offset="1" stop-color="'+mid+'" stop-opacity="0"/></radialGradient>'+
+ '<linearGradient id="wave'+num+'" x1="0" y1="0" x2="1" y2=".75"><stop stop-color="'+mid+'" stop-opacity=".58"/><stop offset="1" stop-color="'+accent+'" stop-opacity=".12"/></linearGradient>'+
+ '<pattern id="grain'+num+'" width="92" height="97" patternUnits="userSpaceOnUse"><circle cx="18" cy="13" r="1.5" fill="'+accent+'" opacity=".17"/><circle cx="65" cy="45" r="1" fill="'+accent+'" opacity=".13"/><circle cx="33" cy="84" r="1.2" fill="'+accent+'" opacity=".13"/></pattern></defs>'+
+ '<rect width="1080" height="1920" fill="url(#bg'+num+')"/><rect width="1080" height="1920" fill="url(#gl'+num+')"/><rect width="1080" height="1920" fill="url(#grain'+num+')"/>'+
  '<circle cx="'+(920+pos/2)+'" cy="140" r="'+(260+(seed%4)*55)+'" fill="'+mid+'" opacity="'+(dark?.16:.19)+'"/>'+
- '<path d="M0 0 H1080 V'+(210+pos)+' Q680 '+(30+pos)+' 460 '+(220+pos)+' Q180 '+(390+pos)+' 0 '+(170+pos)+' Z" fill="url(#wave)" opacity=".38"/>'+
- '<path d="M0 1530 C240 1350 510 1720 760 1460 C900 1330 1010 1450 1080 1380 L1080 1920 H0Z" fill="url(#wave)"/>'+
+ '<path d="M0 0 H1080 V'+(210+pos)+' Q680 '+(30+pos)+' 460 '+(220+pos)+' Q180 '+(390+pos)+' 0 '+(170+pos)+' Z" fill="url(#wave'+num+')" opacity=".38"/>'+
+ '<path d="M0 1530 C240 1350 510 1720 760 1460 C900 1330 1010 1450 1080 1380 L1080 1920 H0Z" fill="url(#wave'+num+')"/>'+
  '<path d="M-45 1630 C210 1410 520 1785 820 1535 Q960 1420 1130 1505" fill="none" stroke="'+accent+'" stroke-width="5" opacity=".25"/>'+
  '<circle cx="-120" cy="980" r="230" fill="none" stroke="'+accent+'" opacity=".14" stroke-width="8"/>'+
  decorative+

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Карточки Instagram Stories — Ирина Дудкина</title>
+<style>
+*{box-sizing:border-box}html{background:#f8f5f1}body{margin:0;color:#332c2c;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:#2f2429;color:#faf5f0;padding:54px max(20px,calc((100vw - 1240px)/2));border-bottom:5px solid #cdaa98}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:#d6b6a1;font-weight:750}
+h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(35px,5vw,64px);line-height:1.03;margin:12px 0}
+header p{max-width:740px;font-size:16px;line-height:1.7;color:#e3d7ce}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}nav a{color:#f8e7da;text-decoration:none;border:1px solid #876d69;padding:10px 14px;border-radius:99px;font-size:13px}
+.container{max-width:1240px;margin:0 auto;padding:34px 20px 90px}
+.hint{font-size:14px;line-height:1.6;color:#655c57;background:#eee8e1;padding:15px 19px;border-radius:12px}
+h2{font-family:Georgia,serif;font-size:31px;font-weight:400;margin:54px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.item{background:#fff;border:1px solid #e7dfd8;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px #3122220b}
+.preview{width:100%;aspect-ratio:9/16;display:block;overflow:hidden;background:#e9dfd5}.preview svg{height:100%;width:100%;display:block}
+.info{padding:14px 14px 17px}h3{margin:0 0 4px;font-size:15px;font-weight:700}.subtitle{font-size:12px;color:#7e746c;min-height:36px;margin:0}
+.actions{display:flex;gap:7px;margin-top:10px}.actions button{font-size:12px;border-radius:8px;padding:10px 9px;cursor:pointer;border:1px solid #b8a9a0;background:#fff;color:#52383f}
+.actions button:first-child{background:#643e4a;color:white;border-color:#643e4a;flex:1}
+.actions button:disabled{opacity:.55}footer{padding:25px 20px 40px;text-align:center;font-size:12px;color:#81736f}
+@media(max-width:980px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{padding:10px}h3{font-size:13px}.subtitle{font-size:11px}.actions{flex-direction:column}.actions button{width:100%}header{padding:40px 20px}}
+</style></head><body>
+<header><div class="eyebrow">Ирина Дудкина · дизайн для Instagram</div><h1>16 карточек<br>для сторис</h1>
+<p>Четыре смысловые группы: приглашение на диагностику, узнавание себя, доверие и живой диалог. С переработанными текстами внутри изображения. Добавьте в Instagram только интерактивные стикеры и ссылку на запись.</p>
+<nav><a href="#invite">01 · Приглашение</a><a href="#recognition">02 · Узнавание</a><a href="#trust">03 · Доверие</a><a href="#dialog">04 · Диалог</a></nav></header>
+<main class="container">
+<p class="hint">Формат каждого фона — <b>1080 × 1920 px, 9:16</b>. Нажмите «Скачать PNG», сохраните файл, откройте Instagram → «История» и добавьте текст из сценария. Тексты уже встроены в карточки. Отзывы и сведения о свободных местах не выдуманы.</p>
+<div id="collections"></div>
+</main><footer>Макеты для визуального оформления сторис Ирины · 2026</footer>
+<script>
+const items=[["День диагностики","Прямое приглашение","Приглашение","#f5ede4","#d7b0a5","#763f4b","leaf",11],["Свободные окошки","Запись по времени","Приглашение","#f8f2ee","#eac3b5","#ab685f","orbit",19],["Как проходит диагностика","Убираем неизвестность","Приглашение","#f0e8de","#dfccba","#73584c","path",29],["Не нужно готовиться","Снимаем барьер","Приглашение","#edf0e9","#cbd6c5","#62785f","ripple",35],["Подари подруге","Тёплая рекомендация","Приглашение","#f8eae7","#eac0bd","#a85f67","heart",47],["Бережный толчок","От «потом» к шагу","Приглашение","#2e232a","#6b3d4e","#e0bfa6","stars",61],["Узнавание по теме","Отношения, деньги, реализация, состояние","Узнавание","#eee6db","#d2b9a5","#725b4c","branch",74],["Столько всего пробовала","Когда устала искать решение","Узнавание","#ddd9d6","#b5a7b2","#554b65","ripple",86],["Отзывы","Место для реального отзыва","Доверие","#f6ece6","#e1c5bd","#91675c","frame",98],["Моя история","Личный путь Ирины","Доверие","#eee5d7","#c7ae94","#836045","sun",108],["Одна сессия — одна боль","Точечная работа с запросом","Доверие","#282b33","#536273","#d7c6ae","circle",123],["Из кабинета","Бережно и конфиденциально","Доверие","#f4efe7","#d7d3be","#7b8569","leaf",135],["Опрос","Выбор темы","Диалог","#e9eadb","#b6c4a2","#5d704c","dots",145],["Ответь одним словом","Простой вход в диалог","Диалог","#f4e9e6","#d5b6cb","#8c617d","speech",157],["Тест и диагностика","От теста к разговору","Диалог","#f1e6d7","#ddc8aa","#86704f","book",166],["Дата рождения","Ввод в индивидуальный разговор","Диалог","#30283f","#62526c","#d1b9dc","stars",178]];
+const groups=[["Приглашение","invite","01 · Прямой контакт"],["Узнавание","recognition","02 · Узнавание себя"],["Доверие","trust","03 · Доверие"],["Диалог","dialog","04 · Диалог"]];
+function motif(t,accent,seed){
+ const st='fill="none" stroke="'+accent+'" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"';
+ if(t==="leaf"||t==="branch")return '<g opacity=".42" transform="translate(790 1430) rotate(-16)"><path d="M0 350 Q-30 120 80 -170" '+st+'/>'+
+ '<path d="M-25 230 Q-200 160 -170 5 Q-18 45 -25 230M22 100 Q200 90 160 -85 Q30 -40 22 100M65 -50 Q-65 -145 0 -270 Q130 -180 65 -50" '+st+'/></g>';
+ if(t==="heart")return '<path d="M740 1450 C530 1320 650 1120 790 1200 C925 1050 1090 1240 930 1380Z" fill="none" stroke="'+accent+'" stroke-width="13" opacity=".36"/>';
+ if(t==="stars")return '<g opacity=".50" stroke="'+accent+'" fill="none" stroke-width="9"><path d="M845 1250 L882 1352 L982 1385 L882 1418 L845 1520 L808 1418 L708 1385 L808 1352 Z"/><path d="M230 300 L255 356 L312 381 L255 405 L230 464 L206 405 L147 381 L206 356 Z"/></g>';
+ if(t==="orbit"||t==="circle"||t==="ripple")return '<g fill="none" stroke="'+accent+'" opacity=".26" stroke-width="9">'+
+ '<circle cx="760" cy="1520" r="260"/><circle cx="760" cy="1520" r="370"/><circle cx="760" cy="1520" r="480"/></g>';
+ if(t==="path")return '<g fill="none" stroke="'+accent+'" opacity=".36" stroke-width="11"><path d="M880 1550 C420 1530 900 1120 650 1250 S350 1580 170 1460"/><circle cx="880" cy="1550" r="21"/><circle cx="170" cy="1460" r="21"/></g>';
+ if(t==="frame")return '<g fill="none" stroke="'+accent+'" opacity=".25" stroke-width="10"><rect x="135" y="1120" width="810" height="600" rx="190"/><rect x="195" y="1180" width="690" height="480" rx="145"/></g>';
+ if(t==="sun")return '<g fill="none" stroke="'+accent+'" opacity=".32" stroke-width="9"><circle cx="790" cy="1520" r="180"/>'+
+ Array.from({length:12},(_,i)=>{const a=i*Math.PI/6;return '<path d="M'+(790+220*Math.cos(a))+' '+(1520+220*Math.sin(a))+' L'+(790+280*Math.cos(a))+' '+(1520+280*Math.sin(a))+'"/>'}).join("")+'</g>';
+ if(t==="dots")return '<g fill="'+accent+'" opacity=".20">'+Array.from({length:20},(_,i)=>'<circle cx="'+(610+(i%5)*83)+'" cy="'+(1180+Math.floor(i/5)*88)+'" r="'+(18+(i*seed)%10)+'"/>').join("")+'</g>';
+ if(t==="speech")return '<path d="M630 1220 Q630 1110 760 1110 H880 Q980 1110 980 1235 V1375 Q980 1480 875 1480 H785 L715 1545 V1470 Q630 1440 630 1375Z" stroke="'+accent+'" stroke-width="13" fill="none" opacity=".32"/>';
+ if(t==="book")return '<g fill="none" stroke="'+accent+'" stroke-width="12" opacity=".28"><path d="M540 1350 Q695 1250 875 1350 V1670 Q695 1590 540 1680Z"/><path d="M540 1350 Q385 1250 205 1350 V1670 Q385 1590 540 1680Z"/><path d="M540 1350 V1680"/></g>';
+ return '';
+}
+const storyLines=[["Сегодня можно начать","разбираться в том, что","вас беспокоит.","Бесплатная диагностика · 40 минут","Напишите «ДИАГНОСТИКА»"],["Хочешь записаться","на диагностику?","Напиши мне, и мы","подберём удобное время.","40 минут · бесплатно"],["Что происходит","на диагностике?","Обсудим твой запрос,","уточним причины и","наметим следующий шаг."],["Не нужно","готовиться идеально.","Достаточно прийти","со своим вопросом.","40 минут · бесплатно"],["Есть подруга,","которой сейчас трудно?","Поделись этой историей.","Она сама решит,","хочет ли обратиться."],["Сколько раз ты","говорила себе «потом»?","Можно сделать маленький","шаг уже сегодня.","Напиши «ДИАГНОСТИКА»"],["Отношения, деньги,","реализация, состояние…","В какой сфере ты","хочешь перемен?","Выбери свою тему ↓"],["Всё понимаешь,","а тревога возвращается?","Порой одного понимания","недостаточно.","Давай разберём твой запрос."],["Истории изменений","говорят громче обещаний.","Здесь можно разместить","реальный отзыв","с разрешения клиентки."],["Когда-то мне тоже","пришлось повернуться","лицом к себе.","С этого начался","мой путь перемен."],["Одна встреча —","один конкретный запрос.","Работаем с тем,","что волнует тебя сейчас.","Без обещаний чудес."],["За каждой фразой","«у меня всё нормально»","может скрываться то,","о чём трудно говорить.","Здесь можно быть собой."],["Что сейчас забирает","больше всего сил?","Отношения · Деньги","Реализация · Состояние","Ответь в опросе ↓"],["Одним словом:","что тебя сейчас","больше всего тревожит?","Напиши в ответ","на эту историю."],["С чего начать?","Выбери тест про себя","на моём сайте.","А результат можем","обсудить на диагностике."],["Каждая женщина —","отдельная история.","На диагностике сначала","услышу твой запрос.","Напиши «ДИАГНОСТИКА»"]];
+function overlayFor(num,dark){
+ const lines=storyLines[num-1];
+ const fg=dark?"#fcf4ec":"#403036", soft=dark?"#e6d3c8":"#724f55";
+ const parts=lines.map((s,i)=>{
+  const headline=i<3; const size=headline?59:37;
+  const y=570+i*93;
+  return '<text x="86" y="'+y+'" fill="'+(headline?fg:soft)+'" font-family="Georgia,serif" font-size="'+size+'" font-weight="'+(headline?600:400)+'" letter-spacing="-.4">'+escapeHtml(s)+'</text>';
+ }).join("");
+ const bar='<rect x="85" y="240" width="118" height="8" rx="4" fill="'+soft+'" opacity=".7"/>'+
+ '<text x="85" y="330" fill="'+soft+'" font-family="Arial,sans-serif" font-size="32" letter-spacing="7" font-weight="700">ИРИНА ДУДКИНА</text>'+
+ '<rect x="85" y="1240" width="910" height="2" fill="'+soft+'" opacity=".3"/>';
+ return '<g>'+bar+parts+'</g>';
+}
+function svgFor(item,num){
+ const [name,desc,group,bg,mid,accent,m,seed]=item;
+ const dark=num===6||num===11||num===16;
+ const decorative=motif(m,accent,seed);
+ const pos=(seed*17)%180;
+ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" aria-label="Фон для сторис '+name.replace(/&/g,'&amp;')+'">'+
+ '<defs><linearGradient id="bg'+num+'" x1="0" y1="0" x2=".84" y2="1"><stop stop-color="'+bg+'"/><stop offset=".54" stop-color="'+bg+'"/><stop offset="1" stop-color="'+mid+'"/></linearGradient>'+
+ '<radialGradient id="gl'+num+'" cx=".74" cy=".7" r=".55"><stop stop-color="'+mid+'" stop-opacity=".58"/><stop offset="1" stop-color="'+mid+'" stop-opacity="0"/></radialGradient>'+
+ '<linearGradient id="wave'+num+'" x1="0" y1="0" x2="1" y2=".75"><stop stop-color="'+mid+'" stop-opacity=".58"/><stop offset="1" stop-color="'+accent+'" stop-opacity=".12"/></linearGradient>'+
+ '<pattern id="grain'+num+'" width="92" height="97" patternUnits="userSpaceOnUse"><circle cx="18" cy="13" r="1.5" fill="'+accent+'" opacity=".17"/><circle cx="65" cy="45" r="1" fill="'+accent+'" opacity=".13"/><circle cx="33" cy="84" r="1.2" fill="'+accent+'" opacity=".13"/></pattern></defs>'+
+ '<rect width="1080" height="1920" fill="url(#bg'+num+')"/><rect width="1080" height="1920" fill="url(#gl'+num+')"/><rect width="1080" height="1920" fill="url(#grain'+num+')"/>'+
+ '<circle cx="'+(920+pos/2)+'" cy="140" r="'+(260+(seed%4)*55)+'" fill="'+mid+'" opacity="'+(dark?.16:.19)+'"/>'+
+ '<path d="M0 0 H1080 V'+(210+pos)+' Q680 '+(30+pos)+' 460 '+(220+pos)+' Q180 '+(390+pos)+' 0 '+(170+pos)+' Z" fill="url(#wave'+num+')" opacity=".38"/>'+
+ '<path d="M0 1530 C240 1350 510 1720 760 1460 C900 1330 1010 1450 1080 1380 L1080 1920 H0Z" fill="url(#wave'+num+')"/>'+
+ '<path d="M-45 1630 C210 1410 520 1785 820 1535 Q960 1420 1130 1505" fill="none" stroke="'+accent+'" stroke-width="5" opacity=".25"/>'+
+ '<circle cx="-120" cy="980" r="230" fill="none" stroke="'+accent+'" opacity=".14" stroke-width="8"/>'+
+ decorative+
+ '<path d="M130 130 Q500 '+(115+seed%80)+' 950 120" fill="none" stroke="'+accent+'" stroke-width="3" opacity=".16"/>'+
+ '<path d="M145 1780 Q550 1730 940 1780" fill="none" stroke="'+accent+'" stroke-width="4" opacity=".18"/>'+
+ overlayFor(num,dark)+'</svg>';
+}
+function escapeHtml(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
+function slug(n){return 'irina-story-'+String(n).padStart(2,'0')}
+function card(item,index){
+ const n=index+1;
+ return '<article class="item"><div class="preview">'+svgFor(item,n)+'</div><div class="info"><h3>'+String(n).padStart(2,'0')+' · '+escapeHtml(item[0])+'</h3><p class="subtitle">'+escapeHtml(item[1])+'</p><div class="actions"><button type="button" onclick="downloadPng('+index+',this)">Скачать PNG</button><button type="button" onclick="downloadSvg('+index+')">SVG</button></div></div></article>';
+}
+document.getElementById('collections').innerHTML=groups.map(g=>{
+ const cards=items.map((x,i)=>x[2]===g[0]?card(x,i):'').join('');
+ return '<section id="'+g[1]+'"><h2>'+g[2]+'</h2><div class="grid">'+cards+'</div></section>';
+}).join('');
+function downloadBlob(data,name,type){const blob=new Blob([data],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}
+function downloadSvg(index){downloadBlob(svgFor(items[index],index+1),slug(index+1)+'.svg','image/svg+xml;charset=utf-8')}
+async function downloadPng(index,btn){
+ btn.disabled=true;btn.textContent='Готовим...';
+ try {
+ const markup=svgFor(items[index],index+1);
+ const blob=new Blob([markup],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob),img=new Image();
+ await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;img.src=url});
+ const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1920;const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0);URL.revokeObjectURL(url);
+ const out=await new Promise(r=>canvas.toBlob(r,'image/png'));
+ if(!out)throw new Error('PNG недоступен');
+ const link=URL.createObjectURL(out),a=document.createElement('a');a.href=link;a.download=slug(index+1)+'.png';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(link),30000);
+ }catch(e){alert('Не получилось скачать PNG. Попробуйте кнопку SVG или другой браузер.')}finally{btn.disabled=false;btn.textContent='Скачать PNG'}
+}
+</script></body></html>

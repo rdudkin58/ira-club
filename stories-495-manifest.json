@@ -7,11 +7,11 @@
   "images": [
     {
       "path": "irina-story-01.png",
-      "sha256": "0d95f8f7cb9a71ef2d64e7660f02c6f96fb14afc84810bc03cae288d64997b09",
-      "git_blob_sha": "4cbf8a19d2884834be973f74d2ccd15d1c9c8afa",
+      "sha256": "8303d367308e3f2d15e5deded2236af39bced52d6b253faf475b37a3a55f8213",
+      "git_blob_sha": "cdacacfc95b8b43822f581b257aad1889e5320df",
       "width": 1080,
       "height": 1920,
-      "bytes": 929568
+      "bytes": 743257
     },
     {
       "path": "irina-story-02.png",
@@ -145,5 +145,14 @@
     14,
     15,
     16
+  ],
+  "redesigned_cards": [
+    {
+      "card": 1,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись «ИРИНА ДУДКИНА • ПСИХОЛОГ» над заголовком, фото опущено на 100 px; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    }
   ]
 }

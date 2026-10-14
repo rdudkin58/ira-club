@@ -15,123 +15,123 @@
     },
     {
       "path": "irina-story-02.png",
-      "sha256": "0d8dadcc4d9198a24e7bdaaf5400a303e649d767ca609b5732ad3297d246f5ca",
-      "git_blob_sha": "1c18efaedfd19f3b5bca5160b182f6c6a5f24d8f",
+      "sha256": "ad6d2bf90d0292a7bff70807aaa9bfe583a39faea916373f0801bc13991a3272",
+      "git_blob_sha": "a37af448cafc79cf270a32a989d8d97dfaec2fbc",
       "width": 1080,
       "height": 1920,
-      "bytes": 995418
+      "bytes": 822547
     },
     {
       "path": "irina-story-03.png",
-      "sha256": "d58f27d6fb268ff9f3471b840e33b3812f78dea359c41bd126d4e69e49e4ab2a",
-      "git_blob_sha": "99df0ada036c7ae169785c91252096973189db5e",
+      "sha256": "575091ba2cee8ae85f2af61b4cf53a96e7b81df604cdbbf8d2e47a8ad5dba5e5",
+      "git_blob_sha": "0c47031c46b02489b7fd7783d1777a71338d9147",
       "width": 1080,
       "height": 1920,
-      "bytes": 1588818
+      "bytes": 945712
     },
     {
       "path": "irina-story-04.png",
-      "sha256": "0c5a9c85331c9e826f47953a0d21c51a702df1d3739b0f68587f9edf8301edfd",
-      "git_blob_sha": "ba4cc0aabf4cf61560397348ddc9c2f99ab98ceb",
+      "sha256": "2e18e93d972219c7d45457815d98b0ef1b71f5d95a5bac68d45e69521eeecf1b",
+      "git_blob_sha": "224dd332ced919dece693294347a256c4bae956d",
       "width": 1080,
       "height": 1920,
-      "bytes": 1613094
+      "bytes": 961501
     },
     {
       "path": "irina-story-05.png",
-      "sha256": "5cc19624cd84848b2924c154f3c4b7c03068100acd27fa1dc487eb30766e3e28",
-      "git_blob_sha": "fe7966c90518bbe035c243ad06741bb0cbf26b65",
+      "sha256": "519d14809d2088f553f1bcd81c325627764effc79eaa037ec0cee623a65c9764",
+      "git_blob_sha": "f43fa25470953494dca7fa19c9061cf35f0a3925",
       "width": 1080,
       "height": 1920,
-      "bytes": 1044200
+      "bytes": 833027
     },
     {
       "path": "irina-story-06.png",
-      "sha256": "19c2273731060a03e2bafe8dfe0f3903b2f80ad4bdfe6d2fb1e6c2b2e74deb64",
-      "git_blob_sha": "a2cbdf42d620c532487ac3d4604f4daa6cf541b0",
+      "sha256": "c7082229bc409c34dfff3ec46b214bf1b03344764ae8e57bc479820505e32335",
+      "git_blob_sha": "a7822849797566848df5748bfc0e9a41f25aa633",
       "width": 1080,
       "height": 1920,
-      "bytes": 1732488
+      "bytes": 1073495
     },
     {
       "path": "irina-story-07.png",
-      "sha256": "3dee7898a7469c8c9b9f771c6c2bd53b8f0c5f27603cfbbfa2c9837e2a2f52e1",
-      "git_blob_sha": "d52a11c53db15896972528d3c6b5aa0993006720",
+      "sha256": "2ea38ae233a40d1e909ab858f3ec1711a867089e026c76c627498d9e54d9d7e6",
+      "git_blob_sha": "0dd64bf41134e6244dfac10f52908bd953207e82",
       "width": 1080,
       "height": 1920,
-      "bytes": 1044084
+      "bytes": 842000
     },
     {
       "path": "irina-story-08.png",
-      "sha256": "f81aa6eb12624a30e5df3e1faf4436682f645690c242e703d2ddfaceb1e1b7f0",
-      "git_blob_sha": "db47de423033ac0082551840b2cd0ff10524ce37",
+      "sha256": "1a87d7a2aaee8124ec9aa66bbc9f3f89731586aa4c46d5a79c9ad664cf691c2e",
+      "git_blob_sha": "79d5fd8076cbe123f5b29cb6b76d3d4220abe87d",
       "width": 1080,
       "height": 1920,
-      "bytes": 914512
+      "bytes": 746598
     },
     {
       "path": "irina-story-09.png",
-      "sha256": "0a119189174155dfc5e6703696d8494f86a68f922cc42dcea5d332d769c55888",
-      "git_blob_sha": "2a4df633f764c0d929628cf3a035d9561059ab4e",
+      "sha256": "b607321c27637ebea054b2f65b66ae325e5c6a012c55e5075944e7b97abcda11",
+      "git_blob_sha": "9d65737c58f905110e56daaecc3e72f17f8f8d37",
       "width": 1080,
       "height": 1920,
-      "bytes": 822793
+      "bytes": 645437
     },
     {
       "path": "irina-story-10.png",
-      "sha256": "8629b3447278e1b1798a1bca6e84319023a83f0ebba72faed33fb1a36aa8d478",
-      "git_blob_sha": "529b3957a36027349f7bf3ed82b0acff7a62fadf",
+      "sha256": "3aaecd4d9f0e13407b9f37e2c0926f965d85673f0805a791bccd395d98b6542e",
+      "git_blob_sha": "136154d8826e3f15d4d6a1f40fc8ff73fc78f13c",
       "width": 1080,
       "height": 1920,
-      "bytes": 1512967
+      "bytes": 833736
     },
     {
       "path": "irina-story-11.png",
-      "sha256": "fc245c4db8800d500907ada2c5d78d3b29cbffd9fef67ea017be21f7e68aaa86",
-      "git_blob_sha": "5b0fae1d9523e16dbbb363ee98e0841fc2270e01",
+      "sha256": "97d69421f8278f5e16c3adacf557b36dde84bb961f424de61b8163d815820ec9",
+      "git_blob_sha": "9f7cf9da6bc972aeac14591e185f0cfff889c966",
       "width": 1080,
       "height": 1920,
-      "bytes": 1614253
+      "bytes": 863787
     },
     {
       "path": "irina-story-12.png",
-      "sha256": "e12ed96d947fb9d80f00cad069726fc0eca203e70c9579a39b19430bd01691b2",
-      "git_blob_sha": "ab0abb9aea2dfa7d22d17b41c16a38b8ca569f64",
+      "sha256": "27b43bc8ff25fce7ad76e3ff573e9e8a751ff031c518d2f3def343c21806801e",
+      "git_blob_sha": "3512780aff2ad6b9cdc160ba6a2be0dd72832bcd",
       "width": 1080,
       "height": 1920,
-      "bytes": 1663271
+      "bytes": 1016463
     },
     {
       "path": "irina-story-13.png",
-      "sha256": "ae4b40074836594d5bfbef98686b9bd71af51179ec8a63ada3107ad30bc557e7",
-      "git_blob_sha": "000d5072e0c1a120f58c39c34a13669b81f6d395",
+      "sha256": "41f876f01f0393199d3e63d6cdbe204f1c1d5c1591cc7558fdb161b9d5576fdd",
+      "git_blob_sha": "48f434793a86e42ce869ea100336713ce38db9a5",
       "width": 1080,
       "height": 1920,
-      "bytes": 1570555
+      "bytes": 916659
     },
     {
       "path": "irina-story-14.png",
-      "sha256": "28302b5c16cb648164f3129e9dd961576c56b9c0ba278c58d04b1b737d98455b",
-      "git_blob_sha": "eec1f14bf51567f2f28de77bef05d2cf9923f162",
+      "sha256": "218b7b9cb31564cb9da123639d9d00af71a798af48fa75850444c2f4b69cf248",
+      "git_blob_sha": "0dcf39fdebe47b785e3670ea906675d3b4735a87",
       "width": 1080,
       "height": 1920,
-      "bytes": 1579551
+      "bytes": 933491
     },
     {
       "path": "irina-story-15.png",
-      "sha256": "ed31101e9b89ef213508e72bf713ea789e5d0c7c7790e5f05b2cf906574266ea",
-      "git_blob_sha": "fbd53fb37cf1bb7ea84ff8c4a02f152f3ff44e3e",
+      "sha256": "f17fcb339c30a2d6ae01e7c69b7c0d0d3062bc526836924aee3e424157d16d8c",
+      "git_blob_sha": "4b5ccfc91cdf77b239b90af84cf980417db4b1fb",
       "width": 1080,
       "height": 1920,
-      "bytes": 1614199
+      "bytes": 955586
     },
     {
       "path": "irina-story-16.png",
-      "sha256": "f592653a9797b845e8da27f0a14fed2fa8712f4718a51967b333e403f91e5b0f",
-      "git_blob_sha": "d047ba4b139167f3a4152ccb5b6a51392665ac46",
+      "sha256": "a38d848086c41c2c78cf8bf0127a5c46b1ba0f7fea7f3c559d3913cdfafdb067",
+      "git_blob_sha": "1f69e13dffce8a8ddfa69ea8ce71ea32c54285de",
       "width": 1080,
       "height": 1920,
-      "bytes": 1691049
+      "bytes": 1028214
     }
   ],
   "corrected_cards": [
@@ -151,7 +151,112 @@
       "card": 1,
       "date": "2026-10-14",
       "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
-      "what": "новый текст, подпись «ИРИНА ДУДКИНА • ПСИХОЛОГ» над заголовком, фото опущено на 160 px и блок текста сдвинут вниз; не перезаписывать старой версией",
+      "what": "новый текст, подпись «ИРИНА ДУДКИНА • ПСИХОЛОГ» над заголовком, фото опущено примерно на 255 px от оригинала GPT и блок текста сдвинут вниз; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 2,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 140 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 3,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 120 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 4,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 160 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 5,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 80 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 6,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 100 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 7,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 100 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 8,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 120 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 9,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 80 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 10,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 100 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 11,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото поднято на 40 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 12,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 100 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 13,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 100 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 14,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 100 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 15,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 160 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
+      "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
+    },
+    {
+      "card": 16,
+      "date": "2026-10-14",
+      "by": "Claude (по просьбе Ромы в треде «Бот канала правок»)",
+      "what": "новый текст, подпись над заголовком, фото опущено на 180 px от оригинала GPT, старая подпись с фото убрана; не перезаписывать старой версией",
       "texts": "/mnt/project-files/rekomendacii/stories-teksty.md"
     }
   ]

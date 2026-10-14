@@ -9,7 +9,7 @@ import re
 import struct
 import subprocess
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 UPLOADS = ROOT / "uploads" / "stories"
 FILE_RE = re.compile(r"irina-story-(0[1-9]|1[0-6])\.png\Z")
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"

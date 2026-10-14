@@ -8,6 +8,8 @@ from zipfile import ZipFile, BadZipFile
 import re
 import struct
 import subprocess
+import hashlib
+import json
 
 ROOT = Path(__file__).resolve().parents[1]
 UPLOADS = ROOT / "uploads" / "stories"
@@ -25,8 +27,14 @@ def git_last_commit(path: Path) -> int:
     return int(completed.stdout.strip() or "0")
 
 archives = [p for p in UPLOADS.glob("*.zip") if p.stat().st_size <= MAX_ARCHIVE_BYTES]
+manifest = ROOT / 'stories-495-manifest.json'
+retired = set()
+if manifest.exists():
+    retired = set(json.loads(manifest.read_text())['superseded_zip_sha256'])
+archives = [p for p in archives if hashlib.sha256(p.read_bytes()).hexdigest() not in retired]
 if not archives:
-    raise SystemExit("No eligible ZIP archives found in uploads/stories")
+    print("No new ZIP archives; directly published images remain unchanged.")
+    raise SystemExit(0)
 archive = max(archives, key=lambda p: (git_last_commit(p), p.name))
 print(f"Selected upload: {archive.relative_to(ROOT)}")
 with ZipFile(archive, "r") as bundle:

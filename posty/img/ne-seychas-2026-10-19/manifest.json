@@ -1,0 +1,72 @@
+{
+  "title": "Неделя «Не сейчас»",
+  "period": {
+    "from": "2026-10-19",
+    "to": "2026-10-25"
+  },
+  "images": [
+    {
+      "date": "2026-10-19",
+      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-19.png",
+      "git_blob_sha": "0b6898283f87a2103398e3115a358b099968832c",
+      "sha256": "31250f544aa5c79573eb94851e0361761ce32c93f7c2252bae852fcfc69a1156",
+      "bytes": 2175997,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "date": "2026-10-20",
+      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-20.png",
+      "git_blob_sha": "e266b77c6b08d3428ac7ef52a26272c36ec8f43e",
+      "sha256": "8e827faec4efe837a0db597062ef22232def0fe0f6d839bcfd66c2eda9afe6aa",
+      "bytes": 2197496,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "date": "2026-10-21",
+      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-21.png",
+      "git_blob_sha": "ce98eea26d478d2d2b02ffd496304f8a7d8479fc",
+      "sha256": "64ad93e71a14f7195af51f31c64d1aef5d424130c1e70b7b877203f37bee9f75",
+      "bytes": 2347161,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "date": "2026-10-22",
+      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-22.png",
+      "git_blob_sha": "0e85cfa89a797bd7a8228eedf3a440093cf49455",
+      "sha256": "bb6cf9b89274055135ce598c54b6ed6a7f0de65c5cf981af8978c38adbd0dd45",
+      "bytes": 2133085,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "date": "2026-10-23",
+      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-23.png",
+      "git_blob_sha": "d6f4e0c859af1be7d04df32ffccec254ee1e8335",
+      "sha256": "0bf722738bfb3f3de57d503440b71e6004dc56980cb1c074d71984a389e16948",
+      "bytes": 2283220,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "date": "2026-10-24",
+      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-24.png",
+      "git_blob_sha": "e3534806aa733342dba501141b22acf337a934db",
+      "sha256": "dc596946b2ffd340c7a1bffce97b7162ceb74cc584138451b6ed53f66c51e037",
+      "bytes": 1973022,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "date": "2026-10-25",
+      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-25.png",
+      "git_blob_sha": "4a598342d16e537997ccb226f894a63addea6630",
+      "sha256": "8d78d41375e826f6ac14664ca6912c27d7f3b808309952edd60e21a5b1551a17",
+      "bytes": 2172563,
+      "width": 1254,
+      "height": 1254
+    }
+  ]
+}

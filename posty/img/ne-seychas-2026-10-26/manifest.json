@@ -1,13 +1,13 @@
 {
   "title": "Неделя «Не сейчас»",
   "period": {
-    "from": "2026-10-19",
-    "to": "2026-10-25"
+    "from": "2026-10-26",
+    "to": "2026-11-01"
   },
   "images": [
     {
-      "date": "2026-10-19",
-      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-19.webp",
+      "date": "2026-10-26",
+      "path": "posty/img/ne-seychas-2026-10-26/ne-seychas-2026-10-26.webp",
       "git_blob_sha": "36212688e2e14509e04c7ea3a56a96f111ef3f90",
       "sha256": "2fe7a58d7086d91aab3af66bfdb9c21f256860eb6b10c7fe4894b663cf0cd105",
       "bytes": 194048,
@@ -16,8 +16,8 @@
       "mime_type": "image/webp"
     },
     {
-      "date": "2026-10-20",
-      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-20.webp",
+      "date": "2026-10-27",
+      "path": "posty/img/ne-seychas-2026-10-26/ne-seychas-2026-10-27.webp",
       "git_blob_sha": "1467393034f57cdf00090fcd7944813de637c373",
       "sha256": "902d64023969a2953418b2f86877d871d75799e0a07ed16227d862e0840c7552",
       "bytes": 193584,
@@ -26,8 +26,8 @@
       "mime_type": "image/webp"
     },
     {
-      "date": "2026-10-21",
-      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-21.webp",
+      "date": "2026-10-28",
+      "path": "posty/img/ne-seychas-2026-10-26/ne-seychas-2026-10-28.webp",
       "git_blob_sha": "2dac7f3a6720c80f9e7c5d960ee7e042d1cfc67e",
       "sha256": "630bdc46a6db20de788f3856cdf5eb3877ac9693a30d30a9ba91100f555f4170",
       "bytes": 218004,
@@ -36,8 +36,8 @@
       "mime_type": "image/webp"
     },
     {
-      "date": "2026-10-22",
-      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-22.webp",
+      "date": "2026-10-29",
+      "path": "posty/img/ne-seychas-2026-10-26/ne-seychas-2026-10-29.webp",
       "git_blob_sha": "26fb1f62b8344d27af81a328f1cc8b26474c47d3",
       "sha256": "6b92c527e472955e4d17fcf7a984f395e25b02047d76d10e596f39d55a830db9",
       "bytes": 173456,
@@ -46,8 +46,8 @@
       "mime_type": "image/webp"
     },
     {
-      "date": "2026-10-23",
-      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-23.webp",
+      "date": "2026-10-30",
+      "path": "posty/img/ne-seychas-2026-10-26/ne-seychas-2026-10-30.webp",
       "git_blob_sha": "f1df8fe228e391f9598ab82a426863e3be05d54f",
       "sha256": "bfb05a27379fdd248c0fa48532fc16c6285ec837bda22f11ba28a134172faa3e",
       "bytes": 236424,
@@ -56,8 +56,8 @@
       "mime_type": "image/webp"
     },
     {
-      "date": "2026-10-24",
-      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-24.webp",
+      "date": "2026-10-31",
+      "path": "posty/img/ne-seychas-2026-10-26/ne-seychas-2026-10-31.webp",
       "git_blob_sha": "e1bb523efa9ba9b32042a21e1a98512f65ae6426",
       "sha256": "90381163bd5b76737447b1c7fb231e25b5012d99d4403f558254cf199c6fa315",
       "bytes": 138654,
@@ -66,8 +66,8 @@
       "mime_type": "image/webp"
     },
     {
-      "date": "2026-10-25",
-      "path": "posty/img/ne-seychas-2026-10-19/ne-seychas-2026-10-25.webp",
+      "date": "2026-11-01",
+      "path": "posty/img/ne-seychas-2026-10-26/ne-seychas-2026-11-01.webp",
       "git_blob_sha": "544cf1ab0f47268d86630aedb74011564a32a4fd",
       "sha256": "5f2925cf09fafff910ff1c70d97aca2c76bf2ac9a2eff6f197b7fbca310760fa",
       "bytes": 228850,

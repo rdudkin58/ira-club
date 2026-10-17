@@ -13,123 +13,130 @@
   },
   "generation_tool": "imagegen",
   "encoding": {
-    "format": "WebP",
-    "quality": 100,
-    "lossless": false,
-    "method": 6
+    "format": "JPEG",
+    "quality": 92,
+    "progressive": true,
+    "converted_from": "WebP (17.10.2026, по просьбе Ромы: везде JPG)"
   },
   "images": [
     {
       "date": "2026-10-19",
-      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-19.webp",
-      "git_blob_sha": "01b193377a137f42e1c92f1b4ac3e50ff13c1017",
-      "sha256": "403af24d049ffe388d9dff8d9590378f4c6bc4fd6ec8366ee4202a6e019437d5",
-      "bytes": 418734,
+      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-19.jpg",
+      "git_blob_sha": "721f8ea2e5bbf32ba5716332b66ad94464eddcf7",
+      "sha256": "98296508c672931a7f80f83446f3f6a874aa6c7825cfab52623ba660e525b148",
+      "bytes": 271088,
       "width": 1080,
       "height": 1080,
-      "mime_type": "image/webp",
+      "mime_type": "image/jpeg",
       "prompt": "Женщина около 43 лет славянской внешности стоит у окна, в стекле мягкое отражение, в руках чашка чая, взгляд задумчивый, без трагизма, осенний свет, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, квадратный кадр 1:1, размер 1080×1080",
       "identity_reference": null,
       "source_dimensions": [
         1254,
         1254
-      ]
+      ],
+      "webp_sha256": "403af24d049ffe388d9dff8d9590378f4c6bc4fd6ec8366ee4202a6e019437d5"
     },
     {
       "date": "2026-10-20",
-      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-20.webp",
-      "git_blob_sha": "2f5c1fd620bc1125d3c1d7535114576d1272613d",
-      "sha256": "7fdb3abd96704207ed7b45b317881cfc160af4217ca1b88cd57069d9db8bdb98",
-      "bytes": 444452,
+      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-20.jpg",
+      "git_blob_sha": "9b6abd2c468862fbe92d59243d8429c427d2f8e0",
+      "sha256": "efdbc6193b46a3bca0c2d2b3b47f573f51b5e93e8c9355e0bae84e3ea534caa8",
+      "bytes": 288185,
       "width": 1080,
       "height": 1080,
-      "mime_type": "image/webp",
+      "mime_type": "image/jpeg",
       "prompt": "Женщина около 43 лет сидит на диване, на коленях открытый блокнот, в руке ручка, она смотрит в окно и обдумывает ответ, рядом плед и чашка чая, тёплый утренний свет, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, квадратный кадр 1:1, размер 1080×1080",
       "identity_reference": null,
       "source_dimensions": [
         1254,
         1254
-      ]
+      ],
+      "webp_sha256": "7fdb3abd96704207ed7b45b317881cfc160af4217ca1b88cd57069d9db8bdb98"
     },
     {
       "date": "2026-10-21",
-      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-21.webp",
-      "git_blob_sha": "cb33363210ea005b26c0f015693924912ab90b2f",
-      "sha256": "3a204bd0546f4e405ffffd821c1599f6498173c4de528493313dc73ec93c8f3d",
-      "bytes": 306652,
+      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-21.jpg",
+      "git_blob_sha": "26c54d9c0481296dbbbc860bd4ede102ccd4ca28",
+      "sha256": "e4071b5cd0fec75ac3cac903e2751a5df7655221ce17e2a0927181bcad5f5ed5",
+      "bytes": 215440,
       "width": 1080,
       "height": 1080,
-      "mime_type": "image/webp",
+      "mime_type": "image/jpeg",
       "prompt": "Женщина 48–50 лет в простой светлой одежде сидит вечером у домашнего окна, на столе рабочие заметки и закрытый ноутбук, лицо задумчивое, достоинство без пафоса, палитра слоновой кости и золота, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, квадратный кадр 1:1, размер 1080×1080",
       "identity_reference": null,
       "source_dimensions": [
         1254,
         1254
-      ]
+      ],
+      "webp_sha256": "3a204bd0546f4e405ffffd821c1599f6498173c4de528493313dc73ec93c8f3d"
     },
     {
       "date": "2026-10-22",
-      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-22.webp",
-      "git_blob_sha": "7a67208b2542aa81383e4da528e280a869be0f6b",
-      "sha256": "9e33b55750b5bdfe3632df7661d8e834252470c3b1827df379e14b3badbde672",
-      "bytes": 329484,
+      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-22.jpg",
+      "git_blob_sha": "628e970096eeed78872278b9a479e659d44c9cab",
+      "sha256": "1db9c1b27d0a0552cd837bdeb2ca6ed4f64c881984bb4e8060bb1568a40c1135",
+      "bytes": 228981,
       "width": 1080,
       "height": 1080,
-      "mime_type": "image/webp",
+      "mime_type": "image/jpeg",
       "prompt": "Мужчина и женщина сидят за кухонным столом по разные стороны, между ними мягкая пауза, напряжение показано позами, без агрессии, достойная реалистичная фотоиллюстрация, тёплые бежево-золотые оттенки, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, квадратный кадр 1:1, размер 1080×1080",
       "identity_reference": null,
       "source_dimensions": [
         1254,
         1254
-      ]
+      ],
+      "webp_sha256": "9e33b55750b5bdfe3632df7661d8e834252470c3b1827df379e14b3badbde672"
     },
     {
       "date": "2026-10-23",
-      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-23.webp",
-      "git_blob_sha": "01abc505d69392423400a75df8e2be951b611b9c",
-      "sha256": "91ef3257711d8130c82ea037818bd386d9155240c0d46101d2a1b7a9d7d416f7",
-      "bytes": 418324,
+      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-23.jpg",
+      "git_blob_sha": "0f6ccba9d37ee472c870014d047eb5c99f7ec66a",
+      "sha256": "950257f1ccc3b3c018902bd8984e84cfcf699c5f01d15c678522e163976e13fe",
+      "bytes": 269300,
       "width": 1080,
       "height": 1080,
-      "mime_type": "image/webp",
+      "mime_type": "image/jpeg",
       "prompt": "Колода метафорических карт на деревянном столе, женская рука держит одну карту рубашкой вверх у груди, рядом горящая свеча, чашка травяного чая и ветка осеннего дерева, тёплый вечерний свет, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, квадратный кадр 1:1, размер 1080×1080",
       "identity_reference": null,
       "source_dimensions": [
         1254,
         1254
-      ]
+      ],
+      "webp_sha256": "91ef3257711d8130c82ea037818bd386d9155240c0d46101d2a1b7a9d7d416f7"
     },
     {
       "date": "2026-10-24",
-      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-24.webp",
-      "git_blob_sha": "a3fd826e12a4639ae50b69d274e4a2eac3a11aa2",
-      "sha256": "2cb5bcd0e0c08debbc6f4e9527be661f785cf12e53f8b324e9dfeb7a7c60478c",
-      "bytes": 302120,
+      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-24.jpg",
+      "git_blob_sha": "033fb7da55767fc8d9c421944e09b19671dd2926",
+      "sha256": "b1ea8bfe1e89962e3577e0f17174805195d83e1ebdbbb7bff0bc3e54e1bb4c96",
+      "bytes": 210831,
       "width": 1080,
       "height": 1080,
-      "mime_type": "image/webp",
+      "mime_type": "image/jpeg",
       "prompt": "Возьми моё фото за основу. Лицо сохрани полностью без изменений: черты, форму лица, возраст, цвет глаз и причёску. Сделай реалистичное фото: я сижу за столом у окна, на столе открытый блокнот и чашка чая, взгляд спокойный и уверенный, лёгкая улыбка, мягкий золотой вечерний свет, тёплые тона слоновой кости и золота, уютная атмосфера, без текста и логотипов, квадратный кадр 1:1, размер 1080×1080",
       "identity_reference": "irina.jpg",
       "source_dimensions": [
         1254,
         1254
-      ]
+      ],
+      "webp_sha256": "2cb5bcd0e0c08debbc6f4e9527be661f785cf12e53f8b324e9dfeb7a7c60478c"
     },
     {
       "date": "2026-10-25",
-      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-25.webp",
-      "git_blob_sha": "eb3bfa8d3a7438acb0dab8118d9773322f7f4073",
-      "sha256": "da3615d844ec05343facbef53faeffa7cc94795fad8b9c4fc93b681017f36b19",
-      "bytes": 417448,
+      "path": "posty/img/otnosheniya-2026-10-19/otnosheniya-2026-10-25.jpg",
+      "git_blob_sha": "4da1b44aab450731e39eb0987fb4c25efe213d15",
+      "sha256": "d757d0d9f33eb45f3afc91e2141a9e4781c5392bed1b36feed439c99ff741739",
+      "bytes": 270551,
       "width": 1080,
       "height": 1080,
-      "mime_type": "image/webp",
+      "mime_type": "image/jpeg",
       "prompt": "Осенний парк, золотые листья на дорожке, мужская и женская рука держат бумажные стаканчики с кофе, лиц не видно, мягкий низкий солнечный свет, спокойная радость, реалистичное фото, мягкий естественный свет, тёплые тона слоновой кости и золота, спокойная уютная атмосфера, без текста и логотипов, квадратный кадр 1:1, размер 1080×1080",
       "identity_reference": null,
       "source_dimensions": [
         1254,
         1254
-      ]
+      ],
+      "webp_sha256": "da3615d844ec05343facbef53faeffa7cc94795fad8b9c4fc93b681017f36b19"
     }
   ]
 }

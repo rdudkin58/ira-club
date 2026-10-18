@@ -1,0 +1,61 @@
+{
+  "task_id": "-1003981637911-733",
+  "source_task_id": "-1003981637911-730",
+  "generated_at": "2026-10-18T07:11:22.424Z",
+  "format": "JPEG",
+  "jpeg_quality": 100,
+  "width": 1280,
+  "height": 720,
+  "files": [
+    {
+      "path": "youtube/zhizn-bez-trevog/zhizn-bez-trevog-01.jpg",
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "jpeg_quality": 100,
+      "bytes": 985919,
+      "git_blob_sha": "f8f5525cfe1ed3f1569a7bd1abc151d7a513fac1",
+      "sha256": "6dbb9f96a567d57418230725cbdc06a7f609dfad11a804f5887cd4c47e0f37ad"
+    },
+    {
+      "path": "youtube/zhizn-bez-trevog/zhizn-bez-trevog-02.jpg",
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "jpeg_quality": 100,
+      "bytes": 1060826,
+      "git_blob_sha": "147562668ffeb291e9fb100665196d87edb19cfd",
+      "sha256": "3478e40b03250d51d0da52b9ec18f2bf07b6ab646efe53310d74155f5e1b4a4f"
+    },
+    {
+      "path": "youtube/zhizn-bez-trevog/zhizn-bez-trevog-03.jpg",
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "jpeg_quality": 100,
+      "bytes": 1013351,
+      "git_blob_sha": "ec31c5a8aeb60e7a32987d3def3ca2dd400d2fe8",
+      "sha256": "8004ca96411b199ea5b4769166d25f9502050ac5965bf79b8bd3c778b8a4e286"
+    },
+    {
+      "path": "youtube/zhizn-bez-trevog/zhizn-bez-trevog-04.jpg",
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "jpeg_quality": 100,
+      "bytes": 1084691,
+      "git_blob_sha": "b9f6b0fafb4d5bec18c1d77645c2310d61556129",
+      "sha256": "1cc22be4915423f03f08304a45e90c42405508900e1b4d89a9026e9ea32bb23a"
+    },
+    {
+      "path": "youtube/zhizn-bez-trevog/zhizn-bez-trevog-05.jpg",
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "jpeg_quality": 100,
+      "bytes": 1026127,
+      "git_blob_sha": "091a70a602b396e998e5e07cc23f34b4abe11f07",
+      "sha256": "40f313e7b193d195a2dd9025294a9e85124f2c239be37f340d3a56881b89809c"
+    }
+  ]
+}

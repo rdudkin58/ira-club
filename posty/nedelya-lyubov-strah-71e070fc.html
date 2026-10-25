@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-balance-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-balance-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-balance-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-balance-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon-balance-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../favicon-balance-512.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon-balance.png">
+<title>Неделя «Любовь или страх»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FAF6EE;
+  --surface:#FFFDF8;
+  --ink:#2B2620;
+  --muted:#7A6F60;
+  --line:#E7DDCB;
+  --gold:#A8823A;
+  --gold-soft:#F3E9D3;
+  --todo-bg:#FBF3E1;
+  --todo-line:#E4CF9F;
+  --cta:#8A5A2B;
+  --cta-bg:#F4E4D2;
+  --focus:#A8823A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1C1915;--surface:#25211B;--ink:#EFE7D8;--muted:#A99C87;--line:#3A342A;
+    --gold:#D4B06A;--gold-soft:#3A3122;--todo-bg:#2E2718;--todo-line:#5A4A2A;
+    --cta:#E7B98A;--cta-bg:#3D2E20;--focus:#D4B06A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1C1915;--surface:#25211B;--ink:#EFE7D8;--muted:#A99C87;--line:#3A342A;
+  --gold:#D4B06A;--gold-soft:#3A3122;--todo-bg:#2E2718;--todo-line:#5A4A2A;
+  --cta:#E7B98A;--cta-bg:#3D2E20;--focus:#D4B06A;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:680px;margin:0 auto}
+.top{padding-block:32px 8px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.range{color:var(--muted);font-size:14px;margin-top:4px;font-variant-numeric:tabular-nums}
+h1{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(34px,8vw,46px);line-height:1.05;margin:.3em 0 .25em;text-wrap:balance}
+.lead{color:var(--muted);margin:0;max-width:60ch}
+.rules{margin:20px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:grid;gap:6px;font-size:14.5px}
+.rules b{font-weight:600}
+nav.days{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);margin-inline:-16px;padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav.days::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;min-width:52px;padding:6px 8px;border-radius:10px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--surface)}
+.chip span{font-weight:700;font-size:14px}
+.chip small{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip:focus-visible,.copy:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.day{padding-block:28px 8px;border-bottom:1px solid var(--line);scroll-margin-top:80px;display:grid;gap:14px}
+.day-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 12px}
+.when{display:flex;align-items:baseline;gap:10px}
+.dname{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:600;line-height:1}
+.date{color:var(--muted);font-variant-numeric:tabular-nums;font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.tag.cta{background:var(--cta-bg);color:var(--cta);font-weight:600}
+.todo{background:var(--todo-bg);border:1px solid var(--todo-line);border-radius:12px;padding:12px 14px;font-size:14.5px}
+.todo-h{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:4px}
+.todo ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.post{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.post-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px 16px 12px;font-size:15.5px}
+.post-text a{color:var(--gold)}
+.post-text b{font-weight:700}
+.copy{display:block;width:100%;border:0;border-top:1px solid var(--line);background:var(--gold-soft);color:var(--ink);font:600 15px/1 "Manrope",system-ui,sans-serif;padding:14px;cursor:pointer}
+.copy:hover{filter:brightness(.97)}
+.copy.done{background:var(--gold);color:var(--bg)}
+.voice{border:1px dashed var(--todo-line);border-radius:14px;background:var(--todo-bg);overflow:hidden}
+.voice-h{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);padding:14px 16px 0}
+.voice-note{margin:4px 16px 0;font-size:14px;color:var(--muted)}
+.voice-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px 16px 14px;font-size:15.5px}
+.pause{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 10px}
+.img{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+.img summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:14.5px;color:var(--gold)}
+.img-note{margin:0 0 10px;font-size:14px}
+.img-row{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.lang{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);padding-top:3px}
+.img-text{font-size:14px;overflow-wrap:anywhere}
+.copy.small{grid-column:2;width:auto;justify-self:start;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px}
+.img-hint{margin:0;padding:8px 0 12px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+.foot{color:var(--muted);font-size:13px;padding-top:20px}
+.krug{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:14px 16px 16px;display:grid;gap:12px}
+.krug-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.krug-title{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.krug-note{font-size:12.5px;color:var(--muted)}
+.k-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.k{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.ring{width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.k-body{display:grid;gap:3px;min-width:0}
+.k-when{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.k-t{font-weight:600;font-size:15px}
+.k-say{margin:0;font-size:15px;overflow-wrap:anywhere}
+.k-hint{margin:0;font-size:13.5px;color:var(--muted)}
+.guide{padding-block:32px 12px;border-bottom:1px solid var(--line);display:grid;gap:14px;scroll-margin-top:80px}
+.guide h2{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:30px;font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+.guide>p{margin:0;max-width:60ch}
+.rows{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.row{display:grid;grid-template-columns:minmax(96px,30%) 1fr;gap:4px 14px;padding:11px 14px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row dt{font-weight:600;font-size:14.5px}
+.row dd{margin:0;font-size:15px}
+.more{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+.more summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:14.5px;color:var(--gold)}
+.more summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.more-body{padding:0 0 14px;display:grid;gap:8px;font-size:15px}
+.more-body h3{margin:8px 0 0;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.more-body p{margin:0}
+.more-body ul{margin:0;padding-left:18px;display:grid;gap:4px}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+.k-body .copy.small{grid-column:auto;justify-self:start;margin-top:6px}
+.num{font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--todo-line);color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+.morning{display:grid;gap:8px}
+.morning-h{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.why{margin:0;font-size:15px;color:var(--ink);max-width:62ch}
+.rub{margin:16px 0 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.rub .row{grid-template-columns:44px minmax(110px,32%) 1fr}
+.rub .d{font-weight:700;font-size:14.5px}
+.rub .h{font-weight:600;font-size:14.5px;color:var(--gold);overflow-wrap:anywhere}
+.rub .w{font-size:14.5px}
+@media (max-width:420px){.rub .row{grid-template-columns:36px 1fr}.rub .w{grid-column:2}}
+.k-when .series{color:var(--gold);font-weight:600}
+.weeks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wk{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:12px 14px;display:grid;gap:4px}
+.wk-d{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.wk-t{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:600;line-height:1.15}
+.wk p{margin:0;font-size:15px}
+.post-img{display:block;width:100%;height:auto;aspect-ratio:1/1;border-bottom:1px solid var(--line);background:var(--gold-soft)}
+.mini-row{display:flex;flex-wrap:wrap;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+.post .mini{display:inline-block;width:auto;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:var(--surface);color:var(--ink);font:600 13px/1 "Manrope",system-ui,sans-serif;cursor:pointer}
+.post .mini:hover{filter:brightness(.97)}
+.post .mini.done{background:var(--gold);color:var(--bg)}
+.wk a,.guide a,.rules a{color:var(--gold);font-weight:600}
+
+html,body{margin:0}
+.back{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:14px;font-weight:600;color:var(--gold);text-decoration:none}
+.back:hover{text-decoration:underline}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="plany-453ad0ea.html">← Все контент-планы</a>
+  <div class="top">
+    <div class="eyebrow">ВРЕМЯ ПРОБУЖДЕНИЯ с ИРИНОЙ</div><div class="range">2–8 ноября 2026</div>
+    <h1>Это любовь — или страх остаться одной?</h1>
+    <p class="lead">Сквозная мысль недели: любовь и страх могут жить рядом. Не «уходи или терпи», а ясность, свои желания и свободный выбор. Семь постов, по одному в день, к каждому утренний пост «Число дня», два кружочка и промт для картинки. Во вторник ещё текст практики для голоса. Под каждым постом кнопка, которая копирует текст для Telegram.</p>
+    <div class="rules">
+      <div><b>Линия недели:</b> открываем тему (пн) → практика «четыре поля» (вт) → разбор «почему я остаюсь, хотя мне больно» (ср) → ответы на вопросы и закрытый клуб (чт) → послание и карта «Две жизни» (пт) → твоя история и принципы (сб) → дневник обычной женщины (вс).</div>
+      <div><b>Откуда план.</b> Его прислал Рома 25.10, по его словам внесены правки: без «СТОП!», «Дорогая» в начале и рубленых строк, первопричина и болевой заряд в среду и субботу, без лишних оговорок, воскресенье заканчивается «Продолжение следует…». <b>Все тексты — черновики</b>: поправь как удобно, твои правки перенесу слово в слово.</div>
+      <div><b>Бот сам выкладывает</b> в канал «Число дня» в 8:00 и основной пост в 10:00 по Москве, накануне в 20:00 присылает превью в канал задач. <b>Кружочки и голосовую практику</b> записываешь ты: днём к посту (14:00–16:00) и вечером серия «Семь вопросов к себе» (19:00). Текст кружка — подсказка, говори своими словами.</div>
+      <div><b>Число дня</b> — сумма всех цифр даты с годом (02.11.2026 → 14 → 5). Сверь.</div>
+      <div><b>На диагностику зовём только в среду и субботу.</b> В четверг мягко зовём в закрытый клуб «МОЁ СОСТОЯНИЕ» (слово «КЛУБ»), цену не называем. В среду 4.11 эфир клуба в 11:00, хоть это и выходной.</div>
+      <div><b>Картинки</b> делает GPT-бот по запросу Ромы. Когда они будут готовы, появятся над постами.</div>
+      <div>Жёлтые блоки «Перед публикацией» — что сделать до того, как выложить пост.</div>
+    </div>
+    <dl class="rub" aria-label="Рубрики недели">
+      <div class="row"><dt class="d">Пн</dt><dd class="h">#тема_недели</dd><dd class="w">Можно любить мужчину и бояться остаться одной</dd></div>
+      <div class="row"><dt class="d">Вт</dt><dd class="h">#практика</dd><dd class="w">Четыре поля: чувства, страхи, обстоятельства, желания; практика голосом</dd></div>
+      <div class="row"><dt class="d">Ср</dt><dd class="h">#разбор_ситуации</dd><dd class="w">«Почему я остаюсь, хотя мне больно?»; зовём на диагностику</dd></div>
+      <div class="row"><dt class="d">Чт</dt><dd class="h">#спрашивают</dd><dd class="w">«Если я боюсь уйти — это не любовь?»; закрытый клуб «МОЁ СОСТОЯНИЕ»</dd></div>
+      <div class="row"><dt class="d">Пт</dt><dd class="h">#послание</dd><dd class="w">«Тебе можно услышать себя»; карта «Две жизни» в кружочке</dd></div>
+      <div class="row"><dt class="d">Сб</dt><dd class="h">#моя_история</dd><dd class="w">Почему я не решаю за женщину; зовём на диагностику</dd></div>
+      <div class="row"><dt class="d">Вс</dt><dd class="h">#сериал</dd><dd class="w">«Записки дневника обычной женщины»: «Вот чего хочу я»</dd></div>
+    </dl>
+  </div>
+  <nav class="days" aria-label="Дни недели"><a class="chip" href="#mon"><span>Пн</span><small>02.11</small></a><a class="chip" href="#tue"><span>Вт</span><small>03.11</small></a><a class="chip" href="#wed"><span>Ср</span><small>04.11</small></a><a class="chip" href="#thu"><span>Чт</span><small>05.11</small></a><a class="chip" href="#fri"><span>Пт</span><small>06.11</small></a><a class="chip" href="#sat"><span>Сб</span><small>07.11</small></a><a class="chip" href="#sun"><span>Вс</span><small>08.11</small></a><a class="chip" href="#noyabr"><span>Ноябрь</span><small>клуб</small></a><a class="chip" href="#krug"><span>Кружки</span><small>как снимать</small></a></nav>
+<section class="day" id="mon">
+<header class="day-h"><div class="when"><span class="dname">Понедельник</span><span class="date">02.11</span></div>
+<div class="tags"><span class="tag">#тема_недели</span><span class="num">число дня 5</span></div></header>
+<p class="why">Открыть тему без ложного выбора «любовь или страх» и вовлечь читательниц.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Не писать, что страх доказывает отсутствие любви. В комментариях не требовать раскрывать личные истории. В комментарий под постом Ирина может дать тест «Что он чувствует, но не говорит?» — <a href="https://irina-psiholog.ru/osoznanie.html" target="_blank" rel="noopener">https://irina-psiholog.ru/osoznanie.html</a></li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m0">#число_дня<br><br>0️⃣2️⃣🧡1️⃣1️⃣<br><br>Сегодня день 5.<br>Пятёрка — число движения и возможности выбора.<br><br>Когда любовь и страх рядом, кажется, что выбирать нужно срочно. Сегодня просто посмотри, чего хочешь ты сама.<br><br><b>«Какого отношения к себе я хочу — независимо от чужих ожиданий?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m0">Скопировать текст</button></div><p class="k-hint">02.11.2026 → 14 → 5. Смысл числа и мысль перед заданием — мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir0">Реалистичная атмосферная фотография: женщина в осеннем свете у окна, на столе две чашки чая, выражение задумчивое, но не трагичное; визуальный образ смешанных чувств, тёплый слоновая кость и приглушённое золото, квадрат 1:1, 1080×1080, без надписей и логотипов.</div><button class="copy small" type="button" data-t="ir0">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/lyubov-strah-2026-11-02/lyubov-strah-2026-11-02.jpg</p></details>
+<div class="post"><div class="post-text" id="t0">#тема_недели<br><br><b>МОЖНО ЛЮБИТЬ МУЖЧИНУ — И ВСЁ РАВНО БОЯТЬСЯ ОСТАТЬСЯ ОДНОЙ</b><br><br>Давай сегодня поговорим честно.<br><br>Ты можешь любить мужчину. Радоваться вашим общим воспоминаниям. Ценить то хорошее, что между вами было и есть.<br><br>И одновременно бояться.<br><br>Что он уйдёт.<br>Что отношения закончатся.<br>Что придётся начинать всё заново.<br>Что одной будет трудно.<br><br><b>А вот здесь интересно…</b><br><br>Иногда эти два чувства так переплетаются, что ты перестаёшь понимать, где твоё настоящее «хочу быть с ним», а где — «я боюсь потерять привычную жизнь».<br><br>И тогда вопросы звучат совсем по-другому. Не только: «Люблю ли я его?»<br><br>А ещё:<br>«Могу ли я рядом с ним оставаться собой?»<br>«Есть ли место моим чувствам и желаниям?»<br>«Что я выбираю, а на что соглашаюсь из страха?»<br>«Что в нашей жизни я действительно ценю?»<br><br><b>Только давай сразу договоримся: это не проверка, после которой нужно срочно уходить или оставаться.</b><br><br>Любовь и страх могут существовать одновременно. А дети, жильё, общие обязательства и безопасность — это реальные обстоятельства, не «отговорки».<br><br>Сегодня нам важно другое.<br><br><b>Начать слышать себя, а не только свой страх.</b><br><br>Всю неделю в канале «ВРЕМЯ ПРОБУЖДЕНИЯ с ИРИНОЙ» мы будем разбираться, что происходит с женщиной, когда любовь, привычка, тревога и страх одиночества оказываются рядом.<br><br>Без обвинений, без советов «терпи» и без советов «немедленно уходи».<br><br>Потому что <b>СОСТОЯНИЕ — ФУНДАМЕНТ</b>. Из него мы воспринимаем происходящее и принимаем решения.<br><br>💬 Ответь честно:<br><br><b>Какая мысль тебе знакомее?</b><br><br>1️⃣ «Я люблю, но иногда мне очень больно».<br><br>2️⃣ «Я боюсь остаться одна».<br><br>3️⃣ «Я не понимаю, чего хочу сама».<br><br>4️⃣ «Сейчас в отношениях мне спокойно».<br><br>Можно просто цифру в комментариях.<br><br>Завтра дам практику, которая поможет отделить любовь от страха. Обнимаю тебя ❤️</div>
+<button class="copy" type="button" data-t="t0">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Два чувства могут жить рядом</div><p class="k-say" id="ks0_1">Девочки, привет, мои дорогие! ❤️ Сегодня начинаем новую тему. Скажите, вы когда-нибудь думали: «Я его люблю — но мне страшно представить жизнь без него»? И вот здесь я предлагаю не спешить с выводом, что это «точно не любовь». Страх и любовь могут быть рядом. Важно услышать себя: что меня радует в этих отношениях, а чего я опасаюсь? В сегодняшнем посте четыре варианта ответа. Загляните и напишите свою цифру. Обнимаю!</p><button class="copy small" type="button" data-t="ks0_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь вопросов к себе»</span></div><div class="k-t">Вопрос 1. Что я чувствую на самом деле?</div><p class="k-say" id="ks0_2">Сегодня первый вечер нашей маленькой серии «Семь вопросов к себе». Не спрашивай себя пока: «Уходить или оставаться?» Начни проще: «Что я чувствую рядом с этим человеком в обычный день?» Не как правильно чувствовать. Не как надо отвечать подругам. А что есть на самом деле: тепло, близость, страх, усталость, спокойствие? Назови два-три слова. Этого на сегодня достаточно. Завтра посмотрим, чего ты боишься потерять.</p><button class="copy small" type="button" data-t="ks0_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="tue">
+<header class="day-h"><div class="when"><span class="dname">Вторник</span><span class="date">03.11</span></div>
+<div class="tags"><span class="tag">#практика</span><span class="num">число дня 6</span></div></header>
+<p class="why">Дать самостоятельную практику, различающую чувства, страхи, реальные обстоятельства и желания.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>После основного поста Ирина лично записывает спокойную практику по сценарию ниже. В пост можно добавить «Ниже — голосовая практика», когда запись действительно готова.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m1">#число_дня<br><br>0️⃣3️⃣🧡1️⃣1️⃣<br><br>Сегодня день 6.<br>Шестёрка — число заботы, отношений и внимания к близким.<br><br>Мы так привыкаем заботиться о других, что себя оставляем на потом. Сегодня загляни в свой день и найди в нём место для себя.<br><br><b>«Где в моей заботе о других остаётся место для меня?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m1">Скопировать текст</button></div><p class="k-hint">03.11.2026 → 15 → 6. Смысл числа и мысль перед заданием — мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir1">Женские руки пишут в открытом блокноте, разделённом на четыре области без читаемых надписей, рядом чашка чая, осенний свет из окна, реалистичная фотография, цвета тёплый слоновая кость и приглушённое золото, квадрат 1080×1080, без надписей и логотипов.</div><button class="copy small" type="button" data-t="ir1">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/lyubov-strah-2026-11-02/lyubov-strah-2026-11-03.jpg</p></details>
+<div class="post"><div class="post-text" id="t1">#практика<br><br><b>ЧТО Я БОЮСЬ ПОТЕРЯТЬ ВМЕСТЕ С ЭТИМИ ОТНОШЕНИЯМИ?</b><br><br>Сегодня будет практика. 🌿<br><br>Мы не будем выяснять, «правильный» у тебя мужчина или «неправильный», и не будем принимать никаких окончательных решений.<br><br>Попробуем разобраться, <b>из чего складывается твоё желание быть рядом</b>.<br><br>Потому что иногда мы говорим: «Я не могу без него». А за этой фразой может стоять очень разное.<br><br>Любовь и привязанность.<br>Страх остаться одной.<br>Тревога за детей.<br>Общие деньги или жильё.<br>Надежда, что отношения станут другими.<br><br>Возьми лист и раздели его на четыре части.<br><br><b>1. ЧТО Я ЧУВСТВУЮ К ЭТОМУ ЧЕЛОВЕКУ?</b><br>Тепло? Нежность? Благодарность? Обида? Злость? Всё вперемешку?<br><br><b>2. ЧЕГО Я БОЮСЬ ЛИШИТЬСЯ?</b><br>Близости? Поддержки? Привычного уклада? Одобрения родных? Ощущения, что я кому-то нужна?<br><br><b>3. КАКИЕ ОБСТОЯТЕЛЬСТВА РЕАЛЬНЫ?</b><br>Дети, жильё, финансовая зависимость, здоровье, безопасность, общие обязательства.<br><br>Не обесценивай их. Это не «слабость».<br><br><b>4. ЧЕГО Я ХОЧУ ДЛЯ СЕБЯ?</b><br>Больше уважения? Тёплого общения? Ясности? Возможности говорить о чувствах? Спокойствия?<br><br>Посмотри на четыре части. Возможно, ты заметишь: есть то, что ты действительно ценишь. Есть то, чего опасаешься. Есть реальные сложности. И есть твои собственные желания.<br><br><b>И всё это не нужно смешивать в один ответ.</b><br><br>Спроси себя:<br><br><b>«Что я могу начать прояснять уже сегодня, не заставляя себя решать всю жизнь за один вечер?»</b><br><br>Может быть, записать вопрос.<br>Попросить поддержку.<br>Обсудить потребность.<br>Или просто дать себе время разобраться.<br><br><b>СОСТОЯНИЕ — ФУНДАМЕНТ.</b><br><br>💬 Если захочешь поделиться, напиши одним словом: <b>«чувства», «страх», «обстоятельства» или «желания»</b> — какую часть оказалось труднее всего заполнить?<br><br>Обнимаю тебя ❤️</div>
+<button class="copy" type="button" data-t="t1">Скопировать текст</button></div>
+<div class="voice"><div class="voice-h">Текст для голоса · Практика голосом: четыре честных вопроса (около 6–8 минут)</div><p class="voice-note">Не для публикации текстом: наговори это голосовым сообщением после основного поста, спокойно, с паузами. Вместе с паузами выйдет около 6–8 минут.</p><div class="voice-text" id="v1">Привет, дорогая. ❤️
+
+Сегодня предлагаю тебе несколько минут для себя. Устройся удобно. Если сейчас неудобно или небезопасно погружаться в переживания, можно вернуться к практике позже.
+
+Не нужно закрывать глаза. Можно просто поставить обе ноги на пол и почувствовать опору.
+
+<span class="pause">пауза 10 секунд</span>
+
+Посмотри вокруг. Заметь, что ты находишься здесь, сейчас.
+
+Сделай спокойный вдох и мягкий выдох — в своём обычном ритме.
+
+<span class="pause">пауза</span>
+
+Сегодня у нас нет задачи решать, оставаться в отношениях или уходить.
+
+Наша задача — чуть лучше услышать себя.
+
+Представь отношения, о которых ты сейчас думаешь. Если воспоминания слишком болезненны, не углубляйся: можешь просто слушать мой голос или завершить практику.
+
+Первый вопрос.
+
+Что я чувствую к этому человеку?
+
+Возможно, тепло. Возможно, привязанность. Возможно, грусть или обиду.
+
+Может быть, сразу несколько чувств. Не нужно выбирать одно «правильное».
+
+<span class="pause">пауза 20 секунд</span>
+
+Второй вопрос.
+
+Чего я боюсь лишиться, если отношения изменятся?
+
+Близости? Общего дома? Привычного распорядка? Поддержки? Ощущения, что я не одна?
+
+Заметь ответ, не оценивая себя.
+
+<span class="pause">пауза 20 секунд</span>
+
+Третий вопрос.
+
+Какие обстоятельства есть в моей жизни на самом деле?
+
+Может быть, дети, общие финансы, жильё, обязанности.
+
+Это реальные условия, их нельзя просто отменить красивой фразой «выбирай себя».
+
+<span class="pause">пауза 20 секунд</span>
+
+И четвёртый вопрос.
+
+Чего я хочу для себя — не из страха, не из чувства долга, а по-настоящему?
+
+Может быть, уважения. Тепла. Права говорить о чувствах. Спокойствия. Ясности.
+
+<span class="pause">пауза 25 секунд</span>
+
+А теперь посмотри: какой из четырёх вопросов оказался для тебя самым непростым?
+
+Не обязательно отвечать мне. Достаточно признать это для себя.
+
+И последний маленький вопрос.
+
+Какой один посильный шаг поможет мне лучше понять себя?
+
+Не большое решение. Всего один шаг.
+
+<span class="pause">пауза 20 секунд</span>
+
+Почувствуй опору под ногами. Посмотри вокруг.
+
+Ты можешь возвращаться к этим вопросам столько, сколько нужно. Тебе не обязательно всё знать прямо сегодня.
+
+Обнимаю тебя.
+
+И если захочешь, под постом напиши одним словом, какой из четырёх вопросов оказался самым сложным. ❤️</div>
+<button class="copy" type="button" data-t="v1">Скопировать текст для голоса</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Покажи четыре поля</div><p class="k-say" id="ks1_1">Девочки, сегодня у нас практика. Возьмите лист, разделите на четыре части. Первая — что я чувствую к человеку. Вторая — чего боюсь лишиться. Третья — какие обстоятельства у меня действительно есть. И четвёртая — чего хочу сама. Почему это важно? Потому что любовь, страх и реальные условия жизни нельзя просто сложить в одну кучу и назвать одним словом. В посте всё расписала. А ниже запишу вам практику голосом. Попробуйте, без спешки. ❤️</p><button class="copy small" type="button" data-t="ks1_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь вопросов к себе»</span></div><div class="k-t">Вопрос 2. Чего я боюсь лишиться?</div><p class="k-say" id="ks1_2">Наш второй вечерний вопрос, девочки. Когда звучит: «Я не могу без этих отношений», попробуй уточнить: без чего именно? Без человека? Без близости? Без дома? Без привычного уклада? Без поддержки? Ответ может быть непростым, и это нормально. Не требуй от себя идеальной честности с первой минуты. Просто назови то, что сейчас видишь. А завтра поговорим, как это всё разбирать без готовых советов для всех.</p><button class="copy small" type="button" data-t="ks1_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="wed">
+<header class="day-h"><div class="when"><span class="dname">Среда</span><span class="date">04.11</span></div>
+<div class="tags"><span class="tag">#разбор_ситуации</span><span class="num">число дня 7</span><span class="tag cta">зовём на диагностику</span></div></header>
+<p class="why">Показать глубину профессиональных вопросов Ирины и пригласить на личную диагностику.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>В тексте собирательная ситуация, НЕ выдавать её за кейс или реальный отзыв. Сегодня допустимо приглашение на бесплатную диагностику, лично с Ириной, около 40 минут. Не объявлять диагноз.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m2">#число_дня<br><br>0️⃣4️⃣🧡1️⃣1️⃣<br><br>Сегодня день 7.<br>Семёрка — число поиска смысла и честных вопросов к себе.<br><br>Иногда мы ищем ответ у подруг, в интернете, у других людей, а он ждёт внутри. Сегодня сначала задай вопрос себе.<br><br><b>«Какой ответ я ищу во внешнем мире, хотя сначала хочу разобраться в себе?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m2">Скопировать текст</button></div><p class="k-hint">04.11.2026 → 16 → 7. Смысл числа и мысль перед заданием — мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir2">Вдумчивая женщина сидит за столом с двумя листами бумаги, реалистичная тихая сцена в квартире, нет драматизации, мягкий свет осени, палитра слоновая кость и золото, квадрат 1080×1080 без текста.</div><button class="copy small" type="button" data-t="ir2">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/lyubov-strah-2026-11-02/lyubov-strah-2026-11-04.jpg</p></details>
+<div class="post"><div class="post-text" id="t2">#разбор_ситуации<br><br><b>«ПОЧЕМУ Я ОСТАЮСЬ, ХОТЯ МНЕ БОЛЬНО?»</b><br><br>Это один из самых непростых вопросов об отношениях. И я хочу сразу сказать: <b>у меня нет универсального ответа для всех женщин.</b><br><br>Давай представим собирательную ситуацию.<br><br>Женщина давно живёт в отношениях. Есть совместная история, привычки, близкие люди, общие дела. Но она всё чаще чувствует себя одинокой рядом со своим мужчиной.<br><br>Подруга говорит: «Так уходи!» Родные говорят: «Семью надо сохранять!» А самой женщине от этих советов не легче.<br><br>Потому что внутри одновременно звучат разные голоса:<br><br>«Я помню, как нам было хорошо».<br>«Мне больно от того, что происходит сейчас».<br>«Я боюсь остаться одна».<br>«Я не знаю, как всё устрою».<br>«А вдруг ещё можно что-то изменить?»<br><br><b>И вот здесь нельзя просто вынести приговор отношениям по одному абзацу.</b><br><br>Когда женщина приходит ко мне с таким запросом, мне важно понять:<br><br>— Что именно происходит между вами? Не предположения — факты.<br><br>— Что ты чувствуешь рядом с этим человеком?<br><br>— Где ты действительно выбираешь, а где действуешь из страха?<br><br>— Какие реакции повторяются и что их может поддерживать?<br><br>— Какие есть реальные обстоятельства и ограничения?<br><br>— Чего ты сама хочешь от отношений?<br><br>Иногда мы обнаруживаем знакомые эмоциональные реакции, которые тянутся из прошлого опыта. Иногда многое объясняется нынешними обстоятельствами и поведением мужчины.<br><br><b>Я иду глубже и ищу первопричину: тот болевой заряд, из-за которого женщина снова и снова остаётся там, где ей больно.</b><br><br><b>Моя задача — не решить за женщину, как ей жить, а помочь ей ясно увидеть свою ситуацию.</b><br><br>И если ты понимаешь, что давно запуталась между любовью, страхом и привычкой, приглашаю тебя на <b>бесплатную личную диагностику</b>.<br><br>🌿 Около <b>40 минут</b>, лично со мной.<br><br>Мы разберём твой запрос и то, что ты уже пробовала, и найдём, что можно исцелить, убрать и изменить на сессиях.<br><br><b>Напиши «ДИАГНОСТИКА»</b> 👉 @IrinaDudkina<br><br>А я помогу тебе начать разбираться в твоей истории.<br><br>Обнимаю ❤️</div>
+<button class="copy" type="button" data-t="t2">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00 <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Почему я не даю готовый совет «уходи»</div><p class="k-say" id="ks2_1">Девочки, сегодня хочу обратить ваше внимание: на вопрос «почему я остаюсь, хотя мне больно?» невозможно честно ответить за минуту. Там могут быть и чувства, и дети, и страх, и реальные обстоятельства, и надежда. Поэтому я не люблю советовать всем одно и то же. Мне важно сначала услышать женщину. Сегодня подробно написала, какие вопросы я задаю на диагностике. Она бесплатная, около сорока минут, лично со мной. Если хочется разобрать именно свою ситуацию — напиши «ДИАГНОСТИКА». ❤️</p><button class="copy small" type="button" data-t="ks2_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь вопросов к себе»</span></div><div class="k-t">Вопрос 3. Что здесь факт?</div><p class="k-say" id="ks2_2">Третий вечер, девочки. Сегодня один важный вопрос: «Что я знаю точно, а что додумываю?» «Он не ответил на сообщение» — факт.
+«Значит, я ему не нужна» — предположение. Но и обратное важно: реальные повторяющиеся поступки нельзя отменить словами «это просто мои мысли». Попробуй записать один факт и одно своё предположение. Иногда уже это возвращает немного ясности. Завтра поговорим о том, что можно сказать вслух.</p><button class="copy small" type="button" data-t="ks2_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="thu">
+<header class="day-h"><div class="when"><span class="dname">Четверг</span><span class="date">05.11</span></div>
+<div class="tags"><span class="tag">#спрашивают</span><span class="num">число дня 8</span></div></header>
+<p class="why">Убрать бинарное мышление, ответить на вопросы о страхе и границах, дать упражнение.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Не использовать формат «7 признаков — подсчитай совпадения» как диагноз. Не призывать женщину выяснять отношения с мужчиной, если есть насилие или угроза.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m3">#число_дня<br><br>0️⃣5️⃣🧡1️⃣1️⃣<br><br>Сегодня день 8.<br>Восьмёрка — число ответственности и личных границ.<br><br>Назвать свою потребность — не значит требовать от другого. Это способ быть честной с собой и с ним.<br><br><b>«Где я могу обозначить свою потребность без требования контролировать другого?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m3">Скопировать текст</button></div><p class="k-hint">05.11.2026 → 17 → 8. Смысл числа и мысль перед заданием — мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir3">Две открытые страницы блокнота с чистыми колонками, руки женщины с карандашом, тихий тёплый домашний свет, образ двух голосов — желание и страх, реалистичный кадр 1080×1080, цветовая гамма слоновая кость и золото, без надписей.</div><button class="copy small" type="button" data-t="ir3">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/lyubov-strah-2026-11-02/lyubov-strah-2026-11-05.jpg</p></details>
+<div class="post"><div class="post-text" id="t3">#спрашивают<br><br><b>«ИРИНА, ЕСЛИ Я БОЮСЬ УЙТИ — ЗНАЧИТ, ЭТО НЕ ЛЮБОВЬ?»</b><br><br>Очень важный вопрос, и я отвечу честно:<br><br><b>Нет. Сам по себе страх не говорит, что любви нет.</b><br><br>Можно любить человека и бояться потерять его.<br>Можно дорожить общим прошлым и одновременно быть недовольной настоящим.<br>Можно понимать, что что-то нужно менять, но пока не знать, как.<br><br>Давай разберём частые вопросы.<br><br><b>❓ «А если я боюсь одиночества — это зависимость?»</b><br><br>Не спеши ставить себе ярлык. Страх одиночества знаком очень многим. Важно другое: насколько он влияет на твои решения и остаётся ли у тебя право на собственные желания, границы и отношения с другими людьми.<br><br><b>❓ «А если у нас дети и общие деньги?»</b><br><br>Это реальные обстоятельства. Их нельзя назвать «просто страхом» и предложить женщине решать всё одним волевым усилием.<br><br>Нужно учитывать безопасность, ресурсы, поддержку и возможные последствия.<br><br><b>❓ «А если я люблю его, но меня часто ранят?»</b><br><br>Любовь не отменяет потребности в уважении и безопасности. Здесь важны конкретные поступки: готов ли мужчина слышать тебя, признавать ошибки, вместе что-то менять? И не приходится ли тебе снова и снова отказываться от себя?<br><br><b>❓ «Что я могу сделать прямо сейчас?»</b><br><br>Предлагаю короткую практику «Два голоса». Раздели страницу на две части.<br><br>Слева напиши: <b>«Я хочу…»</b><br>Справа: <b>«Я боюсь…»</b><br><br>Например:<br>«Я хочу говорить открыто».<br>«Я боюсь, что меня осудят».<br><br>А ниже добавь третью строку:<br><br><b>«Один безопасный шаг, который мне доступен…»</b><br><br>Возможно, это будет честный разговор. Возможно, поиск поддержки. А иногда — просто признание собственного желания.<br><br><b>Только прошу тебя: не принимай решение из паники.</b><br><br>Твоё состояние имеет значение. И реальные обстоятельства тоже.<br><br>И проходить это одной не обязательно. В моём закрытом клубе «МОЁ СОСТОЯНИЕ» мы каждую среду в 11:00 по Москве встречаемся на живых эфирах: глубокие практики, расстановки и разборы ситуаций участниц. Хочешь с нами — напиши мне <b>«КЛУБ»</b> 👉 @IrinaDudkina<br><br>💬 А какой вопрос об отношениях тебе хотелось бы задать, но ты всё время откладывала?<br><br>Можно написать его в комментариях — без личных подробностей.<br><br>Обнимаю тебя ❤️</div>
+<button class="copy" type="button" data-t="t3">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Страх не доказывает отсутствие любви</div><p class="k-say" id="ks3_1">Девочки, я сегодня отвечаю на важный вопрос: «Если мне страшно уходить, значит, любви нет?» Нет, так просто это не работает. Можно любить и тревожиться, можно ценить отношения и понимать, что в них не всё устраивает. Мне важно, чтобы вы не ставили себе диагноз по списку признаков из интернета. В посте — ответы и маленькая практика «Я хочу — я боюсь». Попробуйте. И напишите, какой вопрос появился. ❤️</p><button class="copy small" type="button" data-t="ks3_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь вопросов к себе»</span></div><div class="k-t">Вопрос 4. О чём я молчу?</div><p class="k-say" id="ks3_2">Четвёртый вечерний вопрос. «О какой своей потребности я молчу, потому что боюсь реакции другого?» Может быть, тебе нужна помощь. Может, время на себя. Может, уважительный тон в разговоре. Не обязательно сразу произносить это мужу. Особенно если это может быть небезопасно. Для начала попробуй сказать эту потребность вслух самой себе. Твоё «хочу» тоже имеет значение. ❤️</p><button class="copy small" type="button" data-t="ks3_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="fri">
+<header class="day-h"><div class="when"><span class="dname">Пятница</span><span class="date">06.11</span></div>
+<div class="tags"><span class="tag">#послание</span><span class="num">число дня 9</span></div></header>
+<p class="why">Эмоциональная поддержка без продажи; короткое послание и живая карта «Две жизни».</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Для пятничного кружочка Ирина берёт реально выбранную карту «Две жизни». Не приписывать ей заранее смысл, которого на карте нет. Диагностику сегодня не предлагать.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m4">#число_дня<br><br>0️⃣6️⃣🧡1️⃣1️⃣<br><br>Сегодня день 9.<br>Девятка — число осмысления опыта и завершения лишнего.<br><br>Чужие оценки легко становятся нашим внутренним голосом. Сегодня заметь, какая из них давно уже не твоя.<br><br><b>«Какую чужую оценку я могу перестать носить с собой?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m4">Скопировать текст</button></div><p class="k-hint">06.11.2026 → 18 → 9. Смысл числа и мысль перед заданием — мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir4">Нежная фотография: солнечный свет на руках женщины, держащей одну метафорическую карту без конкретного символа, тёплая слоновая кость, светлое золото, чистая композиция 1080×1080 без текста.</div><button class="copy small" type="button" data-t="ir4">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/lyubov-strah-2026-11-02/lyubov-strah-2026-11-06.jpg</p></details>
+<div class="post"><div class="post-text" id="t4">#послание<br><br><b>ТЕБЕ МОЖНО УСЛЫШАТЬ СЕБЯ ❤️</b><br><br>Сегодня хочу оставить тебе не совет, а разрешение.<br><br>Тебе можно не знать заранее, как сложится вся жизнь. Можно любить и при этом замечать, что тебе больно. Можно скучать по человеку и всё же нуждаться в личном пространстве.<br><br>Можно помнить хорошее и не закрывать глаза на то, что тебя ранит. Можно признать: «Я запуталась».<br><br><b>Это не делает тебя слабой.</b><br><br>Ты не обязана доказывать ни подругам, ни родственникам, ни даже мне, что твоё решение «правильное».<br><br>Тебе не нужно быть удобной.<br>Не нужно улыбаться, когда хочется плакать.<br>Не нужно убеждать себя, что у всех всё хуже — и значит, тебе нельзя хотеть большего.<br><br>И ещё одно.<br><br><b>ТВОЯ ЦЕННОСТЬ НЕ ЗАВИСИТ ОТ ТОГО, ЕСТЬ ЛИ РЯДОМ МУЖЧИНА.</b><br><br>Ты не становишься «меньше», если кто-то не выбрал тебя, и не становишься «больше» только потому, что у тебя есть отношения.<br><br>Ты — это ты, со своей историей, чувствами, желаниями, опытом и правом на уважение.<br><br>🌿 Сегодня попробуй сделать маленькую вещь. Спроси себя:<br><br><b>«Что мне сейчас нужно, если я перестану думать о том, как это оценят другие?»</b><br><br>Может быть, тишина.<br>Разговор.<br>Отдых.<br>Помощь.<br>Или просто возможность спокойно поплакать.<br><br>Обнимаю тебя, дорогая. ❤️<br><br>Если это послание сегодня было нужно — оставь сердечко. Я увижу, что оно пришло вовремя.</div>
+<button class="copy" type="button" data-t="t4">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Послание с картой «Две жизни»</div><p class="k-say" id="ks4_1">Девочки, мои дорогие, сегодня у нас послание. И я покажу вам одну карту из «Двух жизней». [Показать реально выбранную карту.] Посмотрите на неё. Что заметили первым? Какая мысль пришла? Я не хочу заранее говорить вам, что карта «обязательно означает». Мне интересно, что она откликает именно у вас. И мой вопрос сегодня: «Чего хочу я сама, без чужих оценок?» Прочитайте пятничный пост, девочки. Обнимаю ❤️</p><button class="copy small" type="button" data-t="ks4_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь вопросов к себе»</span></div><div class="k-t">Вопрос 5. Чья оценка звучит у меня в голове?</div><p class="k-say" id="ks4_2">Наш пятый вечер, дорогие. Иногда женщина спрашивает себя: «А что скажут люди, если я решу по-другому?» А я сегодня предложу другой вопрос. «Чей голос я сейчас слышу — свой или чужой?» Мамы? Подруг? Общепринятого «так положено»? Не нужно сейчас спорить с этими голосами. Просто отметь, какие из них не принадлежат тебе. И вернись к своему вопросу: «А чего хочу я?» ❤️</p><button class="copy small" type="button" data-t="ks4_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="sat">
+<header class="day-h"><div class="when"><span class="dname">Суббота</span><span class="date">07.11</span></div>
+<div class="tags"><span class="tag">#моя_история</span><span class="num">число дня 1</span><span class="tag cta">зовём на диагностику</span></div></header>
+<p class="why">Личное позиционирование Ирины и продажа бесплатной диагностики без субботнего эфира.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Субботнего эфира НЕТ. Основной пост — #моя_история и личный кружочек на собственной фотографии Ирины. Текст о её принципах, не выдуманный случай клиентки. При желании Ирина добавляет 1–2 реальные детали своей профессиональной истории.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m5">#число_дня<br><br>0️⃣7️⃣🧡1️⃣1️⃣<br><br>Сегодня день 1.<br>Единица — число начала и личного шага.<br><br>Начинать не обязательно с больших решений. Достаточно маленького шага, который выбираешь ты сама.<br><br><b>«Какой небольшой шаг я выбираю сама?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m5">Скопировать текст</button></div><p class="k-hint">07.11.2026 → 19 → 10 → 1. Смысл числа и мысль перед заданием — мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir5">Настоящая фотография Ирины Дудкиной — естественная, живая, спокойный взгляд в камеру, прогулка или домашняя обстановка; аккуратная квадратная кадрировка 1080×1080. НЕ генерировать лицо Ирины без её фотографии.</div><button class="copy small" type="button" data-t="ir5">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/lyubov-strah-2026-11-02/lyubov-strah-2026-11-07.jpg</p></details>
+<div class="post"><div class="post-text" id="t5">#моя_история<br><br><b>ПОЧЕМУ Я НЕ РЕШАЮ ЗА ЖЕНЩИНУ, ОСТАВАТЬСЯ ЕЙ ИЛИ УХОДИТЬ</b><br><br>Сегодня хочу рассказать о том, что для меня особенно важно в работе.<br><br>Я уже делилась с вами историей своего непростого периода в отношениях и тем, как начала возвращать внимание к себе.<br><br>Но сегодня хочу поговорить о другом.<br><br><b>О праве женщины самой выбирать свою жизнь.</b><br><br>Иногда очень хочется, чтобы кто-то мудрый и опытный сказал:<br>«Вот твой правильный путь».<br>«Уходи».<br>Или: «Терпи и сохраняй отношения».<br><br>Но я не хочу занимать такое место в жизни женщины. Я не живу её жизнью, не знаю всех обстоятельств по одному сообщению и не могу вместо неё пережить последствия решения.<br><br>Именно поэтому в своей работе я смотрю глубже первого вопроса.<br><br>Если женщина говорит: «Я боюсь остаться одна», мне важно услышать:<br><br>Что для неё значит одиночество?<br>Что она чувствует рядом с мужчиной?<br>Какие ситуации повторяются?<br>Что удерживает её в отношениях?<br>Чего ей сейчас не хватает?<br>На что она действительно может влиять?<br><br>Иногда в работе проявляются старые обиды и болезненные реакции — то, что в своём подходе я называю <b>болевыми эмоциональными зарядами</b>.<br><br>Но бывают и реальные сложности сегодняшней жизни, и мы смотрим на них честно, без самообмана.<br><br><b>Моя задача — не убедить женщину в моём решении. Моя задача — помочь ей услышать своё.</b><br><br>И я хочу, чтобы человек постепенно учился опираться на себя, а не зависел от специалиста годами.<br><br>Вот почему моя первая встреча — <b>бесплатная индивидуальная диагностика</b>. Около 40 минут, лично со мной.<br><br>Мы берём твой запрос, разбираем ситуацию и то, что ты уже пробовала, и находим, что можно исцелить, убрать и изменить на сессиях. Я объясняю, какие варианты работы вижу.<br><br>Если мой подход тебе подходит — обсудим дальнейший шаг. Если нет — решение остаётся за тобой.<br><br>🌿 Если тема этой недели оказалась очень личной и ты хочешь разобраться в своём состоянии, напиши мне <b>«ДИАГНОСТИКА»</b>.<br><br>👉 @IrinaDudkina<br><br><b>СОСТОЯНИЕ — ФУНДАМЕНТ.</b><br><br>Обнимаю тебя ❤️<br>Ирина</div>
+<button class="copy" type="button" data-t="t5">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00 <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Моя задача — помочь тебе услышать себя</div><p class="k-say" id="ks5_1">Девочки, сегодня я хочу сказать о важной для меня ценности. Я не хочу решать за женщину, сохранять ей отношения или нет. Моя задача — услышать её запрос, посмотреть на состояние, на повторяющиеся реакции и реальные обстоятельства. Я хочу, чтобы женщина постепенно училась опираться на себя, а не зависела от специалиста. Если эта тема откликнулась и хочется разобрать свою историю лично, приходи на мою бесплатную диагностику — около сорока минут. Напиши «ДИАГНОСТИКА». Обнимаю ❤️</p><button class="copy small" type="button" data-t="ks5_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь вопросов к себе»</span></div><div class="k-t">Вопрос 6. На что я могу опереться?</div><p class="k-say" id="ks5_2">Шестой вечер нашего маленького цикла. Сегодня вопрос: «Какая опора есть у меня, кроме этих отношений?» Может быть, подруга, которая умеет слушать. Работа, навык, родные, специалист, любимое занятие. Может быть, сейчас опоры совсем мало — и это тоже важно заметить без стыда. Один посильный шаг: записать, кому можно обратиться за поддержкой. Не обязательно справляться со всем одной. ❤️</p><button class="copy small" type="button" data-t="ks5_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="sun">
+<header class="day-h"><div class="when"><span class="dname">Воскресенье</span><span class="date">08.11</span></div>
+<div class="tags"><span class="tag">#сериал</span><span class="num">число дня 2</span></div></header>
+<p class="why">Завершить историю недели без продажи, дать новый маленький шаг, не повторять «Не сейчас».</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Это художественный, вымышленный эпизод рубрики «Записки дневника обычной женщины», а не рассказ о клиентке. Никакого прямого CTA на диагностику.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m6">#число_дня<br><br>0️⃣8️⃣🧡1️⃣1️⃣<br><br>Сегодня день 2.<br>Двойка — число диалога и баланса.<br><br>Любой диалог начинается с умения слушать, и первой важно услышать себя.<br><br><b>«Кого мне важно услышать сегодня, включая саму себя?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m6">Скопировать текст</button></div><p class="k-hint">08.11.2026 → 20 → 2. Смысл числа и мысль перед заданием — мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir6">Уютная кухонная сцена, две чашки кофе и раскрытый блокнот, рука женщины пишет, за окном мягкий ноябрьский свет, атмосфера внимательности и тихого выбора, реалистичная фотография в тёплых тонах, 1080×1080, без надписей.
+
+
+---
+
+
+## Публикационный ритм
+
+- 08:00 МСК: «Число дня».
+
+- 10:00 МСК: основной пост (в среду 4.11 в 11:00 эфир клуба).
+
+- 14:00–16:00 МСК: дневной кружочек.
+
+- 19:00 МСК: вечерний кружочек «Семь вопросов к себе».
+
+- Вторник: дополнительное голосовое сообщение после поста.
+
+
+## Важно
+
+Средовый пост — собирательный разбор, не кейс. Воскресенье — вымышленный дневниковый эпизод. Для субботы использовать настоящую фотографию Ирины. Изображения по промптам нужно создать отдельно. Цены и другие продукты в этой неделе напрямую не продаём. Закрытый клуб «МОЁ СОСТОЯНИЕ» мягко упоминаем в четверговом посте, без цены (слово Ромы 25.10). Эфир клуба 4.11 в 11:00 будет, хоть это и выходной.</div><button class="copy small" type="button" data-t="ir6">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/lyubov-strah-2026-11-02/lyubov-strah-2026-11-08.jpg</p></details>
+<div class="post"><div class="post-text" id="t6">#сериал<br><br><b>ЗАПИСКИ ДНЕВНИКА ОБЫЧНОЙ ЖЕНЩИНЫ</b><br><br><i>«Сегодня я впервые спросила себя, чего хочу…»</i><br><br>Воскресенье. На кухне пахнет кофе. Он читает что-то в телефоне, я перебираю в голове неделю.<br><br>Мы не ссорились. Но я снова ловлю себя на том, что весь вечер подбираю слова.<br><br>Сказать? Промолчать?<br>Попросить? Сделать самой?<br>Начать разговор? А вдруг опять не поймёт?<br><br>Я открыла блокнот и написала: «Что я чувствую к нему?» И вдруг поняла — ответа в одно слово нет.<br><br>Я люблю наши смешные разговоры по дороге домой. Мне нравится, как мы иногда смеёмся над одной и той же ерундой. И одновременно мне одиноко, когда важные для меня разговоры всё время откладываются.<br><br><b>Раньше я думала, что обязана выбрать какое-то одно чувство.</b> Или люблю, или мне больно.<br><br>А сегодня попробовала не спорить с собой и записала вторую фразу:<br><br><b>«Мне хочется, чтобы меня выслушивали без насмешек».</b><br><br>Смотрела на эти слова и удивлялась. Ничего грандиозного: я не приняла решение на всю жизнь и не составила список претензий. Просто впервые смогла назвать то, что мне важно.<br><br>Потом ещё написала:<br>«Я хочу меньше угадывать чужое настроение».<br>«Я хочу говорить о своих потребностях прямо».<br>«Я хочу чувствовать себя в отношениях не гостьей, а человеком, которого слышат».<br><br>И от этого не исчезли все трудности. Но появился один конкретный вопрос:<br><br><b>Как мне начать разговор о том, что для меня важно?</b><br><br>Я закрыла блокнот. Кофе давно остыл. А я вдруг подумала: может быть, возвращение к себе начинается не с большого решения? А с честной фразы:<br><br><b>«Вот чего хочу я».</b><br><br>Продолжение следует…</div>
+<button class="copy" type="button" data-t="t6">Скопировать текст</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Главный итог недели</div><p class="k-say" id="ks6_1">Девочки, вот и завершается наша неделя. Мы не пытались определить по тесту, есть любовь или нет. Мы учились слышать себя: чувства, страхи, реальные обстоятельства, желания. И я хочу спросить: какое из этих слов стало для вас самым важным? Может быть, «уважение». Или «ясность». «Поддержка». «Свобода». Напишите одно слово под сегодняшней историей. Мне будет интересно почитать. Обнимаю вас, мои дорогие! ❤️</p><button class="copy small" type="button" data-t="ks6_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь вопросов к себе»</span></div><div class="k-t">Вопрос 7. Какой шаг я выбираю?</div><p class="k-say" id="ks6_2">Седьмой вечер. Последний вопрос нашей серии. «Какой один маленький, посильный шаг я выбираю для себя?» Не обязательно уходить, оставаться, обещать или решать что-то навсегда. Может быть, назвать чувство.
+Попросить помощи.
+Записать вопрос.
+Уточнить факт.
+Обратиться за поддержкой. Ты не обязана знать все ответы. Но ты можешь постепенно учиться слышать себя. Спасибо, что прожила эту неделю со мной. Обнимаю! ❤️</p><button class="copy small" type="button" data-t="ks6_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="guide" id="noyabr">
+  <h2>Что рядом по плану</h2>
+  <p>С 1 ноября у закрытого клуба «МОЁ СОСТОЯНИЕ» новые тарифы. Эфиры клуба в ноябре — по средам в 11:00: 4, 11, 18 и 25 ноября. Темы ноября пока не выбраны.</p>
+  <ol class="weeks">
+    <li class="wk"><span class="wk-d">26 октября – 1 ноября</span><span class="wk-t">«Не сейчас»</span><p>Неделя перед этой: что стоит за «нет денег», «нет времени» и «а вдруг не получится». Страница: <a href="nedelya-ne-seychas-c3f9a62e.html">неделя «Не сейчас»</a>.</p></li>
+  </ol>
+</section>
+<section class="guide" id="krug">
+  <h2>Кружочки: как снимать</h2>
+  <dl class="rows">
+    <div class="row"><dt>Утро, 8:00</dt><dd>Не кружок: короткий пост «Число дня», его выкладывает бот</dd></div>
+    <div class="row"><dt>День, 14:00–16:00</dt><dd>Кружок к посту дня: свой пример, продолжение, вопрос</dd></div>
+    <div class="row"><dt>Вечер, 19:00</dt><dd>Серия «Семь вопросов к себе»: один вопрос в день, в воскресенье итог</dd></div>
+  </dl>
+  <details class="more"><summary>Как записывать</summary><div class="more-body"><ul>
+    <li>До 60 секунд, одна мысль. Больше мыслей — 2–3 кружка подряд.</li>
+    <li>Первые 3 секунды — зацепка: вопрос или сильная фраза.</li>
+    <li>В ленте кружок часто начинает играть без звука, поэтому первое, что видно, — лицо и эмоция.</li>
+    <li>Свет — лицом к окну, телефон на уровне глаз, вокруг тихо.</li>
+    <li>Оговорилась — улыбнись и продолжай: живость важнее идеальности.</li>
+    <li>В конце — одно действие: реакция, слово или число в комментариях. «ДИАГНОСТИКА» — только в среду и субботу.</li>
+    <li>Подпись к кружку добавить нельзя. Ссылку отправляй следующим сообщением.</li>
+    <li>Про клиенток — без имён и узнаваемых деталей.</li>
+  </ul></div></details>
+</section>
+  <p class="foot">Все тексты на «ты» и в женском роде. Имена клиенток не упоминаются. Среда — собирательная ситуация, не кейс. Воскресенье — вымышленный дневник, не рассказ о клиентке.</p>
+</div>
+<script>
+function pngBlob(img){
+  return new Promise(function(res,rej){
+    var i=new Image();
+    i.onload=function(){var c=document.createElement('canvas');c.width=i.naturalWidth;c.height=i.naturalHeight;c.getContext('2d').drawImage(i,0,0);c.toBlob(function(b){b?res(b):rej(new Error('png'));},'image/png');};
+    i.onerror=rej;i.src=img.currentSrc||img.src;
+  });
+}
+document.querySelectorAll('.img-only').forEach(function(b){
+  var label=b.textContent;
+  function show(t){b.textContent=t;b.classList.add('done');setTimeout(function(){b.textContent=label;b.classList.remove('done');},2500);}
+  b.addEventListener('click',function(){
+    var img=b.closest('.post').querySelector('.post-img');
+    try{navigator.clipboard.write([new ClipboardItem({'image/png':pngBlob(img)})]).then(function(){show('Картинка скопирована');},function(){show('Не вышло: нажми «Скачать картинку»');});}
+    catch(x){show('Не вышло: нажми «Скачать картинку»');}
+  });
+});
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.dataset.label=btn.textContent;
+  var el=document.getElementById(btn.dataset.t);
+  var isPost=el.classList.contains('post-text');
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  // Чистая разметка поста: только <b> и абзацы <p>, без стилей, ссылок и шрифтов страницы.
+  // Каждая строка — отдельный <p>, пустая строка — <p>&nbsp;</p>: иначе Telegram схлопывает пустые строки и отступы.
+  function runs(n,bold,out){
+    n.childNodes.forEach(function(c){
+      if(c.nodeType===3){out.push([c.nodeValue,bold]);}
+      else if(c.nodeName==='BR'){out.push(['\n',bold]);}
+      else if(c.nodeName==='B'||c.nodeName==='STRONG'){runs(c,true,out);}
+      else{runs(c,bold,out);}
+    });
+    return out;
+  }
+  function clean(n,md){
+    var lines=[[]];
+    runs(n,false,[]).forEach(function(r){
+      r[0].split('\n').forEach(function(part,i){
+        if(i>0)lines.push([]);
+        if(part)lines[lines.length-1].push([part,r[1]]);
+      });
+    });
+    var o=lines.map(function(l){
+      var s=l.map(function(r){
+        var t=md?r[0]:esc(r[0]);
+        if(r[1]&&t.trim())t=md?'**'+t+'**':'<b>'+t+'</b>';
+        return t;
+      }).join('');
+      return md?s:(s.trim()?'<p>'+s+'</p>':'<p>&nbsp;</p>');
+    });
+    return md?o.join('\n'):o.join('');
+  }
+  function ok(label){btn.textContent=label||'Скопировано';btn.classList.add('done');clearTimeout(btn._t);btn._t=setTimeout(function(){btn.textContent=btn.dataset.label;btn.classList.remove('done');},2000);}
+  function fallbackSel(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Текст выделен, скопируй вручную';}
+  function copyData(html,text,done){
+    var handler=function(e){e.preventDefault();if(html!==null)e.clipboardData.setData('text/html',html);e.clipboardData.setData('text/plain',text);};
+    document.addEventListener('copy',handler);
+    var good=false;
+    window.__ownCopy=true;
+    try{good=document.execCommand('copy');}catch(x){}
+    window.__ownCopy=false;
+    document.removeEventListener('copy',handler);
+    if(good){done();return;}
+    try{
+      if(html!==null&&window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+        navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})]).then(done,fallbackSel);return;
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,fallbackSel);return;}
+    }catch(x){}
+    fallbackSel();
+  }
+  btn.addEventListener('click',function(){
+    if(isPost&&btn.dataset.img){
+      // Telegram на iPhone из общего буфера берёт только текст (проверка Ирины 9.10.2026),
+      // поэтому кнопка работает в два нажатия: сначала картинка, потом текст.
+      if(btn.dataset.step!=='text'){
+        var img=btn.parentNode.querySelector('.post-img');
+        var toText=function(){btn.dataset.step='text';btn.textContent='Картинка скопирована. Вставь её в Telegram и нажми ещё раз — скопирую текст';btn.classList.add('done');
+          clearTimeout(btn._t);btn._t=setTimeout(function(){btn.dataset.step='';btn.textContent=btn.dataset.label;btn.classList.remove('done');},180000);};
+        try{navigator.clipboard.write([new ClipboardItem({'image/png':pngBlob(img)})]).then(toText,function(){ok('Картинка не скопировалась: нажми «Скачать картинку»');});}
+        catch(x){ok('Картинка не скопировалась: нажми «Скачать картинку»');}
+      }else{
+        clearTimeout(btn._t);btn.dataset.step='';
+        copyData('<meta charset="utf-8">'+clean(el,false),el.innerText,function(){ok('Текст скопирован: вставь его подписью к картинке');});
+      }
+      return;
+    }
+    if(isPost){copyData('<meta charset="utf-8">'+clean(el,false),el.innerText,function(){ok();});}
+    else{
+      var txt=el.innerText;
+      // Текст кружка записан в «ёлочках» как реплика; в пост их не берём.
+      if(el.classList.contains('k-say'))txt=txt.trim().replace(/^«/,'').replace(/»(\.?)$/,'$1');
+      copyData(null,txt,function(){ok();});
+    }
+  });
+  if(isPost&&el.querySelector('b')&&!btn.classList.contains('mini')){
+    // Запасная кнопка: жирное в виде **слов**. Telegram сам делает из них жирный при отправке.
+    var b2=document.createElement('button');
+    b2.type='button';b2.className='copy';b2.dataset.label=b2.textContent='Жирное не сохранилось? Скопировать со звёздочками';
+    b2.style.fontWeight='500';b2.style.fontSize='13px';
+    b2.addEventListener('click',function(){
+      var md=clean(el,true);
+      copyData(null,md,function(){b2.textContent='Скопировано со звёздочками: вставь и отправь';b2.classList.add('done');setTimeout(function(){b2.textContent=b2.dataset.label;b2.classList.remove('done');},2500);});
+    });
+    btn.parentNode.insertBefore(b2,btn.parentNode.querySelector('.mini-row'));
+  }
+});
+
+// Всё, что выделено вручную вне постов (кружки, подсказки, промты), копируется чистым текстом:
+// иначе в Telegram такой текст вставляется целиком жирным и его не исправить.
+document.addEventListener('copy',function(e){
+  if(window.__ownCopy)return;
+  var sel=window.getSelection();
+  if(!sel||sel.isCollapsed)return;
+  var n=sel.anchorNode,el=n&&(n.nodeType===1?n:n.parentElement);
+  if(el&&el.closest&&el.closest('.post-text'))return;
+  e.preventDefault();
+  e.clipboardData.setData('text/plain',sel.toString());
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Политика обработки персональных данных — Ирина Дудкина</title>
+<meta name="description" content="Политика обработки персональных данных ИП Дудкиной Ирины Александровны: какие данные, зачем, кому передаются, сколько хранятся и как их удалить.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Политика обработки персональных данных">
+<meta property="og:description" content="Какие данные клиенток обрабатывает ИП Дудкина Ирина Александровна и зачем.">
+<meta property="og:image" content="https://rdudkin58.github.io/ira-club/irina.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-balance-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-balance-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-balance-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-balance-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-balance-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-balance-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon-balance.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF7F1;
+    --cream:#F8ECDA;
+    --sand:#F0DDC0;
+    --blush:#F8DCC8;
+    --gold:#C3943F;
+    --gold-light:#E8C98A;
+    --gold-deep:#8E6420;
+    --espresso:#2A201A;
+    --ink:#33291F;
+    --muted:#6E5D4E;
+    --line:rgba(176,128,52,0.34);
+    --gold-grad:linear-gradient(135deg,#F2D38F 0%,#D2A04A 45%,#9C6E25 100%);
+    --serif:'Cormorant Garamond', 'Times New Roman', serif;
+    --sans:'Manrope', system-ui, -apple-system, sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --shadow:0 26px 50px -26px rgba(150,100,30,.5);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse 70% 420px at 100% 0, rgba(242,211,143,.45), transparent 70%),
+      radial-gradient(ellipse 60% 380px at 0 60px, rgba(248,220,200,.7), transparent 70%),
+      linear-gradient(180deg, var(--cream) 0, var(--ivory) 560px) no-repeat,
+      var(--ivory);
+    background-repeat:no-repeat;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.7;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-variant-numeric:lining-nums;
+  }
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--gold-light); color:var(--espresso);}
+  :focus-visible{outline:1px solid var(--gold); outline-offset:4px;}
+
+  .wrap{max-width:660px; margin:0 auto; padding:52px 24px 0;}
+
+  /* ---------- type ---------- */
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:14px;
+    font:600 11.5px/1 var(--sans);
+    letter-spacing:0.28em; text-transform:uppercase;
+    color:var(--gold-deep);
+    margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:32px; height:1px; background:currentColor; opacity:.7;}
+
+  h1{
+    font-family:var(--serif); font-weight:500; color:var(--espresso);
+    font-size:clamp(38px,8vw,56px); line-height:1.06; letter-spacing:-0.01em;
+    margin-bottom:22px;
+  }
+  h1 em, .cta-card h2 em{
+    font-style:italic;
+    background:var(--gold-grad);
+    -webkit-background-clip:text; background-clip:text;
+    color:transparent;
+    padding-right:.04em;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  }
+  .article .subtitle{
+    font-family:var(--serif); font-weight:500; color:var(--espresso);
+    font-size:clamp(25px,5.4vw,33px); line-height:1.18;
+    margin:-8px 0 26px;
+  }
+  .article .lead-line{
+    font:italic 500 clamp(22px,4.8vw,26px)/1.35 var(--serif);
+    color:var(--gold-deep);
+    margin-bottom:24px;
+  }
+
+  .article p{font-size:16.5px; margin-bottom:16px;}
+  .article p.accent{font-weight:600; color:var(--espresso);}
+  .article strong{font-weight:700; color:var(--espresso);}
+  .article a{color:var(--gold-deep); border-bottom:1px solid var(--line); transition:color .3s ease, border-color .3s ease;}
+  .article a:hover{color:var(--gold); border-color:var(--gold);}
+  .article h2{
+    font-family:var(--serif); font-weight:500; color:var(--espresso);
+    font-size:clamp(29px,6.2vw,38px); line-height:1.12;
+    margin:60px 0 20px;
+  }
+  .article h2 em{font-style:italic; color:var(--gold-deep);}
+
+  /* ---------- о себе ---------- */
+
+  .me{
+    display:grid; grid-template-columns:minmax(0,210px) 1fr; gap:34px; align-items:center;
+    margin:40px 0 8px;
+  }
+  .portrait{position:relative; width:100%;}
+  .portrait::before{
+    content:""; position:absolute; inset:0;
+    transform:translate(14px,14px);
+    border:1px solid var(--gold);
+    opacity:.55;
+  }
+  .portrait img{
+    position:relative; display:block;
+    width:100%; height:auto; aspect-ratio:4/5.2; object-fit:cover; object-position:50% 20%;
+  }
+  .me-name{font:500 30px/1.1 var(--serif); color:var(--espresso);}
+  .me-roles{margin:10px 0 16px; font:600 10.5px/1.7 var(--sans); letter-spacing:.2em; text-transform:uppercase; color:var(--muted);}
+  .me p{font-size:16px; margin-bottom:0;}
+
+  /* ---------- списки ---------- */
+
+  .pain-list{
+    list-style:none;
+    margin:0 0 24px;
+    padding:10px 26px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+  }
+  .pain-list li{
+    font:italic 500 20px/1.4 var(--serif);
+    color:var(--espresso);
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .pain-list li:last-child{border-bottom:none;}
+
+  .scenario-list{
+    list-style:none;
+    margin:6px 0 22px;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .scenario-list li{
+    display:flex; gap:14px; align-items:flex-start;
+    font-size:15.5px; line-height:1.5;
+    padding:15px 18px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:14px;
+  }
+  .scenario-list li::before{
+    content:"✦"; flex-shrink:0;
+    color:var(--gold); font-size:13px; line-height:24px;
+  }
+
+  .thought-box{
+    margin:8px 0 24px;
+    padding:20px 24px;
+    background:var(--cream);
+    border-left:3px solid var(--gold);
+    border-radius:0 14px 14px 0;
+  }
+  .article .thought-box p{font:italic 500 23px/1.4 var(--serif); color:var(--espresso); margin:0;}
+
+  .methods{list-style:none; display:flex; flex-direction:column; gap:22px; margin:6px 0 10px;}
+  .methods li{display:grid; grid-template-columns:18px 1fr; gap:12px; align-items:start; font-size:16.5px;}
+  .methods li::before{content:"✦"; color:var(--gold); font-size:13px; line-height:28px;}
+  .m-name{display:block; font:600 21px/1.3 var(--serif); color:var(--espresso); margin-bottom:4px;}
+
+  .cases{display:flex; flex-direction:column; gap:16px; margin:22px 0 26px;}
+  .case{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:18px;
+    padding:22px 24px 8px;
+    box-shadow:var(--shadow);
+  }
+  .case-title{font:italic 500 23px/1.25 var(--serif); color:var(--espresso); margin-bottom:10px;}
+  .case p{font-size:15.5px;}
+
+  .steps{display:flex; flex-direction:column; gap:14px; margin:6px 0 22px;}
+  .step{background:var(--cream); border:1px solid var(--line); border-radius:18px; padding:22px 24px 8px;}
+  .step-num{font:600 11px/1 var(--sans); letter-spacing:.22em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:10px;}
+  .step-title{font:500 24px/1.2 var(--serif); color:var(--espresso); margin-bottom:10px;}
+  .step ul{list-style:none; display:flex; flex-direction:column; gap:8px; margin:0 0 16px;}
+  .step ul li{display:grid; grid-template-columns:16px 1fr; gap:10px; font-size:15.5px; line-height:1.55;}
+  .step ul li::before{content:"✦"; color:var(--gold); font-size:12px; line-height:24px;}
+
+  .faq{border-top:1px solid var(--line); margin-bottom:10px;}
+  .faq-item{padding:20px 0 6px; border-bottom:1px solid var(--line);}
+  .article .faq-q{font:500 22px/1.3 var(--serif); color:var(--espresso); margin-bottom:10px;}
+
+  /* ---------- кнопка и призыв ---------- */
+
+  .btn{
+    position:relative; overflow:hidden; isolation:isolate;
+    display:inline-flex; align-items:center; justify-content:center; gap:12px;
+    max-width:100%;
+    height:58px; padding:0 38px;
+    border:none; border-radius:999px; cursor:pointer;
+    font:600 12px/1 var(--sans);
+    letter-spacing:0.22em; text-transform:uppercase;
+    white-space:nowrap;
+    transition:transform .5s var(--ease), box-shadow .5s var(--ease), background-color .4s ease, color .4s ease;
+  }
+  .btn-gold{background:var(--gold-grad); color:#fff; box-shadow:0 18px 36px -18px rgba(140,104,50,.75);}
+  .btn-gold::after{
+    content:""; position:absolute; inset:0; z-index:-1;
+    background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+    transform:translateX(-120%); transition:transform .9s var(--ease);
+  }
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 24px 44px -18px rgba(140,104,50,.85);}
+  .btn-gold:hover::after{transform:translateX(120%);}
+
+  .cta-card{
+    margin:34px 0 34px;
+    padding:44px 32px 38px;
+    border-radius:24px;
+    text-align:center;
+    color:#FBEEDB;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,226,160,.35), transparent 70%),
+      linear-gradient(135deg, #B5803C 0%, #95622A 55%, #74491C 100%);
+    box-shadow:0 30px 60px -30px rgba(116,73,28,.75);
+  }
+  .cta-card .eyebrow{color:#FCE3B2; margin-bottom:18px;}
+  .cta-card h2 em{background:none; color:#FCE3B2;}
+  .cta-card .btn-gold{background:var(--ivory); color:#7A4D1D; box-shadow:0 18px 36px -18px rgba(60,35,10,.7);}
+  .cta-card h2{
+    font-family:var(--serif); font-weight:500; color:#fff;
+    font-size:clamp(30px,6.6vw,40px); line-height:1.1;
+    margin:0 0 16px;
+  }
+  .article .cta-card p{font-size:15px; max-width:32em; margin:0 auto 28px;}
+  .cta-note{margin-top:16px; font:500 12.5px/1 var(--sans); letter-spacing:.08em; color:#F0D9B8;}
+
+  .article .closing{font:italic 500 clamp(23px,5vw,27px)/1.35 var(--serif); color:var(--espresso); margin-bottom:12px;}
+  .article p.signature{font:italic 500 22px/1.3 var(--serif); color:var(--gold-deep); margin-bottom:34px;}
+  .article p.ps{font-size:15px; color:var(--muted); padding-top:22px; border-top:1px solid var(--line);}
+  .article p.ps strong{color:var(--ink);}
+
+  /* ---------- footer ---------- */
+
+  footer{
+    max-width:660px; margin:64px auto 0; padding:26px 24px 40px;
+    border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center; gap:14px 28px; flex-wrap:wrap;
+    font-size:12.5px; color:var(--muted);
+  }
+  .footer-links{display:flex; gap:22px; flex-wrap:wrap;}
+  .footer-links a{font:600 11px/1.6 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep); transition:color .3s ease;}
+  .footer-links a:hover{color:var(--gold);}
+
+  @media (max-width:560px){
+    .me{grid-template-columns:1fr; gap:26px; justify-items:center; text-align:center;}
+    .portrait{max-width:240px; margin-right:14px;}
+  }
+  @media (max-width:480px){
+    .wrap{padding:36px 16px 0;}
+    .pain-list{padding:6px 20px;}
+    .pain-list li{font-size:19px;}
+    .case, .step{padding:20px 18px 6px;}
+    .btn{padding:0 28px;}
+    .cta-card{padding:36px 20px 32px;}
+    .cta-card .btn{width:100%;}
+    footer{padding:24px 16px 36px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .btn, .btn-gold::after{transition:none;}
+  }
+
+  /* ---------- факты и цены ---------- */
+
+  .facts{
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;
+    margin:30px 0 8px;
+  }
+  .fact{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:16px;
+    padding:16px 14px 14px;
+    box-shadow:var(--shadow);
+  }
+  .fact-label{font:600 10.5px/1.4 var(--sans); letter-spacing:.18em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:6px;}
+  .fact-value{font:500 22px/1.15 var(--serif); color:var(--espresso);}
+  .fact-note{font-size:13px; line-height:1.4; color:var(--muted); margin-top:4px;}
+
+  .req-row{display:grid; grid-template-columns:96px 1fr; gap:12px; padding:10px 0; border-top:1px solid var(--line); font-size:15.5px; line-height:1.55;}
+  .req-row:first-of-type{border-top:none; padding-top:2px;}
+  .req-row b{font:600 10.5px/2.2 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep);}
+  .case .req-weeks{list-style:none; display:flex; flex-direction:column; gap:6px; margin:0 0 16px; font-size:15.5px; line-height:1.5;}
+
+  .price-list{
+    list-style:none;
+    margin:6px 0 20px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:6px 24px;
+  }
+  .price-list li{
+    display:flex; justify-content:space-between; align-items:baseline; gap:18px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .price-list li:last-child{border-bottom:none;}
+  .price-name{font:500 21px/1.25 var(--serif); color:var(--espresso);}
+  .price-name small{display:block; font:400 14px/1.45 var(--sans); color:var(--muted); margin-top:4px;}
+  .price-sum{font:600 24px/1.1 var(--serif); color:var(--gold-deep); white-space:nowrap;}
+
+  @media (max-width:640px){
+    .facts{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:480px){
+    .price-list{padding:4px 18px;}
+    .price-list li{flex-direction:column; gap:6px;}
+    .req-row{grid-template-columns:1fr; gap:2px;}
+  }
+
+
+  /* ---------- реквизиты ---------- */
+
+  .footer-req{width:100%; font-size:12.5px; line-height:1.6; color:var(--muted);}
+  .footer-req a{color:var(--gold-deep); border-bottom:1px solid var(--line);}
+  .seller{
+    margin:6px 0 24px; padding:18px 24px 10px;
+    background:var(--cream); border:1px solid var(--line); border-radius:18px;
+  }
+  .seller .req-row b{line-height:2.2;}
+
+  .doc .edition{font-size:14px; color:var(--muted); margin-bottom:26px;}
+  .doc h2{font-size:clamp(25px,5.4vw,30px); margin:46px 0 14px;}
+  .doc p{font-size:15.5px; line-height:1.65; margin-bottom:12px;}
+  .doc ul{list-style:none; display:flex; flex-direction:column; gap:6px; margin:-4px 0 14px;}
+  .doc ul li{display:grid; grid-template-columns:16px 1fr; gap:10px; font-size:15.5px; line-height:1.6;}
+  .doc ul li::before{content:"✦"; color:var(--gold); font-size:11px; line-height:25px;}
+  .doc dl{margin:0 0 12px;}
+  .doc dt{font:600 15.5px/1.5 var(--sans); color:var(--espresso); margin-top:12px;}
+  .doc dd{font-size:15.5px; line-height:1.65; margin:2px 0 0;}
+  .doc .accept{font-weight:600; color:var(--espresso); padding-top:20px; border-top:1px solid var(--line); margin-top:30px;}
+</style>
+</head>
+<body>
+
+<main class="wrap article doc">
+
+  <div class="eyebrow">Ирина Дудкина · Документы</div>
+  <h1>Политика обработки <em>персональных данных</em></h1>
+  <p class="edition">Дата публикации: 2 октября 2026 г.</p>
+
+  <h2>1. Кто обрабатывает данные</h2>
+  <p>Индивидуальный предприниматель Дудкина Ирина Александровна (ИНН 583700521908, ОГРНИП 322583500057163), далее — Исполнитель.</p>
+  <p>По вопросам данных: <a href="mailto:irina.dudkina.74@mail.ru">irina.dudkina.74@mail.ru</a>, Telegram <a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">@IrinaDudkina</a>.</p>
+
+  <h2>2. Какие данные и зачем</h2>
+  <div class="seller">
+    <div class="req-row"><b>Telegram</b><span>Имя, имя пользователя и номер аккаунта в Telegram — чтобы связаться с клиенткой и открыть доступ к марафону, клубу, чатам.</span></div>
+    <div class="req-row"><b>Контакты</b><span>Телефон или e-mail — для связи и отправки электронного чека об оплате.</span></div>
+    <div class="req-row"><b>Дата рождения</b><span>Только для сессий и только если клиентка сама её сообщает — для подготовки к сессии.</span></div>
+    <div class="req-row"><b>Запрос</b><span>То, что клиентка сама рассказывает на сессиях и в чатах, — для оказания услуги.</span></div>
+    <div class="req-row"><b>Оплата</b><span>Сумма, дата, номер платежа, скриншот чека перевода — чтобы подтвердить оплату, для учёта и налогов.</span></div>
+  </div>
+  <p>Данные банковской карты Исполнитель не получает и не хранит: оплата картой проходит на странице платёжного сервиса Робокасса.</p>
+  <p>Рекламные и новостные рассылки Исполнитель отправляет только тем, кто отдельно на это согласился.</p>
+
+  <h2>3. Основания</h2>
+  <ul>
+    <li><span>исполнение договора с клиенткой (<a href="oferta.html">публичной оферты</a>) — п. 5 ч. 1 ст. 6 Федерального закона № 152-ФЗ «О персональных данных»;</span></li>
+    <li><span>обязанности по закону (кассовые чеки, налоговый учёт);</span></li>
+    <li><span>согласие клиентки — для рассылок.</span></li>
+  </ul>
+
+  <h2>4. Что с данными происходит</h2>
+  <p>Исполнитель собирает, записывает, хранит, уточняет, использует и удаляет данные только для целей из раздела 2.</p>
+  <p>Данные передаются только тем, без кого услугу не оказать:</p>
+  <ul>
+    <li><span>ООО «Робокасса» и оператору фискальных данных — для приёма оплаты картой и отправки чека;</span></li>
+    <li><span>Telegram — сервис, через который проходят марафон, клуб и переписка;</span></li>
+    <li><span>Cloudflare — сервис, на котором работает Telegram-бот марафона.</span></li>
+  </ul>
+  <p>Содержание сессий не записывается и никому не передаётся. Исключение — случаи, прямо предусмотренные законом.</p>
+
+  <h2>5. Сколько хранятся</h2>
+  <p>Пока действует договор и затем не дольше 3 лет. Документы об оплате — столько, сколько требует налоговое законодательство. Данные для рассылок — до отзыва согласия.</p>
+
+  <h2>6. Права клиентки</h2>
+  <p>Клиентка может узнать, какие её данные есть у Исполнителя, попросить исправить или удалить их, отозвать согласие на рассылки. Для этого достаточно написать на <a href="mailto:irina.dudkina.74@mail.ru">irina.dudkina.74@mail.ru</a> или в Telegram <a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">@IrinaDudkina</a>. Ответ — в течение 10 рабочих дней.</p>
+  <p>Если клиентка считает, что её права нарушены, она может обратиться в Роскомнадзор или в суд.</p>
+
+  <h2>7. Защита</h2>
+  <p>Доступ к данным есть только у Исполнителя и её помощника. Аккаунты, где хранятся данные, защищены паролями.</p>
+
+</main>
+
+<footer>
+  <div class="footer-req">ИП Дудкина Ирина Александровна · ИНН 583700521908 · ОГРНИП 322583500057163 · г. Пенза · <a href="tel:+79273757868">+7 (927) 375-78-68</a> · <a href="mailto:irina.dudkina.74@mail.ru">irina.dudkina.74@mail.ru</a></div>
+  <span>© 2026 Ирина Дудкина</span>
+  <div class="footer-links">
+    <a href="index.html">Закрытый клуб «МОЁ СОСТОЯНИЕ»</a>
+    <a href="marafon.html">Марафон</a>
+    <a href="oferta.html">Оферта</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="yandex" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-balance-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-balance-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../favicon-balance-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon-balance-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon-balance-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../favicon-balance-512.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon-balance.png">
+<title>Неделя «Свой год или чужие ожидания» · «НОВАЯ Я. КАЙФУЮ!»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FAF6EE;
+  --surface:#FFFDF8;
+  --ink:#2B2620;
+  --muted:#7A6F60;
+  --line:#E7DDCB;
+  --gold:#A8823A;
+  --gold-soft:#F3E9D3;
+  --todo-bg:#FBF3E1;
+  --todo-line:#E4CF9F;
+  --cta:#8A5A2B;
+  --cta-bg:#F4E4D2;
+  --focus:#A8823A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1C1915;--surface:#25211B;--ink:#EFE7D8;--muted:#A99C87;--line:#3A342A;
+    --gold:#D4B06A;--gold-soft:#3A3122;--todo-bg:#2E2718;--todo-line:#5A4A2A;
+    --cta:#E7B98A;--cta-bg:#3D2E20;--focus:#D4B06A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1C1915;--surface:#25211B;--ink:#EFE7D8;--muted:#A99C87;--line:#3A342A;
+  --gold:#D4B06A;--gold-soft:#3A3122;--todo-bg:#2E2718;--todo-line:#5A4A2A;
+  --cta:#E7B98A;--cta-bg:#3D2E20;--focus:#D4B06A;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:680px;margin:0 auto}
+.top{padding-block:32px 8px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.range{color:var(--muted);font-size:14px;margin-top:4px;font-variant-numeric:tabular-nums}
+h1{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(34px,8vw,46px);line-height:1.05;margin:.3em 0 .25em;text-wrap:balance}
+.lead{color:var(--muted);margin:0;max-width:60ch}
+.rules{margin:20px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:grid;gap:6px;font-size:14.5px}
+.rules b{font-weight:600}
+nav.days{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);margin-inline:-16px;padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav.days::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;min-width:52px;padding:6px 8px;border-radius:10px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--surface)}
+.chip span{font-weight:700;font-size:14px}
+.chip small{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip:focus-visible,.copy:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.day{padding-block:28px 8px;border-bottom:1px solid var(--line);scroll-margin-top:80px;display:grid;gap:14px}
+.day-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 12px}
+.when{display:flex;align-items:baseline;gap:10px}
+.dname{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:600;line-height:1}
+.date{color:var(--muted);font-variant-numeric:tabular-nums;font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.tag.cta{background:var(--cta-bg);color:var(--cta);font-weight:600}
+.todo{background:var(--todo-bg);border:1px solid var(--todo-line);border-radius:12px;padding:12px 14px;font-size:14.5px}
+.todo-h{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:4px}
+.todo ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.post{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.post-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px 16px 12px;font-size:15.5px}
+.post-text a{color:var(--gold)}
+.post-text b{font-weight:700}
+.copy{display:block;width:100%;border:0;border-top:1px solid var(--line);background:var(--gold-soft);color:var(--ink);font:600 15px/1 "Manrope",system-ui,sans-serif;padding:14px;cursor:pointer}
+.copy:hover{filter:brightness(.97)}
+.copy.done{background:var(--gold);color:var(--bg)}
+.voice{border:1px dashed var(--todo-line);border-radius:14px;background:var(--todo-bg);overflow:hidden}
+.voice-h{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);padding:14px 16px 0}
+.voice-note{margin:4px 16px 0;font-size:14px;color:var(--muted)}
+.voice-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px 16px 14px;font-size:15.5px}
+.pause{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 10px}
+.img{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+.img summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:14.5px;color:var(--gold)}
+.img-note{margin:0 0 10px;font-size:14px}
+.img-row{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.lang{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);padding-top:3px}
+.img-text{font-size:14px;overflow-wrap:anywhere}
+.copy.small{grid-column:2;width:auto;justify-self:start;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px}
+.img-hint{margin:0;padding:8px 0 12px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+.foot{color:var(--muted);font-size:13px;padding-top:20px}
+.krug{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:14px 16px 16px;display:grid;gap:12px}
+.krug-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.krug-title{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.krug-note{font-size:12.5px;color:var(--muted)}
+.k-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.k{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.ring{width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.k-body{display:grid;gap:3px;min-width:0}
+.k-when{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.k-t{font-weight:600;font-size:15px}
+.k-say{margin:0;font-size:15px;overflow-wrap:anywhere}
+.k-hint{margin:0;font-size:13.5px;color:var(--muted)}
+.guide{padding-block:32px 12px;border-bottom:1px solid var(--line);display:grid;gap:14px;scroll-margin-top:80px}
+.guide h2{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:30px;font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+.guide>p{margin:0;max-width:60ch}
+.rows{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.row{display:grid;grid-template-columns:minmax(96px,30%) 1fr;gap:4px 14px;padding:11px 14px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row dt{font-weight:600;font-size:14.5px}
+.row dd{margin:0;font-size:15px}
+.more{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+.more summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:14.5px;color:var(--gold)}
+.more summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.more-body{padding:0 0 14px;display:grid;gap:8px;font-size:15px}
+.more-body h3{margin:8px 0 0;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.more-body p{margin:0}
+.more-body ul{margin:0;padding-left:18px;display:grid;gap:4px}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+.k-body .copy.small{grid-column:auto;justify-self:start;margin-top:6px}
+.num{font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--todo-line);color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+.morning{display:grid;gap:8px}
+.morning-h{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.why{margin:0;font-size:15px;color:var(--ink);max-width:62ch}
+.rub{margin:16px 0 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.rub .row{grid-template-columns:44px minmax(110px,32%) 1fr}
+.rub .d{font-weight:700;font-size:14.5px}
+.rub .h{font-weight:600;font-size:14.5px;color:var(--gold);overflow-wrap:anywhere}
+.rub .w{font-size:14.5px}
+@media (max-width:420px){.rub .row{grid-template-columns:36px 1fr}.rub .w{grid-column:2}}
+.k-when .series{color:var(--gold);font-weight:600}
+.weeks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wk{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:12px 14px;display:grid;gap:4px}
+.wk-d{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.wk-t{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:600;line-height:1.15}
+.wk p{margin:0;font-size:15px}
+.post-img{display:block;width:100%;height:auto;aspect-ratio:1/1;border-bottom:1px solid var(--line);background:var(--gold-soft)}
+.mini-row{display:flex;flex-wrap:wrap;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+.post .mini{display:inline-block;width:auto;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:var(--surface);color:var(--ink);font:600 13px/1 "Manrope",system-ui,sans-serif;cursor:pointer}
+.post .mini:hover{filter:brightness(.97)}
+.post .mini.done{background:var(--gold);color:var(--bg)}
+.wk a,.guide a,.rules a{color:var(--gold);font-weight:600}
+
+html,body{margin:0}
+.back{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:14px;font-weight:600;color:var(--gold);text-decoration:none}
+.back:hover{text-decoration:underline}
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="plany-453ad0ea.html">← Все контент-планы</a>
+  <div class="top">
+    <div class="eyebrow">ВРЕМЯ ПРОБУЖДЕНИЯ с ИРИНОЙ</div><div class="range">30 ноября – 6 декабря 2026</div>
+    <h1>Я жила для себя или для чужих ожиданий?</h1>
+    <p class="lead">Сквозная мысль недели: до Нового года ещё месяц, и вместо гонки «успеть всё» мы спрашиваем себя, сколько в этом году было именно моего выбора. Это не финал года, а первые честные итоги через своё состояние. Семь постов, к каждому «Число дня», два кружочка и промт для картинки. Под каждым постом кнопка, которая копирует текст для Telegram.</p>
+    <div class="rules">
+      <div><b>Линия недели:</b> «Весь год я старалась всем угодить. А себе?» (пн) → практика «четыре поля» и голосовая версия (вт) → «Я всё делала правильно, а год будто прошёл мимо» (ср) → «моё желание или чужое ожидание», клуб (чт) → послание по картам «Две жизни» (пт) → моя история «Почему я называю себя необычным психологом» (сб) → сериал «Список, который никто у меня не просил» (вс).</div>
+      <div><b>Откуда план.</b> Его подготовил нейрометодолог, а я переработал под твой голос по твоим правкам 12.11 (пост 2257): без «Дорогая» и рубленых фраз, с меньшим числом оговорок, пятница в формате МАК-карт, в воскресенье «Продолжение следует…», строка-подарок во вт, чт и вс. Все тексты <b>черновики</b>: поправь как удобно, твои правки перенесу слово в слово.</div>
+      <div><b>Ждёт тебя:</b> суббота (5.12): текст написан по твоему голосовому «Что оставить в 2026-м» (пост 2263). Проверь: среда (собирательная ситуация); воскресенье (вымышленный эпизод). Темы эфиров клуба на декабрь жду от тебя.</div>
+      <div><b>Число дня</b> — сумма всех цифр даты с годом (30.11.2026 → 15 → 6). Значения чисел взяла из прошлых недель.</div>
+      <div><b>На диагностику зовём только в среду и субботу.</b> Пятница — #послание, воскресенье — #сериал. В четверг мягко зовём в закрытый клуб «МОЁ СОСТОЯНИЕ» (слово «КЛУБ»), цену не называем. Результат не обещаем.</div>
+      <div><b>Прогрев к интенсиву «НОВАЯ Я. КАЙФУЮ!»:</b> 30.11 и 01.12 — мягкая интрига; 03.12 в 18:00 и 06.12 в 17:30 — отдельные посты. Кодовые слова не смешивать: «ДИАГНОСТИКА» — среда и суббота, «КЛУБ» — основной пост четверга, «КАЙФ» — интенсив.</div>
+      <div><b>Картинки</b> появятся над постами после твоего «да». Героини на вид 30–40 лет, разные сцены, без арок; суббота по твоему фото.</div>
+      <div>Жёлтые блоки «Перед публикацией» — что сделать до того, как выложить пост.</div>
+    </div>
+    <dl class="rub" aria-label="Рубрики недели">
+      <div class="row"><dt class="d">Пн</dt><dd class="h">#тема_недели</dd><dd class="w">Весь год я старалась всем угодить. А себе?</dd></div>
+      <div class="row"><dt class="d">Вт</dt><dd class="h">#практика</dd><dd class="w">Чей это был год: четыре поля; голосовая практика</dd></div>
+      <div class="row"><dt class="d">Ср</dt><dd class="h">#разбор_ситуации</dd><dd class="w">«Я всё делала правильно, а год будто прошёл мимо»; зовём на диагностику</dd></div>
+      <div class="row"><dt class="d">Чт</dt><dd class="h">#спрашивают</dd><dd class="w">Моё желание или чужое ожидание; клуб «МОЁ СОСТОЯНИЕ»</dd></div>
+      <div class="row"><dt class="d">Пт</dt><dd class="h">#послание</dd><dd class="w">Карта дня «Две жизни»: за что я могу поблагодарить себя</dd></div>
+      <div class="row"><dt class="d">Сб</dt><dd class="h">#моя_история</dd><dd class="w">Почему я называю себя необычным психологом; зовём на диагностику</dd></div>
+      <div class="row"><dt class="d">Вс</dt><dd class="h">#сериал</dd><dd class="w">«Записки дневника обычной женщины»: «Список, который никто у меня не просил»</dd></div>
+    </dl>
+  </div>
+  <nav class="days" aria-label="Дни недели"><a class="chip" href="#mon"><span>Пн</span><small>30.11</small></a><a class="chip" href="#tue"><span>Вт</span><small>01.12</small></a><a class="chip" href="#wed"><span>Ср</span><small>02.12</small></a><a class="chip" href="#thu"><span>Чт</span><small>03.12</small></a><a class="chip" href="#fri"><span>Пт</span><small>04.12</small></a><a class="chip" href="#sat"><span>Сб</span><small>05.12</small></a><a class="chip" href="#sun"><span>Вс</span><small>06.12</small></a><a class="chip" href="#kayf"><span>КАЙФ</span><small>ответы</small></a><a class="chip" href="#noyabr"><span>Ноябрь</span><small>клуб</small></a><a class="chip" href="#krug"><span>Кружки</span><small>как снимать</small></a></nav>
+<section class="day" id="mon">
+<header class="day-h"><div class="when"><span class="dname">Понедельник</span><span class="date">30.11</span></div>
+<div class="tags"><span class="tag">#тема_недели</span><span class="num">число дня 6</span></div></header>
+<p class="why">Открыть неделю: до Нового года ещё месяц, и вместо гонки «успеть всё» предложить спросить себя, сколько в этом году было именно моего выбора.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>30 ноября не конец года: не «успей всё», а первые осознания. Текст моя переработка плана нейрометодолога под твой голос. Все тексты недели черновики, правки перенесу слово в слово. Основной пост — твой исправленный текст из поста 2468 (14.11), слово в слово.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m0">#число_дня<br><br>3️⃣0️⃣🧡1️⃣1️⃣<br><br>Сегодня день 6.<br>Шестёрка — число заботы, дома и любви.<br><br>Но забота о других не должна стирать тебя из собственной жизни.<br><br><b>«Где сегодня моё «да» самой себе?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m0">Скопировать текст</button></div><p class="k-hint">30.11.2026 → 15 → 6. Смысл числа взят из прошлых недель, мысль перед заданием мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir0">Женщина на вид 35 лет в пуховике с кучей пакетов и подарочных коробок поднимается по эскалатору украшенного торгового центра, вокруг размытый поток людей, на лице усталость; боковой тёплый свет гирлянд. Реалистичная фотография, естественный свет; цвет слоновой кости или приглушённого золота только акцентом (деталь одежды или предмет); квадрат 1:1, 1080×1080, без надписей и логотипов, без арок и скруглённых рамок.</div><button class="copy small" type="button" data-t="ir0">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-11-30.jpg</p></details>
+<div class="post"><img class="post-img" src="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-11-30.jpg" width="1080" height="1080" loading="lazy" alt="Картинка к посту, 30.11"><div class="post-text" id="t0">#тема_недели<br><br><b>ВЕСЬ ГОД Я СТАРАЛАСЬ ВСЕМ УГОДИТЬ. А СЕБЕ?</b><br><br>Вот и последний день ноября. До Нового года ещё целый месяц, но вокруг уже начинается: кто-то составляет списки подарков, кто-то считает, сколько успел за год, кто-то спешит закончить все дела …<br><br>Прежде чем включаться в эту гонку, я предлагаю <b>посмотреть на уходящий год немного иначе.</b><br>Не только «сколько я заработала», «чего достигла» и «что не успела», а спросить: <b>«Сколько раз в этом году я выбирала то, чего действительно хотела сама?»</b><br><br>Не потому, что «мама расстроится».<br>Не потому, что «хорошая жена должна».<br>Не потому, что «на работе неудобно отказать» и «а вдруг меня осудят».<br>А потому что это было важно мне.<br><br>Я не предлагаю перестать заботиться о близких.<br>Мы живём среди людей, договариваемся, помогаем, идём на компромиссы.<br>Но есть разница между добровольным выбором и жизнью, в которой твоё собственное «хочу» всё время стоит последним в очереди.<br>И если в конце года ты чувствуешь усталость, иногда полезно посмотреть не только на количество дел, а на то, <b>чьи ожидания ты пыталась выполнить.</b><br><br>На этой неделе мы мягко подведём первые итоги года через своё состояние.<br>Что было моим решением, за что я могу себя поблагодарить, где я снова старалась заслужить одобрение и какое состояние иметь дальше.<br>Выносить себе приговор не будем, будем учиться видеть свою жизнь честно.<br><br>Ответь честно: <b>что в этом году чаще звучало внутри?</b><br><br>1️⃣ «Надо, потому что от меня ждут».<br><br>2️⃣ «Мне неудобно отказать».<br><br>3️⃣ «Я сама этого хочу».<br><br>4️⃣ «Я уже не понимаю, чего хочу».<br><br>Напиши цифру в комментариях.<br><br>Обнимаю тебя ❤️</div>
+<button class="copy" type="button" data-t="t0" data-img="1" id="c0">Скопировать картинку, потом текст</button><div class="mini-row"><button class="mini img-only" type="button">Только картинка</button><button class="copy mini" type="button" data-t="t0">Только текст</button><a class="mini" href="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-11-30.jpg" download>Скачать картинку</a></div></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Не ещё один список дел</div><p class="k-say" id="ks0_1">Привет, мои хорошие! Сегодня последний день ноября, и вокруг уже начинается предновогодняя гонка: подарки, списки, дела, что успеть, кого не забыть. А я вот подумала: девочки, а <b>себя мы в эти списки вообще внесли?</b> 😄<br><br>На этой неделе будем смотреть не на то, сколько мы успели, а на то, сколько было нашего собственного выбора. И знаешь, чего мне хочется? Чтобы к Новому году мы подошли не только ответственными и уставшими, а ещё с ощущением, что умеем получать удовольствие от своей жизни.<br><br><b>В декабре готовлю для вас кое-что необычное.</b> Скоро расскажу. А пока выбери в сегодняшнем посте, какая из четырёх фраз тебе ближе.</p><button class="copy small" type="button" data-t="ks0_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь честных итогов»</span></div><div class="k-t">Итог 1. Где я сказала «да» себе?</div><p class="k-say" id="ks0_2">Сегодня первый вечер нашей серии «Семь честных итогов». Считать все достижения до рубля не будем. Вспомни один момент этого года, когда ты сказала себе настоящее «да». Может быть, отдохнула, попросила помощи, ушла с неудобной встречи или начала новое дело. Запиши его, даже если он кажется маленьким. Завтра посмотрим, какие решения были твоими, а какие чужими ожиданиями.</p><button class="copy small" type="button" data-t="ks0_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="tue">
+<header class="day-h"><div class="when"><span class="dname">Вторник</span><span class="date">01.12</span></div>
+<div class="tags"><span class="tag">#практика</span><span class="num">число дня 5</span></div></header>
+<p class="why">Дать практику «четыре поля»: моё «да», моё «надо», чужое «так положено», что беру с собой дальше.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Голосовую версию практики наговариваешь ты, текст для голоса ниже. Практика не про вину за обязанности: забота о близких может быть осознанным выбором. В конце поста строка-подарок.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m1">#число_дня<br><br>0️⃣1️⃣🧡1️⃣2️⃣<br><br>Сегодня день 5.<br>Пятёрка — число движения и возможности выбора.<br><br>Начало декабря хорошая возможность посмотреть, как ты распоряжаешься своим временем.<br><br><b>«Какой выбор сегодня будет действительно моим?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m1">Скопировать текст</button></div><p class="k-hint">01.12.2026 → 14 → 5. Смысл числа взят из прошлых недель, мысль перед заданием мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir1">Женщина на вид 41 года в вязаном пледе стоит на заснеженном балконе в раннее утро, держит лист бумаги и карандаш, изо рта идёт пар, внизу тихий двор с инеем на крышах; холодный розоватый свет рассвета. Реалистичная фотография, естественный свет; цвет слоновой кости или приглушённого золота только акцентом (деталь одежды или предмет); квадрат 1:1, 1080×1080, без надписей и логотипов, без арок и скруглённых рамок.</div><button class="copy small" type="button" data-t="ir1">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-01.jpg</p></details>
+<div class="post"><img class="post-img" src="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-01.jpg" width="1080" height="1080" loading="lazy" alt="Картинка к посту, 01.12"><div class="post-text" id="t1">#практика<br><br><b>ЧЕЙ ЭТО БЫЛ ГОД: МОЙ ИЛИ ЧУЖИХ ОЖИДАНИЙ?</b><br><br>Сегодня начнём с практики.<br><br>Возьми лист бумаги. Это не отчёт перед начальством, никто не будет ставить тебе оценку за 2026 год.<br><br>Подели его на четыре части.<br><br>1️⃣ <b>Моё «да».</b><br>Что я делала, потому что действительно хотела?<br>Может быть, прошла обучение, позволила себе поездку, начала заботиться о здоровье, провела больше времени с дорогим человеком.<br><br>2️⃣ <b>Моё «надо».</b> Где я действовала, потому что иначе было нельзя или трудно?<br>Работа, забота о близких, быт, важные договорённости. Не называй всё это ошибкой, иногда ответственность и есть осознанный выбор.<br><br>3️⃣ <b>Чужое «так положено».</b><br>Где я соглашалась только потому, что боялась, что осудят, обидятся, разочаруются? «Надо всем угодить». «Нельзя просить о помощи». «Хорошая женщина всегда справляется».<br><br>4️⃣ <b>Что я хочу взять с собой дальше.</b><br>Не только планы. Может быть, привычку отдыхать, умение просить, уважение к своему времени, больше спокойствия и доверия к себе.<br><br>Теперь посмотри на лист.<br>Менять все обязательства срочно не нужно. <b>Отметь одну ситуацию, где в декабре ты могла бы оставить немного больше места для своего выбора.</b> Например, не соглашаться сразу, а сказать: «Мне нужно посмотреть своё расписание». Или попросить близких разделить подготовку к празднику.<br>Или выделить вечер без чужих задач.<br><br>Эта практика не про эгоизм, она про честность с собой.<br><br>Ответь одним словом: какую часть заполнить оказалось легче всего, «моё да», «моё надо», «чужое положено» или «беру дальше»?<br><br>Завтра поговорим о том, почему бывает так, что делаешь всё правильно, а год будто прошёл мимо.<br><br>Обнимаю тебя ❤️<br><br>Для тебя есть подарок 🎁 <a href="http://t.me/IraDudkinabot" target="_blank" rel="noopener">забирай здесь</a> ⤵️</div>
+<button class="copy" type="button" data-t="t1" data-img="1" id="c1">Скопировать картинку, потом текст</button><div class="mini-row"><button class="mini img-only" type="button">Только картинка</button><button class="copy mini" type="button" data-t="t1">Только текст</button><a class="mini" href="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-01.jpg" download>Скачать картинку</a></div></div>
+<div class="voice"><div class="voice-h">Текст для голоса · «Что в этом году было моим?»</div><p class="voice-note">Не для публикации текстом: наговори это голосовым сообщением после основного поста, спокойно, с паузами. Вместе с паузами выйдет около 6–8 минут.</p><div class="voice-text" id="v1">ГОЛОСОВАЯ ПРАКТИКА
+«ЧТО В ЭТОМ ГОДУ БЫЛО МОИМ?»
+Ориентир: 6–8 минут с паузами.
+
+Привет, моя дорогая. ❤️
+
+Сегодня я приглашаю тебя к необычному подведению итогов. Не будем проверять, сколько ты успела, сравнивать себя с другими и требовать правильных ответов. Мы заметим, где в этом году ты выбирала сама, а где старалась оправдать ожидания других.
+
+Возьми лист и ручку, если удобно. Устройся спокойно, поставь ноги на пол, посмотри на комнату вокруг. Сделай обычный вдох и мягкий выдох.
+
+<span class="pause">пауза 15 секунд</span>
+
+Вспомни этот год не целиком, а как несколько отдельных эпизодов. Может быть, январь, весна, лето, осень. Не нужно выстраивать идеальную хронологию.
+
+<span class="pause">пауза 15 секунд</span>
+
+Первый вопрос. Что в этом году я сделала потому, что действительно хотела? Пусть это будет даже маленькая вещь: поездка, разговор, занятие, отдых, решение сказать «нет».
+
+<span class="pause">пауза 25 секунд</span>
+
+Если хочешь, запиши один пример.
+
+Второй вопрос. Что я делала из ответственности и заботы? Возможно, работа, семья, быт, помощь кому-то. И здесь я хочу сказать важное: не всё, что мы делаем для других, чужое. Иногда забота это наш настоящий выбор.
+
+<span class="pause">пауза 20 секунд</span>
+
+Третий вопрос. Где я согласилась только потому, что боялась чужой реакции? Что обо мне скажут, обидятся ли, не посчитают ли плохой. Вспомни один не слишком болезненный эпизод.
+
+<span class="pause">пауза 25 секунд</span>
+
+Что ты тогда хотела сказать на самом деле? Возможно: «Я устала», «Мне нужна помощь», «Мне неудобно», «Я хочу по-другому». Можешь записать эту фразу.
+
+<span class="pause">пауза 20 секунд</span>
+
+Четвёртый вопрос. За что я могу поблагодарить себя в этом году? Не за идеальный результат и не за то, что всем понравилась, а за то, что справлялась, просила помощи, пробовала новое, признала свою усталость, поддержала кого-то по своему желанию.
+
+<span class="pause">пауза 30 секунд</span>
+
+И последний вопрос. Какое одно состояние я хочу развивать в декабре? Спокойствие, ясность, бережность, уверенность, честность с собой? Выбери одно слово.
+
+<span class="pause">пауза 20 секунд</span>
+
+Не нужно тут же обещать, что с завтрашнего дня станешь другим человеком. Может быть, достаточно одного маленького действия. Например: «Прежде чем согласиться на новую просьбу, проверю свои силы». Или: «Раз в неделю буду спрашивать себя, что мне нужно». Или: «Разрешу себе отдых без чувства вины».
+
+<span class="pause">пауза 20 секунд</span>
+
+Верни внимание в комнату. Почувствуй опору. Посмотри вокруг. И если захочешь, положи рядом с собой лист с твоим словом на декабрь. Пусть это будет не приказ, а напоминание.
+
+Обнимаю тебя, дорогая. Напиши под практикой, если захочешь, какое слово ты выбрала для себя на декабрь. ❤️</div>
+<button class="copy" type="button" data-t="v1">Скопировать текст для голоса</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Покажи четыре поля</div><p class="k-say" id="ks1_1">Девочки, сегодня предлагаю вам практику с четырьмя полями: моё «да», моё «надо», чужое «так положено» и то, что хочу взять с собой. Мне очень нравится этот вопрос — <b>а где в этом году была именно я?</b><br><br>Мы не будем ругать себя за обязанности. Заботиться о близких, работать, решать семейные вопросы — это тоже может быть нашим настоящим выбором.<br><br>Но вот что интересно: <b>мало заметить, что у тебя всё время включается «надо». Хочется ведь ещё уметь менять своё состояние.</b> Не только понимать, почему устала, но и возвращаться к себе, к лёгкости, к удовольствию.<br><br>Именно об этом будет мой предновогодний интенсив. Скоро расскажу подробности. А сегодняшнюю практику обязательно попробуй — ниже будет моя голосовая версия. ❤️</p><button class="copy small" type="button" data-t="ks1_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь честных итогов»</span></div><div class="k-t">Итог 2. Что я сделала по своему желанию?</div><p class="k-say" id="ks1_2">Второй вечерний итог. Назови одно решение этого года, которым ты довольна. Не обязательно большое: выбрала встречу, о которой мечтала, пошла учиться, попросила поддержки, сказала честное «нет». И спроси себя: почему это решение было именно моим? Не для отчёта, а для ощущения, что ты умеешь выбирать.</p><button class="copy small" type="button" data-t="ks1_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="wed">
+<header class="day-h"><div class="when"><span class="dname">Среда</span><span class="date">02.12</span></div>
+<div class="tags"><span class="tag">#разбор_ситуации</span><span class="num">число дня 6</span><span class="tag cta">зовём на диагностику</span></div></header>
+<p class="why">Разобрать ощущение «я всё делала правильно, а год прошёл мимо»; позвать на диагностику.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Это собирательная ситуация, не история конкретной клиентки. Призыв на диагностику только сегодня и в субботу. В среду эфиры клуба в 11:00, основной пост выходит в 10:00.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m2">#число_дня<br><br>0️⃣2️⃣🧡1️⃣2️⃣<br><br>Сегодня день 6.<br>Шестёрка — число заботы, дома и любви.<br><br>Сегодня полезно заметить, не забываешь ли ты о себе, помогая другим.<br><br><b>«Чьё одобрение я всё ещё пытаюсь заслужить?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m2">Скопировать текст</button></div><p class="k-hint">02.12.2026 → 15 → 6. Смысл числа взят из прошлых недель, мысль перед заданием мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir2">Женщина на вид 40 лет сидит за рабочим столом в пустом офисе поздним вечером, горит только настольная лампа, рядом стопка папок и настенный календарь, взгляд устремлён в одну точку, лицо усталое, но спокойное; съёмка из глубины пустого зала. Реалистичная фотография, естественный свет; цвет слоновой кости или приглушённого золота только акцентом (деталь одежды или предмет); квадрат 1:1, 1080×1080, без надписей и логотипов, без арок и скруглённых рамок.</div><button class="copy small" type="button" data-t="ir2">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-02.jpg</p></details>
+<div class="post"><img class="post-img" src="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-02.jpg" width="1080" height="1080" loading="lazy" alt="Картинка к посту, 02.12"><div class="post-text" id="t2">#разбор_ситуации<br><br><b>«Я ВСЁ ДЕЛАЛА ПРАВИЛЬНО…</b><br><br><b>А ГОД БУДТО ПРОШЁЛ МИМО…»</b><br><br>Представь женщину:<br>она много работала весь год, заботилась о семье, решала вопросы, помогала, поддерживала и не бросала дела, даже когда очень уставала.<br>Со стороны всё выглядит достойно.<br>И вот она подводит итоги и говорит: «А себя то я и не помню во всём этом?»<br><br>Это собирательная ситуация многих клиенток.<br><br>Иногда женщина действительно много делает, но радость от собственных решений почти не чувствует. Возможно, она так привыкла быть нужной, что перестала спрашивать себя о желаниях. Возможно, почти всё время уходило на реальные важные обязательства. А возможно, внутри давно звучит правило: «Меня будут ценить, только если я полезна».<br><br>Когда ко мне приходит женщина с запросом, что её жизнь проходит мимо, я ищу первопричину.<br>Разбираем, что приносило радость в этом году, где было напряжение, какие решения она принимала сама, а где боялась разочаровать людей, что действительно было необходимостью и что она уже пробовала менять. Мне важно увидеть не только проблему, но и её реальную жизнь.<br><br>Если ты тоже ловишь себя на мысли «я для всех старалась, а себя почти не слышала», напиши мне слово ДИАГНОСТИКА. На бесплатной консультации, 40 минут, разберём твой запрос и посмотрим, что можно убрать на сессиях.<br><br>Твоя Ирина ❤️</div>
+<button class="copy" type="button" data-t="t2" data-img="1" id="c2">Скопировать картинку, потом текст</button><div class="mini-row"><button class="mini img-only" type="button">Только картинка</button><button class="copy mini" type="button" data-t="t2">Только текст</button><a class="mini" href="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-02.jpg" download>Скачать картинку</a></div></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00 <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Почему я спрашиваю не только про достижения</div><p class="k-say" id="ks2_1">Девочки, в сегодняшнем посте важный вопрос: «Я столько всего сделала, а почему внутри пусто?» Не всегда дело в том, что женщина мало старалась. Иногда она старалась слишком много, но почти не прислушивалась к себе. На диагностике мне важно услышать весь запрос: что у тебя в жизни сейчас, что ты чувствуешь, что пробовала и чего хочешь. Если узнаёшь себя, напиши «ДИАГНОСТИКА».</p><button class="copy small" type="button" data-t="ks2_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь честных итогов»</span></div><div class="k-t">Итог 3. Где я себя не слышала?</div><p class="k-say" id="ks2_2">Третий вечер честных итогов. Вспомни ситуацию, когда ты согласилась, а внутри было «не хочу». Не ругай себя, у тебя могли быть серьёзные причины. Спроси: что я тогда пыталась сохранить, мир, отношения, стабильность или одобрение? Иногда ответ помогает увидеть настоящую потребность. А завтра поговорим о том, как отличить своё желание от чужого ожидания.</p><button class="copy small" type="button" data-t="ks2_2">Скопировать текст</button></div></li>
+</ol></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Instagram Stories · опционально</span><span class="krug-note">3 кадра · без продажи</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-t">Узнавание</div><p class="k-say" id="st2_1">А ты умеешь просто отдыхать и кайфовать, <b>не испытывая чувства вины</b>? 😄</p><button class="copy small" type="button" data-t="st2_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-t">Опрос</div><p class="k-say" id="st2_2">Когда я отдыхаю, внутри звучит…<br><br>• «Кайфую и не парюсь ❤️»<br>• «Надо бы заняться чем-то полезным 🙈»<br>• «А что, так можно было? 😂»</p><button class="copy small" type="button" data-t="st2_2">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><div class="k-t">Интрига</div><p class="k-say" id="st2_3">Если даже отдых у тебя превращается в ещё одну задачу — ты не одна. В декабре покажу, что приготовила для тех, кто хочет жить с удовольствием, а не только из «надо». ❤️</p><button class="copy small" type="button" data-t="st2_3">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="thu">
+<header class="day-h"><div class="when"><span class="dname">Четверг</span><span class="date">03.12</span></div>
+<div class="tags"><span class="tag">#спрашивают</span><span class="num">число дня 7</span></div></header>
+<p class="why">Ответить на вопрос «моё это желание или чужое ожидание?» и дать три вопроса перед согласием; мягко позвать в закрытый клуб «МОЁ СОСТОЯНИЕ».</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Не обесценивать реальные семейные обязанности. Без призыва на диагностику, зовём в клуб словом КЛУБ. Темы эфиров клуба в декабре жду от тебя, согласуем и вставлю.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m3">#число_дня<br><br>0️⃣3️⃣🧡1️⃣2️⃣<br><br>Сегодня день 7.<br>Семёрка — число тишины, внутреннего голоса и честного взгляда на себя.<br><br>Сегодня можно не торопиться с ответом, который от тебя ждут.<br><br><b>«Что я сказала бы, если бы не боялась показаться неудобной?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m3">Скопировать текст</button></div><p class="k-hint">03.12.2026 → 16 → 7. Смысл числа взят из прошлых недель, мысль перед заданием мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir3">Женщина на вид 37 лет и мужчина того же возраста стоят в тёплой прихожей и вдвоём распутывают длинную гирлянду из коробки, смеются, лампочки светятся у них в руках; вечерний домашний свет, на полу коробки с ёлочными игрушками. Реалистичная фотография, естественный свет; цвет слоновой кости или приглушённого золота только акцентом (деталь одежды или предмет); квадрат 1:1, 1080×1080, без надписей и логотипов, без арок и скруглённых рамок.</div><button class="copy small" type="button" data-t="ir3">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-03.jpg</p></details>
+<div class="post"><img class="post-img" src="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-03.jpg" width="1080" height="1080" loading="lazy" alt="Картинка к посту, 03.12"><div class="post-text" id="t3">#спрашивают<br><br><b>«ИРИНА, КАК ПОНЯТЬ: ЭТО МОЁ ЖЕЛАНИЕ</b><br><br><b>ИЛИ Я ОПЯТЬ КОГО-ТО РАДИ НЕГО СТАРАЮСЬ?»</b><br><br>Давай разберём несколько ситуаций.<br><br><b>❓ «Если я хочу порадовать близких, это чужие ожидания?»</b><br>Не обязательно. Заботиться о любимых людях может быть твоим искренним желанием. Важно другое: есть ли у тебя право выбирать, сколько сил и времени ты на это отдаёшь.<br><br><b>❓ «А если я согласилась, потому что мне неудобно отказать?»</b><br>Спроси себя: «Если бы человек спокойно принял моё „нет“, я всё равно сказала бы „да“?» Иногда ответ многое проясняет.<br><br><b>❓ «А если от меня действительно зависит семья или работа?»</b><br>Тогда не нужно противопоставлять себя обязанностям. Бывает, что обстоятельства объективно требуют участия. Вопрос не в том, почему я опять всех спасаю, а в том, где мне нужна поддержка, как разделить нагрузку и что реально можно изменить.<br><br><b>❓ «Как отличить своё желание от страха осуждения?»</b><br>Задай себе три вопроса:<br><br>1️⃣ Я бы хотела этого, если бы никто не оценивал мой выбор?<br><br>2️⃣ Что я получаю от этого решения, кроме чужого одобрения?<br><br>3️⃣ Какая цена у этого решения для моего времени, сил и состояния?<br><br>Ответы не всегда будут однозначными: мы часто одновременно хотим и заботиться о других, и быть принятыми, и сохранять свои границы.<br><br><b>Нет экзамена на «правильную» женщину.</b><br><br>А если хочется делать шаги не в одиночку, а рядом с женщинами, которые тоже учатся слышать себя, у меня есть закрытый клуб «МОЁ СОСТОЯНИЕ». Каждую среду мы встречаемся на эфирах, делаем практики и поддерживаем друг друга.<br>Напиши мне слово КЛУБ,<br><a href="https://rdudkin58.github.io/ira-club/index.html" target="_blank" rel="noopener">здесь о Клубе подробнее</a>.<br><br>Ответь коротко: у тебя сейчас чаще звучит «мне хочется» или «от меня ждут»? Обнимаю тебя ❤️<br><br>Для тебя есть подарок 🎁 <a href="http://t.me/IraDudkinabot" target="_blank" rel="noopener">забирай здесь</a> ⤵️</div>
+<button class="copy" type="button" data-t="t3" data-img="1" id="c3">Скопировать картинку, потом текст</button><div class="mini-row"><button class="mini img-only" type="button">Только картинка</button><button class="copy mini" type="button" data-t="t3">Только текст</button><a class="mini" href="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-03.jpg" download>Скачать картинку</a></div></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Три вопроса перед согласием</div><p class="k-say" id="ks3_1">Девочки, сегодня маленький инструмент на декабрь. Прежде чем автоматически сказать «да», спросите себя три вещи: выбрала бы я это, если бы никто не оценивал? Что я получаю, кроме одобрения? И сколько сил это у меня заберёт? Пожалуйста, не превращайте заботу о семье в «плохое решение»: мы можем искренне хотеть заботиться. Важны свобода и посильность выбора. Полный разбор в посте.</p><button class="copy small" type="button" data-t="ks3_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь честных итогов»</span></div><div class="k-t">Итог 4. Где я могу попросить помощь?</div><p class="k-say" id="ks3_2">Четвёртый вечер. Вопрос на сегодня: какое дело я привычно беру на себя, хотя могла бы попросить о помощи? Организация праздника, быт, рабочая задача, подарки. Возможно, никто не догадался, что тебе тяжело. А возможно, ты и сама никогда об этом не говорила. Запиши одну конкретную просьбу, которую можно произнести спокойно.</p><button class="copy small" type="button" data-t="ks3_2">Скопировать текст</button></div></li>
+</ol></div>
+<div class="todo"><div class="todo-h">Отдельная публикация · 18:00 МСК</div><ul><li>Открытие записи на интенсив. Не объединять с основным постом про закрытый клуб «МОЁ СОСТОЯНИЕ». Кодовое слово — «КАЙФ».</li><li>Обложка: «НОВАЯ Я. КАЙФУЮ!», «15–17 декабря», «18:00 МСК», «3 000 ₽».</li><li>Вечерний кружочек «Итог 4» оставить без изменений; при необходимости разово перенести на 20:00.</li></ul></div>
+<div class="post"><div class="post-text" id="offer3"><b>НОВАЯ Я. КАЙФУЮ!</b> 🔥<br><br>Девочки, мои хорошие, скажите честно: <b>нам кто-нибудь выдаст медаль за то, что мы весь год были сильными, удобными, ответственными и всё держали на себе?</b> 😂<br><br>Работа, семья, близкие, подарки, планы, бесконечные «надо» — и ведь мы умеем справляться!<br><br>Но я всё чаще думаю: а когда уже можно не только справляться, но и <b>наслаждаться своей жизнью</b>?<br><br>Когда можно перестать ждать, пока все дела закончатся, чтобы разрешить себе удовольствие?<br><br>Я хочу предложить вам другую подготовку к 2027 году. Не очередной список целей, где надо стать ещё лучше, а три вечера, которые мы посвятим себе.<br><br>Открываю запись на трёхдневный интенсив <b>«НОВАЯ Я. КАЙФУЮ!»</b> ❤️<br><br><b>15 декабря — ОСОЗНАЁМ.</b> Посмотрим, какие страхи, сомнения, обиды, привычные установки и старые реакции отнимают силы. Будет практика осознавания и принятия, а также разборы.<br><br><b>16 декабря — ЭНЕРГЕТИЧЕСКОЕ ОЧИЩЕНИЕ И НАПОЛНЕНИЕ.</b> Я проведу свою авторскую энергетическую практику. Будем работать с тем, что хочется символически оставить в уходящем году, и уделим внимание тому, чем хотим наполнить свою жизнь.<br><br><b>17 декабря — ЛИЧНЫЙ КОД РАВНОВЕСИЯ.</b> С помощью GPT рассмотрим символические подсказки по датам рождения в моей системе матрицы души, соберём свой КОД и проведём большую практику активации.<br><br>Наш КОД — это <b>К: Контакт с собой, О: Осознание реакции, Д: Действие для изменения состояния</b>.<br><br><b>15, 16 и 17 декабря, каждый вечер в 18:00 по Москве.</b><br><br><b>Стоимость участия во всех трёх встречах — 3 000 ₽.</b><br><br>Мы завершим интенсив перед <b>21 декабря — зимним солнцестоянием</b>, символической для меня точкой обновления.<br><br>А в моём нумерологическом видении 2027-й связан с женской энергией, отношениями и возможностями. Но я хочу, чтобы мы шли к своему расцвету <b>не через гонку и достигаторство, а через равновесие и удовольствие от жизни</b>.<br><br>Ну что, девочки, будем опять всё тащить — или начинаем кайфовать? 😄<br><br><b>Хочешь программу и условия участия? Напиши мне «КАЙФ»</b> 👉 <a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">https://t.me/IrinaDudkina</a><br><br>Обнимаю,<br>Ирина ❤️</div><button class="copy" type="button" data-t="offer3">Скопировать отдельный пост</button></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Instagram Stories · открытие записи</span><span class="krug-note">3 кадра</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><p class="k-say" id="st3_1">Весь год всё тащила на себе. А в 2027 я вообще жить собираюсь?! 😂</p><button class="copy small" type="button" data-t="st3_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><p class="k-say" id="st3_2">Придумала интенсив: осознавание → энергетическое очищение → личный КОД Равновесия. 15–17 декабря, 18:00 МСК.</p><button class="copy small" type="button" data-t="st3_2">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><p class="k-say" id="st3_3"><b>НОВАЯ Я. КАЙФУЮ!</b> Все три вечера — 3 000 ₽. Хочешь программу? Напиши в директ <b>«КАЙФ»</b> ❤️</p><button class="copy small" type="button" data-t="st3_3">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="fri">
+<header class="day-h"><div class="when"><span class="dname">Пятница</span><span class="date">04.12</span></div>
+<div class="tags"><span class="tag">#послание</span><span class="num">число дня 8</span></div></header>
+<p class="why">Послание недели по картам «Две жизни»: вопрос к картам про благодарность себе за этот год.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Рубрика #послание по МАК-картам «Две жизни» (пост 1811). В комментариях ты, как всегда, присылаешь каждой послание её карты по числу. Содержание карт я не придумываю.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m4">#число_дня<br><br>0️⃣4️⃣🧡1️⃣2️⃣<br><br>Сегодня день 8.<br>Восьмёрка — число силы, ресурса и внутренней опоры.<br><br>Но ответственность не должна превращаться в бесконечные претензии к себе.<br><br><b>«За что я могу поблагодарить себя без оговорки «но…»?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m4">Скопировать текст</button></div><p class="k-hint">04.12.2026 → 17 → 8. Смысл числа взят из прошлых недель, мысль перед заданием мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir4">Женщина на вид 36 лет в шерстяном пальто стоит на заснеженной лесной тропе среди сосен на рассвете, раскрытые ладони направлены вверх, изо рта идёт пар, лицо спокойное; рассеянный розовый свет сквозь стволы. Реалистичная фотография, естественный свет; цвет слоновой кости или приглушённого золота только акцентом (деталь одежды или предмет); квадрат 1:1, 1080×1080, без надписей и логотипов, без арок и скруглённых рамок.</div><button class="copy small" type="button" data-t="ir4">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-04.jpg</p></details>
+<div class="post"><img class="post-img" src="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-04.jpg" width="1080" height="1080" loading="lazy" alt="Картинка к посту, 04.12"><div class="post-text" id="t4">#послание<br><br><b>Карта дня: за что я могу поблагодарить себя в этом году?</b> 🃏<br><br>Сегодня пятница🤩<br>Принимайте послания💫<br><br>Колода «Две жизни» создана по мотивам романа Конкордии Антаровой о внутренней силе человека.<br>Её карты помогают услышать то, что ты давно знаешь, но не говоришь себе вслух.<br><br>Всю неделю мы смотрели на год и спрашивали себя, чей он был, мой или чужих ожиданий.<br>И сегодня задай этот вопрос картам.<br><br>Название колоды можно символично для себя понять так: она про выбор.<br>Одна жизнь, где ты предъявляешь себе списки того, что не успела.<br>Другая, где ты замечаешь, что уже сделала, и говоришь себе спасибо.<br><br>Карта не предсказывает будущее.<br>Она помогает услышать, что ты сама хочешь себе сказать.<br><br>Как получить своё послание:<br><br>1️⃣ Сядь удобно, положи руку на сердце, сделай пару спокойных вдохов и выдохов.<br><br>2️⃣ Спроси себя: <b>«За что я могу поблагодарить себя в этом году?»</b><br><br>3️⃣ Напиши в комментариях любое число от 1 до 60, первое, что пришло.<br><br>Я пришлю тебе послание твоей карты.<br>Прочитай его медленно и послушай, что откликнется внутри.<br><br>Жду твоё число ⬇️<br><br>Обнимаю тебя ❤️</div>
+<button class="copy" type="button" data-t="t4" data-img="1" id="c4">Скопировать картинку, потом текст</button><div class="mini-row"><button class="mini img-only" type="button">Только картинка</button><button class="copy mini" type="button" data-t="t4">Только текст</button><a class="mini" href="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-04.jpg" download>Скачать картинку</a></div></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Послание с картой «Две жизни»</div><p class="k-say" id="ks4_1">Девочки, сегодня пятница, время послания. Покажите в кадре колоду «Две жизни». В декабре все начинают подводить итоги, и легко начать себя ругать за то, что не успели. Давайте спросим у карт, за что мы можем поблагодарить себя в этом году. Напишите в комментариях число от одного до шестидесяти, первое, что пришло, и я пришлю послание вашей карты.</p><button class="copy small" type="button" data-t="ks4_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь честных итогов»</span></div><div class="k-t">Итог 5. За что я благодарна себе?</div><p class="k-say" id="ks4_2">Пятый вечер нашей серии. Сегодня очень простое задание: закончить фразу «Спасибо мне за…». Не за идеальный год и не за выдающиеся достижения, а за одну вещь, которую ты действительно сделала для себя или близких. Может быть, ты научилась просить о помощи, призналась себе в усталости или начала что-то новое. Пусть сегодня это будет без строгого внутреннего экзаменатора.</p><button class="copy small" type="button" data-t="ks4_2">Скопировать текст</button></div></li>
+</ol></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Instagram Stories · опционально</span><span class="krug-note">3 кадра · МАК-пост не менять</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><p class="k-say" id="st4_1">Представь: ты вошла в 2027-й. А там снова: «Надо всем помочь. Надо всё успеть. Отдохну потом». Знакомо? 😅</p><button class="copy small" type="button" data-t="st4_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><p class="k-say" id="st4_2">А что, если попробовать иначе? Не стать идеальной, а научиться замечать себя, возвращать равновесие и давать себе больше удовольствия.</p><button class="copy small" type="button" data-t="st4_2">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">3</span><div class="k-body"><p class="k-say" id="st4_3">Мой трёхдневный интенсив <b>«НОВАЯ Я. КАЙФУЮ!»</b> — 15–17 декабря, 18:00 МСК, 3 000 ₽.<br><br>Хочешь подробности? Напиши <b>«КАЙФ»</b> ❤️</p><button class="copy small" type="button" data-t="st4_3">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="sat">
+<header class="day-h"><div class="when"><span class="dname">Суббота</span><span class="date">05.12</span></div>
+<div class="tags"><span class="tag">#моя_история</span><span class="num">число дня 9</span><span class="tag cta">зовём на диагностику</span></div></header>
+<p class="why">Личный пост Ирины: что она оставляет в 2026 году и что берёт с собой; позвать на диагностику.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Текст написан по твоему голосовому (пост 2263), ждёт твоей проверки. «Единое сознание», «жить из равновесия» и «Равновесие» оставил в твоих словах. Твоё фото из присланных. Призыв на диагностику.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m5">#число_дня<br><br>0️⃣5️⃣🧡1️⃣2️⃣<br><br>Сегодня день 9.<br>Девятка — число завершения и отпускания лишнего.<br><br>Сегодня можно мягко завершить одну маленькую привычку действовать через силу.<br><br><b>«Какое «должна» я хочу заменить на осознанный выбор?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m5">Скопировать текст</button></div><p class="k-hint">05.12.2026 → 18 → 9. Смысл числа взят из прошлых недель, мысль перед заданием мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir5">I am attaching a photo of myself. Use my exact face, facial features, skin tone, hair color and hairstyle from the attached photo. Do not change my face. Keep my identity 100% recognizable. Now generate a new photo of me in the scene described below. Match the lighting and warm natural aesthetic of my reference photo. No glowing effects, no fantasy elements — only realistic photography.
+
+A realistic close-up portrait of the woman from the reference photo. She looks directly into the camera with a warm knowing smile, wise calm eyes. She wears a mustard-yellow silk blouse. Soft candlelight, deep cozy warm-toned blurred background. 85mm lens, sharp focus on eyes, photorealistic, natural skin texture, no plastic retouch.</div><button class="copy small" type="button" data-t="ir5">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-05.jpg</p></details>
+<div class="post"><img class="post-img" src="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-05.jpg" width="1080" height="1080" loading="lazy" alt="Картинка к посту, 05.12"><div class="post-text" id="t5">#моя_история<br><br><b>ЧТО Я ОСТАВЛЯЮ В 2026 ГОДУ</b><br><br>Год подходит к концу, и я задала себе вопрос: что мне хочется оставить в 2026-м, а что взять с собой?<br><br>- Конечно, хочется оставить свои страхи.<br>Страхи за близких, которые время от времени поднимаются, но я работаю с ними, на корню и убираю.<br>- Сомнения в работе: «А нужно ли? А получится ли?»<br>Они тоже иногда проскальзывают, и с ними я тоже постоянно работаю.<br>Хочется раз и навсегда оставить неуверенность.<br>Я очень рада, что у меня есть методы глубокой и достаточно быстрой проработки.<br><br>Хочется оставить и привычку судить.<br>Я ещё иногда это делаю и мне важно научиться: принимать всё как есть.<br>Я продолжаю учиться этому каждый день.<br><br>Хочется также оставить импульсивные эмоции, которые успевают проявиться.<br>Я ежедневно учусь жить осознанно, из равновесия.<br><br>А забрать с собой я хочу навыки и умение создавать своё состояние каждый день. Жить из равновесия — это основа и фундамент всего, что происходит в жизни каждой из нас, и в моей тоже.<br><br>Этому я учу женщин в своей работе: замечать своё состояние и постепенно возвращаться в равновесие, чтобы не жить всё время на автомате. Если хочешь разобраться, что стоит за твоими страхами и неуверенностью, напиши мне слово ДИАГНОСТИКА. На бесплатной консультации, 40 минут, разберём твой запрос и посмотрим, что можно убрать на сессиях.<br><br>А что хочешь оставить в 2026 году ты?<br>Напиши в комментариях.<br><br>Обнимаю ❤️<br>Твоя Ирина</div>
+<button class="copy" type="button" data-t="t5" data-img="1" id="c5">Скопировать картинку, потом текст</button><div class="mini-row"><button class="mini img-only" type="button">Только картинка</button><button class="copy mini" type="button" data-t="t5">Только текст</button><a class="mini" href="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-05.jpg" download>Скачать картинку</a></div></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00 <span class="tag cta">зовём на диагностику</span></div><div class="k-t">Что я оставляю в 2026</div><p class="k-say" id="ks5_1">Девочки, привет! Я задала этот вопрос себе: что мне хочется оставить в 2026 году? Страхи, неуверенность, привычку осуждать и импульсные реакции. А взять с собой умение каждый день выстраивать своё состояние. Прочитайте пост и напишите одним словом, что хотите оставить вы. Если хочется разобраться, что стоит за вашими страхами, напишите «ДИАГНОСТИКА». Обнимаю!</p><button class="copy small" type="button" data-t="ks5_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь честных итогов»</span></div><div class="k-t">Итог 6. Что я больше не хочу делать из страха?</div><p class="k-say" id="ks5_2">Шестой вечер. Закончи фразу: «Я больше не хочу автоматически…». Соглашаться, чтобы никого не расстроить, брать на себя всё, сравнивать себя с другими, оправдываться за отдых. Жёстких обещаний «никогда больше» давать не нужно, достаточно заметить одну привычку. Завтра завершим неделю тем, что ты хочешь взять с собой в декабрь.</p><button class="copy small" type="button" data-t="ks5_2">Скопировать текст</button></div></li>
+</ol></div>
+</section>
+<section class="day" id="sun">
+<header class="day-h"><div class="when"><span class="dname">Воскресенье</span><span class="date">06.12</span></div>
+<div class="tags"><span class="tag">#сериал</span><span class="num">число дня 1</span></div></header>
+<p class="why">Художественный эпизод про список маленьких побед и «хочу чаще замечать себя»; подготовка к декабрю, не финал года.</p>
+<div class="todo"><div class="todo-h">Перед публикацией</div><ul><li>Рубрика #сериал (твой пост 1795): вымышленный эпизод, без призыва на диагностику, «Продолжение следует…». Текст мой черновик, ждёт твоей проверки.</li></ul></div>
+<div class="morning"><div class="morning-h">Утром · короткий пост «Число дня»</div><div class="post"><div class="post-text" id="m6">#число_дня<br><br>0️⃣6️⃣🧡1️⃣2️⃣<br><br>Сегодня день 1.<br>Единица — число начала и личного шага.<br><br>Сегодня можно выбрать одно качество или состояние, которое хочешь развивать в декабре.<br><br><b>«Что я хочу начать делать для себя, а не ради чужой оценки?»</b><br><br>И сделай<br><b>квадратное дыхание:</b><br>Вдох на 4 счета<br>Задержка на 4<br>Выдох на 4<br>Задержка на 4<br>И так три круга хотя бы.</div>
+<button class="copy" type="button" data-t="m6">Скопировать текст</button></div><p class="k-hint">06.12.2026 → 19 → 10 → 1. Смысл числа взят из прошлых недель, мысль перед заданием мой черновик, поправь как удобно.</p></div>
+<details class="img"><summary>Промт для картинки</summary>
+<div class="img-row"><span class="lang">RU</span><div class="img-text" id="ir6">Женщина на вид 39 лет в канцелярском магазине выбирает новый блокнот, держит в руках два разных, на лице весёлая задумчивость; вокруг полки с разноцветными тетрадями и ручками, мягкий тёплый свет магазина. Реалистичная фотография, естественный свет; цвет слоновой кости или приглушённого золота только акцентом (деталь одежды или предмет); квадрат 1:1, 1080×1080, без надписей и логотипов, без арок и скруглённых рамок.</div><button class="copy small" type="button" data-t="ir6">Скопировать</button></div>
+<p class="img-hint">Картинку делает GPT-бот, адрес на сайте: posty/img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-06.jpg</p></details>
+<div class="post"><img class="post-img" src="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-06.jpg" width="1080" height="1080" loading="lazy" alt="Картинка к посту, 06.12"><div class="post-text" id="t6">#сериал<br><br><b>ЗАПИСКИ ДНЕВНИКА ОБЫЧНОЙ ЖЕНЩИНЫ</b><br><br><b>«Список, который никто у меня не просил…»</b><br><br>Воскресное утро. На столе лежит новый блокнот. Обычно в декабре я пишу списки: подарки, продукты, кого поздравить, что успеть на работе, что приготовить.<br>И каждый год этот список почему-то получается очень длинный 😅<br><br>Сегодня я взяла ручку и написала: «Итоги года».<br>И сразу услышала знакомое: «Так, что мы опять не успели?» Хотела написать: не похудела, не закончила ремонт, не съездила туда, куда собиралась, не стала такой организованной, как мечтала.<br><br>Но вдруг остановилась.<br><br>А если сегодня список будет не про то, чего мне не хватило, а про то, что у меня уже получилось?<br><br>Я написала: «Попросила сына помочь, вместо того чтобы молча всё делать самой». «Сказала подруге, что устала, и не стала притворяться бодрой». «Один вечер провела без телефона». «Перестала оправдываться за то, что хочу отдохнуть».<br><br>Смотрела на эти строчки и смеялась.<br>Какие маленькие победы!<br>Никто не вручит за них медаль, и в соцсетях они не соберут тысячи лайков.<br>Но ведь именно из них складывалась моя настоящая жизнь.<br><br>Потом я добавила ещё одну фразу: «В декабре я хочу не успеть всё. Я хочу чаще замечать себя».<br><br>И знаешь, что удивительно? Список подарков от этого никуда не исчез.<br>Работа тоже.<br>Но впервые мне захотелось оставить в декабре место не только для обязанностей, а и для себя ❤️<br><br>Продолжение следует…<br><br>Для тебя есть подарок 🎁 <a href="http://t.me/IraDudkinabot" target="_blank" rel="noopener">забирай здесь</a> ⤵️</div>
+<button class="copy" type="button" data-t="t6" data-img="1" id="c6">Скопировать картинку, потом текст</button><div class="mini-row"><button class="mini img-only" type="button">Только картинка</button><button class="copy mini" type="button" data-t="t6">Только текст</button><a class="mini" href="img/chuzhie-ozhidaniya-2026-11-30/chuzhie-ozhidaniya-2026-12-06.jpg" download>Скачать картинку</a></div></div>
+<div class="krug"><div class="krug-h"><span class="krug-title">Кружочки дня</span><span class="krug-note">каждый до 60 секунд</span></div>
+<ol class="k-list">
+<li class="k"><span class="ring" aria-hidden="true">1</span><div class="k-body"><div class="k-when">День, 14:00–16:00</div><div class="k-t">Не список ошибок, а список жизни</div><p class="k-say" id="ks6_1">Девочки, мы заканчиваем нашу неделю первых итогов года, и я предлагаю вам одну вещь: не составляйте пока список всего, что не успели. Вспомните хотя бы три маленькие победы, о которых знаете только вы: где вы услышали себя, попросили помощь, позволили себе отдых, сделали собственный выбор. В сегодняшнем дневнике как раз такая история. Напишите одну свою маленькую победу.</p><button class="copy small" type="button" data-t="ks6_1">Скопировать текст</button></div></li>
+<li class="k"><span class="ring" aria-hidden="true">2</span><div class="k-body"><div class="k-when">Вечер, 19:00 · <span class="series">серия «Семь честных итогов»</span></div><div class="k-t">Итог 7. Что беру с собой в декабрь?</div><p class="k-say" id="ks6_2">Седьмой вечер нашей серии «Семь честных итогов». Последний вопрос: какое состояние я хочу развивать в декабре? Не «я обязана стать идеальной», а, например, больше спокойствия, больше честности с собой, больше заботы о своих силах, больше свободы говорить о желаниях. Выбери одно слово. Пусть оно станет твоим ориентиром на предновогодний месяц. Спасибо, что была со мной эту неделю.</p><button class="copy small" type="button" data-t="ks6_2">Скопировать текст</button></div></li>
+</ol></div>
+<div class="todo"><div class="todo-h">Отдельная публикация · 17:30 МСК</div><ul><li>Второй оффер интенсива. Не вставлять его в текст воскресного сериала.</li><li>В 19:00 опубликовать исходный завершающий кружочек без правок либо использовать заранее согласованное время.</li><li>Не писать, что мест почти не осталось, если это не подтверждено реальным количеством оплат.</li></ul></div>
+<div class="post"><div class="post-text" id="offer6"><b>Я ТУТ ПОДУМАЛА: А СЕБЕ-ТО НА НОВЫЙ ГОД ЧТО ПОДАРИМ?!</b> 🎄😂<br><br>Девочки, декабрь начался, и постепенно появляются списки: кому подарок, что купить, что приготовить, куда успеть. Всё как обычно.<br><br>А себя ты в этом списке нашла?<br><br>Не в смысле ещё одного полезного курса, после которого надо стать лучшей версией себя. Я сейчас о другом.<br><br><b>А если подарить себе право выдохнуть и пожить с удовольствием?</b><br><br>Не ждать, пока закончится работа. Пока все будут довольны. Пока кто-нибудь наконец разрешит тебе отдохнуть.<br><br>Я как раз придумала три предновогодних вечера, чтобы переключить внимание на себя.<br><br><b>Интенсив «НОВАЯ Я. КАЙФУЮ!»</b> ❤️<br><br>• <b>15 декабря:</b> увидим, какие внутренние реакции, страхи, сомнения и привычные «надо» мешают чувствовать себя свободнее.<br>• <b>16 декабря:</b> я проведу авторское энергетическое очищение и наполнение.<br>• <b>17 декабря:</b> с помощью GPT посмотрим символические подсказки по датам рождения, соберём личный КОД Равновесия на 2027 год и проведём большую практику активации.<br><br>Мне близка мысль, что 2027 год — время женского расцвета. В моей нумерологической системе он связан с отношениями и возможностями.<br><br>Но расцвет — это не соревнование за звание самой правильной женщины.<br><br><b>Это когда в твоей жизни есть место для тебя самой — твоих желаний, лёгкости и удовольствия.</b><br><br><b>15–17 декабря · каждый вечер в 18:00 МСК.</b><br><b>Стоимость всех трёх дней — 3 000 ₽.</b><br><br>Если хочется подробностей, напиши мне <b>«КАЙФ»</b> 👉 <a href="https://t.me/IrinaDudkina" target="_blank" rel="noopener">https://t.me/IrinaDudkina</a><br><br>Ну что, девочки? Кто в новом году хочет не только всё успевать, но и кайфовать? 😄<br><br>Обнимаю ❤️<br>Ирина</div><button class="copy" type="button" data-t="offer6">Скопировать отдельный пост</button></div>
+</section>
+<section class="guide" id="kayf">
+  <h2>«КАЙФ»: ответы и организационные условия</h2>
+  <p>Кодовое слово «КАЙФ» используется только для нового платного интенсива. Не смешивать его с обращениями «ДИАГНОСТИКА» и «КЛУБ».</p>
+  <div class="todo"><div class="todo-h">До оплаты обязательно уточнить</div><ul><li>Срок доступа к материалам и записям.</li><li>Порядок получения символической подсказки по дате рождения.</li><li>Способ оплаты и подтверждение участия.</li><li>Дату рождения запрашивать отдельно, с согласия женщины, не в общем чате.</li><li>Не обещать каждой участнице полноценную индивидуальную сессию, если формат этого не предусматривает.</li></ul></div>
+  <div class="post"><div class="post-text" id="reply_kayf">Привет! ❤️ Рада, что тебе откликнулся интенсив Ирины Дудкиной <b>«НОВАЯ Я. КАЙФУЮ!»</b><br><br>Это <b>три живые встречи 15, 16 и 17 декабря в 18:00 МСК</b>.<br><br><b>15 декабря</b> — разберём внутренние «надо», привычные реакции, страхи и сомнения, проведём практику осознавания и принятия.<br><br><b>16 декабря</b> — Ирина проведёт авторское энергетическое очищение и наполнение.<br><br><b>17 декабря</b> — через символический расчёт по дате рождения с помощью GPT начнём собирать личный КОД Равновесия и проведём групповую практику активации.<br><br><b>Стоимость — 3 000 ₽ за все три вечера.</b><br><br>КОД — это <b>Контакт с собой → Осознание реакции → Действие для изменения состояния</b>.<br><br>Условия доступа к материалам и порядок получения символических подсказок по дате рождения отправлю вместе с подробной программой. Дату рождения будем запрашивать отдельно, с твоего согласия, не в общем чате.<br><br><b>Хочешь, пришлю полные условия и способ записи?</b> ❤️</div><button class="copy" type="button" data-t="reply_kayf">Скопировать ответ на «КАЙФ»</button></div>
+  <details class="more"><summary>Итоговый контроль перед публикацией</summary><div class="more-body">
+    <h3>Оставить без изменений</h3>
+    <ul><li>Все семь постов «Число дня» и расчёты.</li><li>Основные посты, кроме одной согласованной строки 5 декабря.</li><li>Голосовую практику вторника и вечернюю серию «Семь честных итогов».</li><li>Средовую и субботнюю «ДИАГНОСТИКУ».</li><li>Четверговый «КЛУБ», пятничное МАК-послание и воскресный сериал с «Продолжение следует…».</li></ul>
+    <h3>Не делать</h3>
+    <ul><li>Не вставлять «КАЙФ» в каждый основной пост.</li><li>Не заменять приглашение в клуб 3 декабря продажей интенсива.</li><li>Не превращать МАК-послание 4 декабря в рекламную рубрику.</li><li>Не обещать гарантированного удаления страхов, «сущностей» или лечения заболеваний.</li><li>Нумерологические значения подавать как авторскую символическую интерпретацию Ирины, а не объективный факт.</li></ul>
+  </div></details>
+</section>
+<section class="guide" id="noyabr">
+  <h2>Что рядом по плану</h2>
+  <p>Эфиры закрытого клуба «МОЁ СОСТОЯНИЕ» по средам в 11:00: 2 декабря попадает на эту неделю. Темы эфиров на декабрь жду от тебя и согласуем.</p>
+  <ol class="weeks">
+    <li class="wk"><span class="wk-d">23–29 ноября</span><span class="wk-t">«Почему я всё время боюсь, что меня не выберут?»</span><p>Неделя перед этой. Страница: <a href="nedelya-ne-vyberut-6134fc5b.html">неделя «Меня не выберут»</a>.</p></li>
+  </ol>
+</section>
+<section class="guide" id="krug">
+  <h2>Кружочки: как снимать</h2>
+  <dl class="rows">
+    <div class="row"><dt>Утро, 8:00</dt><dd>Не кружок: короткий пост «Число дня», его выкладывает бот</dd></div>
+    <div class="row"><dt>День, 14:00–16:00</dt><dd>Кружок к посту дня: свой пример, продолжение, вопрос</dd></div>
+    <div class="row"><dt>Вечер, 19:00</dt><dd>Серия «Семь честных итогов»: один вопрос в день, в воскресенье итог</dd></div>
+  </dl>
+  <details class="more"><summary>Как записывать</summary><div class="more-body"><ul>
+    <li>До 60 секунд, одна мысль. Больше мыслей — 2–3 кружка подряд.</li>
+    <li>Первые 3 секунды — зацепка: вопрос или сильная фраза.</li>
+    <li>В ленте кружок часто начинает играть без звука, поэтому первое, что видно, — лицо и эмоция.</li>
+    <li>Свет — лицом к окну, телефон на уровне глаз, вокруг тихо.</li>
+    <li>Оговорилась — улыбнись и продолжай: живость важнее идеальности.</li>
+    <li>В конце — одно действие: реакция, слово или число в комментариях. «ДИАГНОСТИКА» — только в среду и субботу.</li>
+    <li>Подпись к кружку добавить нельзя. Ссылку отправляй следующим сообщением.</li>
+    <li>Про клиенток — без имён и узнаваемых деталей.</li>
+  </ul></div></details>
+</section>
+  <p class="foot">Все тексты на «ты» и в женском роде. Имена клиенток не упоминаются. Среда — собирательная ситуация, не кейс клиентки. Суббота — по твоему голосовому, ждёт проверки.</p>
+</div>
+<script>
+
+function pngBlob(img){
+  return new Promise(function(res,rej){
+    var i=new Image();
+    i.onload=function(){var c=document.createElement('canvas');c.width=i.naturalWidth;c.height=i.naturalHeight;c.getContext('2d').drawImage(i,0,0);c.toBlob(function(b){b?res(b):rej(new Error('png'));},'image/png');};
+    i.onerror=rej;i.src=img.currentSrc||img.src;
+  });
+}
+document.querySelectorAll('.img-only').forEach(function(b){
+  var label=b.textContent;
+  function show(t){b.textContent=t;b.classList.add('done');setTimeout(function(){b.textContent=label;b.classList.remove('done');},2500);}
+  b.addEventListener('click',function(){
+    var img=b.closest('.post').querySelector('.post-img');
+    try{navigator.clipboard.write([new ClipboardItem({'image/png':pngBlob(img)})]).then(function(){show('Картинка скопирована');},function(){show('Не вышло: нажми «Скачать картинку»');});}
+    catch(x){show('Не вышло: нажми «Скачать картинку»');}
+  });
+});
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.dataset.label=btn.textContent;
+  var el=document.getElementById(btn.dataset.t);
+  var isPost=el.classList.contains('post-text');
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  // Чистая разметка поста: только <b> и абзацы <p>, без стилей, ссылок и шрифтов страницы.
+  // Каждая строка — отдельный <p>, пустая строка — <p>&nbsp;</p>: иначе Telegram схлопывает пустые строки и отступы.
+  function runs(n,bold,out){
+    n.childNodes.forEach(function(c){
+      if(c.nodeType===3){out.push([c.nodeValue,bold]);}
+      else if(c.nodeName==='BR'){out.push(['\n',bold]);}
+      else if(c.nodeName==='B'||c.nodeName==='STRONG'){runs(c,true,out);}
+      else{runs(c,bold,out);}
+    });
+    return out;
+  }
+  function clean(n,md){
+    var lines=[[]];
+    runs(n,false,[]).forEach(function(r){
+      r[0].split('\n').forEach(function(part,i){
+        if(i>0)lines.push([]);
+        if(part)lines[lines.length-1].push([part,r[1]]);
+      });
+    });
+    var o=lines.map(function(l){
+      var s=l.map(function(r){
+        var t=md?r[0]:esc(r[0]);
+        if(r[1]&&t.trim())t=md?'**'+t+'**':'<b>'+t+'</b>';
+        return t;
+      }).join('');
+      return md?s:(s.trim()?'<p>'+s+'</p>':'<p>&nbsp;</p>');
+    });
+    return md?o.join('\n'):o.join('');
+  }
+  function ok(label){btn.textContent=label||'Скопировано';btn.classList.add('done');clearTimeout(btn._t);btn._t=setTimeout(function(){btn.textContent=btn.dataset.label;btn.classList.remove('done');},2000);}
+  function fallbackSel(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Текст выделен, скопируй вручную';}
+  function copyData(html,text,done){
+    var handler=function(e){e.preventDefault();if(html!==null)e.clipboardData.setData('text/html',html);e.clipboardData.setData('text/plain',text);};
+    document.addEventListener('copy',handler);
+    var good=false;
+    window.__ownCopy=true;
+    try{good=document.execCommand('copy');}catch(x){}
+    window.__ownCopy=false;
+    document.removeEventListener('copy',handler);
+    if(good){done();return;}
+    try{
+      if(html!==null&&window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+        navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})]).then(done,fallbackSel);return;
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,fallbackSel);return;}
+    }catch(x){}
+    fallbackSel();
+  }
+  btn.addEventListener('click',function(){
+    if(isPost&&btn.dataset.img){
+      // Telegram на iPhone из общего буфера берёт только текст (проверка Ирины 9.10.2026),
+      // поэтому кнопка работает в два нажатия: сначала картинка, потом текст.
+      if(btn.dataset.step!=='text'){
+        var img=btn.parentNode.querySelector('.post-img');
+        var toText=function(){btn.dataset.step='text';btn.textContent='Картинка скопирована. Вставь её в Telegram и нажми ещё раз — скопирую текст';btn.classList.add('done');
+          clearTimeout(btn._t);btn._t=setTimeout(function(){btn.dataset.step='';btn.textContent=btn.dataset.label;btn.classList.remove('done');},180000);};
+        try{navigator.clipboard.write([new ClipboardItem({'image/png':pngBlob(img)})]).then(toText,function(){ok('Картинка не скопировалась: нажми «Скачать картинку»');});}
+        catch(x){ok('Картинка не скопировалась: нажми «Скачать картинку»');}
+      }else{
+        clearTimeout(btn._t);btn.dataset.step='';
+        copyData('<meta charset="utf-8">'+clean(el,false),el.innerText,function(){ok('Текст скопирован: вставь его подписью к картинке');});
+      }
+      return;
+    }
+    if(isPost){copyData('<meta charset="utf-8">'+clean(el,false),el.innerText,function(){ok();});}
+    else{
+      var txt=el.innerText;
+      // Текст кружка записан в «ёлочках» как реплика; в пост их не берём.
+      if(el.classList.contains('k-say'))txt=txt.trim().replace(/^«/,'').replace(/»(\.?)$/,'$1');
+      copyData(null,txt,function(){ok();});
+    }
+  });
+  if(isPost&&el.querySelector('b')&&!btn.classList.contains('mini')){
+    // Запасная кнопка: жирное в виде **слов**. Telegram сам делает из них жирный при отправке.
+    var b2=document.createElement('button');
+    b2.type='button';b2.className='copy';b2.dataset.label=b2.textContent='Жирное не сохранилось? Скопировать со звёздочками';
+    b2.style.fontWeight='500';b2.style.fontSize='13px';
+    b2.addEventListener('click',function(){
+      var md=clean(el,true);
+      copyData(null,md,function(){b2.textContent='Скопировано со звёздочками: вставь и отправь';b2.classList.add('done');setTimeout(function(){b2.textContent=b2.dataset.label;b2.classList.remove('done');},2500);});
+    });
+    btn.parentNode.insertBefore(b2,btn.parentNode.querySelector('.mini-row'));
+  }
+});
+
+// Всё, что выделено вручную вне постов (кружки, подсказки, промты), копируется чистым текстом:
+// иначе в Telegram такой текст вставляется целиком жирным и его не исправить.
+document.addEventListener('copy',function(e){
+  if(window.__ownCopy)return;
+  var sel=window.getSelection();
+  if(!sel||sel.isCollapsed)return;
+  var n=sel.anchorNode,el=n&&(n.nodeType===1?n:n.parentElement);
+  if(el&&el.closest&&el.closest('.post-text'))return;
+  e.preventDefault();
+  e.clipboardData.setData('text/plain',sel.toString());
+});
+
+<\/script>
+</body>
+</html>
